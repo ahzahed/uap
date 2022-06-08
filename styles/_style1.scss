@@ -1,0 +1,943 @@
+// .overly_body{
+//   overflow-y: auto;
+//   position: fixed;
+//   margin-top: 0px;
+
+// }
+
+// #about {
+//   padding-top: $section-padding;
+//   padding-bottom: $section-padding;
+//   @include respond-below(sm) {
+//     padding-top: 60px;
+//     padding-bottom: 60px;
+//   }
+//   @include respond-between(sm, md) {
+//     padding-top: 60px;
+//     padding-bottom: 60px;
+//   }
+//   @include respond-between(md, lg) {
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//   }
+//   .about-content {
+//     h2 {
+//       margin: 0 57px 42px 0;
+//       @include title;
+//       text-align: left;
+//       @include respond-below(sm) {
+//         // padding-bottom: 40px;
+//         // font-size: 33px;
+//         text-align: center;
+//       }
+//       @include respond-between(sm, md) {
+//         // padding-bottom: 40px;
+//         text-align: center;
+//       }
+//       @include respond-between(md, lg) {
+//         // padding-bottom: 40px;
+//         text-align: center;
+//       }
+//       @include respond-between(lg, xl) {
+//         font-size: 45px;
+//         // padding-bottom: 36px;
+//       }
+//     }
+//     p {
+//       color: $text-color;
+
+//       @include paragraph;
+//       text-align: left;
+//       padding-right: 60px;
+//       margin-bottom: 0;
+//       padding-bottom: 60px;
+//       @include respond-below(sm) {
+//         padding-right: 0;
+//       }
+//       @include respond-between(sm, md) {
+//         padding-right: 0;
+//       }
+//       @include respond-between(md, lg) {
+//         padding-right: 0;
+//       }
+//       @include respond-between(lg, xl) {
+//         font-size: 16px;
+//         line-height: 26px;
+//         padding-right: 30px;
+//       }
+//     }
+//     .read-more-icon {
+//       text-align: right;
+//       margin-right: 75px;
+//       padding: 11px 42px;
+//       border-radius: 5px;
+//       @include respond-below(sm) {
+//         text-align: center;
+//         margin-right: 0;
+//       }
+//       @include respond-between(sm, md) {
+//         text-align: center;
+//         margin-right: 0;
+//       }
+//       @include respond-between(md, lg) {
+//         text-align: center;
+//         margin-right: 0;
+//       }
+//     }
+//     // .read-more-icon {
+//     //   padding: 11px 42px;
+//     //   border-radius: 5px;
+//     // }
+//   }
+//   .about-img {
+//     overflow: hidden;
+//     img {
+//       height: auto;
+//       max-width: 100%;
+
+//       opacity: 1;
+//       vertical-align: bottom;
+//       -webkit-transition: all 0.5s ease-in-out;
+//       -moz-transition: all 0.5s ease-in-out;
+//       -o-transition: all 0.5s ease-in-out;
+//       transition: all 0.5s ease-in-out;
+//       &:hover {
+//         transform: scale(1.2);
+//         opacity: 0.7;
+//       }
+//       @include respond-below(sm) {
+//         padding-top: 50px;
+//       }
+//       @include respond-between(sm, md) {
+//         padding-top: 50px;
+//       }
+//       @include respond-between(md, lg) {
+//         padding-top: 50px;
+//       }
+//     }
+//   }
+// }
+
+// #choose {
+//   padding-top: $section-padding;
+//   padding-bottom: $section-padding;
+//   background: url(../static/home03info1.png);
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-attachment: fixed;
+//   @include respond-below(sm) {
+//     padding-top: 100px;
+//     padding-bottom: 80px;
+//   }
+//   @include respond-between(sm, md) {
+//     padding-top: 100px;
+//     padding-bottom: 80px;
+//   }
+//   @include respond-between(md, lg) {
+//     padding-top: 100px;
+//     padding-bottom: 80px;
+//   }
+//   .choose-content {
+//     text-align: center;
+
+//     h2 {
+//       color: $text-color;
+//       @include title;
+//       margin-bottom: 0;
+//       padding-bottom: 26px;
+//       @include respond-below(sm) {
+//         font-size: 33px;
+//       }
+//     }
+//     p {
+//       color: $text-color;
+//       @include paragraph;
+//       padding-bottom: 70px;
+//       margin-bottom: 0;
+//       @include respond-below(sm) {
+//         padding-bottom: 30px;
+//       }
+//       @include respond-between(sm, md) {
+//         padding-bottom: 30px;
+//       }
+//       @include respond-between(md, lg) {
+//         padding-bottom: 30px;
+//       }
+//     }
+//   }
+//   .choose-item {
+//     padding: 60px 22px;
+//     border-radius: 5px;
+//     text-align: center;
+//     transition: all linear 0.3s;
+
+//     &:hover {
+//       background: $white;
+//       box-shadow: $card-shadow-dark;
+//     }
+//     img {
+//       padding-bottom: 56px;
+//       max-width: 100%;
+//     }
+//     h6 {
+//       color: $text-color;
+//       font-size: 27px;
+//       font-weight: 500;
+//       font-stretch: normal;
+//       font-style: normal;
+//       line-height: normal;
+//       letter-spacing: normal;
+//       margin-bottom: 0;
+//       padding-bottom: 54px;
+//     }
+//     p {
+//       text-align: left !important;
+//       color: $text-color;
+//       @include paragraph;
+//       padding-left: 10px;
+//       padding-right: 10px;
+//       margin-bottom: 50px;
+//       @include respond-between(sm, md) {
+//         text-align: center !important;
+//       }
+//       @include respond-between(md, lg) {
+//         text-align: center !important;
+//       }
+//     }
+
+//     .choose-icon {
+//       padding: 11px 32px;
+//       border-radius: 5px;
+//     }
+//   }
+// }
+
+// #admission {
+//   padding-top: $section-padding;
+//   padding-bottom: $section-padding;
+//   background: $background-color;
+//   @include respond-below(sm) {
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//   }
+//   @include respond-between(sm, md) {
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//   }
+//   @include respond-between(md, lg) {
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//   }
+//   .admission-content {
+//     @include respond-below(md) {
+//       text-align: center;
+//     }
+//     h2 {
+//       color: $text-color;
+//       font-size: 52px;
+//       font-weight: 500;
+//       font-stretch: normal;
+//       font-style: normal;
+//       line-height: normal;
+//       letter-spacing: normal;
+//       margin-bottom: 0;
+//       padding-bottom: 29px;
+//       @include respond-below(sm) {
+//         padding-bottom: 50px;
+//         font-size: 32px;
+//         text-align: center;
+//       }
+//       @include respond-between(sm, md) {
+//         padding-bottom: 50px;
+//         text-align: center;
+//       }
+//       @include respond-between(md, lg) {
+//         padding-bottom: 50px;
+//         text-align: center;
+//       }
+//       @include respond-between(lg, xl) {
+//         font-size: 40px;
+//         padding-bottom: 45px;
+//       }
+//     }
+//     p {
+//       color: $text-color;
+//       font-family: Poppins;
+//       @include paragraph;
+//       margin-bottom: 0;
+//       padding-bottom: 37px;
+//       padding-right: 20px;
+//       @include respond-between(lg, xl) {
+//         font-size: 18px;
+//         line-height: 35px;
+//         padding-right: 0px;
+//       }
+//     }
+//     .admission-icon {
+//       padding: 11px 42px;
+//       text-align: center;
+//       border-radius: 5px;
+//       margin-right: 35px;
+//       margin-top: 30px;
+//       @include respond-below(sm) {
+//         text-align: center;
+//         margin-right: 0;
+//       }
+//       @include respond-between(sm, md) {
+//         text-align: center;
+//         margin-right: 0;
+//       }
+//       @include respond-between(md, lg) {
+//         text-align: center;
+//         margin-right: 0;
+//       }
+//     }
+
+//     .admission-img {
+//       @include respond-below(sm) {
+//         padding-top: 50px;
+//       }
+//       @include respond-between(sm, md) {
+//         padding-top: 50px;
+//       }
+//       @include respond-between(md, lg) {
+//         padding-top: 50px;
+//       }
+//     }
+//   }
+// }
+
+// #apply {
+//   padding-top: $section-padding;
+//   padding-bottom: $section-padding;
+//   @include respond-below(sm) {
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//   }
+//   @include respond-between(sm, md) {
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//   }
+//   @include respond-between(md, lg) {
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//   }
+//   .apply-title h2 {
+//     color: $text-color;
+//     font-size: 52px;
+//     font-weight: 500;
+//     font-stretch: normal;
+//     font-style: normal;
+//     line-height: normal;
+//     letter-spacing: normal;
+//     padding-bottom: 90px;
+//     margin-bottom: 0;
+//     @include respond-below(sm) {
+//       padding-bottom: 50px;
+//       font-size: 40px;
+//       text-align: center;
+//     }
+//     @include respond-between(sm, md) {
+//       padding-bottom: 50px;
+//       text-align: center;
+//     }
+//     @include respond-between(md, lg) {
+//       padding-bottom: 50px;
+//       text-align: center;
+//     }
+//     @include respond-between(lg, xl) {
+//       font-size: 45px;
+//     }
+//   }
+//   .apply-btn {
+//     text-align: right;
+//     margin-top: 30px;
+//     margin-right: 50px;
+//     @include respond-below(sm) {
+//       margin-right: 0;
+//       text-align: center;
+//       margin-bottom: 70px;
+//     }
+//     @include respond-between(sm, md) {
+//       margin-right: 0;
+//       text-align: center;
+//       margin-bottom: 70px;
+//     }
+//     @include respond-between(md, lg) {
+//       margin-right: 0;
+//       text-align: center;
+//       margin-bottom: 70px;
+//     }
+//     a {
+//       color: $white;
+//       font-size: 21px;
+//       font-weight: 500;
+//       font-stretch: normal;
+//       font-style: normal;
+//       line-height: normal;
+//       letter-spacing: normal;
+//       text-align: left;
+//       background: $darkblue;
+//       // box-shadow: $card-shadow-dark;
+//       border-radius: 5px;
+//       padding: 11px 35px;
+//       &:hover {
+//         border: 1px solid $darkblue;
+//         color: $darkblue !important;
+//         background: $white;
+//       }
+//       @include respond-below(xsl) {
+//         // padding: 19px 40px;
+//         font-size: 18px;
+//       }
+//     }
+//   }
+//   .apply-item {
+//     @include respond-below(sm) {
+//       margin-bottom: 30px;
+//     }
+//     @include respond-between(sm, md) {
+//       margin-bottom: 30px;
+//     }
+//     @include respond-between(md, lg) {
+//       margin-bottom: 30px;
+//     }
+//     span {
+//       margin-left: 20px;
+//       color: $text-color;
+//       font-size: 21px;
+//       font-weight: 500;
+//       font-stretch: normal;
+//       font-style: normal;
+//       line-height: normal;
+//       letter-spacing: normal;
+//       padding-top: 15px;
+//       @include respond-below(sm) {
+//         font-size: 28px;
+//       }
+//       @include respond-between(sm, md) {
+//         font-size: 28px;
+//       }
+//       @include respond-between(md, lg) {
+//         font-size: 28px;
+//       }
+//       @include respond-between(lg, xl) {
+//         font-size: 28px;
+//       }
+//     }
+//     p {
+//       color: $light-black;
+//       @include paragraph;
+//       padding-top: 50px;
+//       margin-bottom: 0;
+//       padding-right: 40px;
+//       @include respond-below(sm) {
+//         padding-right: 0;
+//         padding-top: 30px;
+//       }
+//       @include respond-between(sm, md) {
+//         padding-right: 0;
+//         padding-top: 30px;
+//       }
+//       @include respond-between(md, lg) {
+//         padding-right: 0;
+//         padding-top: 30px;
+//       }
+//       @include respond-between(lg, xl) {
+//         font-size: 18px;
+//       }
+//     }
+//   }
+// }
+
+// #student {
+//   .student-img {
+//     background-size: cover;
+//   }
+//   .student-content {
+//     padding-top: 100px;
+//     padding-bottom: 60px;
+//     background: $darkblue;
+//     padding-left: 18%;
+
+//     @include respond-below(sm) {
+//       padding-left: 8%;
+//     }
+//     @include respond-between(sm, md) {
+//       padding-left: 8%;
+//     }
+//     @include respond-between(md, lg) {
+//       padding-left: 8%;
+//     }
+//     @include respond-between(lg, xl) {
+//       padding-top: 50px;
+//       padding-bottom: 50px;
+//     }
+
+//     h2 {
+//       color: $white;
+//       font-size: 52px;
+//       font-weight: 500;
+//       font-stretch: normal;
+//       font-style: normal;
+//       line-height: normal;
+//       letter-spacing: normal;
+//       margin-bottom: 0;
+//       padding-bottom: 22px;
+//       @include respond-below(sm) {
+//         font-size: 49px;
+//       }
+//       @include respond-between(lg, xl) {
+//         font-size: 40px;
+//         padding-bottom: 35px;
+//       }
+//     }
+//     p {
+//       color: $white;
+//       @include paragraph;
+//       margin-bottom: 0;
+//       padding-bottom: 25px;
+//       padding-right: 50px;
+//       @include respond-between(lg, xl) {
+//         font-size: 16px;
+//         padding-bottom: 50px;
+//         padding-right: 50px;
+//       }
+//     }
+//     a {
+//       color: $white;
+//       font-size: 21px;
+//       font-weight: 500;
+//       font-stretch: normal;
+//       font-style: normal;
+//       line-height: normal;
+//       letter-spacing: normal;
+//       border-bottom: 1px solid $white;
+//       padding-bottom: 10px;
+//     }
+//   }
+//   .student-footer {
+//     background: $lightblue;
+//     padding-top: 140px;
+//     padding-bottom: 98px;
+//     padding-left: 40%;
+//     position: relative;
+//     background-size: cover;
+//     object-fit: cover;
+//     z-index: 1;
+//     background-attachment: bottom;
+//     background-position: center;
+//     background-repeat: round no-repeat;
+//     //Pore dekhmune start
+
+//     //Pore dekhmune start
+//     @include respond-below(sm) {
+//       padding-left: 10%;
+//     }
+//     @include respond-between(sm, md) {
+//       padding-left: 10%;
+//     }
+//     @include respond-between(md, lg) {
+//       padding-left: 10%;
+//     }
+//     @include respond-between(lg, xl) {
+//       padding-top: 50px;
+//       padding-bottom: 50px;
+//       padding-left: 30%;
+//     }
+//     h5 {
+//       color: $text-color;
+//       font-size: 27px;
+//       font-weight: 500;
+//       font-stretch: normal;
+//       font-style: normal;
+//       line-height: normal;
+//       letter-spacing: normal;
+//       text-transform: capitalize;
+//       margin-bottom: 0;
+//       padding-bottom: 30px;
+//       @include respond-below(sm) {
+//         font-size: 23px;
+//       }
+//       @include respond-between(lg, xl) {
+//         font-size: 18px;
+//         padding-bottom: 29px;
+//       }
+//     }
+//     h5 a {
+//       color: $text-color;
+//     }
+//     h5 a i {
+//       margin-left: 5px;
+//     }
+//     img {
+//       position: absolute;
+//       left: 0;
+//       bottom: 0;
+//       z-index: -1;
+//     }
+//     .student-img {
+//       img {
+//         max-height: 926px;
+//         object-fit: cover;
+//       }
+//     }
+//     .student-life-link {
+//       display: flex;
+//       justify-content: space-evenly;
+//     }
+//   }
+// }
+
+/* Events Part Css */
+// #events {
+//   padding-top: $section-padding;
+//   padding-bottom: $section-padding;
+
+//   @include respond-below(md) {
+//     padding-top: 100px;
+//     padding-bottom: 80px;
+//   }
+//   .event-title h2 {
+//     color: $text-color;
+//     font-size: 52px;
+//     font-weight: 500;
+//     font-stretch: normal;
+//     font-style: normal;
+//     line-height: normal;
+//     letter-spacing: normal;
+//     padding-bottom: 100px;
+//     margin-bottom: 0;
+//     @include respond-below(sm) {
+//       font-size: 40px;
+//     }
+
+//     @include respond-below(md) {
+//       padding-bottom: 50px;
+//       text-align: center;
+//     }
+//     @include respond-between(lg, xl) {
+//       font-size: 45px;
+//     }
+//   }
+//   .event-btn {
+//     text-align: right;
+//     margin-top: 30px;
+//     // margin-right: 50px;
+//     @include respond-below(sm) {
+//       margin-right: 0;
+//       text-align: center;
+//       margin-bottom: 70px;
+//     }
+//     @include respond-between(sm, md) {
+//       margin-right: 0;
+//       text-align: center;
+//       margin-bottom: 70px;
+//     }
+//     @include respond-between(md, lg) {
+//       margin-right: 0;
+//       text-align: center;
+//       margin-bottom: 70px;
+//     }
+//     a {
+//       color: $white;
+//       font-size: 20px;
+//       font-weight: 500;
+//       font-stretch: normal;
+//       font-style: normal;
+//       line-height: normal;
+//       letter-spacing: normal;
+//       background: $darkblue;
+//       // box-shadow: $card-shadow-dark;
+//       border-radius: 5px;
+//       padding: 11px 62px;
+//       &:hover {
+//         border: 1px solid $darkblue;
+//         color: $darkblue !important;
+//         background: $white;
+//       }
+//     }
+//   }
+
+//   .event-img {
+//     position: relative;
+//     width: 95%;
+//     height: 482px;
+//     @include respond-between(last, xsl) {
+//       width: 100%;
+//       height: 250px;
+//       margin-bottom: 10px;
+//     }
+
+//     @include respond-between(xsl, xs) {
+//       width: 100%;
+//       height: 300px;
+//       margin-bottom: 10px;
+//     }
+//     @include respond-between(xs, sm) {
+//       width: 100%;
+//       height: 350px;
+//       margin-bottom: 10px;
+//     }
+//     @include respond-between(sm, md) {
+//       width: 100%;
+//       height: 400px;
+//       margin-bottom: 10px;
+//     }
+//     @include respond-between(md, lg) {
+//       width: 100%;
+//       height: 500px;
+//       margin-bottom: 10px;
+//     }
+//     // @include respond-between(lg, xl) {
+//     //   height: 390px;
+//     // }
+//     // @include respond-between(xl, xml) {
+//     //   height: 333px;
+//     // }
+//     img {
+//       border-radius: 5px;
+//       height: 100%;
+//       width: 100%;
+//       // padding-right: 80px;
+//     }
+
+//     .overlay-content {
+//       margin-bottom: 20px;
+//       position: absolute;
+//       left: 0;
+//       bottom: 0;
+//       right: 0;
+//       text-align: center;
+//       margin-bottom: 20px;
+
+//       p {
+//         display: inline-block;
+//         background: $deep-primary;
+//         border-radius: 5px;
+//         color: $white;
+//         padding: 7px 30px;
+//         @include paragraph;
+//         font-weight: 500;
+//         text-align: left;
+//         margin: 0;
+//       }
+//       h6 {
+//         color: $white;
+//         @include title2;
+//         font-weight: 600;
+//         text-align: center;
+//         margin: 0;
+//         padding: 10px 20px;
+//         @include respond-below(xsl) {
+//           font-size: 12px;
+//           line-height: 20px;
+//         }
+//         @include respond-between(xsl, xs) {
+//           font-size: 12px;
+//         }
+//         @include respond-between(xs, sm) {
+//           font-size: 17px;
+//         }
+//         @include respond-between(lg, xl) {
+//           font-size: 18px;
+//         }
+//         @include respond-between(xl, xml) {
+//           font-size: 20px;
+//         }
+//       }
+//       span {
+//         font-size: 12px;
+//         font-weight: normal;
+//         font-stretch: normal;
+//         font-style: normal;
+//         line-height: normal;
+//         letter-spacing: normal;
+//         color: $white;
+//         padding-right: 70px;
+
+//         @include respond-below(xsl) {
+//           font-size: 12px;
+//         }
+//       }
+//       small {
+//         color: $white;
+//         font-size: 12px;
+//         font-weight: normal;
+//         font-stretch: normal;
+//         font-style: normal;
+//         line-height: normal;
+//         letter-spacing: normal;
+//         position: relative;
+//         @include respond-below(xsl) {
+//           font-size: 12px;
+//         }
+//       }
+//       small::after {
+//         position: absolute;
+//         content: '';
+//         top: 9px;
+//         left: -50px;
+//         width: 39px;
+//         height: 2px;
+//         background: $text-color;
+//       }
+//     }
+//     .overlay-event {
+//       position: absolute;
+//       left: 0;
+//       bottom: 0;
+//       right: 0;
+//       top: 0;
+//       text-align: center;
+//       background-image: linear-gradient(
+//         to bottom,
+//         rgba(48, 48, 48, 0),
+//         rgba(26, 26, 26, 0),
+//         rgba(26, 26, 26, 0.8)
+//       );
+//       // padding: 0 60px;
+//       border-bottom-right-radius: 5px;
+//       border-bottom-left-radius: 5px;
+//     }
+//   }
+
+//   .card {
+//     // height: 155px;
+//     // overflow: hidden;
+//     margin-left: 6%;
+
+//     @include respond-below(lg) {
+//       margin-left: 0;
+//     }
+//     @include respond-below(sm) {
+//       margin-left: 0;
+//       margin-top: 20px;
+//     }
+//     border: none;
+//     img {
+//       height: 100%;
+//       border-radius: 5px;
+//     }
+//     .card-body {
+//       background-color: $background-color;
+//       height: 150px;
+//       text-align: center;
+//       h5 {
+//         color: $text-color;
+//         font-size: 21px;
+//         font-weight: 500;
+//         font-stretch: normal;
+//         font-style: normal;
+//         line-height: normal;
+//         letter-spacing: normal;
+//         margin-bottom: 0;
+//         padding-top: 30px;
+//         // padding-bottom: 10px;
+//         @include respond-between(lg, xl) {
+//           font-size: 16px;
+//           padding-top: 15px;
+//         }
+//       }
+//       span {
+//         font-size: 12px;
+//         font-weight: normal;
+//         font-stretch: normal;
+//         font-style: normal;
+//         line-height: normal;
+//         letter-spacing: normal;
+//       }
+//       small {
+//         font-size: 12px;
+//         font-weight: normal;
+//         font-stretch: normal;
+//         font-style: normal;
+//         line-height: normal;
+//         letter-spacing: normal;
+//       }
+//     }
+//   }
+
+//   // .event-item {
+//   //   // box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.161);
+//   //   border: 1px solid rgba(112, 112, 112, 0.15);
+//   //   border-radius: 5px;
+//   //   background: $background-color;
+//   //   margin-left: 10%;
+//   //   height: 125px;
+//   //   @include respond-below(sm) {
+//   //     padding-bottom: 20px;
+//   //   }
+
+//   .event-item-img {
+//     position: relative;
+//     height: 150px;
+//     overflow: hidden;
+//     img {
+//       height: 100%;
+//       border-radius: 5px;
+//     }
+//     .date {
+//       position: absolute;
+//       left: 50%;
+//       bottom: 20px;
+//       transform: translateX(-50%);
+//     }
+//     .date span {
+//       color: $white;
+//       font-size: 10px;
+//       font-weight: 700;
+//       letter-spacing: 0.8px;
+//       padding: 10px 18px;
+//       background: $deep-primary;
+//       border-radius: 5px;
+
+//       @include respond-between(lg, xl) {
+//         padding: 10px 15px;
+//         font-size: 9px;
+//       }
+//     }
+//   }
+//   //   h5 {
+//   //     color: $text-color;
+//   //     font-size: 21px;
+//   //     font-weight: 500;
+//   //     font-stretch: normal;
+//   //     font-style: normal;
+//   //     line-height: normal;
+//   //     letter-spacing: normal;
+//   //     margin-bottom: 0;
+//   //     padding-top: 30px;
+//   //     // padding-bottom: 10px;
+//   //     @include respond-between(lg, xl) {
+//   //       font-size: 16px;
+//   //       padding-top: 15px;
+//   //     }
+//   //   }
+//   //   span {
+//   //     font-size: 12px;
+//   //     font-weight: normal;
+//   //     font-stretch: normal;
+//   //     font-style: normal;
+//   //     line-height: normal;
+//   //     letter-spacing: normal;
+//   //   }
+//   //   small {
+//   //     font-size: 12px;
+//   //     font-weight: normal;
+//   //     font-stretch: normal;
+//   //     font-style: normal;
+//   //     line-height: normal;
+//   //     letter-spacing: normal;
+//   //   }
+//   // }
+// }
+
+// #accolades {
+//   .card {
+//     .card-text {
+//       color: #bb1c85;
+//     }
+//   }
+// }

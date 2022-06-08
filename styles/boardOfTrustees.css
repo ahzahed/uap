@@ -1,0 +1,132 @@
+.primary-btn {
+  background: #1b2055;
+  border: 1px solid #1b2055;
+  color: #ffff;
+  -webkit-transition: visibility 0.25s ease-in, -webkit-transform 0.25s;
+  transition: visibility 0.25s ease-in, -webkit-transform 0.25s;
+  transition: transform 0.25s, visibility 0.25s ease-in;
+  transition: transform 0.25s, visibility 0.25s ease-in, -webkit-transform 0.25s;
+  font-size: 21px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  padding: 11px 61px 11px 60px;
+  border-radius: 5px;
+}
+
+.primary-btn:hover {
+  border: 1px solid #1b2055;
+  color: #1b2055 !important;
+  background: #ffff;
+}
+
+@media (max-width: 479px) {
+  .primary-btn {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 479px) {
+  .primary-btn {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1259px) {
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 1921px) {
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1920px !important;
+  }
+}
+
+@media (max-width: 1920px) {
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1600px !important;
+  }
+}
+
+#trustees {
+  margin-top: 69px;
+}
+
+#trustees .cardContainer {
+  -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  min-height: 453px;
+  background: #e1f2f9;
+  border-radius: 5px;
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  #trustees .cardContainer {
+    margin: 25px;
+  }
+}
+
+#trustees .cardContainer img {
+  border-radius: 5px;
+}
+
+#trustees .cardContainer .card-body h5 {
+  font-size: 24px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b2055;
+}
+
+@media (max-width: 479px) {
+  #trustees .cardContainer .card-body h5 {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  #trustees .cardContainer .card-body h5 {
+    font-size: 18px;
+  }
+}
+
+#trustees .cardContainer .card-body p {
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+@media (max-width: 479px) {
+  #trustees .cardContainer .card-body p {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  #trustees .cardContainer .card-body p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 479px) {
+  #trustees .cardContainer .card-body {
+    padding: 2rem !important;
+  }
+}
+/*# sourceMappingURL=boardOfTrustees.css.map */

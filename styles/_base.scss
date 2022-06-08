@@ -1,0 +1,214 @@
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+.primary-btn {
+  background: $darkblue;
+  border: 1px solid $darkblue;
+  color: $white;
+  transition: transform 0.25s, visibility 0.25s ease-in;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.16px;
+  padding: 11px 61px 11px 60px;
+  border-radius: 5px;
+  &:hover {
+    border: 1px solid $darkblue;
+    color: $darkblue !important;
+    background: $white;
+  }
+}
+.pink-btn {
+  background: $secondary;
+  border: 1px solid $secondary;
+  color: $white;
+  transition: transform 0.25s, visibility 0.25s ease-in;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.16px;
+  padding: 11px 61px 11px 60px;
+  border-radius: 5px;
+  &:hover {
+    border: 1px solid $secondary;
+    color: $secondary !important;
+    background: $white;
+  }
+}
+.filter-btn {
+  background: $primary;
+  color: $white;
+  border: none;
+  padding: 7px 20px;
+  border-radius: 5px;
+}
+
+// Heading 1
+@mixin title {
+  font-family: Poppins;
+  font-size: 48px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.72px;
+}
+
+//Heading 2
+@mixin title1 {
+  font-size: 40px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+}
+
+@mixin title4 {
+  font-size: 32px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+
+@mixin title2 {
+  font-size: 26px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.07px;
+}
+
+// Card Title
+@mixin cardTitle {
+  font-size: 24px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b2055;
+}
+
+// Card Paragraph
+@mixin cardPara {
+  font-size: 20px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+@mixin cardParaBold {
+  font-size: 20px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+
+// Peragraph
+@mixin title3 {
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.02px;
+}
+@mixin title3Bold {
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.02px;
+}
+@mixin paragraph {
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+@mixin paragraph2 {
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.08px;
+}
+@mixin subtitle {
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.02px;
+}
+
+@mixin paragraph1 {
+  font-size: 13px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.03px;
+}
+@mixin subtitle2 {
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.01px;
+}
+
+@mixin caption {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.05px;
+}
+
+@mixin overline {
+  font-size: 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.4;
+  letter-spacing: 0.15px;
+}
+
+.container-md,
+.container-sm,
+.container {
+  @include respond-below(xl) {
+    max-width: 100% !important;
+  }
+  @include respond-above(xxxl) {
+    max-width: 1920px !important;
+  }
+  @include respond-above(xxl) {
+    max-width: 1600px !important;
+  }
+}

@@ -1,0 +1,432 @@
+// .program {
+//   margin-top: 157px;
+//   margin-bottom: 60px;
+// }
+
+.tution-fees{}
+
+#tuitionInfo {
+  padding-left: 250px;
+  padding-right: 250px;
+  margin-top: 105px;
+  table {
+    thead {
+      background-color: $background-color;
+      tr {
+        th {
+          font-size: 18px;
+          font-weight: 600;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          text-align: center;
+          color: $darkblue;
+          padding: 36px 0 52px 50px !important;
+          .hsc {
+            position: relative;
+          }
+          .subTitle {
+            position: absolute;
+            font-size: 14px;
+            margin-left: 50px;
+          }
+          .diploma {
+            margin-left: 160px;
+          }
+        }
+      }
+    }
+
+    tbody {
+      td {
+        font-size: 18px;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: $darkblue;
+        .hsc-main {
+          margin-left: 65px;
+        }
+        .hscData {
+          padding-right: 30px;
+        }
+      }
+      td.programText {
+        text-align: left !important;
+        padding-left: 50px !important;
+      }
+      td.data {
+        text-align: center !important;
+      }
+    }
+  }
+  ul {
+    border-left: 11px solid $darkblue;
+    background-color: $background-color;
+
+    align-items: center;
+    // gap: 14px;
+
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: justify;
+    min-height: 77px;
+
+    li {
+      // gap: 4px;
+      // margin: auto 0;
+
+      padding-top: 17px;
+      padding-bottom: 17px;
+      &:nth-of-type(5n + 3) > * {
+        // --bs-table-accent-bg: var(--bs-table-striped-bg);
+        color: red;
+      }
+    }
+  }
+}
+.programList {
+  padding: 0px 400px;
+  margin-top: 190px;
+  margin-bottom: 71px;
+  flex-grow: 0;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: justify;
+  .undergraduate {
+    color: $darkblue;
+  }
+  .graduate {
+    background-color: $darkblue;
+    color: $white;
+    padding: 17px 73px;
+    margin-left: 230px;
+  }
+}
+
+#waiver {
+  display: flex;
+  flex-direction: column;
+  margin-top: 90px;
+  margin-bottom: 176px;
+
+  .main-merit {
+    border-radius: 5px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  }
+  table {
+    thead tr th {
+      color: $darkblue;
+    }
+    tbody tr {
+      color: $darkblue;
+    }
+  }
+  .special {
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    margin-left: 73px;
+    padding: 65px !important;
+    border-radius: 5px;
+    box-shadow: -25px -35px 0 0 #fde7f6, 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    .special-waiver-text {
+      color: $waiver-text;
+    }
+    .waiver-text {
+      color: $text-color;
+    }
+  }
+  .logo {
+    img {
+      max-width: 54px;
+      max-height: 64px;
+      margin-top: -10px;
+    }
+  }
+  h3 {
+    font-size: 27px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: $waiver-text;
+  }
+  .merit,
+  thead {
+    background-color: $violot;
+  }
+  .merit {
+    border-bottom: 1px solid $darkblue;
+  }
+  .meritP {
+    font-size: 21px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: $text-color;
+  }
+  .meritTableFooter {
+    font-size: 18px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+    background-color: $violot;
+  }
+}
+
+#waiver-info {
+  margin-top: -14px;
+  .info {
+    background-color: $background-color;
+    padding: 57px 127px 57px 32px;
+
+    ul {
+      list-style-type: disc !important;
+      // text-align: justify;
+      font-size: 18px;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: $text-color;
+      li {
+        margin: 5px 0px 5px 0px;
+      }
+    }
+  }
+}
+#tution-waiver {
+  .main-table {
+    border-radius: 5px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .creditHead {
+    padding-top: 42px;
+    padding-bottom: 20px;
+    background-color: $background-color;
+    border-bottom: 1px solid $darkblue;
+    color: $darkblue;
+    h3 {
+      font-size: 27px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+ 
+}
+
+#graduate {
+  .main-table {
+    border-radius: 5px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .creditHead {
+    padding-top: 42px;
+    padding-bottom: 20px;
+    background-color: $background-color;
+    border-bottom: 1px solid $darkblue;
+    color: $darkblue;
+    h3 {
+      font-size: 27px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  table {
+    thead {
+      background-color: $background-color;
+
+      tr {
+        th {
+          vertical-align: text-top;
+          font-size: 17px;
+          font-weight: 600;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: $darkblue;
+          padding: 36px 0 52px 0 !important;
+        }
+        th.credit {
+          min-width: 63px;
+        }
+        th.top {
+          position: relative;
+        }
+        th.totalSemester {
+          width: 156px;
+        }
+        th.thsame {
+          width: 248px !important;
+          padding: 4px;
+          &:first-child {
+            width: 310px !important;
+            padding-left: 50px !important;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        font-size: 18px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: $darkblue;
+        td.sameText {
+          font-weight: 300;
+        }
+        td.programText {
+          text-align: left !important;
+          padding-left: 50px !important;
+        }
+        td.data {
+          text-align: center !important;
+        }
+      }
+    }
+  }
+}
+
+#under-graduate {
+  .main-table {
+    border-radius: 5px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .creditHead {
+    padding-top: 42px;
+    padding-bottom: 20px;
+    background-color: $background-color;
+    border-bottom: 1px solid $darkblue;
+    color: $darkblue;
+    h3 {
+      font-size: 27px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+
+  table {
+    thead {
+      background-color: $background-color;
+
+      tr {
+        th {
+          vertical-align: text-top;
+          font-size: 18px;
+          font-weight: 600;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: $darkblue;
+         text-align: center;
+         .subtitle-div{
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+         }
+         .subtitle{
+           display: block;
+           font-size: 14px;
+           color: $text-color;
+         }
+          .sub-text {
+            font-size: 14px;
+            font-weight: 600;
+        
+            color: $text-color;
+          }
+          .last-text {
+            font-size: 14px;
+            font-weight: normal;
+            color: $text-color;
+            display: block;
+          }
+        }
+        th.title {
+          position: relative;
+
+          td {
+            .subTitle {
+              position: absolute;
+            }
+            .subTitle2 {
+              margin-left: 88px;
+              background-color: red;
+            }
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        font-size: 18px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: $darkblue;
+        td.programText {
+          text-align: left !important;
+          padding-left: 50px !important;
+        }
+        td.data {
+          text-align: center !important;
+        }
+        td.fee {
+          padding-right: 10px;
+        }
+        td.same-text {
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}

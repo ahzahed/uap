@@ -1,0 +1,97 @@
+@import 'main';
+.search-overlay {
+    overflow: hidden;
+    background-color: #fff;
+    height: 100%;
+  
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    padding-top: 30px;
+
+    .close-icon {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 30px;
+      color: $darkblue;
+      cursor: pointer;
+    }
+    .has-search {
+      position: relative;
+      min-height: 48px;
+      margin-top: 80px;
+      margin-bottom: 80px;
+      &:hover {
+        .material-icons {
+         
+          color: $darkblue;
+        }
+      }
+      .form-control {
+        height: auto;
+        font-size: 50px;
+        font-weight: 700;
+        line-height: 1.2em;
+        border: none;
+        background-color: transparent;
+        &::placeholder{
+          color: #d4d4d4;
+        }
+        border-bottom: 1px solid #e5e5e5;
+        color: #d4d4d4;
+        fill: #d4d4d4;
+        &:focus,
+        &:hover,
+        &:active {
+          color: #d4d4d4;
+          fill: #d4d4d4;
+          border: none;
+          box-shadow: none;
+          border-radius: inherit;
+          border-bottom: 1px solid $darkblue;
+        }
+      }
+
+      .search-icon {
+        top: 0;
+        right: 0;
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 700;
+        line-height: 1.2em;
+        pointer-events: none;
+        color: #aaa;
+      }
+    }
+
+    .search-flex {
+      display: flex;
+      align-content: flex-end;
+      align-items: flex-end;
+      & > * {
+        max-width: 100%;
+      }
+    }
+    .search-col {
+      .navbar-nav {
+        .nav-item {
+          border-bottom: 1px solid #e5e5e5;
+          padding: 15px 0px 15px 0px;
+          .nav-link {
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: none;
+            text-decoration: none;
+            line-height: 1.6em;
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }

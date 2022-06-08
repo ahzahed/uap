@@ -1,0 +1,246 @@
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/fontawesome.min.css');
+@import 'main';
+@import 'style1';
+@import 'style2';
+@import 'style3';
+@import 'about';
+@import 'playbtn';
+@import 'boardOfTrustees';
+@import 'tution';
+@import 'financial-aid';
+@import 'campus-administration';
+@import 'admission-info';
+
+// @import "node_modules/bootstrap/scss/bootstrap";
+// .slick-cloned { display: none !important; }
+.page-loader {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+  background-color: $white;
+  z-index: 99;
+  img {
+    z-index: 100;
+  }
+}
+.megamenu {
+  border: 1px solid #a4a4a4;
+  border-top: none;
+  max-width: 100%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 100000000;
+  width: 100%;
+  top: 72px;
+  // margin-bottom: -20px;
+  box-shadow: 2px 2px 5px rgb(51 51 51 / 50%);
+  padding: 30px;
+
+  ul.menu-sublist {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li {
+      a {
+        border-bottom: medium none;
+        /* color: #333333; */
+        color: $text-color;
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 0;
+        padding: 8px 0;
+        text-align: left;
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: $primary;
+          padding-left: 10px;
+
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+#bootstrap-overrides .container {
+  width: 1400px !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+p::first-letter {
+  /* content and styles here */
+  text-transform: capitalize;
+}
+p {
+  &::first-letter {
+    text-transform: capitalize;
+  }
+}
+a {
+  text-decoration: none !important;
+}
+a:hover {
+  text-decoration: none !important;
+}
+b {
+  font-weight: bold;
+}
+ul,
+ol {
+  list-style-type: none;
+}
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+body {
+  font-family: $font-family-base;
+  color: $text-color;
+}
+.main {
+  overflow: hidden;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+  z-index: 1050;
+  width: 100vw;
+  height: 100vh;
+  background-color: $text-color;
+  transition: opacity 0.15s linear;
+}
+
+// primary butoon
+.btn-theme {
+  color: $white;
+  background: $darkblue;
+  border: 1px solid $darkblue;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    color: $darkblue;
+  }
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 100px;
+  color: red;
+}
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 60px;
+  background-color: #f5f5f5;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 60px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $darkblue;
+}
+
+.banner-content {
+  background: #1b2055;
+  color: rgba(255, 255, 255, 1);
+  padding: 50px;
+  border-radius: 5px;
+  z-index: 9;
+  opacity: 0.9;
+  position: relative;
+  margin-top: -160px;
+}
+.BriefHistory {
+  .bounding-box {
+    // width: 100% !important;
+    // height: inherit;
+    // position: absolute;
+    // top: 0;
+    // left: 0 !important;
+  }
+  .page {
+    // position: relative;
+    // overflow: hidden;
+  }
+}
+.latest-news-slider {
+  overflow: hidden !important;
+}
+
+.inner {
+  white-space: nowrap !important;
+}
+
+.specialNoteList {
+  padding: 20px;
+  margin-bottom: 40px;
+  ul {
+    text-align: left;
+    list-style-type: disc !important;
+    @include paragraph;
+    color: $darkblue;
+    li {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.academicTeachingLists {
+  padding: 20px;
+  ul {
+    text-align: justify;
+    list-style-type: disc !important;
+    @include paragraph;
+    li {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.gallery-slider {
+  // overflow: hidden !important;
+
+  .slick-slide {
+    height: 500px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .img-thumbnail {
+    height: 100%;
+  }
+}
+
+#youtube-container {
+  div {
+    iframe {
+      width: 100% !important;
+      height: 460px !important;
+    }
+  }
+}
+
+.overly_body {
+  overflow-y: auto;
+  position: fixed;
+  margin-top: 0px;
+}

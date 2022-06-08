@@ -1,0 +1,116 @@
+#MemberCampusAdministration {
+  margin-top: 85px;
+  margin-bottom: 270px;
+
+  .container {
+    background-color: $violot;
+    padding: 80px 40px;
+  }
+  .cardContainer {
+     @include respond-below(md){
+         .top{
+           display: block;
+           text-align: center;
+           
+         }
+       }
+    .main-img {
+      border-radius: 50%;
+      margin-bottom: 42px;
+      width: 400px;
+      height: 400px;
+       @include respond-below(xml){
+         width: 350px;
+      height: 350px;
+       }
+       @include respond-below(xl){
+         width: 300px;
+      height: 300px;
+       }
+       @include respond-below(lg){
+         width: 300px;
+      height: 300px;
+       }
+       @include respond-below(md){
+         margin-bottom: 27px;
+       }
+    }
+    .img-text {
+      .name {
+        @include cardTitle;
+        font-weight: 500;
+        color: $deep-primary;
+        @include respond-below(xml){
+         font-size: 21px;
+       }
+        @include respond-below(xl){
+         font-size: 20px;
+       }
+        @include respond-below(lg){
+         font-size: 18px;
+       }
+        @include respond-below(md){
+         text-align: center;
+       }
+      }
+      .title {
+        color: $deep-primary;
+        font-size: 17px;
+        font-weight: normal;
+      }
+    }
+    .info {
+      @include paragraph;
+      text-align: justify;
+      color: $text-color;
+      margin-left: 35px;
+      @include respond-below(xml){
+         font-size: 18px;
+       }
+      @include respond-below(xl){
+         font-size: 16px;
+       }
+      @include respond-below(lg){
+         font-size: 16px;
+       }
+      @include respond-below(md){
+         font-size: 18px;
+       }
+      @include respond-below(xs){
+         font-size: 17px;
+        //  text-align: center;
+       }
+    }
+    ul {
+        @include respond-below(md){
+         text-align: center;
+         margin: auto;
+         padding-top: 40px !important;
+       }
+      li {
+        img {
+          margin-top: -20px;
+          padding: 13px 16px;
+          border-radius: 5px;
+          box-shadow: $box-shadow;
+          background-color: $secondary;
+           @include respond-below(xml){
+         margin-top: -78px;
+       }
+           @include respond-below(lg){
+         margin-top: -93px;
+       }
+         
+          
+        }
+        &:nth-child(2) img {
+          padding: 13px 7px;
+        }
+        &:nth-child(3) img {
+          padding: 13px 10px;
+        }
+        
+      }
+    }
+  }
+}

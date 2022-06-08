@@ -1,0 +1,295 @@
+#overview {
+  margin-top: $section-padding;
+  margin-bottom: $section-padding;
+  .main-overview {
+    background-color: $background-color;
+    padding: 25px 122px 20px 70px;
+    color: $text-color;
+    border-radius: $border-radius;
+  }
+  h1 {
+    @include title2;
+    text-align: left;
+    padding: 8px;
+    @include respond-below(lg) {
+      padding: 7px;
+    }
+  }
+  p {
+    @include paragraph;
+    text-align: justify;
+    padding: 8px;
+  }
+}
+
+#special-waiver {
+  margin-top: $section-padding;
+  margin-bottom: $section-padding;
+  margin-left: 200px;
+  @include respond-below(lg) {
+    margin-left: 144px;
+  }
+  @include respond-below(md) {
+    margin-left: 35px;
+  }
+  @include respond-below(sm) {
+    margin-left: 27px;
+  }
+  .main-specialWaiver {
+    padding: 8px;
+    text-align: center;
+    border-radius: $border-radius;
+    box-shadow: $financial-box-shadow;
+    background-color: $white;
+    .logo-top {
+      margin-top: 80px;
+      padding: 43px;
+      h3 {
+        color: $waiver-text;
+        @include title2;
+      }
+    }
+    .logo {
+      img {
+        max-width: 54px;
+        max-height: 64px;
+        margin-bottom: 18px;
+      }
+    }
+    .info-top {
+      margin-bottom: 130px;
+      .info {
+        margin-bottom: 30px;
+        h4 {
+          margin-bottom: 10px;
+          color: $darkblue;
+          @include cardTitle;
+          text-align: center !important;
+        }
+        p {
+          color: $text-color;
+          @include paragraph;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+#new-student {
+  margin-top: $section-padding;
+  margin-bottom: $section-padding;
+  .main-new-student {
+    .main_new_student_header {
+      background-color: $lightblue;
+      text-align: center;
+      border-bottom: 1px solid $darkblue;
+      padding: 30px 200px;
+      h5 {
+        @include title2;
+        color: $light-gray;
+      }
+      p {
+        @include paragraph;
+        font-weight: 500;
+        color: $darkblue;
+      }
+    }
+    .table-top {
+      .subtile {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 85%;
+        .col-6 {
+          text-align: left;
+        }
+        .diploma {
+          text-align: right !important;
+        }
+        .subtitle-text {
+          font-weight: 600;
+        }
+      }
+
+      thead {
+        background-color: $lightblue;
+        vertical-align: top !important;
+
+        tr {
+          th {
+            @include cardPara;
+            font-weight: 600;
+            text-align: center;
+            color: $darkblue;
+            .subtile {
+              span {
+                @include cardPara;
+                font-weight: 300;
+                font-size: 14px;
+                text-align: center;
+                color: $text-color !important;
+              }
+            }
+            @include respond-above(lg) {
+              padding-top: 15px;
+              padding-bottom: 20px;
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            @include cardPara;
+            font-weight: 300;
+            text-align: center;
+            color: $darkblue;
+          }
+        }
+      }
+    }
+    .special-option {
+      border-radius: $border-radius;
+      // box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+      background-color: $background-color;
+      background-color: $lightblue;
+      padding: 50px 145px;
+      h5 {
+        @include cardPara;
+        font-weight: 600;
+        text-align: left;
+        color: $darkblue;
+      }
+      .info {
+        margin-top: 12px;
+        ul {
+          padding-left: 25px;
+          li {
+            padding-left: 6px;
+            // @include cardPara;
+            // font-weight: 300;
+            // text-align: left;
+            // color: $text-color;
+            list-style-type: disc !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+#current-student {
+  margin-top: $section-padding;
+  margin-bottom: $section-padding;
+  table {
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: $darkblue;
+
+    thead {
+      font-size: 18px;
+      font-weight: 600;
+      background-color: $background-color;
+      vertical-align: top !important;
+      tr {
+        th {
+          padding-top: 45px;
+          padding-bottom: 40px;
+        }
+        th.gpa {
+          text-align: right !important;
+        }
+      }
+    }
+    tbody {
+      font-size: 18px;
+      font-weight: 300;
+      tr {
+        td.text-gpa {
+          text-align: right !important;
+          padding-right: 35px;
+        }
+      }
+    }
+  }
+  .special {
+    padding: 45px 0px 48px 110px;
+    background-color: $background-color;
+    h3 {
+      @include cardPara;
+      color: $darkblue;
+      font-weight: 600;
+    }
+    .info {
+      ul {
+        padding-left: 0px;
+        li {
+          @include cardPara;
+        }
+      }
+    }
+  }
+}
+#general {
+  margin-top: $section-padding;
+  margin-bottom: $section-padding;
+  .main-general {
+    .top {
+      border-radius: $border-radius;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+      border: solid 2px $deep-primary;
+      background-color: $white;
+      text-align: center;
+      padding: 30px 242px;
+      @include respond-below(xml) {
+        padding: 30px 152px;
+      }
+      @include respond-below(xl) {
+        padding: 30px 152px;
+      }
+      @include respond-below(lg) {
+        padding: 30px 78px;
+      }
+      @include respond-above(sm) {
+        padding: 14px 18px !important;
+      }
+      h5 {
+        @include title2;
+        color: $waiver-text;
+      }
+      p {
+        @include paragraph;
+        font-weight: 500;
+        color: $darkblue;
+      }
+    }
+    .info-top {
+      padding: 70px 80px;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+      background-color: $background-color;
+      @include respond-above(sm) {
+        padding: 52px 5px;
+      }
+      .info {
+        padding-left: 60px;
+        @include respond-below(sm) {
+          padding-left: 0px;
+        }
+        @include paragraph;
+        letter-spacing: 0px;
+        text-align: left;
+        font-weight: 500;
+        color: $darkblue;
+        ul {
+          li {
+            list-style-type: disc !important;
+          }
+        }
+      }
+    }
+  }
+}

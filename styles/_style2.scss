@@ -1,0 +1,222 @@
+// .main-footer {
+//   background-image: url(../static/images/Mask_Group.png);
+//   position: relative;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   padding-top: 60px;
+//   @include respond-below(sm) {
+//     padding-top: 10px;
+//   }
+//   .padding-footer {
+//     padding-top: 20px;
+//     padding-bottom: 20px;
+//   }
+//   .footer-overly {
+//     position: absolute;
+//     background-color: $darkblue;
+//     top: 0;
+//     bottom: 0;
+//     right: 0;
+//     left: 0;
+//     opacity: 0.8;
+//   }
+//   .footer-logo {
+//     .logo {
+//       margin-left: -15px;
+//       img {
+//         max-width: 100%;
+//         margin-top: -10px;
+//       }
+//     }
+//   }
+//   .logo-area {
+//     color: $white;
+//     p {
+//       font-size: 17px;
+//       font-weight: 500;
+//       @include respond-below(sm) {
+//         font-size: 14px;
+//       }
+//     }
+//     ul {
+//       padding-left: 0px;
+//       list-style: none;
+//     }
+//   }
+//   .footer-socal-area {
+//     padding-top: 40px;
+//     padding-bottom: 30px;
+//   }
+//   .footer-bottom {
+//     position: relative;
+//     text-align: center;
+//     border-top: 1px solid #ffffff63;
+//     padding-top: 10px;
+//     padding-bottom: 10px;
+//     color: #fff;
+//     width: 100%;
+//   }
+//   .container {
+//     position: relative;
+//   }
+//   .footer-col {
+//     @include respond-below(sm) {
+//       padding-bottom: 20px;
+//       border-right: 1px solid #ffffff63;
+//     }
+//   }
+//   .navbar-nav {
+//     // position: absolute;
+//     .nav-item {
+//       .nav-link {
+//         color: $white;
+//         font-size: 16px;
+//         line-height: 24px;
+//         font-weight: $text-weight;
+//         @include respond-below(sm) {
+//           padding: 5px;
+//           font-size: 12px;
+//           line-height: 16px;
+//         }
+//         &:hover {
+//           color: #ddd;
+          
+//         }
+//       }
+//     }
+//   }
+// }
+//latest News
+// #latest-news {
+//   position: relative;
+//   max-width: 100%;
+//   padding-top: 80px;
+//   padding-bottom: 80px;
+//   background: $background-color;
+//   .latest-news-header {
+//     text-align: center;
+//     padding-bottom: 80px;
+//     h2 {
+//       font-size: 52px;
+//       font-weight: 500;
+//     }
+//   }
+//   .latest-news-footer {
+//     text-align: center;
+//     padding-top: 60px;
+//     .btn-theme {
+//       font-size: 21px;
+//       padding: 11px 42.4px 11px 79px;
+//       border-radius: 5px;
+//       font-weight: 500;
+//       P{
+//       display: flex;
+//       margin-bottom: 0px;
+
+//       align-items: center;
+//       justify-content: space-around;
+//       i {
+     
+//         margin-left: 20px;
+//       }
+//       }
+//     }
+//   }
+
+//   .latest-news-slider {
+//     .slick-slide {
+//       padding-left: 20px;
+//       padding-right: 20px;
+//       padding-bottom: 60px;
+    
+//     }
+//   }
+//   .latest-news-nav {
+//     z-index: 1;
+//     .latest-news-prev,
+//     .latest-news-next {
+//       position: absolute;
+//       z-index: 2;
+//       top: 50%;
+//       transform: translateY(-50%);
+//       &:before {
+//         color: $white;
+//       }
+//     }
+//     .latest-news-prev {
+//       left: 5%;
+//     }
+//     .latest-news-next {
+//       right: 5%;
+//     }
+//   }
+// }
+
+//upcoming events
+// #events {
+//   position: relative;
+// }
+
+//our campus
+
+// #main-campus {
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   .overlay {
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     // box-shadow: 0px 16px 40px #00000029;
+//     // border: 1px solid #707070;
+//     // border-radius: 5px;
+//   }
+
+//   #myVideo {
+   
+//     min-width: 100%;
+//     margin-bottom: -7px;
+//     z-index: 1;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     box-shadow: 0px 16px 40px #00000029;
+//     border: 1px solid #707070;
+//     border-radius: 5px;
+//     opacity: 0.27;
+//     backdrop-filter: blur(6px);
+//     -webkit-backdrop-filter: blur(6px);
+//   }
+//   .main-campus-content {
+//     position: absolute;
+
+//     box-sizing: border-box;
+//     left: 0;
+//     right: 0;
+//     text-align: center;
+//     top: 25%;
+//     bottom: 30%;
+//     .campus-contant {
+//       position: relative;
+//       .campus-video-title {
+//         @include title;  
+//         margin-bottom: 150px;
+  
+
+//         text-align: center;
+//       }
+//       .campus-video-subtitle {
+//         font-weight: 500;
+//         font-size: 27px;
+//         line-height: 40px;
+//         color: $darkblue;
+//       }
+//       #myBtn {
+//         position: relative;
+//         margin: 0 auto;
+//         margin-bottom: 100px;
+//       }
+//     }
+//   }
+// }

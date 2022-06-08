@@ -1,0 +1,77 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:iCalendar-Ruby
+BEGIN:VEVENT
+CATEGORIES:Academic Calendar
+DESCRIPTION:Fall semester examination period\n\nFor the final exam schedule
+ \, go to www.ohio.edu/registrar/fall-semester-final-exam-schedule
+DTSTAMP:20211209T051056Z
+DTSTART;VALUE=DATE:20211206
+LOCATION:
+SEQUENCE:0
+SUMMARY:Fall semester examination period
+UID:tag:localist.com\,2008:EventInstance_36447153937586
+URL:https://calendar.ohio.edu/event/fall_semester_examination_period_9590
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Academic Calendar
+DESCRIPTION:Fall semester examination period\n\nFor the final exam schedule
+ \, go to www.ohio.edu/registrar/fall-semester-final-exam-schedule
+DTSTAMP:20211209T051056Z
+DTSTART;VALUE=DATE:20211207
+LOCATION:
+SEQUENCE:0
+SUMMARY:Fall semester examination period
+UID:tag:localist.com\,2008:EventInstance_36447154065593
+URL:https://calendar.ohio.edu/event/fall_semester_examination_period_9590
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Academic Calendar
+DESCRIPTION:Fall semester examination period\n\nFor the final exam schedule
+ \, go to www.ohio.edu/registrar/fall-semester-final-exam-schedule
+DTSTAMP:20211209T051056Z
+DTSTART;VALUE=DATE:20211208
+LOCATION:
+SEQUENCE:0
+SUMMARY:Fall semester examination period
+UID:tag:localist.com\,2008:EventInstance_36447154136250
+URL:https://calendar.ohio.edu/event/fall_semester_examination_period_9590
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Academic Calendar
+DESCRIPTION:Fall semester examination period\n\nFor the final exam schedule
+ \, go to www.ohio.edu/registrar/fall-semester-final-exam-schedule
+DTSTAMP:20211209T051056Z
+DTSTART;VALUE=DATE:20211209
+LOCATION:
+SEQUENCE:0
+SUMMARY:Fall semester examination period
+UID:tag:localist.com\,2008:EventInstance_36447154157755
+URL:https://calendar.ohio.edu/event/fall_semester_examination_period_9590
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Academic Calendar
+DESCRIPTION:Fall semester examination period\n\nFor the final exam schedule
+ \, go to www.ohio.edu/registrar/fall-semester-final-exam-schedule
+DTSTAMP:20211209T051056Z
+DTSTART;VALUE=DATE:20211210
+LOCATION:
+SEQUENCE:0
+SUMMARY:Fall semester examination period
+UID:tag:localist.com\,2008:EventInstance_36447154178236
+URL:https://calendar.ohio.edu/event/fall_semester_examination_period_9590
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Academic Calendar
+DESCRIPTION:Fall semester examination period\n\nFor the final exam schedule
+ \, go to www.ohio.edu/registrar/fall-semester-final-exam-schedule
+DTSTAMP:20211209T051056Z
+DTSTART;VALUE=DATE:20211211
+LOCATION:
+SEQUENCE:0
+SUMMARY:Fall semester examination period
+UID:tag:localist.com\,2008:EventInstance_36447154198717
+URL:https://calendar.ohio.edu/event/fall_semester_examination_period_9590
+END:VEVENT
+END:VCALENDAR

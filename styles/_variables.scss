@@ -1,0 +1,77 @@
+// Sidebar //
+$drawer-items-padding: 32px !default;
+$navigation-drawer-mini-variant-width: 96px !important;
+
+// Layout //
+$body-bg: #f6f7ff !default;
+$content-padding: 24px;
+// front-family      //
+$font-family-base: 'Poppins', sans-serif;
+
+// Colors //https://app.zeplin.io/project/618b523590fd31a803f58211/screen/61b1da7ec51d574bd58354d9
+$primary: #27187f;
+$deep-primary: #2d368e;
+$secondary: #bb1c85;
+$error: #ff4081;
+$warning: #ffc260;
+$success: #3cd4a0;
+$info: #9013fe;
+$white: #ffff;
+$violot: #f0f0fa;
+$text-color: #000000;
+$text-grey: #b9b9b9;
+$title-grey: #4a4a4a;
+$card-title-color: $text-color;
+$darkblue: #1b2055;
+$background-color: #e1f2f9;
+$light-black: #444444;
+$lightblue: #f0f0fa;
+$dark-text: #b3b3b3;
+$light-gray: #2f2e41;
+$waiver-text: #2f2e41;
+$silver: #989898;
+$cardBackground: #f7fbfd;
+$pelorous: #28bea3;
+$tranquil: #dbf5f0;
+$summer-sky: #34a6cc;
+$light-sky: #80daff;
+$columbia-blue: #8ddeff;
+$turquoise: #58c4cc;
+$oyster: #d1eff1;
+$tahiti-gold: #e86427;
+$pattens-blue: #dee3e6;
+$superblue: #1266f1;
+$blueish: #0a3b8c;
+$thistle: #f2f2f2;
+$gray: #f6f6f6;
+
+// Typography //
+$h1-font-size: 2.441rem !default; // 28px
+$h2-font-size: 1.953rem !default; // 24px
+$h3-font-size: 1.64rem !default; // 22px
+$h4-font-size: 1.563rem !default; // 20px
+$h5-font-size: 1.25rem !default; // 16px
+$h6-font-size: 1.142rem !default; // 14px
+$text-weight: 500;
+// Card //
+$card-shadow-light: 0 3px 11px 0 #e8eafc, 0 3px 3px -2px #b2b2b21a,
+  0 1px 8px 0 #9a9a9a1a;
+$card-shadow-dark: 4px 2px 60px 0 rgba(0, 0, 0, 0.25);
+
+// Buttons //
+$button-shadow: 0px 3px 11px 0px #e8eafc, 0 3px 3px -2px #b2b2b21a,
+  0 1px 8px 0 #9a9a9a1a;
+$cubic-bezier: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+// Padding
+$section-padding: 150px;
+
+$financial-box-shadow: -25px -35px 0 0 #bd1b88, 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+$box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+$border-radius: 5px;
+.slick-track,
+.slick-list {
+ perspective: 2000 !important;
+ backface-visibility: hidden !important;
+}

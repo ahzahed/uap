@@ -1,0 +1,31 @@
+@import 'main';
+.card {
+  border: none;
+  // border-radius: 25px;
+}
+.rightSide {
+  background-color: $background-color;
+  padding: 15px 0px 15px 20px;
+  display: grid;
+  align-items: center;
+  border-radius: 5px;
+  @include respond-below(sm) {
+    padding-left: 0px;
+    justify-content: center;
+  }
+}
+.leftSide {
+  padding-left: 0px;
+  padding-right: 0px;
+  border-radius: 0px;
+
+  img {
+    border-radius: 0px;
+  }
+}
+h5 {
+  @include cardTitle;
+}
+p {
+  @include cardPara;
+}

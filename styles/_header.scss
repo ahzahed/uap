@@ -1,0 +1,112 @@
+@import 'main';
+#header {
+  .top-bar {
+    z-index: 1000;
+    position: relative;
+    background-color: $darkblue;
+    padding: 10px;
+    border-bottom: 1px solid $darkblue;
+    transform: none;
+    @include respond-below(sm) {
+      text-align: center;
+      padding: 0px;
+      .nav {
+        justify-content: center;
+      }
+    }
+    .nav-item {
+      .nav-link {
+        color: $white;
+        font-size: 14px;
+        font-weight: 500;
+        @include respond-below(md) {
+          font-size: 13px;
+          padding: 7px;
+        }
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  .header-bottom {
+    position: relative;
+    // overflow: hidden;
+    z-index: 1000;
+    background-color: $white;
+ 
+
+    // border-bottom: 1px solid $primary;
+    .navbar{
+      padding-top: 15px  !important;
+      padding-bottom: 15px  !important;
+    }
+    .logo {
+      width: 210px;
+      height: auto;
+      display: block;
+      @include respond-below(xs) {
+        width: 160px;
+      }
+      @include respond-below(xsl) {
+        width: 120px;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .nav-item {
+      position: static;
+      @include respond-below(lg) {
+        display: none;
+      }
+    
+      .active {
+        // color: $primary !important;
+        position: relative;
+      
+        &:hover {
+          color: $primary !important;
+        }
+      }
+      .nav-link {
+        color: $text-color;
+        font-size: 17px;
+        font-weight: 500;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+    .header_icon {
+      color: $darkblue;
+      i {
+        display: block;
+        font-size: 30px;
+      }
+      .header_icon_title {
+        font-size: 12px;
+      }
+    }
+  }
+}
+#header.shrink {
+  left: 0;
+  top: 0;
+  position: fixed;
+  right: 0;
+  z-index: 30;
+  transition: all 0.5s;
+  -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  transition: top 0.85s $cubic-bezier;
+  .top-bar {
+    display: none;
+    transform: translate3d(0, -100%, 0);
+  }
+}
