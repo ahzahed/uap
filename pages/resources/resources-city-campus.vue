@@ -31,9 +31,9 @@
   </section>
 </template>
 <script>
-import Banner from '../components/helpers/Banner.vue'
-import Header from '../components/helpers/Header.vue'
-import InformalActivitySpaces from '../components/resourcesCityCampus/InformalActivitySpaces.vue'
+import Banner from '../../components/helpers/Banner.vue'
+import Header from '../../components/helpers/Header.vue'
+import InformalActivitySpaces from '../../components/resourcesCityCampus/InformalActivitySpaces.vue'
 
 export default {
   name: 'AcademicCouncil',

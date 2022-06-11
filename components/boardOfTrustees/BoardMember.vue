@@ -1,3 +1,4 @@
+/* eslint-disable vue/require-default-prop */
 <template>
   <section id="trustees">
     <div class="container">
@@ -31,6 +32,38 @@
               </div>
             </div>
         </div> -->
+        <div v-show="showCharman == 1" class="row">
+          <div class="col-lg-6 mx-auto">
+            <div class="mb-4">
+              <div class="card mb-4 loopCardContainer">
+                <div class="row">
+                  <div class="col-lg-5 col-md-5 col-sm-5 paddingRight">
+                    <img
+                      :src="chairperson.image"
+                      class="img-fluid h-100 w-100"
+                      :alt="chairperson.name"
+                    />
+                  </div>
+                  <div class="col-lg-7 col-md-7 col-sm-7">
+                    <div class="card-body">
+                      <h5>{{ chairperson.name }}</h5>
+                      <h6>{{ chairperson.designation }}</h6>
+                      <h5>Occupation</h5>
+                      <p>
+                        {{ chairperson.occupation }}
+                      </p>
+                      {{ showCharman }}
+                      <h5>Address</h5>
+                      <p>{{ chairperson.address }}</p>
+                      <h5>Email</h5>
+                      <p>{{ chairperson.email }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="mb-4">
           <div class="row">
@@ -42,7 +75,7 @@
                     <img
                       :src="item.image"
                       class="img-fluid h-100 w-100"
-                      :alt="item.title"
+                      :alt="item.name"
                     />
                   </div>
                   <div class="col-lg-7 col-md-7 col-sm-7">
@@ -79,6 +112,10 @@ export default {
     },
     chairperson: {
       type: Object,
+      required: true,
+    },
+    showCharman: {
+      type: Number,
       required: true,
     },
   },

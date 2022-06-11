@@ -53,8 +53,6 @@ export default {
     },
     nextPagination() {
       this.onClickPage(this.pagination.current_page + 1)
-      // eslint-disable-next-line no-console
-      console.log(this.pagination.current_page + 1)
     },
     prevPagination() {
       this.onClickPage(this.pagination.current_page - 1)

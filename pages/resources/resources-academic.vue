@@ -32,11 +32,11 @@
   </section>
 </template>
 <script>
-import Banner from '../components/helpers/Banner.vue'
-import Header from '../components/helpers/Header.vue'
-import Overview from '../components/resourcesAcademic/Overview.vue'
-import Laboratories from '../components/resourcesAcademic/Laboratories.vue'
-import ListOfAllLab from '../components/resourcesAcademic/ListOfAllLab.vue'
+import Banner from '../../components/helpers/Banner.vue'
+import Header from '../../components/helpers/Header.vue'
+import Overview from '../../components/resourcesAcademic/Overview.vue'
+import Laboratories from '../../components/resourcesAcademic/Laboratories.vue'
+import ListOfAllLab from '../../components/resourcesAcademic/ListOfAllLab.vue'
 
 export default {
   name: 'AcademicCouncil',

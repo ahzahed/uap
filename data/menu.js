@@ -161,7 +161,7 @@ export const Menu = [
   {
     title: 'Academic',
     subMenus: [
-      { title: 'List of Schools', link: '/list-of-schools' },
+      { title: 'List of Schools', link: '/schools' },
       { title: 'List of Departments', link: '/departments' },
       {
         title: 'Academic Rules & Regulations',

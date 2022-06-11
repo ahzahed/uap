@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12">
-            <h1>Departments</h1>
+            <h1>Schools</h1>
             <ul class="breadcrumb justify-content-center">
               <li>
                 <nuxt-link to="/"><i class="fas fa-home"></i> Home</nuxt-link>
@@ -18,20 +18,24 @@
     </div>
 
     <div class="container">
-  
-
       <div class="panel panel-default">
-        <div class="panel-heading">
-         Departments
-        </div>
+        <div class="panel-heading">Departments</div>
         <div class="panel-body">
-        
           <div class="row">
-            <nuxt-link v-for="(item, i) in departmentList" :key="i+'department'" class="col-md-4" :to="'/'+item.department">
+            <nuxt-link
+              v-for="(item, i) in schoolList"
+              :key="i + 'department'"
+              class="col-md-4"
+              :to="'/schools/' + item.slug"
+            >
               <div class="card">
-                <img src="../assets/card.jpeg" class="card-img-top" :alt="item.title" />
+                <img
+                  src="../../assets/card.jpeg"
+                  class="card-img-top"
+                  :alt="item.title"
+                />
                 <div class="card-body">
-                      {{item.title}}
+                  {{ item.school_name }}
                 </div>
               </div>
             </nuxt-link>
@@ -49,30 +53,27 @@ export default {
   components: {},
   layout: 'HomeLayout',
   asyncData({ store }) {
-    store.dispatch('department/getDepartmentList')
- 
+    store.dispatch('school/getSchoolList')
   },
   data() {
-    return {
-    
-    }
+    return {}
   },
   computed: {
-    ...mapGetters('department', ['departmentList']),
+    ...mapGetters('school', ['schoolList']),
   },
 }
 </script>
 
 <style lang="scss" scoped>
 @import './styles/_main.scss';
-.departments-title{
-    padding: 10PX;
+.departments-title {
+  padding: 10px;
 }
 .breadcrumb-area {
   min-height: 50vh;
   padding: 90px 50px 50px 0px;
 
-  background-image: url(../assets/uni.jpg);
+  background-image: url(../../assets/uni.jpg);
   background-repeat: no-repeat;
 
   background-size: cover;
@@ -83,34 +84,34 @@ export default {
       padding: 0 10px;
       position: relative;
       z-index: 0.7;
-       .nuxt-link-active {
+      .nuxt-link-active {
         color: #fff;
       }
     }
-      .departments{
-          color:#fff;
-          opacity: .5;
-      }
+    .departments {
+      color: #fff;
+      opacity: 0.5;
+    }
   }
 }
-.panel{
-    padding-top: 60px;
-    padding-bottom: 60px;
-.panel-heading {
+.panel {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  .panel-heading {
     font-size: 18px;
     padding: 10px 15px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-        background-color: $primary;
-    background-image: linear-gradient( #ffb606, $primary, transparent);
-        color: #fff;
- 
-
-}
-.panel-body {
-  padding: 15px;
-  border: 1px solid #eee;
-}
+    background: $darkblue;
+    color: #fff;
+  }
+  .panel-body {
+    padding: 15px;
+    border: 1px solid #eee;
+    .card-body {
+      @include cardTitle;
+    }
+  }
 }
 </style>

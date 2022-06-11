@@ -24,14 +24,14 @@
         <div class="panel-body">
           <div class="row">
             <nuxt-link
-              v-for="(item, i) in departmentList"
+              v-for="(item, i) in departmentListUnderSchool"
               :key="i + 'department'"
               class="col-md-4"
               :to="'/' + item.department"
             >
               <div class="card">
                 <img
-                  src="../assets/card.jpeg"
+                  src="../../assets/card.jpeg"
                   class="card-img-top"
                   :alt="item.title"
                 />
@@ -53,14 +53,17 @@ import { mapGetters } from 'vuex'
 export default {
   components: {},
   layout: 'HomeLayout',
-  asyncData({ store }) {
-    store.dispatch('department/getDepartmentList')
+  asyncData({ store, route }) {
+    store.dispatch(
+      'school/getDepartmentListUnderSchool',
+      route.params.slug
+    )
   },
   data() {
     return {}
   },
   computed: {
-    ...mapGetters('department', ['departmentList']),
+    ...mapGetters('school', ['departmentListUnderSchool']),
   },
 }
 </script>
@@ -75,7 +78,7 @@ export default {
     min-height: 50vh;
     padding: 90px 50px 50px 0px;
 
-    background-image: url(../assets/uni.jpg);
+    background-image: url(../../assets/uni.jpg);
     background-repeat: no-repeat;
 
     background-size: cover;

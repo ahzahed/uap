@@ -69,11 +69,10 @@
       </div>
 
       <div class="row">
-        <nuxt-link
+        <div
           v-for="(event, i) in seminars"
           :key="i"
           class="col-md-6 col-lg-4 p-3"
-          :to="`/events/${event.slug}`"
         >
           <div class="main-card h-100 shadow">
             <div class="card-top">
@@ -108,7 +107,7 @@
               </div>
             </div>
           </div>
-        </nuxt-link>
+        </div>
       </div>
     </div>
   </section>

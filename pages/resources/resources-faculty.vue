@@ -1,13 +1,13 @@
 <template>
   <section id="admissionTest">
-    <Banner :items="banner" />
+    <Banner :banner="banner" />
     <AdmissionData />
   </section>
 </template>
 
 <script>
-import Banner from '../components/helpers/Banner.vue'
-import AdmissionData from '../components/resourcesFaculty/resourcesFaculty.vue'
+import Banner from '../../components/helpers/Banner.vue'
+import AdmissionData from '../../components/resourcesFaculty/resourcesFaculty.vue'
 export default {
   components: { Banner, AdmissionData },
   layout: 'HomeLayout',
