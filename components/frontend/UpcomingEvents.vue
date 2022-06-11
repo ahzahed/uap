@@ -342,7 +342,7 @@ export default {
         line-height: normal;
         letter-spacing: normal;
         margin-bottom: 0;
-        padding-top: 30px;
+        // padding-top: 30px;
         // padding-bottom: 10px;
         @include respond-between(lg, xl) {
           font-size: 16px;
@@ -398,7 +398,7 @@ export default {
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.8px;
-      padding: 10px 18px;
+      padding: 10px 12px;
       background: $deep-primary;
       border-radius: 5px;
 

@@ -141,7 +141,7 @@ export default {
       padding-bottom: 54px;
     }
     p {
-      text-align: left !important;
+      // text-align: left !important;
       color: $text-color;
       @include paragraph;
       padding-left: 10px;

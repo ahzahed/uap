@@ -9,21 +9,30 @@
         <h2 class="">Latest News</h2>
       </div>
 
-      <VueSlickCarousel
+      <!-- <VueSlickCarousel
         v-if="latest_news_lists.length"
         v-bind="settings"
         ref="carousel"
         class="latest-news-slider"
-      >
-        <NewsCard
+      > -->
+      <div v-if="latest_news_lists" class="row">
+        <div
+          v-for="(item, i) in latest_news_lists"
+          :key="i"
+          class="col-lg-3 col-xl-3 col-md-4 col-sm-6 col-12"
+        >
+          <NewsCard :item="item" @click.native="showModal(item.description)" />
+        </div>
+      </div>
+      <!-- <NewsCard
           v-for="(item, i) in latest_news_lists"
           :key="'item_' + i"
           class="card"
           data-aos="fade-up"
           :item="item"
           @click.native="showModal(item.description)"
-        />
-      </VueSlickCarousel>
+        /> -->
+      <!-- </VueSlickCarousel> -->
 
       <div class="latest-news-nav">
         <button class="btn latest-news-prev" @click="showNext">
@@ -87,7 +96,7 @@ export default {
         dots: false,
         arrows: false,
         focusOnSelect: false,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
         slidesToShow: 4,
         slidesToScroll: 3,
