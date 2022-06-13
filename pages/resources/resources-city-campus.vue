@@ -1,9 +1,9 @@
 <template>
   <section id="resourcesCityCampusPage">
-    <Banner :items="banner" />
+    <Banner :banner="resource_city_banner" />
 
     <!-- Mambars header Start -->
-    <Header :list="academic" />
+    <Header :list="city_campus_list" />
     <!-- Mambars header End-->
     <!-- Mambars body Start -->
 
@@ -31,6 +31,7 @@
   </section>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import Banner from '../../components/helpers/Banner.vue'
 import Header from '../../components/helpers/Header.vue'
 import InformalActivitySpaces from '../../components/resourcesCityCampus/InformalActivitySpaces.vue'
@@ -44,6 +45,10 @@ export default {
     Banner,
   },
   layout: 'HomeLayout',
+  asyncData({ store }) {
+    store.dispatch('resourceCityCampus/getResourceCityBanner')
+    store.dispatch('resourceCityCampus/getCityCampusList')
+  },
   data() {
     return {
       banner: {
@@ -97,7 +102,6 @@ export default {
             // note: 'Start of the Day and the end of the day, Different times -different seasons',
           },
           {
-
             img: require('@/static/room.png'),
           },
           {
@@ -105,10 +109,8 @@ export default {
             // note: 'Start of the Day and the end of the day, Different times -different seasons',
           },
           {
-
             img: require('@/static/room.png'),
           },
-          
         ],
         BackYard: [
           {
@@ -147,6 +149,12 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    ...mapGetters('resourceCityCampus', [
+      'resource_city_banner',
+      'city_campus_list',
+    ]),
   },
 }
 </script>

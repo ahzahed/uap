@@ -2,14 +2,29 @@
   <section id="whatIsRequired">
     <Banner :banner="tuition_fees_banner" />
     <Header :list="whatIsRequired" />
+    <!-- <div style="text-align: center; font-weight: bold" class="mt-5">
+      <div
+        v-for="(item, i) in programs"
+        :key="i"
+        class="form-check form-check-inline"
+      >
+        <input
+          :id="item.id"
+          class="form-check-input"
+          type="radio"
+          name="inlineRadioOptions"
+          :value="item.program_name"
+        />
+        <label class="form-check-label" :for="item.id">{{
+          item.program_name
+        }}</label>
+      </div>
+    </div> -->
 
-    <Graduate
-      v-show="whatIsRequired[0].active == true"
-      :graduate-cost="graduateCost"
-    />
+    <Graduate v-show="whatIsRequired[0].active == true" :programs="programs" />
     <Undergraduate
       v-show="whatIsRequired[1].active == true"
-      :under-graduate-cost="underGraduateCost"
+      :programs="programs"
     />
 
     <SpecialNote
@@ -36,13 +51,14 @@ export default {
   },
   layout: 'HomeLayout',
   asyncData({ store, route }) {
-    store.dispatch('depTuitionFees/graduateCost', route.params.department)
-    store.dispatch('depTuitionFees/underGraduateCost', route.params.department)
+    // store.dispatch('depTuitionFees/graduateCost', route.params.department)
+    // store.dispatch('depTuitionFees/underGraduateCost', route.params.department)
     store.dispatch('depTuitionFees/specialNote', route.params.department)
     store.dispatch(
       'depTuitionFees/getTuitionFeesBanner',
       route.params.department
     )
+    store.dispatch('depTuitionFees/getPrograms', route.params.department)
   },
   data() {
     return {
@@ -71,10 +87,11 @@ export default {
   },
   computed: {
     ...mapGetters('depTuitionFees', [
-      'graduateCost',
-      'underGraduateCost',
+      // 'graduateCost',
+      // 'underGraduateCost',
       'specialNote',
       'tuition_fees_banner',
+      'programs',
     ]),
   },
 }

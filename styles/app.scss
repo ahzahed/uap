@@ -244,3 +244,10 @@ body::-webkit-scrollbar-thumb {
   position: fixed;
   margin-top: 0px;
 }
+
+#ListOfAllLab {
+  ul,
+  ol {
+    list-style-type: revert;
+  }
+}

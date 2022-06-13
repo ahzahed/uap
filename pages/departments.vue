@@ -20,7 +20,7 @@
 
     <div class="container">
       <div class="panel panel-default">
-        <div class="panel-heading">Departments</div>
+        <div class="panel-heading">List of Departments</div>
         <div class="panel-body">
           <div class="row">
             <nuxt-link

@@ -1,6 +1,25 @@
 <template>
   <section id="tutionGraduate">
-    <div class="container mt-5">
+    <div style="text-align: center; font-weight: bold" class="mt-5">
+      <div
+        v-for="(item, i) in programs"
+        :key="i"
+        class="form-check form-check-inline"
+        @change="getGraduation($event)"
+      >
+        <input
+          :id="item.id"
+          class="form-check-input"
+          type="radio"
+          name="inlineRadioOptions"
+          :value="item.id"
+        />
+        <label class="form-check-label" :for="item.id">{{
+          item.program_name
+        }}</label>
+      </div>
+    </div>
+    <div v-show="graduateCost.length > 0" class="container mt-5">
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <div class="table-responsive-lg">
@@ -35,15 +54,18 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   props: {
-    graduateCost: {
+    programs: {
       type: Array,
       required: true,
     },
   },
+
   data() {
     return {
+      program_id: '',
       title: 'Graduate Cost',
       column: ['Credit', '36'],
       row: [
@@ -65,6 +87,18 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    ...mapGetters('depTuitionFees', ['graduateCost']),
+  },
+  methods: {
+    getGraduation(event) {
+      // this.program_id = event.target.value
+      this.$store.dispatch('depTuitionFees/graduateCost', {
+        department: this.$router,
+        id: event.target.value,
+      })
+    },
   },
 }
 </script>

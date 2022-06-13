@@ -1,13 +1,14 @@
 <template>
   <section id="resources-academic">
-    <Banner :items="banner" />
+    <Banner :banner="rc_banner" />
 
     <!-- Mambars header Start -->
-    <Header :list="academic" />
+    <Header :list="programmenu" />
+    <NuxtChild />
     <!-- Mambars header End-->
     <!-- Mambars body Start -->
 
-    <Overview
+    <!-- <Overview
       v-show="academic[0].active == true"
       :overview="overview"
       :overview-details="overviewDetails"
@@ -21,7 +22,7 @@
       v-show="academic[2].active == true"
       :laboratories="laboratories"
       :laboratories-details="laboratoriesDetails"
-    />
+    /> -->
     <!-- <Members
           v-show="mambarmenu[1].active == true"
           :members="mambarList1"
@@ -32,24 +33,50 @@
   </section>
 </template>
 <script>
-import Banner from '../../components/helpers/Banner.vue'
-import Header from '../../components/helpers/Header.vue'
-import Overview from '../../components/resourcesAcademic/Overview.vue'
-import Laboratories from '../../components/resourcesAcademic/Laboratories.vue'
-import ListOfAllLab from '../../components/resourcesAcademic/ListOfAllLab.vue'
+import { mapGetters } from 'vuex'
+import Banner from '../components/helpers/Banner.vue'
+// import Overview from '../../components/resourcesAcademic/Overview.vue'
+// import Laboratories from '../../components/resourcesAcademic/Laboratories.vue'
+// import ListOfAllLab from '../../components/resourcesAcademic/ListOfAllLab.vue'
+import Header from '@/components/tution-fees/Program.vue'
 
 export default {
   name: 'AcademicCouncil',
   components: {
-    Overview,
-    Laboratories,
-    ListOfAllLab,
+    // Overview,
+    // Laboratories,
+    // ListOfAllLab,
     Header,
     Banner,
   },
   layout: 'HomeLayout',
+  asyncData({ store, route, redirect }) {
+    if (route.name === 'resources-academic') {
+      redirect('/resources-academic/overview')
+    }
+
+    store.dispatch('resourcesAcademic/getRcBanner')
+  },
   data() {
     return {
+      programmenu: [
+        {
+          section: 'Classroom',
+          url: '/resources-academic/overview',
+          active: true,
+        },
+        {
+          section: 'Laboratories & Workshops',
+          url: '/resources-academic/laboratories',
+          active: false,
+        },
+        {
+          section: 'List of all Lab & Workshops',
+          url: '/resources-academic/listOfAllLab',
+          active: false,
+        },
+      ],
+
       banner: {
         img: require('@/static/authorities-banner.png'),
         title: 'UAP Resources: Academic',
@@ -124,10 +151,12 @@ export default {
         'n contrast to the Classrooms, the Lab and workshop facilities are kept unique to the individual departments and thus help to create the general identity of each department. As the classrooms are taken care of by the central authority, departments can put their undivided focuses on lab developments. University has allocated ample budget and encourage departments to equip the lab/workshops with state of the art equipment and facilities. The labs are pivotal part to ensure UAP’s commitment of combining theory with practical hand-on learning. In cases the departments can share their resources.',
     }
   },
+  computed: {
+    ...mapGetters('resourcesAcademic', ['rc_banner']),
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 @import './styles/_main.scss';
-
 </style>

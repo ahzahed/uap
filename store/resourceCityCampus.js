@@ -1,21 +1,21 @@
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
 const state = () => ({
-  rf_banner: {},
-  rf_body: {},
+  resource_city_banner: {},
+  city_campus_list: [],
 })
 
 const getters = {
-  rf_banner: (state) => state.rf_banner,
-  msc_body: (state) => state.msc_body,
+  resource_city_banner: (state) => state.resource_city_banner,
+  city_campus_list: (state) => state.city_campus_list,
 }
 
 const actions = {
-  getRfBanner(context) {
+  getResourceCityBanner(context) {
     return new Promise((resolve, reject) => {
       context.commit('sidebar/toggleLoader', true, { root: true })
       this.$axios
-        .get(`/resourse/faculty/member/page/setting`)
+        .get(`/resourse/physical/city/campus/page/setting`)
         .then((result) => {
           context.commit('sidebar/toggleLoader', false, { root: true })
           resolve(result)
@@ -23,25 +23,26 @@ const actions = {
             result.data.image = this.$config.baseURL + result.data.image
             result.data.thumbnail = this.$config.baseURL + result.data.thumbnail
           }
-          context.commit('RF_BANNER', result.data)
+          context.commit('RESOURCE_CITY_BANNER', result.data)
         })
         .catch((error) => {
           reject(error)
         })
     })
   },
-  async getMscBody(context, value) {
-    const data = await this.$axios.get(`/department/msc/Curriculum/${value}`)
-    context.commit('MSC_BODY', data.data)
+
+  async getCityCampusList(context) {
+    const data = await this.$axios.get(`/resourse/physical/city/campus/list`)
+    context.commit('CITY_CAMPUS_LIST', data.data)
   },
 }
 
 const mutations = {
-  RF_BANNER(state, section) {
-    state.rf_banner = section
+  RESOURCE_CITY_BANNER(state, section) {
+    state.resource_city_banner = section
   },
-  MSC_BODY(state, msc_body) {
-    state.msc_body = msc_body
+  CITY_CAMPUS_LIST(state, section) {
+    state.city_campus_list = section
   },
 }
 export default {

@@ -4,16 +4,22 @@
       <div class="row">
         <div class="col-lg-12 pb-2">
           <div class="details">
-            <h2>Classrooms At UAP:</h2>
-            <p>
-              {{ overviewDetails }}
-            </p>
+            <h2>Lab & Workshop at UAP:</h2>
+            <div v-html="lab_work.lab_shop_description"></div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div v-for="(item, i) in overview" :key="i" class="col-lg-6 py-3">
-          <img :src="item.img" alt="" class="w-100" />
+        <div
+          v-for="(item, i) in lab_work.images"
+          :key="i"
+          class="col-lg-6 py-3"
+        >
+          <img
+            :src="$config.baseURL + item.image"
+            :alt="item.created_at"
+            class="w-100"
+          />
         </div>
       </div>
     </div>
@@ -21,10 +27,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-  props: {
-    overviewDetails: { required: true, type: Object },
-    overview: { required: true, type: Array },
+  asyncData({ store, route }) {
+    store.dispatch('resourcesAcademic/getLabWork')
+  },
+  computed: {
+    ...mapGetters('resourcesAcademic', ['lab_work']),
   },
 }
 </script>

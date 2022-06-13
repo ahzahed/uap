@@ -3,16 +3,21 @@
   <section id="ListOfAllLab">
     <div class="container mt-5">
       <div class="row">
-        <div class="col-lg-4 col-md-6 mb-3">
+        <div
+          v-for="(item, i) in lab_workshop_list"
+          :key="i"
+          class="col-lg-4 col-md-6 mb-3"
+        >
           <h2>Department of Architecture</h2>
           <div class="finalResult pt-4 shadow-sm">
-            <ul v-for="(item, i) in feePayment" :key="i">
+            <div v-html="item.all_list"></div>
+            <!-- <ul v-for="(item, i) in lab_workshop_list" :key="i">
               <li>{{ item.link }}</li>
               <hr />
-            </ul>
+            </ul> -->
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-3">
+        <!-- <div class="col-lg-4 col-md-6 mb-3">
           <h2>Department of Business Administration</h2>
           <div class="waitingResult pt-4 shadow-sm">
             <ul v-for="(item, i) in depositeSlip" :key="i">
@@ -29,14 +34,19 @@
               <hr />
             </ul>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
+  asyncData({ store, route }) {
+    store.dispatch('resourcesAcademic/getLabWorkshopList')
+  },
+
   data() {
     return {
       session: {
@@ -79,6 +89,9 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    ...mapGetters('resourcesAcademic', ['lab_workshop_list']),
   },
 }
 </script>
@@ -124,6 +137,22 @@ export default {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     margin-bottom: 0px;
+  }
+
+  .finalResult::-webkit-scrollbar {
+    width: 10px;
+    height: 100px;
+    color: red;
+  }
+  .finalResult::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 60px;
+    background-color: #f5f5f5;
+  }
+  .finalResult::-webkit-scrollbar-thumb {
+    border-radius: 60px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: $darkblue;
   }
 
   .finalResult,

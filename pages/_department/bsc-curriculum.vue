@@ -1,7 +1,7 @@
 <template>
   <section id="bscCurriculum">
     <Banner :banner="bsc_banner" />
-    <Curriculum :bsc-body="bsc_body"/>
+    <Curriculum :bsc-body="bsc_body" />
   </section>
 </template>
 
@@ -19,7 +19,6 @@ export default {
   asyncData({ store, route }) {
     store.dispatch('depBscCur/getBscBanner', route.params.department)
     store.dispatch('depBscCur/getBscBody', route.params.department)
-  
   },
   data() {
     return {
@@ -30,7 +29,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('depBscCur', ['bsc_banner','bsc_body']),
+    ...mapGetters('depBscCur', ['bsc_banner', 'bsc_body']),
   },
 }
 </script>

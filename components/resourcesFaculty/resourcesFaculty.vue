@@ -2,13 +2,23 @@
   <div id="resourcesFaculty">
     <div class="container my-5">
       <div class="row">
-        <div v-for="(item, i) in resources" :key="i" class="col-lg-4 col-md-6 col-sm-6">
-          <div class="card my-5">
-            <img :src="item.img" class="card-img" />
-            <div class="card-img-overlay shadow">
-              <p class="card-text">{{ item.title }}</p>
+        <div
+          v-for="(item, i) in departments"
+          :key="i"
+          class="col-lg-4 col-md-6 col-sm-6"
+        >
+          <nuxt-link :to="'/' + item.department + '/faculty'">
+            <div class="card my-5">
+              <img
+                :src="$config.baseURL + item.image"
+                :alt="item.title"
+                class="card-img"
+              />
+              <div class="card-img-overlay shadow">
+                <p class="card-text">{{ item.title }}</p>
+              </div>
             </div>
-          </div>
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -16,6 +26,12 @@
 </template>
 <script>
 export default {
+  props: {
+    departments: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {
       resources: [

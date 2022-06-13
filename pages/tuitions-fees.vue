@@ -2,7 +2,7 @@
 <template>
   <section id="tution-fees">
     <Banner :banner="tuitions_banner" />
-      <Program :list="programmenu" />
+    <Program :list="programmenu" />
 
     <NuxtChild />
   </section>
@@ -24,10 +24,10 @@ export default {
   },
   layout: 'HomeLayout',
   asyncData({ store, route, redirect }) {
-    if(route.name === 'tuitions-fees'){
+    if (route.name === 'tuitions-fees') {
       redirect('/tuitions-fees/under-graduate')
     }
-   
+
     store.dispatch('tuitions/tuitionsBanner')
   },
   data() {
@@ -51,12 +51,11 @@ export default {
       ],
     }
   },
-  
 
   computed: {
     ...mapGetters('tuitions', ['tuitions_banner']),
   },
-  
+
   // eslint-disable-next-line vue/order-in-components
   head() {
     return {
@@ -80,7 +79,6 @@ export default {
       ],
     }
   },
-
 }
 </script>
 
