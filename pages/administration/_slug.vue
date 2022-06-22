@@ -23,7 +23,7 @@
                   <p class="card-text mb-4">
                     {{ item.email }}
                   </p>
-                  <nuxt-link :to="`/administration-details/${item.slug}`" class="primary-btn">Explore</nuxt-link>
+                  <nuxt-link :to="`/administration-details/${item.id}`" class="primary-btn">Explore</nuxt-link>
                 </div>
               </div>
             </div>

@@ -7,7 +7,7 @@
       <Header :list="committee_section" page="committee" />
       <!-- Mambars header End-->
       <!-- Mambars body Start -->
-      <div class="mambars_body">
+      <div class="mambars_body mt-5">
         <nuxt-child></nuxt-child>
       </div>
       <!-- Mambars body End -->
@@ -16,12 +16,12 @@
 </template>
 <script>
 // eslint-disable-next-line no-unused-vars
-import { mapActions, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 import Banner from '../components/helpers/Banner.vue'
 import Header from '~/halpers/Header.vue'
 
 export default {
-  name: 'CademicCouncil',
+  // name: 'CademicCouncil',
   components: {
     // eslint-disable-next-line vue/no-unused-components
     Banner,

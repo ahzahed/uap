@@ -28,6 +28,7 @@ const actions = {
         })
     })
   },
+
   allCommitteeSection(context) {
     return new Promise((resolve, reject) => {
       context.commit('sidebar/toggleLoader', true, { root: true })
@@ -43,6 +44,7 @@ const actions = {
         })
     })
   },
+  
   async allCommittee(context, id) {
     try {
       context.commit('sidebar/toggleLoader', true, { root: true })

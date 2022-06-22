@@ -29,7 +29,7 @@
         </ul>
       </div>
     </div>
-    <Banner :items="banner" />
+    <Banner :banner="banner" />
     <Cse 
     :informations="Informations"
     />

@@ -49,10 +49,9 @@
 <script>
 export default {
    props: {
-    // eslint-disable-next-line vue/require-default-prop
     faqs: {
       type: Array,
-      require: true,
+      required: true,
     },
   },
   data() {

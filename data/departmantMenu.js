@@ -32,7 +32,7 @@ export const Menu = [
         link: '/awards-and-achievements',
       },
       {
-        title: 'affiliations',
+        title: 'Affiliations',
         link: '/affiliations',
       },
       {

@@ -29,35 +29,35 @@ export const Menu = [
       // },
       {
         title: 'Awards and Achievements',
-        link: '/awards-and-achievements',
+        link: '/our-ranking',
       },
       {
-        title: 'affiliations',
+        title: 'Affiliations',
         link: '/affiliations',
       },
       {
         title: 'The Chairman',
-        link: '/chairman',
+        link: '/administration-details/2',
       },
       {
         title: 'The Vice Chancellor',
-        link: '/vice-chancellor',
+        link: '/administration-details/1',
       },
       {
         title: 'The Pro Vice Chancellor',
-        link: '/pro-vice-chancellor',
+        link: '/administration-details/3',
       },
       {
         title: 'Treasurer',
-        link: 'treasurer',
+        link: '/administration-details/4',
       },
       {
         title: 'Registrar',
-        link: '/registrar',
+        link: '/administration-details/5',
       },
       {
         title: 'Office of the Proctor',
-        link: '/office-of-proctor',
+        link: '/office-proctor',
       },
       {
         title: 'career',
@@ -149,7 +149,7 @@ export const Menu = [
       { title: 'Apply Online', link: '/apply-online' },
       {
         title: 'Pandemic Payment Policy and Option',
-        link: '/pandemic-payment-policy-and-option',
+        link: '/pandemic-payment',
       },
       {
         title: 'Important Dates and Deadlines',
@@ -179,8 +179,8 @@ export const Menu = [
     title: 'News and Information',
     subMenus: [
       { title: 'Events', link: '/events' },
-      { title: 'News', link: '/news' },
-      { title: 'UAP News and Notice', link: 'uap-news-and-notice' },
+      // { title: 'News', link: '/news' },
+      { title: 'UAP News and Notice', link: '/news' },
       {
         title: 'Calendar of University Events',
         link: 'calendar-of-university-events',

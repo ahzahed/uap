@@ -1,7 +1,7 @@
 <template>
   <section id="faq">
     <Banner :banner="important_banner" />
-    <DatesandDeadlines />
+    <DatesandDeadlines :dates="dates" />
   </section>
 </template>
 
@@ -14,6 +14,7 @@ export default {
   layout: 'HomeLayout',
   asyncData({ store }) {
     store.dispatch('importantDates/getImportantBanner')
+    store.dispatch('importantDates/getDates')
   },
   data() {
     return {
@@ -25,7 +26,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('importantDates', ['important_banner']),
+    ...mapGetters('importantDates', ['important_banner', 'dates']),
   },
 }
 </script>

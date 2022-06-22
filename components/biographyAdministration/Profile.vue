@@ -6,7 +6,7 @@
         <div class="col-xl-4 col-lg-4 col-md-12 mb-5 text-center">
           <div class="bg-white rounded shadow py-5 px-4 leftSide">
             <img
-              :src="img"
+              :src="details.image"
               class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
             />
             <h5>{{ details.name }}</h5>

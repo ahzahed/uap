@@ -1,6 +1,7 @@
 <template>
   <section class="latest-news">
-    <div class="container py-5">
+    <hr />
+    <div class="container py-3">
       <div class="row latest-news-header">
         <div class="col-md-10 text-center">
           <div class="section-title">

@@ -5,6 +5,7 @@ const state = () => ({
   administration_section: [],
   administration_banner: {},
   administration_details: {},
+  office_proctor: [],
 })
 
 const getters = {
@@ -12,6 +13,7 @@ const getters = {
   administration_section: (state) => state.administration_section,
   administration_banner: (state) => state.administration_banner,
   administration_details: (state) => state.administration_details,
+  office_proctor: (state) => state.office_proctor,
 }
 
 const actions = {
@@ -57,6 +59,11 @@ const actions = {
     })
   },
 
+  async getOfficeProctor(context){
+    const data = await this.$axios.get(`/administration/office-of-the-proctor/9`)
+    context.commit('OFFICE_PROCTOR', data.data)
+  },
+
   async getAdministrationDetails(context, value) {
     const data = await this.$axios.get(`/administration/${value}/show`)
     context.commit('ADMINISTRATION_DETAILS', data.data.data)
@@ -75,6 +82,9 @@ const mutations = {
   },
   ADMINISTRATION_DETAILS(state, section) {
     state.administration_details = section
+  },
+  OFFICE_PROCTOR(state, section) {
+    state.office_proctor = section
   },
 }
 export default {

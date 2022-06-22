@@ -2,7 +2,7 @@
   <section id="ranking">
     <div class="container">
       <h2 class="text-center">
-        {{ ranking.title }}
+        Our Ranking
       </h2>
 
       <div class="row">
@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="row">
-        <nuxt-link to="/" class="primary-btn ranking-btn">See more</nuxt-link>
+        <nuxt-link to="/our-ranking" class="primary-btn ranking-btn">See more</nuxt-link>
       </div>
     </div>
   </section>
@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       ranking: {
-        title: 'Our Ranking',
+        
 
         data: [
           {

@@ -1,6 +1,5 @@
 <template>
   <section class="about-section">
-
     <div id="float">
       <p>CONTENTS</p>
       <div class="floating-tabs">
@@ -9,9 +8,7 @@
             <nuxt-link class="nav-link" to="#cse">Why CSE at uap</nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link" to="#general"
-              >General Info</nuxt-link
-            >
+            <nuxt-link class="nav-link" to="#general">General Info</nuxt-link>
           </li>
           <li class="nav-item">
             <nuxt-link class="nav-link" to="#generalTiming"
@@ -19,38 +16,30 @@
             >
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link" to="#admission-citeria">Admission Criteria</nuxt-link>
+            <nuxt-link class="nav-link" to="#admission-citeria"
+              >Admission Criteria</nuxt-link
+            >
           </li>
           <li class="nav-item">
             <nuxt-link class="nav-link" to="#special">Special Notes</nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link" to="#contact">Admission Contact</nuxt-link>
+            <nuxt-link class="nav-link" to="#contact"
+              >Admission Contact</nuxt-link
+            >
           </li>
         </ul>
       </div>
     </div>
-    <Banner :items="banner" />
-    <Cse 
-    :informations="Informations"
-    />
-    
-    <General
-    :general-informations="generalInformations"
-    />
-    <GeneralTiming/>
-    <Procedure 
-    :procedure-information="procedureInformation"
-    />
-    <AdmissionCriteria
-    :criteria-information="criteriaInformation"
-    />
-    <Special
-    :special-information="specialInformation"
-    />
-    <Contact
-    :contact-information="contactInformation"
-    />
+    <Banner :banner="banner" />
+    <Cse :informations="Informations" />
+
+    <General :general-informations="generalInformations" />
+    <GeneralTiming />
+    <Procedure :procedure-information="procedureInformation" />
+    <AdmissionCriteria :criteria-information="criteriaInformation" />
+    <Special :special-information="specialInformation" />
+    <Contact :contact-information="contactInformation" />
   </section>
 </template>
 
@@ -59,10 +48,10 @@ import Banner from '../../components/helpers/Banner.vue'
 import Cse from '../../components/admission-info/undergraduate/Cse.vue'
 import General from '../../components/admission-info/undergraduate/General.vue'
 import GeneralTiming from '../../components/admission-info/undergraduate/GeneralTiming.vue'
-import Procedure from '../../components/admission-info/undergraduate/Procedure.vue' 
+import Procedure from '../../components/admission-info/undergraduate/Procedure.vue'
 import AdmissionCriteria from '../../components/admission-info/undergraduate/AdmissionCriteria.vue'
 import Special from '../../components/admission-info/undergraduate/Special.vue'
-import Contact from '../../components/admission-info/undergraduate/Contact.vue' 
+import Contact from '../../components/admission-info/undergraduate/Contact.vue'
 
 export default {
   components: {
@@ -84,32 +73,32 @@ export default {
         details: 'Undergraduate',
       },
       Informations: [
-          {
-              info: "The Department of CSE is ranked “Very Good” in quality by External Peer Review Team (EPRT), IQAC, UGC."
-          },
-          {
-              info: "Adjunct senior faculty members only from renowned public universities (BUET, Dhaka University and Jahangirnagar University)"
-          },
-          {
-              info: "Student clubs and extracurricular activities are funded and encouraged by the department"
-          },
-          {
-              info: "Industrial training is included in the course curriculum to bridge the gap between study and work"
-          },
-          {
-              info: "Government-funded Lab for Games and Android App development for students"
-          },
-          {
-              info: "Students publish their research work in high impact factor journals and international conferences"
-          },
-          {
-              info: "Students publish their research work in high impact factor journals and international conferences"
-          },
+        {
+          info: 'The Department of CSE is ranked “Very Good” in quality by External Peer Review Team (EPRT), IQAC, UGC.',
+        },
+        {
+          info: 'Adjunct senior faculty members only from renowned public universities (BUET, Dhaka University and Jahangirnagar University)',
+        },
+        {
+          info: 'Student clubs and extracurricular activities are funded and encouraged by the department',
+        },
+        {
+          info: 'Industrial training is included in the course curriculum to bridge the gap between study and work',
+        },
+        {
+          info: 'Government-funded Lab for Games and Android App development for students',
+        },
+        {
+          info: 'Students publish their research work in high impact factor journals and international conferences',
+        },
+        {
+          info: 'Students publish their research work in high impact factor journals and international conferences',
+        },
       ],
 
       generalInformations: [
         {
-          info: "The admission screening procedure at UAP aims to find the most deserving students for each department. It is also important for students to find out their own skill sets which will suggest and guide them in choosing appropriate career paths. The admission system varies for different departments depending on each department’s requirements, but it is strictly maintained that the procedures are fair and transparent. We value that each student deserves a culture where all the classmates are motivated to pursue higher education and have something to offer in their lateral education. Good admission procedures are here to satisfy that."
+          info: 'The admission screening procedure at UAP aims to find the most deserving students for each department. It is also important for students to find out their own skill sets which will suggest and guide them in choosing appropriate career paths. The admission system varies for different departments depending on each department’s requirements, but it is strictly maintained that the procedures are fair and transparent. We value that each student deserves a culture where all the classmates are motivated to pursue higher education and have something to offer in their lateral education. Good admission procedures are here to satisfy that.',
         },
       ],
       procedureInformation: [
@@ -141,39 +130,37 @@ export default {
       ],
       criteriaInformation: [
         {
-          program: "B.Sc. Engg. in CSE",
-          gpaReq: "Minimum GPA Requirements",
-          ssc: "Total GPA in SSC & HSC = 7.50",
-          o: "Total GPA in O & A level=7.50",
-          min: "(Candidates with minimum GPA of 2.5 in five subjects in O level and two subjects in A level).",
-          subReq: "Subject Requirements",
-          must: "Students must have Physics, Mathematics in HSC (or equivalent) and Chemistry either in SSC or HSC (or equivalent).",
-          link: "http://"
-
-        }
+          program: 'B.Sc. Engg. in CSE',
+          gpaReq: 'Minimum GPA Requirements',
+          ssc: 'Total GPA in SSC & HSC = 7.50',
+          o: 'Total GPA in O & A level=7.50',
+          min: '(Candidates with minimum GPA of 2.5 in five subjects in O level and two subjects in A level).',
+          subReq: 'Subject Requirements',
+          must: 'Students must have Physics, Mathematics in HSC (or equivalent) and Chemistry either in SSC or HSC (or equivalent).',
+          link: 'http://',
+        },
       ],
       specialInformation: [
         {
-          title: "Admit Card",
-          dec: "Applicants are requested to come to the UAP admission office to collect the admit card."
+          title: 'Admit Card',
+          dec: 'Applicants are requested to come to the UAP admission office to collect the admit card.',
         },
         {
-          title: "For Diploma Students",
-          dec: "Diploma students may apply for admission provided that they have a minimum GPA of 3.0 and they can apply for their respective department only( i.e A diploma student of Copmuter Technology can apply only in CSE department.)"
-        }
+          title: 'For Diploma Students',
+          dec: 'Diploma students may apply for admission provided that they have a minimum GPA of 3.0 and they can apply for their respective department only( i.e A diploma student of Copmuter Technology can apply only in CSE department.)',
+        },
       ],
       contactInformation: [
         {
-          name: "Rabeya Khandoker",
-          designation: "Admission Officer",
-          email: "rabeyakhandoker@uap-bd.edu",
-        }
-      ]
+          name: 'Rabeya Khandoker',
+          designation: 'Admission Officer',
+          email: 'rabeyakhandoker@uap-bd.edu',
+        },
+      ],
     }
   },
 }
 </script>
-
 
 <style lang="scss" scoped>
 @import './styles/_main.scss';

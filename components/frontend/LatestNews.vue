@@ -34,14 +34,14 @@
         /> -->
       <!-- </VueSlickCarousel> -->
 
-      <div class="latest-news-nav">
+      <!-- <div class="latest-news-nav">
         <button class="btn latest-news-prev" @click="showNext">
           <i class="fas fa-chevron-left"></i>
         </button>
         <button class="btn latest-news-next" @click="showPrev">
           <i class="fas fa-chevron-right"></i>
         </button>
-      </div>
+      </div> -->
       <div class="latest-news-footer">
         <div class="col-md-6 col-lg-6 col-xl-3 col-12 col-sm-12 mx-auto">
           <nuxt-link class="btn btn-theme" to="/news"

@@ -32,7 +32,7 @@
 </template>
 <script>
 // eslint-disable-next-line no-unused-vars
-import { mapActions, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   name: '',
   asyncData({ route, store }) {

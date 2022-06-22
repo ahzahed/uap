@@ -22,7 +22,7 @@ export default {
     // eslint-disable-next-line vue/require-default-prop
     banner: {
       type: Object,
-      require: true,
+      required: true,
     },
   },
 }

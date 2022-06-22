@@ -1,6 +1,7 @@
 <template>
   <section id="event">
     <!-- <Banner :banner="banner" /> -->
+    <hr />
     <div class="container py-5">
       <div class="row event-header">
         <div class="col-md-10 text-center">

@@ -2,10 +2,12 @@
 /* eslint-disable camelcase */
 const state = () => ({
   important_banner: {},
+  dates: [],
 })
 
 const getters = {
   important_banner: (state) => state.important_banner,
+  dates: (state) => state.dates,
 }
 
 const actions = {
@@ -28,11 +30,18 @@ const actions = {
         })
     })
   },
+  async getDates(context) {
+    const data = await this.$axios.get(`/date/deadline`)
+    context.commit('DATES', data.data)
+  },
 }
 
 const mutations = {
   IMPORTANT_BANNER(state, section) {
     state.important_banner = section
+  },
+  DATES(state, section) {
+    state.dates = section
   },
 }
 export default {
