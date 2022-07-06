@@ -50,7 +50,7 @@
 export default {
   props: {
     faqs: {
-      type: Array,
+      type: Object,
       required: true,
     },
   },

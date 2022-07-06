@@ -19,7 +19,6 @@
           v-else-if="page.label == 'Next &raquo;'"
           class="page-link"
           href="javascript:void(0)"
-       
           :class="page.url === null ? 'disabled' : ''"
           @click="nextPagination"
           v-html="page.label"
@@ -47,10 +46,6 @@ export default {
   },
 
   methods: {
-    chack(value) {
-      // eslint-disable-next-line no-console
-      console.log(value === null)
-    },
     nextPagination() {
       this.onClickPage(this.pagination.current_page + 1)
     },
@@ -64,9 +59,9 @@ export default {
 }
 </script>
 <style lang="scss">
-.disabled{
-  display:none;
-   cursor: not-allowed;
+.disabled {
+  display: none;
+  cursor: not-allowed;
   opacity: 0.5;
   text-decoration: none;
 }

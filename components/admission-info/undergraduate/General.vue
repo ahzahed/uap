@@ -4,9 +4,10 @@
       <div class="row">
         <div class="col-12 col-md-10 mx-auto">
           <h5 class="text-center top-text">General Info</h5>
-          <div v-for="(information, i) in generalInformations" :key="i">
-            <p class="details">{{ information.info }}</p>
-          </div>
+          <!-- <div v-for="(information, i) in generalInformations" :key="i"> -->
+          <!-- <p class="details">{{ information.info }}</p> -->
+          <p class="details" v-html="generalInformations.general_info"></p>
+          <!-- </div> -->
         </div>
       </div>
     </div>
@@ -17,7 +18,7 @@
 export default {
   props: {
     generalInformations: {
-      type: Array,
+      type: Object,
       required: true,
     },
   },

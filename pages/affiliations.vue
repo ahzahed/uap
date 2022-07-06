@@ -1,14 +1,14 @@
 <template>
   <section id="event">
-    <Banner :banner="banner" />
+    <Banner :banner="affiliation_banner" />
     <div class="container py-5">
       <div class="row">
         <div
-          v-for="(event, i) in notices"
+          v-for="(event, i) in affiliation_body"
           :key="i"
           class="col-md-4 col-lg-4 p-3"
           style="cursor: pointer"
-          @click="showModal(event.description)"
+          @click="showModal(event.short_description)"
         >
           <div class="main-card h-100 shadow">
             <div class="card-top">
@@ -28,11 +28,14 @@
               <p class="card-text mb-0 title">
                 {{ event.title }}
               </p>
-              <div class="mb-3">
+              <!-- <div class="mb-3">
                 <small class="date">{{
                   $moment(event.date).format('MMMM DD, YYYY')
                 }}</small>
-              </div>
+              </div> -->
+              <p class="card-text mb-0 title">
+                {{ event.short_description }}
+              </p>
             </div>
           </div>
         </div>
@@ -77,11 +80,8 @@ export default {
   },
   layout: 'HomeLayout',
   asyncData({ store, route }) {
-    store.dispatch(
-      'depNoticeBoard/getNoticeBoardBanner',
-      route.params.department
-    )
-    store.dispatch('depNoticeBoard/getNotices', route.params.department)
+    store.dispatch('affiliation/getAffiliationBanner')
+    store.dispatch('affiliation/getAffiliationBody')
   },
   data() {
     return {
@@ -90,7 +90,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('depNoticeBoard', ['banner', 'notices']),
+    ...mapGetters('affiliation', ['affiliation_banner', 'affiliation_body']),
   },
   methods: {
     // Modal

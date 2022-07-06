@@ -56,7 +56,6 @@ const actions = {
           `/department/academic/category/gallery/image/${payload.department}/${payload.category}`
         )
         .then((result) => {
-            console.log(result.data)
           context.commit('DATA', result.data)
       
           resolve(result)

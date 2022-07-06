@@ -85,7 +85,6 @@ const state = () => ({
       try {
         context.commit('sidebar/toggleLoader', true, { root: true })
         const data = await this.$axios.get(`/tution/header/info`)
-        console.log(data.data)
         context.commit('TUITIONS_BANNER', data.data)
         context.commit('sidebar/toggleLoader', false, { root: true })
       } catch (error) {

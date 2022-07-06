@@ -4,7 +4,7 @@ const state = () => ({
   events: [],
   upcoming_events: [],
   parent_categories: [],
-  topics: {},
+  topics: [],
 })
 
 const getters = {
@@ -28,9 +28,9 @@ const actions = {
   },
   async filterByEvent(context, payload) {
     const data = await this.$axios.get(
-      `/event/${payload.date}/${payload.topic}/filter`
+      `/event/${payload.date}/${payload.topic}/${payload.status}/filter`
     )
-    context.commit('DATA', data.data)
+    context.commit('DATA', data)
   },
 }
 

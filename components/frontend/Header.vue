@@ -141,4 +141,7 @@ export default {
 
 <style lang="scss" scoped>
 @import './styles/_header.scss';
+.nuxt-link-active {
+  color: $secondary !important;
+}
 </style>

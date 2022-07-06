@@ -1,35 +1,33 @@
 <template>
   <section id="procedure">
     <div class="container">
-     <div class="col-12 col-lg-10 mx-auto">
-          <h1 class="text-center">Procedure</h1>
-      <div class="row">
-        <div
-          v-for="(item, i) in procedureInformation"
-          :key="i"
-          class="procedureProcess mb-3"
-        >
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.details }}</p>
+      <div class="col-12 col-lg-10 mx-auto">
+        <h1 class="text-center">Procedure</h1>
+        <div class="row">
+          <div
+            v-for="(item, i) in procedureInformation"
+            :key="i"
+            class="procedureProcess mb-3"
+          >
+            <h3>{{ item.group_name }}</h3>
+            <div v-html="item.description"></div>
+          </div>
         </div>
       </div>
-     </div>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-    props: {
+  props: {
     procedureInformation: {
       type: Array,
       required: true,
     },
   },
   data() {
-    return {
-      
-    }
+    return {}
   },
 }
 </script>

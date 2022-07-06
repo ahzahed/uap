@@ -63,7 +63,6 @@ const actions = {
 //         .get(`/syndicate/section/list`)
 //         .then((result) => {
 //           resolve(result)
-//           console.log(result);
 //           context.commit('SYNDICATE_SECTION', result.data)
 //         })
 //         .catch((error) => {

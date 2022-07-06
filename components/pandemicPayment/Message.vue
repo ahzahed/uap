@@ -4,35 +4,35 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="heading">
-            <h1 class="text-center">{{ message.title }}</h1>
-            <p class="text-center">{{ message.season }}</p>
+            <h1 class="text-center">Message from the Treasurer</h1>
+            <p class="text-center">(Spring 2020)</p>
           </div>
           <div class="details">
             <!-- <p class="descinline" v-html="message.details"></p> -->
             <!-- <p class="descempty" v-html="message.details"></p> -->
-            <p
+            <!-- <p
               v-if="toggle == false"
-              v-html="message.details.slice(0, 300)"
-            ></p>
+              v-html=" message && message.message.slice(0, 300)"
+            ></p> -->
 
-            <p v-else v-html="message.details"></p>
-            <div v-show="toggle == true" class="messageFrom mt-5">
-              <img :src="img" alt="x" />
+            <p v-html="message.message"></p>
+            <div class="messageFrom mt-5">
+              <img :src="$config.baseURL + message.image" :alt="message.name" />
               <div class="profile mt-5">
                 <p>
-                  IshfaqIlahi Choudhury<br />
-                  <span> Treasurer, UAP</span>
+                  {{ message.name }}<br />
+                  <span>{{ message.position }}</span>
                 </p>
               </div>
             </div>
-            <div style="text-align: right">
+            <!-- <div style="text-align: right">
               <button class="primary-btn readmore" @click="toggle = !toggle">
                 <span v-if="toggle == false">
                   <span class="plus">+</span> Read More</span
                 >
                 <span v-else> <span class="plus">-</span> Read Less</span>
               </button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -42,15 +42,21 @@
 
 <script>
 export default {
+  props: {
+    message: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
       toggle: false,
-      message: {
-        title: 'Message from the Treasurer',
-        season: '(Spring 2020)',
-        details:
-          '<p>I am addressing you at a time when Bangladesh, and indeed the whole world, is facing a pandemic that we have never experienced before. Our educational institutions had been shut down for months causing enormous loss to the academic life of our students. Despite initial hesitation, the Government has now given the go-ahead to continue education online. We, in the UAP, had been working from Day-1 on how best to go online, our faculty worked very hard and now we are fully prepared to meet the challenge of time. UAP is set to start Spring 2020 online from <strong>Sunday, 28 June 2020.</strong></p><p>We realize that many of you, and your parents/guardians, have suffered great difficulties in view of the economic dislocation caused by the COVID-19 pandemic. To alleviate your sufferings, UAP has decided to reduce the tuition fees by <strong>20%</strong>. In monetary sum, it comes to nearly <strong>Tk. 5 crores</strong>. To ease the payments of fees for undergraduate courses we shall have 5 installments instead of 3. The last dates of payment of each installment are indicated in the Academic Calendar. I am sure you shall pay the fees well ahead to avoid the last-minute rush. We have increased various options available to you so that you can easily pay online without going outside your home. Various payment options and amounts to be paid for various programs are attached along with this mail. Those will also be on the website.</p><p>In addition to the 20% reduction of tuition fees across the board, UAP will continue to have a generous Waiver Policy in which many of you will get up to 100% tuition fee waiver. Any student or guardian who had suffered badly due to the pandemic will be favorably considered for VC’s waiver. I am sure you will appreciate that it would be quite an uphill task for us to deliver the best of education with the limited fund available at our end, but we shall never compromise on quality. Be rest assured that UAP will give you the best.</p><p>Without students the University campus is dead. We are missing you all. However, we are looking forward to a better future, and Insha Allah, our next semester can be held on Campus, as usual, and we shall once again have a happy and joyous campus life as before.</p>',
-      },
+      // message: {
+      //   title: 'Message from the Treasurer',
+      //   season: '(Spring 2020)',
+      //   details:
+      //     '<p>I am addressing you at a time when Bangladesh, and indeed the whole world, is facing a pandemic that we have never experienced before. Our educational institutions had been shut down for months causing enormous loss to the academic life of our students. Despite initial hesitation, the Government has now given the go-ahead to continue education online. We, in the UAP, had been working from Day-1 on how best to go online, our faculty worked very hard and now we are fully prepared to meet the challenge of time. UAP is set to start Spring 2020 online from <strong>Sunday, 28 June 2020.</strong></p><p>We realize that many of you, and your parents/guardians, have suffered great difficulties in view of the economic dislocation caused by the COVID-19 pandemic. To alleviate your sufferings, UAP has decided to reduce the tuition fees by <strong>20%</strong>. In monetary sum, it comes to nearly <strong>Tk. 5 crores</strong>. To ease the payments of fees for undergraduate courses we shall have 5 installments instead of 3. The last dates of payment of each installment are indicated in the Academic Calendar. I am sure you shall pay the fees well ahead to avoid the last-minute rush. We have increased various options available to you so that you can easily pay online without going outside your home. Various payment options and amounts to be paid for various programs are attached along with this mail. Those will also be on the website.</p><p>In addition to the 20% reduction of tuition fees across the board, UAP will continue to have a generous Waiver Policy in which many of you will get up to 100% tuition fee waiver. Any student or guardian who had suffered badly due to the pandemic will be favorably considered for VC’s waiver. I am sure you will appreciate that it would be quite an uphill task for us to deliver the best of education with the limited fund available at our end, but we shall never compromise on quality. Be rest assured that UAP will give you the best.</p><p>Without students the University campus is dead. We are missing you all. However, we are looking forward to a better future, and Insha Allah, our next semester can be held on Campus, as usual, and we shall once again have a happy and joyous campus life as before.</p>',
+      // },
       img: require('@/static/BOD/x.jpg'),
     }
   },

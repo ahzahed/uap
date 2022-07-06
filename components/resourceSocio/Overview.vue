@@ -1,5 +1,5 @@
 <template>
-  <section id="researchIEERD">
+  <section id="resourceSocio">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -43,7 +43,7 @@ export default {
 
 <style lang="scss" scoped>
 @import './styles/_main.scss';
-#researchIEERD {
+#resourceSocio {
   margin-top: 104px;
   margin-bottom: 104px;
   .heading {

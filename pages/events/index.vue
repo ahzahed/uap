@@ -42,14 +42,14 @@
               <div class="mb-3">
                 <label class="form-label">Event Status</label>
                 <select
-                  v-model="topic"
+                  v-model="selectedStatus"
                   class="form-select"
-                  placeholder="Select Topic"
+                  placeholder="Select Status"
                 >
                   <option
-                    v-for="(item, i) in topics"
+                    v-for="(item, i) in status"
                     :key="'item_' + i"
-                    :value="item.id"
+                    :value="item.value"
                   >
                     {{ item.title }}
                   </option>
@@ -156,11 +156,12 @@ export default {
       isModalVisible: false,
       status: [
         { title: 'Upcoming', value: 'upcoming' },
-        { title: 'Upcoming', value: 'upcoming' },
+        { title: 'Recent', value: 'recent' },
       ],
 
       filter: false,
       topic: '',
+      selectedStatus: '',
       date: '',
       currentPage: 1,
       banner: {
@@ -173,7 +174,7 @@ export default {
     ...mapGetters('event', ['events', 'topics']),
 
     filter_disbaled() {
-      return this.date && this.topic
+      return this.date && this.topic && this.selectedStatus
     },
   },
   created() {
@@ -194,6 +195,7 @@ export default {
       const filterData = {
         date: this.date,
         topic: this.topic,
+        status: this.selectedStatus,
       }
       this.$store.dispatch('event/filterByEvent', filterData).then((res) => {
         this.filter = !this.filter

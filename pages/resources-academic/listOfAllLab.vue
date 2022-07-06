@@ -8,7 +8,7 @@
           :key="i"
           class="col-lg-4 col-md-6 mb-3"
         >
-          <h2>Department of Architecture</h2>
+          <h2>{{ item.department }}</h2>
           <div class="finalResult pt-4 shadow-sm">
             <div v-html="item.all_list"></div>
             <!-- <ul v-for="(item, i) in lab_workshop_list" :key="i">

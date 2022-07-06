@@ -35,7 +35,6 @@ const actions = {
         .then((result) => {
           context.commit('sidebar/toggleLoader', false, { root: true })
           resolve(result)
-          console.log(result.data)
           context.commit('ADMISSION_ADDRESS', result.data)
         })
         .catch((error) => {
@@ -155,7 +154,6 @@ const actions = {
         .get(`/admission/test/header`)
         .then((result) => {
           context.commit('sidebar/toggleLoader', false, { root: true })
-          console.log(result.data)
           resolve(result)
           context.commit('ADMISSION_TEST_BANNER', result.data)
         })

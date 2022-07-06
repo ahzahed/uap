@@ -17,7 +17,7 @@
               </div>
               <div class="h-100 text-top">
                 <p class="card-text">
-                  {{ information.info }}
+                  {{ information.short_description }}
                 </p>
               </div>
             </div>

@@ -34,7 +34,6 @@ const actions = {
     try {
       context.commit('sidebar/toggleLoader', true, { root: true })
       const data = await this.$axios.get(`/academic/explore/${payload}`)
-      console.log(data);
       context.commit('ACADEMIC_EXPLORE', data.data)
       context.commit('sidebar/toggleLoader', false, { root: true })
     } catch (error) {

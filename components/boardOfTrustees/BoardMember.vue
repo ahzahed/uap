@@ -52,7 +52,6 @@
                       <p>
                         {{ chairperson.occupation }}
                       </p>
-                      {{ showCharman }}
                       <h5>Address</h5>
                       <p>{{ chairperson.address }}</p>
                       <h5>Email</h5>

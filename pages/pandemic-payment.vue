@@ -1,8 +1,8 @@
 <template>
   <section id="pandemicPayment">
     <Banner :banner="pandemic_banner" />
-    <Message />
-    <PaymentDownload />
+    <Message :message="message" />
+    <PaymentDownload :fee="fee" :deposit="deposit" />
   </section>
 </template>
 
@@ -16,6 +16,9 @@ export default {
   layout: 'HomeLayout',
   asyncData({ store }) {
     store.dispatch('pandemic/getPandemicBanner')
+    store.dispatch('pandemic/getMessage')
+    store.dispatch('pandemic/getFee')
+    store.dispatch('pandemic/getDeposit')
   },
   data() {
     return {
@@ -27,7 +30,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('pandemic', ['pandemic_banner']),
+    ...mapGetters('pandemic', ['pandemic_banner', 'message', 'fee', 'deposit']),
   },
 }
 </script>

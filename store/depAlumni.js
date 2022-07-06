@@ -4,12 +4,14 @@ const state = () => ({
   banner: {},
   alumniStories: [],
   allAlumniStories: [],
+  generalAllAlumniStories: [],
 })
 
 const getters = {
   banner: (state) => state.banner,
   alumniStories: (state) => state.alumniStories,
   allAlumniStories: (state) => state.allAlumniStories,
+  generalAllAlumniStories: (state) => state.generalAllAlumniStories,
 }
 
 const actions = {
@@ -64,6 +66,10 @@ const actions = {
   //     context.commit('sidebar/toggleLoader', false, { root: true })
   //   }
   // },
+  async getGeneralAllAlumniStories(context) {
+    const data = await this.$axios.get(`/all/alumni/story`)
+    context.commit('GENERAL_ALL_ALUMNI_STORIES', data.data)
+  },
 }
 
 const mutations = {
@@ -75,6 +81,9 @@ const mutations = {
   },
   ALL_ALUMNI_STORIES(state, section) {
     state.allAlumniStories = section
+  },
+  GENERAL_ALL_ALUMNI_STORIES(state, section) {
+    state.generalAllAlumniStories = section
   },
 }
 

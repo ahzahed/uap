@@ -45,11 +45,7 @@
                 </li>
               </ul>
               <ul v-else class="nav-primary__list">
-                <li
-                  v-for="(item, i) in Menu"
-                  :key="i"
-                  class="nav-item"
-                >
+                <li v-for="(item, i) in Menu" :key="i" class="nav-item">
                   <a
                     href="javascript:void(0)"
                     class="nav-link"

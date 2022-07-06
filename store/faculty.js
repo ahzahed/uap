@@ -51,7 +51,6 @@ const actions = {
           result.data.forEach((element) => {
             element.section = element.category_name
           })
-          // console.log(data.data)
           context.commit('ALL_DESIGNATION', result.data)
           resolve(result)
         })
@@ -80,7 +79,6 @@ const actions = {
   },
 
   getFacultyDetails(context, value) {
-    // console.log(value)
     return new Promise((resolve, reject) => {
       context.commit('sidebar/toggleLoader', true, { root: true })
       this.$axios

@@ -4,12 +4,14 @@ const state = () => ({
   resourse_socio_banner: {},
   resourse_socio_section: [],
   resourse_socio_details: {},
+  topics: [],
 })
 
 const getters = {
   resourse_socio_banner: (state) => state.resourse_socio_banner,
   resourse_socio_section: (state) => state.resourse_socio_section,
   resourse_socio_details: (state) => state.resourse_socio_details,
+  topics: (state) => state.topics,
 }
 
 const actions = {
@@ -51,25 +53,6 @@ const actions = {
     })
   },
 
-  //   getResearchDetails(context, value) {
-  //     return new Promise((resolve, reject) => {
-  //       context.commit('sidebar/toggleLoader', true, { root: true })
-  //       this.$axios
-  //         .get(`/research/${value.history.current.query.id}`)
-  //         .then((result) => {
-  //           context.commit('sidebar/toggleLoader', false, { root: true })
-  //           resolve(result)
-  //           result.data.forEach((element) => {
-  //             element.section = element.title
-  //           })
-  //           context.commit('RESEARCH_DETAILS', result.data)
-  //         })
-  //         .catch((error) => {
-  //           reject(error)
-  //         })
-  //     })
-  //   },
-
   async getRessourceSocioDetailsFirstLoad(context, id) {
     const data = await this.$axios.get(
       `/resourse/SocioCounseling/Mentalhealthcare/${id}`
@@ -82,6 +65,27 @@ const actions = {
     )
     context.commit('RESOURSE_SOCIO_DETAILS', data.data)
   },
+
+  async eventPagination(context, value) {
+    const data = await this.$axios.get(
+      `/resourse/SocioCounseling/Mentalhealthcare/${value.id.history.current.query.id}?page=${value.page}`
+    )
+    context.commit('RESOURSE_SOCIO_DETAILS', data.data)
+  },
+
+  async topicList(context) {
+    const data = await this.$axios.get(
+      `/resourse/SocioCounseling/Mentalhealthcare/event/topic`
+    )
+    context.commit('TOPIC_LIST', data.data)
+  },
+
+  async filterByEvent(context, payload) {
+    const data = await this.$axios.get(
+      `/resourse/SocioCounseling/Mentalhealthcare/event/${payload.date}/${payload.topic}/${payload.status}/filter`
+    )
+    context.commit('RESOURSE_SOCIO_DETAILS', data)
+  },
 }
 
 const mutations = {
@@ -93,6 +97,9 @@ const mutations = {
   },
   RESOURSE_SOCIO_DETAILS(state, section) {
     state.resourse_socio_details = section
+  },
+  TOPIC_LIST(state, topics) {
+    state.topics = topics
   },
 }
 export default {

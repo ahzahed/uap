@@ -6,8 +6,10 @@
         <div class="col-lg-6">
           <h2>Special Option for Fee Payments</h2>
           <div class="finalResult pt-4">
-            <ul v-for="(item, i) in feePayment" :key="i">
-              <li>{{ item.link }}</li>
+            <ul v-for="(item, i) in fee" :key="i">
+              <li>
+                <a :href="$config.baseURL + item.file">{{ item.file_title }}</a>
+              </li>
               <hr />
             </ul>
           </div>
@@ -15,8 +17,10 @@
         <div class="col-lg-6 waitingResultContent">
           <h2>Download Bank Deposit Slip</h2>
           <div class="waitingResult pt-4">
-            <ul v-for="(item, i) in depositeSlip" :key="i">
-              <li>{{ item.link }}</li>
+            <ul v-for="(item, i) in deposit" :key="i">
+              <li>
+                <a :href="$config.baseURL + item.file">{{ item.file_title }}</a>
+              </li>
               <hr />
             </ul>
           </div>
@@ -28,6 +32,16 @@
 
 <script>
 export default {
+  props: {
+    fee: {
+      type: Array,
+      required: true,
+    },
+    deposit: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {
       session: {

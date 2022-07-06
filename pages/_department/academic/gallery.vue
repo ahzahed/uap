@@ -47,7 +47,7 @@
       </div>
       <div v-else class="row h-100">
         <div class="col-md-12">
-          <h3 class="text-center">This category photos emtrty</h3>
+          <h3 class="text-center">This category photos empty</h3>
         </div>
       </div>
     </div>
@@ -56,8 +56,7 @@
       v-show="showModal"
       model-class="modal-dialog modal-dialog-centered"
       model-width="800px"
-       @close="closeModal"
-     
+      @close="closeModal"
     >
       <template #body>
         <VueSlickCarousel
@@ -132,11 +131,10 @@ export default {
     this.getGallery('all')
   },
   methods: {
-      closeModal() {
+    closeModal() {
       this.showModal = false
     },
     showNext() {
-     
       this.$refs.photos.next()
     },
     showPrev() {
@@ -161,38 +159,37 @@ export default {
 
 <style lang="scss">
 .academic-gallery {
-    .gallery-nav {
+  .gallery-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+
+    .btn {
       position: absolute;
-      top: 50%;
-      width: 100%;
-      height: 100%;
+      background: rgba(18, 102, 241, 0.75);
+      box-shadow: 0px 22px 40px rgba(77, 140, 245, 0.1);
+      border-radius: 5px;
 
-      .btn {
-        position: absolute;
-        background: rgba(18, 102, 241, 0.75);
-        box-shadow: 0px 22px 40px rgba(77, 140, 245, 0.1);
-        border-radius: 5px;
-
-        color: #fff;
-        // top: 50%;
-        &:hover {
-         opacity: 0.6;
-        
-        }
-      }
-      .gallery-prev {
-        left: 0px;
-      }
-      .gallery-next {
-        right: 0px;
+      color: #fff;
+      // top: 50%;
+      &:hover {
+        opacity: 0.6;
       }
     }
+    .gallery-prev {
+      left: 0px;
+    }
+    .gallery-next {
+      right: 0px;
+    }
+  }
   .gallery-slider {
     // overflow: hidden !important;
 
     .slick-slide {
       height: 500px;
-      img{
+      img {
         width: 100%;
         height: 100%;
       }
@@ -200,7 +197,6 @@ export default {
     .img-thumbnail {
       height: 100%;
     }
-  
   }
 
   .nav-padding {

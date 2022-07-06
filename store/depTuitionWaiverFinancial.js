@@ -71,7 +71,6 @@ const actions = {
     const data = await this.$axios.get(
       `/department/tuition/waiver/current_student/note/${value}`
     )
-    console.log(data);
     context.commit('CURRENT_STUDENT_NOTE', data.data)
   },
   async getSpecialWaiver(context, value) {

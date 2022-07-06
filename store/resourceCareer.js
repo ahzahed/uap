@@ -2,14 +2,18 @@
 /* eslint-disable camelcase */
 const state = () => ({
   resourse_career_banner: {},
-  resourse_career_section: [],
-  resourse_career_details: {},
+  resourse_career_overview: {},
+  events: [],
+  topics: [],
+  extra_events: {},
 })
 
 const getters = {
   resourse_career_banner: (state) => state.resourse_career_banner,
-  resourse_career_section: (state) => state.resourse_career_section,
-  resourse_career_details: (state) => state.resourse_career_details,
+  resourse_career_overview: (state) => state.resourse_career_overview,
+  events: (state) => state.events,
+  topics: (state) => state.topics,
+  extra_events: (state) => state.extra_events,
 }
 
 const actions = {
@@ -32,53 +36,35 @@ const actions = {
     })
   },
 
-  getResourceCareerSection(context) {
-    return new Promise((resolve, reject) => {
-      context.commit('sidebar/toggleLoader', true, { root: true })
-      this.$axios
-        .get(`/resourse/uap/library/type`)
-        .then((result) => {
-          context.commit('sidebar/toggleLoader', false, { root: true })
-          resolve(result)
-          result.data.forEach((element) => {
-            element.section = element.title
-          })
-          context.commit('RESOURSE_CAREER_SECTION', result.data)
-        })
-        .catch((error) => {
-          reject(error)
-        })
-    })
+  async getResourceCareerOverview(context) {
+    const data = await this.$axios.get(`/resourse/career/councelling/overview`)
+    context.commit('RESOURSE_CAREER_OVERVIEW', data.data)
   },
 
-  //   getResearchDetails(context, value) {
-  //     return new Promise((resolve, reject) => {
-  //       context.commit('sidebar/toggleLoader', true, { root: true })
-  //       this.$axios
-  //         .get(`/research/${value.history.current.query.id}`)
-  //         .then((result) => {
-  //           context.commit('sidebar/toggleLoader', false, { root: true })
-  //           resolve(result)
-  //           result.data.forEach((element) => {
-  //             element.section = element.title
-  //           })
-  //           context.commit('RESEARCH_DETAILS', result.data)
-  //         })
-  //         .catch((error) => {
-  //           reject(error)
-  //         })
-  //     })
-  //   },
-
-  async getRessourceCareerDetailsFirstLoad(context, id) {
-    const data = await this.$axios.get(`/resourse/uap/library/${id}`)
-    context.commit('RESOURSE_CAREER_DETAILS', data.data)
-  },
-  async getResourceCareerDetails(context, value) {
+  async allEventList(context, page) {
     const data = await this.$axios.get(
-      `/resourse/uap/library/${value.history.current.query.id}`
+      `/resourse/career/councelling/event?page=${page}`
     )
-    context.commit('RESOURSE_CAREER_DETAILS', data.data)
+    context.commit('DATA', data.data)
+  },
+
+  async getExtraEvent(context) {
+    const data = await this.$axios.get(
+      `/resourse/career/councelling/event/extra`
+    )
+    context.commit('EXTRA_EVENTS', data.data)
+  },
+  async topicList(context) {
+    const data = await this.$axios.get(
+      `/resourse/career/councelling/event/topic`
+    )
+    context.commit('TOPIC_LIST', data.data)
+  },
+  async filterByEvent(context, payload) {
+    const data = await this.$axios.get(
+      `/resourse/career/councelling/event/${payload.date}/${payload.topic}/${payload.status}/filter`
+    )
+    context.commit('DATA', data)
   },
 }
 
@@ -86,11 +72,17 @@ const mutations = {
   RESOURSE_CAREER_BANNER(state, section) {
     state.resourse_career_banner = section
   },
-  RESOURSE_CAREER_SECTION(state, section) {
-    state.resourse_career_section = section
+  RESOURSE_CAREER_OVERVIEW(state, section) {
+    state.resourse_career_overview = section
   },
-  RESOURSE_CAREER_DETAILS(state, section) {
-    state.resourse_career_details = section
+  DATA(state, events) {
+    state.events = events
+  },
+  TOPIC_LIST(state, topics) {
+    state.topics = topics
+  },
+  EXTRA_EVENTS(state, section) {
+    state.extra_events = section
   },
 }
 export default {

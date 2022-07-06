@@ -20,7 +20,7 @@
     <!-- Fundings & Forms End -->
 
     <!-- Policies Start -->
-    <section v-if="resourse_socio_details.event">
+    <section v-if="resourse_socio_details.data">
       <SccEvents :value="resourse_socio_details" />
     </section>
     <!-- Policies End -->

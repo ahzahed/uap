@@ -5,13 +5,17 @@
         <ul class="nav justify-content-center">
           <li v-for="(item, i) in list" :key="'item_' + i" class="nav-item">
             <nuxt-link
-            v-if="department"
+              v-if="department"
               class="nav-link my-3"
               :class="item.id == $route.query.id ? 'nuxt-link-active' : ''"
-              :to="{ path: `/${department}/${page}/${item.slug}`, query: { id: item.id } }"
-              >{{ item.section }}</nuxt-link>
-             <nuxt-link
-             v-else
+              :to="{
+                path: `/${department}/${page}/${item.slug}`,
+                query: { id: item.id },
+              }"
+              >{{ item.section }}</nuxt-link
+            >
+            <nuxt-link
+              v-else
               class="nav-link my-3"
               :class="item.id == $route.query.id ? 'nuxt-link-active' : ''"
               :to="{ path: `/${page}/${item.slug}`, query: { id: item.id } }"
@@ -40,37 +44,35 @@ export default {
       required: true,
     },
   },
- 
 }
 </script>
 <style lang="scss" scoped>
 @import './styles/_main.scss';
-  .mambars_header {
-    border-bottom: 1px solid #cccccc;
-    padding: 40px 0;
-    .nav-item {
-      .nav-link {
-        font-size: 16px;
-        font-weight: 400;
-        color: $darkblue;
-        padding: 16px 32px;
-        border-radius: 5px;
-        border: 1px solid transparent;
-        transition: all 0.3s ease-in-out;
-      
-        &:hover {
-          border: 1px solid $darkblue;
-        }
-        &:first-child {
-          margin-right: 10px;
-        }
-      }
-      .nuxt-link-active {
-        background-color: $darkblue;
+.mambars_header {
+  border-bottom: 1px solid #cccccc;
+  padding: 40px 0;
+  .nav-item {
+    .nav-link {
+      font-size: 16px;
+      font-weight: 400;
+      color: $darkblue;
+      padding: 16px 32px;
+      border-radius: 5px;
+      border: 1px solid transparent;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
         border: 1px solid $darkblue;
-        color: $white;
-       
+      }
+      &:first-child {
+        margin-right: 10px;
       }
     }
+    .nuxt-link-active {
+      background-color: $darkblue;
+      border: 1px solid $darkblue;
+      color: $white;
+    }
   }
+}
 </style>

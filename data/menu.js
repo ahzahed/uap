@@ -61,7 +61,7 @@ export const Menu = [
       },
       {
         title: 'career',
-        link: '/career',
+        link: 'https://www.uap-bd.edu/vacancy.php',
       },
     ],
   },
@@ -146,7 +146,10 @@ export const Menu = [
         title: 'Tuition Waiver & Financial Aid',
         link: '/tuition-waiver-financial-aid',
       },
-      { title: 'Apply Online', link: '/apply-online' },
+      {
+        title: 'Apply Online',
+        link: 'https://www.admission.uap-bd.edu/Admission/Home.aspx',
+      },
       {
         title: 'Pandemic Payment Policy and Option',
         link: '/pandemic-payment',
@@ -165,12 +168,12 @@ export const Menu = [
       { title: 'List of Departments', link: '/departments' },
       {
         title: 'Academic Rules & Regulations',
-        link: '/academic-rules-&-regulations',
+        link: '/rules-regulations',
       },
-      { title: 'Academic Counseling', link: '/academic-counseling' },
+      { title: 'Academic Counseling', link: '/academic-councelling' },
       {
         title: 'Institutional Quality Assurance Cell',
-        link: '/institutional-quality-assurance-cell',
+        link: '/iqac',
       },
       { title: 'Academic Calendar', link: '/academic-calender' },
     ],
@@ -181,15 +184,15 @@ export const Menu = [
       { title: 'Events', link: '/events' },
       // { title: 'News', link: '/news' },
       { title: 'UAP News and Notice', link: '/news' },
-      {
-        title: 'Calendar of University Events',
-        link: 'calendar-of-university-events',
-      },
+      // {
+      //   title: 'Calendar of University Events',
+      //   link: 'calendar-of-university-events',
+      // },
       {
         title: 'Media and Press Releases',
-        link: 'media-and-press-releases',
+        link: '/media-releases',
       },
-      { title: 'Virtual Tour', link: 'virtual-tour' },
+      { title: 'Virtual Tour', link: '/virtual-tour' },
       {
         title: 'Announcement',
         link: 'announcement',

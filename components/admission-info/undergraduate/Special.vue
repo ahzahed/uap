@@ -1,22 +1,24 @@
 <template>
   <section id="special">
-    <div class="container">
+    <div v-for="(special, i) in specialInformation" :key="i" class="container my-5">
       <div class="col-12 col-lg-10 mx-auto">
         <div class="row">
           <div class="col-lg-12 p-0">
             <div class="text-center bottom">
-              <p>Special Notes</p>
+              <p>{{ special.title }}</p>
             </div>
           </div>
         </div>
         <div class="row main d-flex justify-content-center shadow-sm">
-            <div class="col-md-12">
-                <ul v-for="(special, i) in specialInformation" :key="i" class="mb-0">
-                    <li>
-                        <span class="title">{{special.title}}</span>: <span class="dec">{{special.dec}}</span>
-                    </li>
-                </ul>
-            </div>
+          <div class="col-md-12">
+            <ul class="mb-0">
+              <li>
+                <!-- <span class="title">{{ special.title }}</span
+                >: <span class="dec">{{ special.description }}</span> -->
+                <div v-html="special.description"></div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -37,9 +39,9 @@ export default {
 <style lang="scss" scoped>
 @import './styles/_main.scss';
 
-#special{
-    margin-top: 70px;
-    .bottom {
+#special {
+  
+  .bottom {
     p {
       margin-bottom: 0px;
       @include title2;
@@ -53,29 +55,28 @@ export default {
   }
 
   .container {
-      .main{
-          padding: 65px 100px 30px 100px;
-          background-color: $background-color;
-          border-radius: $border-radius;
-          ul{
-              list-style-type: disc !important;
-              li{
-                .title{
-                  color: $darkblue;
-                  @include paragraph;
-                  text-align: justify;
-                  font-weight: 500;
-                }
-                .dec{
-                  color: $darkblue;
-                  @include paragraph2;
-                  text-align: justify;
-                  font-weight: 300;
-                }
-              }
+    .main {
+      padding: 65px 100px 30px 100px;
+      background-color: $background-color;
+      border-radius: $border-radius;
+      ul {
+        list-style-type: disc !important;
+        li {
+          .title {
+            color: $darkblue;
+            @include paragraph;
+            text-align: justify;
+            font-weight: 500;
           }
+          .dec {
+            color: $darkblue;
+            @include paragraph2;
+            text-align: justify;
+            font-weight: 300;
+          }
+        }
       }
+    }
   }
-
 }
 </style>

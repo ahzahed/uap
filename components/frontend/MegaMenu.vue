@@ -4,8 +4,18 @@
       <div v-for="(menus, i) in dividemenu" :key="'item' + i" class="col-md-4">
         <ul class="menu-sublist">
           <li v-for="(menu, menu_2) in menus" :key="menu_2" class="menu-item">
-            <nuxt-link :to="menu.link"
-              ><i class="fas fa-angle-double-right"></i> 
+            <!-- <nuxt-link v-if="menu.link.includes('/')" :to="menu.link"
+              ><i class="fas fa-angle-double-right"></i>
+              {{ menu.title }}</nuxt-link
+            > -->
+            <a
+              v-if="menu.link.includes('www.')"
+              :href="menu.link"
+              target="_blank"
+              ><i class="fas fa-angle-double-right"></i> {{ menu.title }}</a
+            >
+            <nuxt-link v-else :to="menu.link"
+              ><i class="fas fa-angle-double-right"></i>
               {{ menu.title }}</nuxt-link
             >
           </li>
@@ -90,3 +100,9 @@ export default {
 }
 </script>
 
+<style lang="scss" scoped>
+@import './styles/_main.scss';
+.nuxt-link-active {
+  color: $secondary !important;
+}
+</style>
