@@ -27,6 +27,10 @@ export const Menu = [
       // title: 'UAP at Ranking',
       // link: 'uap-at-ranking',
       // },
+      // {
+      // title: 'UAP at Ranking',
+      // link: 'uap-at-ranking',
+      // },
       {
         title: 'Awards and Achievements',
         link: '/our-ranking',
