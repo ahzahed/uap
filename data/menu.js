@@ -37,11 +37,11 @@ export const Menu = [
       },
       {
         title: 'The Chairman',
-        link: '/administration-details/2',
+        link: '/administration-details/1',
       },
       {
         title: 'The Vice Chancellor',
-        link: '/administration-details/1',
+        link: '/administration-details/2',
       },
       {
         title: 'The Pro Vice Chancellor',
