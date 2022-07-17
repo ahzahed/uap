@@ -90,7 +90,7 @@
                     class="nav-item"
                   >
                     <nuxt-link
-                      :to="item.slug"
+                      :to="'/club/' + item.slug"
                       class="nav-link"
                       @click.native="subCategory()"
                     >
@@ -180,12 +180,14 @@ export default {
       // eslint-disable-next-line no-console
       if (item.subMenus) {
         this.sub_categories = item.subMenus
+        this.$store.dispatch('club/getEmptyClubType')
       } else {
         this.sub_categories = []
       }
     },
     club() {
       this.$store.dispatch('club/getClubType')
+      this.sub_categories = []
     },
     subCategory() {
       this.sub_categories = []

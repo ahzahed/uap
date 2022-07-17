@@ -46,9 +46,30 @@ const actions = {
     const data = await this.$axios.get(`/general/club/event/${value}`)
     context.commit('CLUB_EVENTS', data.data)
   },
-  async getClubType(context) {
-    const data = await this.$axios.get(`/general/club/type`)
-    context.commit('CLUB_TYPE', data.data)
+  // async getClubType(context) {
+  //   const data = await this.$axios.get(`/general/club/type`)
+  //   context.commit('CLUB_TYPE', data.data)
+  // },
+
+  getClubType(context) {
+    return new Promise((resolve, reject) => {
+      context.commit('sidebar/toggleLoader', true, { root: true })
+      this.$axios
+        .get(`/general/club/type`)
+        .then((result) => {
+          context.commit('sidebar/toggleLoader', false, { root: true })
+          resolve(result)
+          context.commit('CLUB_TYPE', result.data)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
+  getEmptyClubType(context) {
+    const data = []
+    context.commit('CLUB_TYPE', data)
   },
 }
 

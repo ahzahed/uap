@@ -5,6 +5,7 @@ const state = () => ({
   dep_club_body: {},
   dep_club_events: [],
   all_dep_club_events: [],
+  dep_club_type: [],
 })
 
 const getters = {
@@ -12,6 +13,7 @@ const getters = {
   dep_club_body: (state) => state.dep_club_body,
   dep_club_events: (state) => state.dep_club_events,
   all_dep_club_events: (state) => state.all_dep_club_events,
+  dep_club_type: (state) => state.dep_club_type,
 }
 
 const actions = {
@@ -58,6 +60,27 @@ const actions = {
 
     context.commit('ALL_DEP_CLUB_EVENTS', data.data)
   },
+
+  getDepClubType(context, value) {
+    return new Promise((resolve, reject) => {
+      context.commit('sidebar/toggleLoader', true, { root: true })
+      this.$axios
+        .get(`/department/club/type/${value}`)
+        .then((result) => {
+          context.commit('sidebar/toggleLoader', false, { root: true })
+          resolve(result)
+          context.commit('DEP_CLUB_TYPE', result.data)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
+  getEmptyDepClubType(context) {
+    const data = []
+    context.commit('DEP_CLUB_TYPE', data)
+  },
 }
 
 const mutations = {
@@ -72,6 +95,9 @@ const mutations = {
   },
   ALL_DEP_CLUB_EVENTS(state, section) {
     state.all_dep_club_events = section
+  },
+  DEP_CLUB_TYPE(state, section) {
+    state.dep_club_type = section
   },
 }
 export default {

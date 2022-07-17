@@ -72,7 +72,6 @@ export default {
 <style lang="scss" scoped>
 @import './styles/_main.scss';
 #admissionResult {
-  margin-top: 104px;
   margin-bottom: 104px;
   h1 {
     @include title;
@@ -124,10 +123,3 @@ export default {
   }
 }
 </style>
-
-
-
-
-
-
-     
