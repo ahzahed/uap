@@ -4,12 +4,14 @@ const state = () => ({
   club_banner: {},
   club_body: {},
   club_events: [],
+  club_type: [],
 })
 
 const getters = {
   club_banner: (state) => state.club_banner,
   club_body: (state) => state.club_body,
   club_events: (state) => state.club_events,
+  club_type: (state) => state.club_type,
 }
 
 const actions = {
@@ -33,9 +35,7 @@ const actions = {
     })
   },
   async getClubBody(context, value) {
-    const data = await this.$axios.get(
-      `/general/club/${value}`
-    )
+    const data = await this.$axios.get(`/general/club/${value}`)
     if (data.data) {
       data.data.introduction_image =
         this.$config.baseURL + data.data.introduction_image
@@ -43,10 +43,12 @@ const actions = {
     context.commit('CLUB_BODY', data.data)
   },
   async getClubEvents(context, value) {
-    const data = await this.$axios.get(
-      `/general/club/event/${value}`
-    )
+    const data = await this.$axios.get(`/general/club/event/${value}`)
     context.commit('CLUB_EVENTS', data.data)
+  },
+  async getClubType(context) {
+    const data = await this.$axios.get(`/general/club/type`)
+    context.commit('CLUB_TYPE', data.data)
   },
 }
 
@@ -59,6 +61,9 @@ const mutations = {
   },
   CLUB_EVENTS(state, club_events) {
     state.club_events = club_events
+  },
+  CLUB_TYPE(state, section) {
+    state.club_type = section
   },
 }
 export default {

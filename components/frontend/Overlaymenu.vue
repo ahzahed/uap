@@ -24,18 +24,22 @@
           <div class="row h-100">
             <div class="col-md-4 col-sm-6 col-lg-3 col-xl-3 h-100">
               <ul v-if="width > 991" class="nav-primary__list">
+                <li class="nav-item">
+                  <a href="javascript:void(0)" class="nav-link" @click="club()">
+                    Club
+                  </a>
+                </li>
+
                 <li
                   v-for="(item, i) in Menu.slice(5)"
                   :key="i"
                   class="nav-item"
                 >
+                  <nuxt-link v-if="item.link" :to="item.link" class="nav-link">
+                    <p @click="TOGGLE_DRAWER">{{ item.title }}</p>
+                  </nuxt-link>
                   <a
-                    href="javascript:void(0)"
-                    class="nav-link"
-                    @click="setCategory(item)"
-                  >
-                  </a>
-                  <a
+                    v-else
                     href="javascript:void(0)"
                     class="nav-link"
                     @click="setCategory(item)"
@@ -79,6 +83,21 @@
                     </nuxt-link>
                   </li>
                 </ul>
+                <ul v-if="club_type.length > 0">
+                  <li
+                    v-for="(item, i3) in club_type"
+                    :key="'menu2_' + i3"
+                    class="nav-item"
+                  >
+                    <nuxt-link
+                      :to="item.slug"
+                      class="nav-link"
+                      @click.native="subCategory()"
+                    >
+                      {{ item.group_name }}
+                    </nuxt-link>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -116,10 +135,13 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
 import { Menu } from '../../data/menu.js'
 import { nav } from '@/data/navfooter'
 export default {
+  // asyncData({ store }) {
+  //   store.dispatch('club/getClubType')
+  // },
   data() {
     return {
       nav,
@@ -131,6 +153,7 @@ export default {
   },
   computed: {
     ...mapState('sidebar', ['drawer']),
+    ...mapGetters('club', ['club_type']),
 
     DRAWER_STATE: {
       get() {
@@ -160,6 +183,9 @@ export default {
       } else {
         this.sub_categories = []
       }
+    },
+    club() {
+      this.$store.dispatch('club/getClubType')
     },
     subCategory() {
       this.sub_categories = []

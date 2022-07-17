@@ -142,8 +142,15 @@ export const Menu = [
     subMenus: [
       { title: 'Welcome Note', link: '/welcome-note' },
       { title: 'General Info', link: '/admission' },
-      { title: 'Tuitions Fees', link: '/tuitions-fees/under-graduate' },
-      { title: 'What is Required', link: '/what-is-required' },
+      { title: 'Tuitions Fees', link: '/tuitions-fees' },
+      {
+        title: 'What is required graduate',
+        link: '/what-is-required-graduate',
+      },
+      {
+        title: 'What is required undergraduate',
+        link: '/what-is-required-undergraduate',
+      },
       { title: 'Admission Test', link: '/admission-test' },
       { title: 'Admission Result', link: '/admission-result' },
       {
@@ -199,7 +206,7 @@ export const Menu = [
       { title: 'Virtual Tour', link: '/virtual-tour' },
       {
         title: 'Announcement',
-        link: 'announcement',
+        link: '/announcement',
       },
     ],
   },
@@ -210,16 +217,12 @@ export const Menu = [
       { title: 'Career Services', link: '/career-services' },
       {
         title: 'Directorate of Students Welfare',
-        link: '/directorate-of-students-welfare',
+        link: '/dsw',
       },
       { title: 'Library', link: '/library' },
       {
         title: 'Convocation',
         link: '/convocation',
-      },
-      {
-        title: 'Clubs',
-        link: '/clubs',
       },
       {
         title: 'UCAM',
@@ -233,8 +236,46 @@ export const Menu = [
   },
   {
     title: 'Research',
+    link: '/research',
   },
+
   {
     title: 'Resources',
+    subMenus: [
+      { title: 'Academic', link: '/resources-academic' },
+      { title: 'Career Services', link: '/career-services' },
+      {
+        title: 'The city campus',
+        link: '/resources-city-campus',
+      },
+      {
+        title: 'Exam Section Service',
+        link: '/resource-exam-section',
+      },
+      {
+        title: 'Socio-Counselling',
+        link: '/resource-socio-counseling',
+      },
+      {
+        title: 'Career counselling service',
+        link: '/resource-career',
+      },
+      {
+        title: 'Journals',
+        link: '/resource-journal',
+      },
+      {
+        title: 'Publications',
+        link: '/resource-publications',
+      },
+      {
+        title: 'Library',
+        link: '/resource-library',
+      },
+      {
+        title: 'Faculty',
+        link: '/resources-faculty',
+      },
+    ],
   },
 ]

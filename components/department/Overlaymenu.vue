@@ -29,13 +29,15 @@
                   :key="i"
                   class="nav-item"
                 >
-                  <a
-                    href="javascript:void(0)"
+                  <nuxt-link
+                    v-if="item.link"
+                    :to="'/' + $nuxt.$route.params.department + item.link"
                     class="nav-link"
-                    @click="setCategory(item)"
                   >
-                  </a>
+                    <p @click="TOGGLE_DRAWER">{{ item.title }}</p>
+                  </nuxt-link>
                   <a
+                    v-else
                     href="javascript:void(0)"
                     class="nav-link"
                     @click="setCategory(item)"
@@ -45,11 +47,7 @@
                 </li>
               </ul>
               <ul v-else class="nav-primary__list">
-                <li
-                  v-for="(item, i) in Menu"
-                  :key="i"
-                  class="nav-item"
-                >
+                <li v-for="(item, i) in Menu" :key="i" class="nav-item">
                   <a
                     href="javascript:void(0)"
                     class="nav-link"
@@ -121,7 +119,7 @@
 </template>
 <script>
 import { mapState, mapActions } from 'vuex'
-import { Menu } from '../../data/menu.js'
+import { Menu } from '../../data/departmantMenu.js'
 import { nav } from '@/data/navfooter'
 export default {
   data() {
