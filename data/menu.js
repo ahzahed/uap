@@ -243,7 +243,7 @@ export const Menu = [
     title: 'Resources',
     subMenus: [
       { title: 'Academic', link: '/resources-academic' },
-      { title: 'Career Services', link: '/career-services' },
+      { title: 'Career Services', link: '/career-service' },
       {
         title: 'The city campus',
         link: '/resources-city-campus',
@@ -275,6 +275,14 @@ export const Menu = [
       {
         title: 'Faculty',
         link: '/resources-faculty',
+      },
+      {
+        title: 'Faculty Capacity',
+        link: '/resource-faculty-capacity',
+      },
+      {
+        title: 'Media Service',
+        link: '/resource-medical-service',
       },
     ],
   },

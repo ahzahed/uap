@@ -114,22 +114,13 @@ export const Menu = [
     title: 'Facilities',
     link: '/facilities',
   },
- 
+
   {
     title: 'Alumni',
     subMenus: [
       { title: 'Alumni', link: '/alumni' },
       { title: 'Alumni Associates', link: '/alumni-associate' },
     ],
-  },
-
-  {
-    title: 'Resource',
-    link: '/admission',
-  },
-  {
-    title: 'Research',
-    link: '/admission',
   },
 
   // {

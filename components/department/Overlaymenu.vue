@@ -29,6 +29,24 @@
                     Club
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a
+                    href="javascript:void(0)"
+                    class="nav-link"
+                    @click="research()"
+                  >
+                    Research
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="javascript:void(0)"
+                    class="nav-link"
+                    @click="resource()"
+                  >
+                    Resource
+                  </a>
+                </li>
                 <li
                   v-for="(item, i) in Menu.slice(5)"
                   :key="i"
@@ -86,6 +104,7 @@
                     </nuxt-link>
                   </li>
                 </ul>
+                <!-- Club  -->
                 <ul v-if="dep_club_type.length > 0">
                   <li
                     v-for="(item, i3) in dep_club_type"
@@ -98,6 +117,48 @@
                         $nuxt.$route.params.department +
                         '/club/' +
                         item.slug
+                      "
+                      class="nav-link"
+                      @click.native="subCategory()"
+                    >
+                      {{ item.group_name }}
+                    </nuxt-link>
+                  </li>
+                </ul>
+                <!-- Resource  -->
+                <ul v-if="resource_type.length > 0">
+                  <li
+                    v-for="(item, i3) in resource_type"
+                    :key="'menu2_' + i3"
+                    class="nav-item"
+                  >
+                    <nuxt-link
+                      :to="
+                        '/' +
+                        $nuxt.$route.params.department +
+                        '/resource/' +
+                        item.id
+                      "
+                      class="nav-link"
+                      @click.native="subCategory()"
+                    >
+                      {{ item.group_name }}
+                    </nuxt-link>
+                  </li>
+                </ul>
+                <!--  Research  -->
+                <ul v-if="research_type.length > 0">
+                  <li
+                    v-for="(item, i3) in research_type"
+                    :key="'menu2_' + i3"
+                    class="nav-item"
+                  >
+                    <nuxt-link
+                      :to="
+                        '/' +
+                        $nuxt.$route.params.department +
+                        '/research/' +
+                        item.id
                       "
                       class="nav-link"
                       @click.native="subCategory()"
@@ -159,6 +220,7 @@ export default {
   computed: {
     ...mapState('sidebar', ['drawer']),
     ...mapGetters('depClub', ['dep_club_type']),
+    ...mapGetters('depResearchResource', ['research_type', 'resource_type']),
 
     DRAWER_STATE: {
       get() {
@@ -196,6 +258,26 @@ export default {
         this.$route.params.department
       )
       this.sub_categories = []
+      this.$store.dispatch('depResearchResource/getEmptyResearchType')
+      this.$store.dispatch('depResearchResource/getEmptyResourceType')
+    },
+    research() {
+      this.$store.dispatch(
+        'depResearchResource/getResearchType',
+        this.$route.params.department
+      )
+      this.sub_categories = []
+      this.$store.dispatch('depClub/getEmptyDepClubType')
+      this.$store.dispatch('depResearchResource/getEmptyResourceType')
+    },
+    resource() {
+      this.$store.dispatch(
+        'depResearchResource/getResourceType',
+        this.$route.params.department
+      )
+      this.sub_categories = []
+      this.$store.dispatch('depClub/getEmptyDepClubType')
+      this.$store.dispatch('depResearchResource/getEmptyResearchType')
     },
     subCategory() {
       this.sub_categories = []
