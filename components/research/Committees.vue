@@ -7,11 +7,7 @@
             <p v-html="research.research_committee.advisory_council"></p>
           </div>
         </div>
-        <div class="col-lg-12 mt-5">
-          <div class="text_box_one">
-            <p v-html="research.research_committee.working_group"></p>
-          </div>
-        </div>
+        
       </div>
       <div style="background: #f6f6f6; padding: 15px" class="mt-5">
         <h2 class="p-5 ">Scrutiny Committee (SC)</h2>

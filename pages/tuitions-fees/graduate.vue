@@ -6,7 +6,9 @@
           <h3>Credit hours & total cost</h3>
           <p>(without admission fee)</p>
         </div>
-        <table class="table table-borderless table-responsive">
+        <table
+          class="mb-0 table table-borderless table-responsive shadow-sm table-striped table-bordered"
+        >
           <thead>
             <tr class="">
               <th class="thsame">Programs</th>
@@ -38,6 +40,9 @@
             </tr>
           </tbody>
         </table>
+        <div class="meritTableFooter p-5">
+          <div v-html="graduationNote.notes"></div>
+        </div>
       </div>
     </div>
     <!-- <slot></slot> -->
@@ -49,14 +54,28 @@ import { mapGetters } from 'vuex'
 export default {
   asyncData({ store, route }) {
     store.dispatch('tuitions/allGraduate')
+    store.dispatch('tuitions/getGraduationNote')
   },
   data() {
     return {}
   },
   computed: {
-    ...mapGetters('tuitions', ['graduateList']),
+    ...mapGetters('tuitions', ['graduateList', 'graduationNote']),
   },
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import './styles/_main.scss';
+.meritTableFooter {
+  font-size: 18px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+
+  color: #000;
+  background-color: $violot;
+}
+</style>

@@ -148,5 +148,41 @@ export default {
     height: 280px;
     overflow-y: scroll;
   }
+
+  .waitingResult::-webkit-scrollbar {
+    width: 10px;
+    height: 100px;
+    color: red;
+  }
+
+  .waitingResult::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 60px;
+    background-color: #f5f5f5;
+  }
+
+  .waitingResult::-webkit-scrollbar-thumb {
+    border-radius: 60px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: $darkblue;
+  }
+
+  .finalResult::-webkit-scrollbar {
+    width: 10px;
+    height: 100px;
+    color: red;
+  }
+
+  .finalResult::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 60px;
+    background-color: #f5f5f5;
+  }
+
+  .finalResult::-webkit-scrollbar-thumb {
+    border-radius: 60px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: $darkblue;
+  }
 }
 </style>

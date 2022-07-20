@@ -153,7 +153,7 @@
 import { mapActions, mapGetters } from 'vuex'
 
 import Pagination from '@/halpers/Pagination'
-import Modal from '@/components/helpers/Modal.vue'
+import Modal from '@/components/helpers/ModalScroll.vue'
 import Banner from '@/components/helpers/Banner.vue'
 export default {
   name: 'Events',

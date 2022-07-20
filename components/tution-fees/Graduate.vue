@@ -7,7 +7,7 @@
               <h3>Credit hours & total cost</h3>
               <p>(without admission fee)</p>
             </div>
-            <table class="table table-borderless table-responsive">
+            <table class="table table-borderless table-responsive table-striped table-bordered">
               <thead>
                 <tr class="">
                   <th class="thsame">Programs</th>

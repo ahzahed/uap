@@ -72,7 +72,7 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import Modal from '@/components/helpers/Modal.vue'
+import Modal from '@/components/helpers/ModalScroll.vue'
 // import Banner from '@/components/helpers/Banner.vue'
 export default {
   name: 'Events',

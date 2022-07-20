@@ -1,88 +1,23 @@
 <template>
-  <section id="event">
-    <Banner :banner="banner" />
+  <section v-show="value.length" id="event">
     <div class="container py-5">
       <div class="row event-header">
-        <div class="col-md-10 text-center">
+        <div class="col-md-12 text-center">
           <div class="section-title">
             <h2>All Events</h2>
-          </div>
-        </div>
-        <div class="col-md-2 text-right">
-          <div class="dropdown">
-            <button
-              class="btn btn-filter-toggle"
-              type="button"
-              @click="filterToggle"
-            >
-              Filter <i class="ml-2 fas fa-sliders-h"></i>
-            </button>
-            <div v-show="filter" class="filter-div text-left">
-              <div class="mb-3">
-                <label class="form-label">Sort by</label>
-                <input v-model="date" type="date" class="form-control" />
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Topic</label>
-                <select
-                  v-model="topic"
-                  class="form-select"
-                  placeholder="Select Topic"
-                >
-                  <option
-                    v-for="(item, i) in topics"
-                    :key="'item_' + i"
-                    :value="item.id"
-                  >
-                    {{ item.title }}
-                  </option>
-                </select>
-              </div>
-              <!-- <div class="mb-3">
-                <label class="form-label">Event Status</label>
-                <select
-                  v-model="topic"
-                  class="form-select"
-                  placeholder="Select Topic"
-                >
-                  <option
-                    v-for="(item, i) in topics"
-                    :key="'item_' + i"
-                    :value="item.id"
-                  >
-                    {{ item.title }}
-                  </option>
-                </select>
-              </div> -->
-
-              <div class="mb-3 filter-footer">
-                <button class="btn" @click="filterToggle">Cancel</button>
-                <button
-                  class="btn filter-btn"
-                  :disabled="!filter_disbaled"
-                  @click="filterByEvent"
-                >
-                  Apply
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
       <div class="row">
         <div
-          v-for="(event, i) in events.data"
+          v-for="(event, i) in value"
           :key="i"
           class="col-md-4 col-lg-4 p-3"
           @click="showModal(event.description)"
         >
           <div class="main-card h-100 shadow">
             <div class="card-top">
-              <img
-                :src="$config.baseURL + event.image"
-                alt="event.title"
-                class="w-100"
-              />
+              <img :src="event.image" alt="event.title" class="w-100" />
             </div>
             <div class="serial">
               <p class="text-center event-btn mb-0">
@@ -105,13 +40,8 @@
           </div>
         </div>
       </div>
-
-      <pagination
-        v-if="events.meta"
-        :pagination="events.meta"
-        @pagechanged="onPageChange"
-      />
     </div>
+
     <!-- Modal Start -->
     <Modal
       v-show="isModalVisible"
@@ -139,22 +69,15 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
-import Pagination from '@/halpers/Pagination'
 import Modal from '@/components/helpers/ModalScroll.vue'
-import Banner from '@/components/helpers/Banner.vue'
+// import Banner from '@/components/helpers/Banner.vue'
 export default {
-  name: 'Events',
-  components: {
-    Banner,
-    Modal,
-    pagination: Pagination,
-  },
-  layout: 'HomeLayout',
-  asyncData({ store, route }) {
-    store.dispatch('depEvent/topicList', route.params.department)
-    store.dispatch('depEvent/depEventBanner', route.params.department)
+  components: { Modal },
+  props: {
+    value: {
+      type: Array,
+      required: true,
+    },
   },
   data() {
     return {
@@ -162,48 +85,21 @@ export default {
       isModalVisible: false,
       status: [
         { title: 'Upcoming', value: 'upcoming' },
-        { title: 'Upcoming', value: 'upcoming' },
+        { title: 'Recent', value: 'recent' },
       ],
 
       filter: false,
       topic: '',
+      selectedStatus: '',
       date: '',
       currentPage: 1,
+      banner: {
+        img: require('@/static/admissiontest.png'),
+        title: 'Events',
+      },
     }
   },
-  computed: {
-    ...mapGetters('depEvent', ['events', 'topics', 'banner']),
-
-    filter_disbaled() {
-      return this.date && this.topic
-    },
-  },
-  created() {
-    this.onPageChange(1)
-  },
   methods: {
-    onPageChange(page) {
-      const data = {
-        page,
-        depatment: this.$route.params.department,
-      }
-      this.$store.dispatch('depEvent/allEventList', data)
-    },
-
-    filterToggle() {
-      this.filter = !this.filter
-    },
-
-    filterByEvent() {
-      const filterData = {
-        date: this.date,
-        topic: this.topic,
-      }
-      this.$store.dispatch('event/filterByEvent', filterData).then((res) => {
-        this.filter = !this.filter
-      })
-    },
-
     // Modal
     showModal(slug) {
       // this.$store.dispatch('home/getSingleNewsBySlug', slug).then((res) => {

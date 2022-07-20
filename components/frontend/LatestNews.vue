@@ -81,7 +81,7 @@
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import { mapActions, mapGetters } from 'vuex'
-import Modal from '@/components/helpers/Modal.vue'
+import Modal from '@/components/helpers/ModalScroll.vue'
 import NewsCard from '~/halpers/NewsCard.vue'
 import aosMixin from '~/mixins/aos'
 export default {

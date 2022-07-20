@@ -32,7 +32,7 @@ const actions = {
   },
 
   async getRmsBody(context) {
-    const data = await this.$axios.get(`/resourse/medical/develop`)
+    const data = await this.$axios.get(`/resourse/medical/service`)
     context.commit('RMS_BODY', data.data)
   },
 }

@@ -2,7 +2,7 @@
   <section id="admissionResult">
     <Banner :banner="admission_result_banner" />
 
-    <div class="container">
+    <div class="container mt-5">
       <div class="row text-center">
         <div class="col-lg-1"></div>
         <div class="col-lg-10">

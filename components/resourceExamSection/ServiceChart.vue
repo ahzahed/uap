@@ -5,9 +5,7 @@
         <div class="row">
           <div class="col-lg-6 my-5 m-auto">
             <div class="text_box_five">
-              <h2>
-                Prerequisite, Fees, Documents needed, and a tentative timeline
-              </h2>
+              <h2>Application Form</h2>
               <ul v-for="(item, i) in value.chart_fqa" :key="i">
                 <li>
                   <a
@@ -37,7 +35,9 @@
             </p>
           </div>
           <div class="table-top">
-            <table class="table table-borderless table-responsive">
+            <table
+              class="table table-borderless table-responsive table-striped table-bordered"
+            >
               <thead>
                 <tr>
                   <th>Service</th>
@@ -157,7 +157,6 @@ export default {
 }
 
 #resourceServiceChartTable {
-  margin-top: $section-padding;
   margin-bottom: $section-padding;
   .main-new-student {
     .main_new_student_header {
@@ -222,8 +221,9 @@ export default {
         tr {
           td {
             @include cardPara;
+            font-size: 14px;
             font-weight: 300;
-            text-align: center;
+            // text-align: center;
             color: $darkblue;
           }
         }

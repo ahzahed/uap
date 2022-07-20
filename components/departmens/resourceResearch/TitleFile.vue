@@ -1,16 +1,16 @@
 <template>
-  <section id="researchIEERD">
+  <section v-show="value.length > 0" id="researchTitleFile">
     <div class="container">
       <div class="col-lg-6 mt-5 m-auto">
         <div class="text_box_five">
-          <h2>UAP Booklet</h2>
-          <ul v-for="(item, i) in value.uap_booklets" :key="i">
+          <h2>Latest Arrival at library</h2>
+          <ul v-for="(item, i) in value" :key="i">
             <li>
               <a
                 :href="$config.baseURL + item.file"
                 target="_blank"
                 class="nav-link"
-                >{{ item.file_title }}</a
+                >{{ item.title }}</a
               >
             </li>
             <hr />
@@ -25,7 +25,7 @@
 export default {
   props: {
     value: {
-      type: Object,
+      type: Array,
       required: true,
     },
   },
@@ -47,9 +47,9 @@ export default {
 
 <style lang="scss" scoped>
 @import './styles/_main.scss';
-#researchIEERD {
-  margin-top: 104px;
-  margin-bottom: 104px;
+#researchTitleFile {
+  margin-top: 10px;
+  margin-bottom: 10px;
   .heading {
     background-color: $darkblue;
     padding-top: 23px;

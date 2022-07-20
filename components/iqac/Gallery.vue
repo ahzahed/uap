@@ -64,7 +64,7 @@
 <script>
 import VueSlickCarousel from 'vue-slick-carousel'
 
-import Modal from '@/components/helpers/Modal.vue'
+import Modal from '@/components/helpers/ModalScroll.vue'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 

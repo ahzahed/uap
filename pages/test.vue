@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import Modal from '@/components/helpers/Modal.vue'
+import Modal from '@/components/helpers/ModalScroll.vue'
 
 export default {
   name: 'App',

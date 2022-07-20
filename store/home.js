@@ -40,9 +40,25 @@ const actions = {
     const data = await this.$axios.get(`/admission_aid/info`)
     context.commit('ADMISSION_AID', data.data)
   },
-  async newsList(context, page) {
-    const data = await this.$axios.get(`/news/list?page=${page}`)
-    context.commit('NEWS_LIST', data.data)
+
+  newsList(context, page) {
+    return new Promise((resolve, reject) => {
+      context.commit('sidebar/toggleLoader', true, { root: true })
+      this.$axios
+        .get(`/news/list?page=${page}`)
+        .then((result) => {
+          context.commit('sidebar/toggleLoader', false, { root: true })
+          resolve(result)
+          if (result.data) {
+            result.data.image = this.$config.baseURL + result.data.image
+            result.data.thumbnail = this.$config.baseURL + result.data.thumbnail
+          }
+          context.commit('NEWS_LIST', result.data)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
   },
 
   async newslatestList(context) {

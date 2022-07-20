@@ -1,10 +1,9 @@
 <template>
-  <section id="event">
-    <Banner :banner="banner" />
+  <section v-show="value.length > 0" id="depResourceGallery">
     <div class="container py-5">
       <div class="row">
         <div
-          v-for="(event, i) in facilities"
+          v-for="(event, i) in value"
           :key="i"
           class="col-md-4 col-lg-4 p-3"
           style="cursor: pointer"
@@ -28,75 +27,20 @@
               <p class="card-text mb-0 title">
                 {{ event.title }}
               </p>
-              <div class="mb-3">
-                <div v-html="event.description"></div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Modal Start -->
-    <Modal
-      v-show="isModalVisible"
-      model-class="modal-dialog modal-dialog-centered"
-      model-width="800px"
-      @close="closeModal"
-    >
-      <template #body>
-        <div v-html="singleNewsDetails"></div>
-      </template>
-      <template #footer>
-        <div class="modal-footer">
-          <button
-            class="btn btn-primary"
-            data-bs-target="#exampleModalToggle"
-            data-bs-toggle="modal"
-            @click="closeModal()"
-          >
-            Close
-          </button>
-        </div>
-      </template>
-    </Modal>
   </section>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
-import Banner from '@/components/helpers/Banner.vue'
-import Modal from '@/components/helpers/ModalScroll.vue'
 export default {
-  name: 'Events',
-  components: {
-    Banner,
-    Modal,
-  },
-  layout: 'HomeLayout',
-  asyncData({ store, route }) {
-    store.dispatch('depFacilities/getFacilityBanner', route.params.department)
-    store.dispatch('depFacilities/getFacilities', route.params.department)
-  },
-  data() {
-    return {
-      singleNewsDetails: '',
-      isModalVisible: false,
-    }
-  },
-  computed: {
-    ...mapGetters('depFacilities', ['banner', 'facilities']),
-  },
-  methods: {
-    // Modal
-    showModal(slug) {
-      // this.$store.dispatch('home/getSingleNewsBySlug', slug).then((res) => {
-      this.singleNewsDetails = slug
-      this.isModalVisible = true
-      // })
-    },
-    closeModal() {
-      this.isModalVisible = false
+  props: {
+    value: {
+      type: Array,
+      required: true,
     },
   },
 }
@@ -105,7 +49,7 @@ export default {
 <style lang="scss" scoped>
 @import './styles/_main.scss';
 
-#event {
+#depResourceGallery {
   .event-header {
     padding-bottom: 20px;
   }

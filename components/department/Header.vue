@@ -9,16 +9,17 @@
               <img src="@/static/logo-big-black.png" />
             </nuxt-link>
           </div>
-          <div
-            class="col-lg-9 col-md-3 col-sm-4 col-5 col-xs-12"
-            @mouseleave="hideMegaMenu()"
-          >
+          <div class="col-lg-9 col-md-3 col-sm-4 col-5 col-xs-12">
             <ul class="navbar nav">
+              <li class="nav-item">
+                <nuxt-link class="nav-link" to="/">Home & About</nuxt-link>
+              </li>
               <li
-                v-for="(item, i) in Menu.slice(0, 5)"
+                v-for="(item, i) in Menu.slice(0, 4)"
                 :key="i"
                 class="nav-item"
                 @mouseover="mouseEvent($event, 'item', i)"
+                @mouseleave="hideMegaMenu()"
               >
                 <nuxt-link
                   v-if="item.link"

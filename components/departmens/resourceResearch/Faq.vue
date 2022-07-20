@@ -1,16 +1,12 @@
 /* eslint-disable vue/require-default-prop */
 <template>
-  <section id="allFaq">
+  <section v-show="value.length > 0" id="resourseDepartmentBooklet">
     <div class="container">
       <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-lg-10">
           <div id="accordionExample" class="accordion">
-            <div
-              v-for="(item, i) in value.overview"
-              :key="i"
-              class="accordion-item"
-            >
+            <div v-for="(item, i) in value" :key="i" class="accordion-item">
               <h2 id="headingOne" class="accordion-header">
                 <button
                   class="accordion-button"
@@ -27,9 +23,10 @@
                     }
                   "
                 >
-                  {{ item.overview_title }}
+                  {{ item.title }}
                 </button>
               </h2>
+
               <div
                 id="collapseOne"
                 class="accordion-collapse collapse"
@@ -38,7 +35,7 @@
                 :class="show && item.id == showindex ? 'show' : ''"
               >
                 <div class="accordion-body">
-                  <p v-html="item.overview_description"></p>
+                  <p v-html="item.description"></p>
                 </div>
               </div>
             </div>
@@ -54,7 +51,7 @@
 export default {
   props: {
     value: {
-      type: Object,
+      type: Array,
       required: true,
     },
   },
@@ -100,9 +97,10 @@ export default {
 
 <style lang="scss" scoped>
 @import './styles/_main.scss';
-#allFaq {
+#resourseDepartmentBooklet {
   padding-top: 50px;
-  padding-bottom: $section-padding;
+  padding-bottom: 50px;
+
   h1 {
     @include title;
     font-weight: bold;

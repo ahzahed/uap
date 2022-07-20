@@ -2,9 +2,12 @@
   <section id="researchIEERD">
     <div class="container">
       <div class="col-lg-6 mt-5 m-auto">
+        <h2>IEERD Policies</h2>
         <div class="text_box_five">
-          <h2>IEERD Policies</h2>
-          <ul v-for="(item, i) in research.research_funded_activites_files" :key="i">
+          <ul
+            v-for="(item, i) in research.research_funded_activites_files"
+            :key="i"
+          >
             <li>
               <a
                 :href="$config.baseURL + item.file"
@@ -90,25 +93,42 @@ export default {
     }
     @include paragraph;
   }
+
+  .text_box_five::-webkit-scrollbar {
+    width: 10px;
+    height: 100px;
+    color: red;
+  }
+  .text_box_five::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 60px;
+    background-color: #f5f5f5;
+  }
+  .text_box_five::-webkit-scrollbar-thumb {
+    border-radius: 60px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: $darkblue;
+  }
+
   .text_box_five {
     border-radius: 5px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    min-height: 380px;
-
+    height: 380px;
+    overflow-y: scroll;
     @include respond-below(lg) {
       margin-top: 20px;
     }
-    h2 {
-      @include title2;
-      padding-left: 85px;
-      padding-top: 25px;
-      padding-bottom: 25px;
-      background-color: $background-color;
-      border-radius: 5px;
-      @include respond-below(xs) {
-        text-align: center;
-        padding-left: 0px;
-      }
+  }
+  h2 {
+    @include title2;
+    padding-left: 85px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: $background-color;
+    border-radius: 5px;
+    @include respond-below(xs) {
+      text-align: center;
+      padding-left: 0px;
     }
   }
 }

@@ -70,15 +70,15 @@
         <div class="col-lg-8 mt-5">
           <div class="text_box_three">
             <p
-              v-if="toggle == false"
-              v-html="research.about_ieerd.text_box_four.slice(0, 300)"
+              v-if="toggle2 == false"
+              v-html="research.about_ieerd.text_box_four.slice(0, 800)"
             ></p>
 
             <p v-else v-html="research.about_ieerd.text_box_four"></p>
-            <div v-show="toggle == true" class="messageFrom mt-5"></div>
+            <div v-show="toggle2 == true" class="messageFrom mt-5"></div>
             <div style="text-align: right">
-              <button class="primary-btn readmore" @click="toggle = !toggle">
-                <span v-if="toggle == false">
+              <button class="primary-btn readmore" @click="toggle2 = !toggle2">
+                <span v-if="toggle2 == false">
                   <span class="plus">+</span> Read More</span
                 >
                 <span v-else> <span class="plus">-</span> Read Less</span>
@@ -194,6 +194,7 @@ export default {
   data() {
     return {
       toggle: false,
+      toggle2: false,
       message: {
         title: 'Message from the Treasurer',
         season: '(Spring 2020)',

@@ -32,6 +32,14 @@ export const Menu = [
       // link: 'uap-at-ranking',
       // },
       {
+        title: 'About',
+        link: '/about',
+      },
+      {
+        title: 'Message From Deam',
+        link: '/message-from-dean',
+      },
+      {
         title: 'Awards and Achievements',
         link: '/our-ranking',
       },
@@ -214,23 +222,27 @@ export const Menu = [
     title: 'Students',
     subMenus: [
       { title: 'Alumni', link: '/alumni' },
-      { title: 'Career Services', link: '/career-services' },
+      { title: 'Career Services', link: '/career-service' },
       {
         title: 'Directorate of Students Welfare',
         link: '/dsw',
       },
-      { title: 'Library', link: '/library' },
+      {
+        title: 'Announcement',
+        link: '/announcement',
+      },
+      { title: 'Library', link: '/' },
       {
         title: 'Convocation',
-        link: '/convocation',
+        link: '/',
       },
       {
         title: 'UCAM',
-        link: '/ucam',
+        link: '/',
       },
       {
         title: 'Emergency Information',
-        link: '/emergency-information',
+        link: '/',
       },
     ],
   },
@@ -261,11 +273,11 @@ export const Menu = [
         link: '/resource-career',
       },
       {
-        title: 'Journals',
+        title: 'UAP Ad/Tender/Media Release & Vacancies',
         link: '/resource-journal',
       },
       {
-        title: 'Publications',
+        title: 'UAP Publications',
         link: '/resource-publications',
       },
       {
@@ -281,7 +293,7 @@ export const Menu = [
         link: '/resource-faculty-capacity',
       },
       {
-        title: 'Media Service',
+        title: 'Medical Service Insurance',
         link: '/resource-medical-service',
       },
     ],

@@ -1,7 +1,7 @@
 <template>
   <section id="admissionTest">
     <Banner :banner="admission_test_banner" />
-     <div class="container">
+    <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="table-responsive-lg">
@@ -21,10 +21,10 @@
                 </tr>
                 <tr v-for="(item, i) in admissiontestlist" :key="i">
                   <td class="data">{{ item.department }}</td>
-                  <td class="data">{{item.schedule}}</td>
+                  <td class="data">{{ item.schedule }}</td>
                   <td class="data">
                     <a :href="item.pdf" download>
-                    {{item.pdf_file_title}}
+                      {{ item.pdf_file_title }}
                     </a>
                   </td>
                 </tr>
@@ -42,28 +42,27 @@ import { mapGetters } from 'vuex'
 import Banner from '../components/helpers/Banner.vue'
 
 export default {
-  components: { Banner,  },
+  components: { Banner },
   layout: 'HomeLayout',
-   asyncData({ store, route }) {
+  asyncData({ store, route }) {
     store.dispatch('admission/admissionTestBanner')
     store.dispatch('admission/admissionTestList')
   },
   data() {
     return {
-        column: ['Faculty/Department', 'Schedule', 'Sample Question'],
+      column: ['Faculty/Department', 'Schedule', 'Sample Question'],
     }
   },
   computed: {
     ...mapGetters('admission', ['admission_test_banner', 'admissiontestlist']),
   },
 }
-
 </script>
 <style lang="scss" scoped>
 @import './styles/_main.scss';
 #admissionTest {
-  // padding-top: $section-padding;
-  // padding-bottom: $section-padding;
+ 
+  padding-bottom: $section-padding;
   table {
     margin-top: 60px;
     border-radius: 5px;
@@ -95,4 +94,3 @@ export default {
   }
 }
 </style>
-

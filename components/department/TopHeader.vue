@@ -40,33 +40,33 @@ export default {
       leftLinks: [
         {
           text: 'Alumni',
-          to: '/Alumni',
+          to: '/alumni',
         },
         {
           text: 'UCAM Login',
-          to: '/UCAMLogin',
+          to: '/',
         },
-        {
-          text: 'UAP Ranking',
-          to: '/uapranking',
-        },
+        // {
+        //   text: 'UAP Ranking',
+        //   to: '/',
+        // },
       ],
       rightLinks: [
         {
           text: 'News',
           to: '/news',
         },
-        {
-          text: 'Resouces',
-          to: '/resouces',
-        },
+        // {
+        //   text: 'Resouces',
+        //   to: '/resouces',
+        // },
         {
           text: 'Library',
-          to: '/library',
+          to: '/',
         },
         {
           text: 'Contact',
-          to: '/contact',
+          to: '/',
         },
       ],
     }

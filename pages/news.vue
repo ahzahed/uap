@@ -105,7 +105,7 @@ import { mapActions, mapGetters } from 'vuex'
 import Pagination from '../halpers/Pagination'
 // import Banner from '@/components/helpers/Banner.vue'
 import NewsCard from '~/halpers/NewsCard.vue'
-import Modal from '@/components/helpers/Modal.vue'
+import Modal from '@/components/helpers/ModalScroll.vue'
 export default {
   components: {
     pagination: Pagination,

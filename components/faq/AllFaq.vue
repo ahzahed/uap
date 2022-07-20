@@ -16,6 +16,7 @@
                   data-bs-target="#collapseOne"
                   aria-expanded="true"
                   aria-controls="collapseOne"
+                  :class="show && item.id == showindex ? '' : 'collapsed'"
                   @click="
                     () => {
                       accoladingSlide(item.id)
@@ -48,7 +49,7 @@
 
 <script>
 export default {
-   props: {
+  props: {
     faqs: {
       type: Array,
       required: true,

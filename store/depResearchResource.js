@@ -4,14 +4,16 @@ const state = () => ({
   research_resource_banner: {},
   research_type: [],
   resource_type: [],
-  research_resource: {},
+  research: {},
+  resource: {},
 })
 
 const getters = {
   research_resource_banner: (state) => state.research_resource_banner,
   research_type: (state) => state.research_type,
   resource_type: (state) => state.resource_type,
-  research_resource: (state) => state.research_resource,
+  research: (state) => state.research,
+  resource: (state) => state.resource,
 }
 
 const actions = {
@@ -20,7 +22,9 @@ const actions = {
     return new Promise((resolve, reject) => {
       context.commit('sidebar/toggleLoader', true, { root: true })
       this.$axios
-        .get(`/department/tuition/fee/home/page/setting/${value}`)
+        .get(
+          `/department/resource/research/page/setting/${value.department}/${value.id}`
+        )
         .then((result) => {
           context.commit('sidebar/toggleLoader', false, { root: true })
           resolve(result)
@@ -76,11 +80,41 @@ const actions = {
     context.commit('RESOURCE_TYPE', data)
   },
 
-  async getResearchResource(context, value) {
-    const data = await this.$axios.get(
-      `/department/tuition/fee/special/note/${value}`
-    )
-    context.commit('RESEARCH_RESOURCE', data.data)
+  getResource(context, value) {
+    return new Promise((resolve, reject) => {
+      context.commit('sidebar/toggleLoader', true, { root: true })
+      this.$axios
+        .get(
+          `/department/resource/research/${value.department}/Resources/${value.id}`
+        )
+        .then((result) => {
+          context.commit('sidebar/toggleLoader', false, { root: true })
+          resolve(result)
+
+          context.commit('RESOURCE', result.data)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+  getResearch(context, value) {
+    return new Promise((resolve, reject) => {
+      context.commit('sidebar/toggleLoader', true, { root: true })
+      this.$axios
+        .get(
+          `/department/resource/research/${value.department}/Research/${value.id}`
+        )
+        .then((result) => {
+          context.commit('sidebar/toggleLoader', false, { root: true })
+          resolve(result)
+
+          context.commit('RESEARCH', result.data)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
   },
 }
 
@@ -94,8 +128,11 @@ const mutations = {
   RESOURCE_TYPE(state, section) {
     state.resource_type = section
   },
-  RESEARCH_RESOURCE(state, section) {
-    state.research_resource = section
+  RESEARCH(state, section) {
+    state.research = section
+  },
+  RESOURCE(state, section) {
+    state.resource = section
   },
 }
 export default {

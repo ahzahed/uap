@@ -1,47 +1,48 @@
 export const Menu = [
-  {
-    title: 'Home & About',
-    link: '/',
-    subMenus: [],
-    // subMenus: [
-    //   {
-    //     title: 'Awards and Achievements',
-    //     link: '/awards-and-achievements',
-    //   },
-    //   {
-    //     title: 'Affiliations',
-    //     link: '/affiliations',
-    //   },
-    //   {
-    //     title: 'The Chairman',
-    //     link: '/chairman',
-    //   },
-    //   {
-    //     title: 'The Vice Chancellor',
-    //     link: '/vice-chancellor',
-    //   },
-    //   {
-    //     title: 'The Pro Vice Chancellor',
-    //     link: '/pro-vice-chancellor',
-    //   },
-    //   {
-    //     title: 'Treasurer',
-    //     link: 'treasurer',
-    //   },
-    //   {
-    //     title: 'Registrar',
-    //     link: '/registrar',
-    //   },
-    //   {
-    //     title: 'Office of the Proctor',
-    //     link: '/office-of-proctor',
-    //   },
-    //   {
-    //     title: 'career',
-    //     link: '/career',
-    //   },
-    // ],
-  },
+  // {
+  //   title: 'Home & About',
+  //   link: '/',
+  //   subMenus: [],
+  //   // subMenus: [
+  //   //   {
+  //   //     title: 'Awards and Achievements',
+  //   //     link: '/awards-and-achievements',
+  //   //   },
+  //   //   {
+  //   //     title: 'Affiliations',
+  //   //     link: '/affiliations',
+  //   //   },
+  //   //   {
+  //   //     title: 'The Chairman',
+  //   //     link: '/chairman',
+  //   //   },
+  //   //   {
+  //   //     title: 'The Vice Chancellor',
+  //   //     link: '/vice-chancellor',
+  //   //   },
+  //   //   {
+  //   //     title: 'The Pro Vice Chancellor',
+  //   //     link: '/pro-vice-chancellor',
+  //   //   },
+  //   //   {
+  //   //     title: 'Treasurer',
+  //   //     link: 'treasurer',
+  //   //   },
+  //   //   {
+  //   //     title: 'Registrar',
+  //   //     link: '/registrar',
+  //   //   },
+  //   //   {
+  //   //     title: 'Office of the Proctor',
+  //   //     link: '/office-of-proctor',
+  //   //   },
+  //   //   {
+  //   //     title: 'career',
+  //   //     link: '/career',
+  //   //   },
+  //   // ],
+  // },
+
   {
     title: 'People',
     subMenus: [

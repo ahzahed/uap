@@ -87,7 +87,7 @@ import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import aosMixin from '~/mixins/aos'
-import Modal from '@/components/helpers/Modal.vue'
+import Modal from '@/components/helpers/ModalScroll.vue'
 export default {
   components: { VueSlickCarousel, Modal },
   mixins: [aosMixin],

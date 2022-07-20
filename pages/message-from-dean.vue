@@ -1,6 +1,6 @@
 <template>
   <section id="dealMessage">
-    <Banner :items="banner" />
+    <Banner :banner="banner" />
     <Message />
   </section>
 </template>

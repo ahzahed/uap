@@ -13,7 +13,7 @@
           <div class="main-card h-100 shadow">
             <div class="card-top">
               <img
-                :src="$config.baseURL + event.image"
+                :src="$config.baseURL + event.logo"
                 alt="event.title"
                 class="w-100"
               />
@@ -71,7 +71,7 @@
 import { mapGetters } from 'vuex'
 
 import Banner from '@/components/helpers/Banner.vue'
-import Modal from '@/components/helpers/Modal.vue'
+import Modal from '@/components/helpers/ModalScroll.vue'
 export default {
   name: 'Events',
   components: {

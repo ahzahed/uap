@@ -117,7 +117,6 @@ export default {
     }
     border-radius: 5px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    min-height: 380px;
     @include respond-below(lg) {
       margin-top: 20px;
     }

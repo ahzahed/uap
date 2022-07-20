@@ -6,7 +6,7 @@
           <h3>Credit hours & total cost</h3>
           <p>(without admission fee)</p>
         </div>
-        <table class="table table-borderless table-responsive">
+        <table class="table table-borderless table-responsive shadow-sm">
           <thead>
             <tr class="" style="padding-bottom: 110px">
               <th>SI. No</th>

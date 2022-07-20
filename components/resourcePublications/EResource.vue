@@ -12,7 +12,9 @@
               available at the library are the following:
             </p>
           </div>
-          <table class="table table-borderless table-responsive">
+          <table
+            class="table table-borderless table-responsive shadow-sm table-striped table-bordered"
+          >
             <thead>
               <tr>
                 <th>serial No.</th>
@@ -22,9 +24,9 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="xxx">
+              <!-- <tr class="xxx">
                 <td colspan="4">UGC Digital Library Consortium</td>
-              </tr>
+              </tr> -->
               <tr v-for="(item, i) in value.e_resources_list" :key="i">
                 <td class="programText">{{ i + 1 }}</td>
                 <td class="data">{{ item.database_name }}</td>
@@ -36,6 +38,11 @@
                 <td class="data">{{ item.short_description }}</td>
               </tr>
             </tbody>
+            <tfoot>
+              <tr>
+                <th colspan="4"></th>
+              </tr>
+            </tfoot>
           </table>
         </div>
       </div>

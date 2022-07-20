@@ -1,23 +1,23 @@
 <template>
-  <section id="resourceFacultyCapacity">
-    <Banner :banner="rfc_banner" />
+  <section id="resourceMedicalService">
+    <Banner :banner="rms_banner" />
 
     <section id="researchIEERD">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 mt-5">
             <div class="text_box_one">
-              <p v-html="rfc_body.text_box_one"></p>
+              <p v-html="rms_body.medical_service"></p>
             </div>
           </div>
           <div class="col-lg-12 mt-5">
             <div class="text_box_two">
-              <p v-html="rfc_body.text_box_two"></p>
+              <p v-html="rms_body.medical_collaboration"></p>
             </div>
           </div>
           <div class="col-lg-12 mt-5">
             <div class="text_box_three">
-              <p v-html="rfc_body.text_box_three"></p>
+              <p v-html="rms_body.insurance_coverage"></p>
             </div>
           </div>
         </div>
@@ -33,20 +33,19 @@ export default {
   components: { Banner },
   layout: 'HomeLayout',
   asyncData({ store }) {
-    store.dispatch('resourceFacultyCapacity/getRfcBanner')
-    store.dispatch('resourceFacultyCapacity/getRfcBody')
+    store.dispatch('resourceMedicalService/getRmsBanner')
+    store.dispatch('resourceMedicalService/getRmsBody')
   },
 
   computed: {
-    ...mapGetters('resourceFacultyCapacity', ['rfc_banner', 'rfc_body']),
+    ...mapGetters('resourceMedicalService', ['rms_banner', 'rms_body']),
   },
 }
 </script>
 
 <style lang="scss" scoped>
 @import './styles/_main.scss';
-#resourceFacultyCapacity {
-  margin-top: 104px;
+#resourceMedicalService {
   margin-bottom: 104px;
 
   .text_box_one {
