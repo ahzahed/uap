@@ -20,18 +20,18 @@
 
     <div class="container">
       <div class="panel panel-default">
-        <div class="panel-heading">Departments</div>
+        <div class="panel-heading">Departments under school</div>
         <div class="panel-body">
           <div class="row">
             <nuxt-link
               v-for="(item, i) in departmentListUnderSchool"
               :key="i + 'department'"
-              class="col-md-4"
+              class="col-md-4 mb-4"
               :to="'/' + item.department"
             >
               <div class="card">
                 <img
-                  src="../../assets/card.jpeg"
+                  :src="$config.baseURL + item.image"
                   class="card-img-top"
                   :alt="item.title"
                 />

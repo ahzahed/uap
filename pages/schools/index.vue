@@ -25,7 +25,7 @@
             <nuxt-link
               v-for="(item, i) in schoolList"
               :key="i + 'department'"
-              class="col-md-4"
+              class="col-md-4 mb-4"
               :to="'/schools/' + item.slug"
             >
               <div class="card">

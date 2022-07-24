@@ -92,7 +92,7 @@
 import { mapGetters } from 'vuex'
 import VueSlickCarousel from 'vue-slick-carousel'
 import Banner from '../../../components/helpers/Banner.vue'
-import Modal from '@/components/helpers/ModalScroll.vue'
+import Modal from '@/components/helpers/Modal.vue'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
