@@ -19,7 +19,7 @@
       <div class="row event-header py-5">
         <div class="col-md-10 text-center">
           <div class="section-title">
-            <h2>All DSW  Events</h2>
+            <h2>All DSW Events</h2>
           </div>
         </div>
         <div class="col-md-2 text-right">
@@ -181,10 +181,6 @@ export default {
       selectedStatus: '',
       date: '',
       currentPage: 1,
-      banner: {
-        img: require('@/static/admissiontest.png'),
-        title: 'Events',
-      },
     }
   },
   computed: {

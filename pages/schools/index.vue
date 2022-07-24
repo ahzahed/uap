@@ -30,9 +30,9 @@
             >
               <div class="card">
                 <img
-                  src="../../assets/card.jpeg"
+                  :src="$config.baseURL + item.school_thumbnail"
                   class="card-img-top"
-                  :alt="item.title"
+                  :alt="item.school_name"
                 />
                 <div class="card-body">
                   {{ item.school_name }}

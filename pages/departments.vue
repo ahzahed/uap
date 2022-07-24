@@ -31,7 +31,7 @@
             >
               <div class="card">
                 <img
-                  src="../assets/card.jpeg"
+                  :src="$config.baseURL + item.image"
                   class="card-img-top"
                   :alt="item.title"
                 />

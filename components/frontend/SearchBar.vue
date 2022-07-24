@@ -1,5 +1,5 @@
 <template>
-  <transition  name="slide" appear>
+  <transition name="slide" appear>
     <div
       v-if="searchbar"
       v-click-outside="Toggle_SearchBar"
@@ -9,9 +9,9 @@
         <div class="col-md-11 mx-auto">
           <div class="form-group has-search">
             <input type="text" class="form-control" placeholder="Search" />
-          <i class="fas fa-search search-icon"></i>
+            <i class="fas fa-search search-icon"></i>
           </div>
-          <div class="row">
+          <!-- <div class="row">
             <div
               v-for="(menu, i) in SearchMenus"
               :key="'col_' + i"
@@ -49,7 +49,7 @@
                 </ul>
               </template>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -140,16 +140,15 @@ export default {
 @import './styles/_searchoverly.scss';
 .slide-leave-active,
 .fade-enter-active {
-  transition: all .5s cubic-bezier(.65, .05, .36, 1);
+  transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 .slide-enter-active,
 .fade-leave-active {
-  transition: all .5s cubic-bezier(.65, .05, .36, 1);
+  transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 .slide-enter,
 .slide-leave-to {
-   transform: translateY(-50%);
- 
+  transform: translateY(-50%);
 }
 .fade-enter,
 .fade-leave-to {

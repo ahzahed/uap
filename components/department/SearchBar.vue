@@ -11,7 +11,7 @@
             <input type="text" class="form-control" placeholder="Search" />
           <i class="fas fa-search search-icon"></i>
           </div>
-          <div class="row">
+          <!-- <div class="row">
             <div
               v-for="(menu, i) in SearchMenus"
               :key="'col_' + i"
@@ -49,7 +49,7 @@
                 </ul>
               </template>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

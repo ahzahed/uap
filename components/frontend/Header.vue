@@ -38,6 +38,10 @@
                   v-if="showMegaMenu && index === i"
                   :mega-menu="megamenu"
                 />
+                <!-- <MegaMenuAcademic
+                  v-if="showMegaMenu && index === i && i == 3"
+                  :mega-menu="megamenu"
+                /> -->
               </li>
               <li class="btn header_icon" @click.stop="Toggle_SearchBar">
                 <i class="fas fa-search"></i>
@@ -70,11 +74,13 @@ import eventBus from '../../eventBus'
 import TopHeader from './TopHeader.vue'
 import SearchBar from './SearchBar.vue'
 import MegaMenu from './MegaMenu.vue'
+// import MegaMenuAcademic from './MegaMenuAcademic.vue'
 export default {
   components: {
     MegaMenu,
     TopHeader,
     SearchBar,
+    // MegaMenuAcademic,
   },
   data() {
     return {
