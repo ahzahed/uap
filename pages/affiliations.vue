@@ -1,22 +1,18 @@
 <template>
-  <section id="event">
+  <section id="affiliations">
     <Banner :banner="affiliation_banner" />
     <div class="container py-5">
       <div class="row">
         <div
           v-for="(event, i) in affiliation_body"
           :key="i"
-          class="col-md-4 col-lg-4 p-3"
+          class="col-sm-6 col-lg-4 p-3"
           style="cursor: pointer"
           @click="showModal(event.short_description)"
         >
           <div class="main-card h-100 shadow">
             <div class="card-top">
-              <img
-                :src="$config.baseURL + event.logo"
-                alt="event.title"
-                class="w-100"
-              />
+              <img :src="$config.baseURL + event.logo" alt="event.title" />
             </div>
             <!-- <div class="serial">
               <p class="text-center event-btn mb-0">
@@ -110,7 +106,7 @@ export default {
 <style lang="scss" scoped>
 @import './styles/_main.scss';
 
-#event {
+#affiliations {
   .event-header {
     padding-bottom: 20px;
   }
@@ -168,15 +164,15 @@ export default {
       height: 300px;
       border-radius: 5px;
       overflow: hidden;
-      &:hover {
-        img {
-          transform: scale(1.2);
-        }
-      }
+      border-bottom: 1px solid gray;
       img {
-        height: 100%;
-        min-height: 300px;
-        width: 100%;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        // width: 150px;
+        height: 150px;
+        text-align: center;
         transition: all 0.2s ease-in-out;
       }
     }

@@ -36,10 +36,6 @@ export const Menu = [
         link: '/about',
       },
       {
-        title: 'Message From Deam',
-        link: '/message-from-dean',
-      },
-      {
         title: 'Awards and Achievements',
         link: '/our-ranking',
       },
@@ -48,15 +44,20 @@ export const Menu = [
         link: '/affiliations',
       },
       {
-        title: 'The Chairman',
+        title: 'Message From Dean',
+        link: '/message-from-dean',
+      },
+      
+      {
+        title: 'Message From Chairman',
         link: '/administration-details/1',
       },
       {
-        title: 'The Vice Chancellor',
+        title: 'Message From Vice Chancellor',
         link: '/administration-details/2',
       },
       {
-        title: 'The Pro Vice Chancellor',
+        title: 'Message From Pro Vice Chancellor',
         link: '/administration-details/3',
       },
       {
@@ -273,7 +274,7 @@ export const Menu = [
         link: '/resource-career',
       },
       {
-        title: 'UAP Ad/Tender/Media Release & Vacancies',
+        title: 'UAP Ad/ Tender',
         link: '/resource-journal',
       },
       {

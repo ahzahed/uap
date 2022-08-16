@@ -10,7 +10,7 @@
             </nuxt-link>
           </div>
           <div class="col-lg-9 col-md-3 col-sm-4 col-5 col-xs-12">
-            <ul class="navbar nav">
+            <ul class="navbar nav" @mouseleave="hideMegaMenu()">
               <li class="nav-item">
                 <nuxt-link class="nav-link" to="/">Home & About</nuxt-link>
               </li>
@@ -19,7 +19,6 @@
                 :key="i"
                 class="nav-item"
                 @mouseover="mouseEvent($event, 'item', i)"
-                @mouseleave="hideMegaMenu()"
               >
                 <nuxt-link
                   v-if="item.link"

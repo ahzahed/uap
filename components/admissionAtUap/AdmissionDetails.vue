@@ -25,7 +25,7 @@ export default {}
 
 <style lang="scss" scoped>
 p {
-  margin-top: 95px;
+  margin-top: 50px;
   font-size: 21px;
   font-weight: 300;
   font-stretch: normal;

@@ -75,6 +75,7 @@ export default {
 <style lang="scss" scoped>
 @import './styles/_main.scss';
 #BriefHistory {
+  padding-top: 80px;
   position: relative;
   .title {
     h2 {

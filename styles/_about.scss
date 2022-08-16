@@ -128,7 +128,7 @@
 }
 
 #ranking {
-  padding-top: $section-padding;
+  padding-top: 80px;
   padding-bottom: $section-padding;
   .ranking-item{
     .card-body{
@@ -175,7 +175,7 @@
     }
     .card-body {
       min-height: 448px;
-      padding: 50px !important;
+      
 
       h5 {
         font-size: 22px;
@@ -204,8 +204,8 @@
 }
 
 #glance {
-  padding-top: 100px;
-  padding-bottom: $section-padding;
+  padding-top: 80px;
+  // padding-bottom: $section-padding;
   @include respond-below(xs) {
     padding-top: 80px;
     padding-bottom: 80px;

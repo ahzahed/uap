@@ -25,7 +25,7 @@
                 <div class="ms-3 py-2 info">
                   <h4 class="mb-0">{{ alumni.name }}</h4>
                   <p class="card-text title my-1">
-                    {{ alumni.designation }}
+                    {{ alumni.occupation }}
                   </p>
                   <small class="date mb-0"
                     >Year Of Graduation: {{ alumni.year_of_graduation }}</small

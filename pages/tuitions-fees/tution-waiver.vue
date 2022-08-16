@@ -6,41 +6,43 @@
           <h3>Credit hours & total cost</h3>
           <p>(without admission fee)</p>
         </div>
-        <table class="table table-borderless table-responsive shadow-sm">
-          <thead>
-            <tr class="" style="padding-bottom: 110px">
-              <th>SI. No</th>
-              <th>GPA of SSC/Equivalent</th>
-              <th>Total Semester</th>
-              <th class="hsc">
-                GPA of HSC/ Equivalent
-                <div class="categoryPosition">
-                  <span class="subTitle">HSC</span>
-                  <span class="subTitle diploma">Diploma</span>
-                </div>
-              </th>
-              <th>Tuition fee Waiver</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, i) in getWaiverList" :key="i">
-              <td class="programText">{{ i + 1 }}</td>
-              <td class="data">{{ item.gpa_of_ssc_equivalent }}</td>
-              <td class="data">
-                {{ item.total_semester }}
-              </td>
+        <div class="table-responsive">
+          <table class="table table-borderless table-responsive shadow-sm table-striped table-bordered">
+            <thead>
+              <tr class="" style="padding-bottom: 110px">
+                <th>SI. No</th>
+                <th>GPA of SSC/Equivalent</th>
+                <th>Total Semester</th>
+                <th class="hsc">
+                  GPA of HSC/ Equivalent
+                  <div class="categoryPosition">
+                    <span class="subTitle">HSC</span>
+                    <span class="subTitle diploma">Diploma</span>
+                  </div>
+                </th>
+                <th>Tuition fee Waiver</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(item, i) in getWaiverList" :key="i">
+                <td class="programText">{{ i + 1 }}</td>
+                <td class="data">{{ item.gpa_of_ssc_equivalent }}</td>
+                <td class="data">
+                  {{ item.total_semester }}
+                </td>
 
-              <td class="data">
-                <span class="categoryPosition">
-                  <sm class="hscData">{{ item.hsc }}</sm>
-                  <sm>{{ item.diploma }}</sm>
-                </span>
-              </td>
-              <!-- <td></td> -->
-              <td class="data">{{ item.total_fee_waiver }}</td>
-            </tr>
-          </tbody>
-        </table>
+                <td class="data">
+                  <span class="categoryPosition">
+                    <sm class="hscData">{{ item.hsc }}</sm>
+                    <sm>{{ item.diploma }}</sm>
+                  </span>
+                </td>
+                <!-- <td></td> -->
+                <td class="data">{{ item.total_fee_waiver }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
     <section id="waiver">

@@ -118,13 +118,9 @@ export default {
     }
   }
   p {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 98px;
-    @include respond-below(sm) {
-      padding: 20px;
-    }
-    @include respond-below(xsl) {
+    padding: 50px;
+
+    @include respond-below(lg) {
       padding: 10px;
     }
   }

@@ -48,9 +48,15 @@ export default {
     }
     .leftContent {
       border-top-left-radius: 5px;
-      height: 279px;
-      padding: 104px 70px;
+      height: 300px;
+      padding: 90px 70px;
       background-color: $background-color;
+      @include respond-below(lg) {
+        padding: 40px;
+      }
+      @include respond-below(xs) {
+        padding: 15px;
+      }
     }
   }
   .right {
@@ -61,9 +67,15 @@ export default {
     .rightContent {
       border-top-right-radius: 5px;
 
-      height: 279px;
-      padding: 104px 70px;
+      height: 300px;
+      padding: 90px 70px;
       background-color: $lightblue;
+      @include respond-below(lg) {
+        padding: 40px;
+      }
+      @include respond-below(xs) {
+        padding: 15px;
+      }
     }
   }
   .bottom {

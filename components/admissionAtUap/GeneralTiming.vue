@@ -42,7 +42,7 @@ export default {}
   padding-top: $section-padding;
   h1 {
     @include title;
-    margin-bottom: 95px;
+    margin-bottom: 50px;
   }
   .left {
     padding-right: 0px;
@@ -52,7 +52,7 @@ export default {}
     .leftContent {
       border-top-left-radius: 5px;
       height: 279px;
-      padding: 104px 70px;
+      padding: 104px 60px;
       background-color: $background-color;
       text-align: center;
     }
@@ -66,7 +66,7 @@ export default {}
       border-top-right-radius: 5px;
       text-align: center;
       height: 279px;
-      padding: 104px 70px;
+      padding: 104px 60px;
       background-color: $lightblue;
     }
   }

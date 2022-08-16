@@ -46,50 +46,6 @@ export default {
   asyncData({ store, route }) {
     store.dispatch('resourcesAcademic/getLabWorkshopList')
   },
-
-  data() {
-    return {
-      session: {
-        title: 'For Fall 2020 session',
-        details:
-          'Following are the <strong>PDFs</strong> containing the official results of Admission tests for different departments. Results are generally published for <strong>WRITTEN test</strong> only (before viva) and then as <strong>FINAL RESULT</strong> after viva session. According to the differences in the exam procedures for each departments, some departments directly publish the FINAL result.  Scroll to find your desired department.',
-      },
-      feePayment: [
-        {
-          link: 'Fees Payment Amount for Spring 2020',
-        },
-        {
-          link: 'Revised Payment Schedule, Graduate Program 2020',
-        },
-        {
-          link: 'UAP Fees Payment Options Spring 2020 ',
-        },
-      ],
-      depositeSlip: [
-        {
-          link: 'Al-Arafah Islami Bank Ltd',
-        },
-        {
-          link: 'Bank Asia Ltd',
-        },
-        {
-          link: 'Bangladesh Commerce Bank Ltd',
-        },
-        {
-          link: 'Social Islami Bank Limited',
-        },
-        {
-          link: 'Southeast Bank Ltd',
-        },
-        {
-          link: 'Standard Bank Ltd',
-        },
-        {
-          link: 'Uttara Bank Ltd',
-        },
-      ],
-    }
-  },
   computed: {
     ...mapGetters('resourcesAcademic', ['lab_workshop_list']),
   },

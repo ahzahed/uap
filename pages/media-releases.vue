@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <div class="table-responsive-lg">
+          <div class="table-responsive">
             <table class="table text-center">
               <thead>
                 <tr>
@@ -67,8 +67,8 @@ export default {
 <style lang="scss" scoped>
 @import './styles/_main.scss';
 #admissionTest {
-  // padding-top: $section-padding;
-  // padding-bottom: $section-padding;
+  padding-top: $section-padding;
+  padding-bottom: $section-padding;
   table {
     margin-top: 60px;
     border-radius: 5px;

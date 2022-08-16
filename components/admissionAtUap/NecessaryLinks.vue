@@ -82,8 +82,8 @@ export default {
 <style lang="scss" scoped>
 @import './styles/_main.scss';
 #NecessaryLinks {
-  margin-top: 95px;
-  margin-bottom: 95px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   h2 {
     @include title2;
   }

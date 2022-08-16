@@ -34,7 +34,7 @@
               Admin. Officer, except Form # F-04)
             </p>
           </div>
-          <div class="table-top">
+          <div class="table-top table-responsive">
             <table
               class="table table-borderless table-responsive table-striped table-bordered"
             >
@@ -163,7 +163,10 @@ export default {
       background-color: $lightblue;
       text-align: center;
       border-bottom: 1px solid $darkblue;
-      padding: 30px 200px;
+      padding: 30px 100px;
+      @include respond-below(md) {
+        padding: 30px 50px;
+      }
       h5 {
         @include title2;
         color: $light-gray;
@@ -197,7 +200,7 @@ export default {
 
         tr {
           th {
-            @include cardPara;
+            @include title3;
             font-weight: 600;
             text-align: center;
             color: $darkblue;

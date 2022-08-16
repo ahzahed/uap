@@ -3,7 +3,7 @@
   margin-bottom: $section-padding;
   .main-overview {
     background-color: $background-color;
-    padding: 25px 122px 20px 70px;
+    padding: 15px;
     color: $text-color;
     border-radius: $border-radius;
   }
@@ -84,7 +84,9 @@
       background-color: $lightblue;
       text-align: center;
       border-bottom: 1px solid $darkblue;
-      padding: 30px 200px;
+      // padding: 30px 200px;
+      padding-top: 30px;
+      padding-bottom: 30px;
       h5 {
         @include title2;
         color: $light-gray;
@@ -154,7 +156,9 @@
       // box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
       background-color: $background-color;
       background-color: $lightblue;
-      padding: 50px 145px;
+  
+      padding: 30px;
+      
       h5 {
         @include cardPara;
         font-weight: 600;
@@ -217,7 +221,7 @@
     }
   }
   .special {
-    padding: 45px 0px 48px 110px;
+    padding: 15px;
     background-color: $background-color;
     h3 {
       @include cardPara;
@@ -244,19 +248,9 @@
       border: solid 2px $deep-primary;
       background-color: $white;
       text-align: center;
-      padding: 30px 242px;
-      @include respond-below(xml) {
-        padding: 30px 152px;
-      }
-      @include respond-below(xl) {
-        padding: 30px 152px;
-      }
-      @include respond-below(lg) {
-        padding: 30px 78px;
-      }
-      @include respond-above(sm) {
-        padding: 14px 18px !important;
-      }
+      padding: 30px 10px;
+      
+      
       h5 {
         @include title2;
         color: $waiver-text;
@@ -268,7 +262,7 @@
       }
     }
     .info-top {
-      padding: 70px 80px;
+      padding: 10px;
       box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
       background-color: $background-color;
       @include respond-above(sm) {

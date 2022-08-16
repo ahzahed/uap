@@ -19,7 +19,6 @@
           :key="i"
           class="col-lg-4 col-md-6"
           data-aos="fade-up"
-          :data-aos-duration="item.duration"
         >
           <div class="choose-item">
             <img :src="item.image" :alt="item.title" />

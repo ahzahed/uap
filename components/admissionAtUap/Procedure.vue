@@ -6,7 +6,7 @@
         <div
           v-for="(item, i) in procedure"
           :key="i"
-          class="procedureProcess mb-3"
+          class="procedureProcess mb-3 py-5 px-sm-5 px-3"
         >
           <h3>{{ item.title }}</h3>
           <p>{{ item.details }}</p>
@@ -58,7 +58,7 @@ export default {
   padding-bottom: $section-padding;
   padding-top: $section-padding;
   h1 {
-    margin-bottom: 95px;
+    margin-bottom: 50px;
     @include title;
   }
   h3 {
@@ -74,7 +74,7 @@ export default {
   }
   .procedureProcess {
     background-color: $lightblue;
-    padding: 43px 76px;
+    // padding: 43px 76px;
     border-radius: 5px;
     &:nth-of-type(odd) {
       background-color: $background-color;

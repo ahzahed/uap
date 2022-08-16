@@ -3,7 +3,7 @@
     <div class="container my-5">
       <div class="row">
         <div class="col-lg-12 text-center mx-auto">
-          <div class="shadow-sm">
+          <div class="shadow-sm table-responsive">
             <table class="table table-borderless">
               <thead>
                 <tr>

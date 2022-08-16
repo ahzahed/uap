@@ -15,7 +15,7 @@
             <div class="ranking-img">
               <img :src="item.image" :alt="item.title" class="" />
             </div>
-            <div class="card-body" :style="{ background: item.background }">
+            <div class="card-body px-sm-5 px-3" :style="{ background: item.background }">
               <h5 class="card-title">
                 {{ item.title }}
               </h5>

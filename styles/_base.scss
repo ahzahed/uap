@@ -16,12 +16,15 @@
   font-style: normal;
   line-height: 1.5;
   letter-spacing: 0.16px;
-  padding: 11px 61px 11px 60px;
+  padding: 11px 60px;
   border-radius: 5px;
   &:hover {
     border: 1px solid $darkblue;
     color: $darkblue !important;
     background: $white;
+  }
+  @include respond-below(xxl) {
+    padding: 8px 30px;
   }
 }
 .pink-btn {

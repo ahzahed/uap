@@ -4,7 +4,7 @@
     <div class="container mt-5">
       <div class="row">
         <div class="col-lg-12 mx-auto">
-          <div id="accordionExample" class="table-responsive-lg">
+          <div id="accordionExample" class="table-responsive">
             <table
               v-for="(item, i) in dates"
               :key="i"

@@ -1,38 +1,24 @@
 <template>
-  <section id="campus">
-    <hr>
-    <div class="container mt-5">
-      <!-- {{ office_proctor }} -->
-      <div
-        v-for="(item, i) in office_proctor"
-        :key="`administration_${i}`"
-        class="row"
-      >
-        <div class="col-lg-10 mx-auto">
-          <div class="card mb-3 shadow-sm">
-            <div class="row">
-              <div class="col-md-4 col-sm-4 leftSide">
-                <img
-                  :src="item.image"
-                  class="img-fluid w-100 h-100"
-                  :alt="item.name"
-                />
+  <section id="administrationSlug">
+    <div class="container my-5">
+      <div v-for="(item, i) in office_proctor" :key="`administration_${i}`" class="row">
+        <div class="col-lg-5 col-md-7 col-sm-9 mx-auto">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-sm-4">
+                <img :src="item.image" class="img-fluid rounded-start w-100 h-100" :alt="item.name" />
               </div>
-              <div class="col-md-8 col-sm-8 rightSide">
+              <div class="col-sm-8 rightSide">
                 <div class="card-body">
                   <h5 class="card-title">{{ item.name }}</h5>
-                  <p class="card-text">
+                  <p>
                     {{ item.designation }}
                   </p>
-                  <h5 class="card-title">Email</h5>
-                  <p class="card-text mb-4">
+                  <h4>Email</h4>
+                  <p>
                     {{ item.email }}
                   </p>
-                  <nuxt-link
-                    :to="`/administration-details/${item.id}`"
-                    class="primary-btn"
-                    >Explore</nuxt-link
-                  >
+                  <nuxt-link :to="`/administration-details/${item.id}`" class="primary-btn">Explore</nuxt-link>
                 </div>
               </div>
             </div>
@@ -56,6 +42,21 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" scoped>
-@import './styles/_members.scss';
+@import './styles/_main.scss';
+
+#administrationSlug {
+  h5 {
+    @include cardTitle;
+  }
+  h4{
+    @include cardPara;
+    color: #1b2055;
+  }
+
+  .rightSide {
+    background: $background-color;
+  }
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <section id="researchIEERD">
+  <section id="resourcePublicationEresource">
     <section id="e-resources" class="mt-5">
       <div class="container">
         <div class="main-table">
@@ -12,38 +12,40 @@
               available at the library are the following:
             </p>
           </div>
-          <table
-            class="table table-borderless table-responsive shadow-sm table-striped table-bordered"
-          >
-            <thead>
-              <tr>
-                <th>serial No.</th>
-                <th>DATABASE NAME</th>
-                <th>SUBJECT STRENGTH</th>
-                <th>DESCRIPTION</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- <tr class="xxx">
+          <div class="table-responsive">
+            <table
+              class="table table-borderless table-responsive shadow-sm table-striped table-bordered"
+            >
+              <thead>
+                <tr>
+                  <th>Serial No.</th>
+                  <th>DATABASE NAME</th>
+                  <th>SUBJECT STRENGTH</th>
+                  <th>DESCRIPTION</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <tr class="xxx">
                 <td colspan="4">UGC Digital Library Consortium</td>
               </tr> -->
-              <tr v-for="(item, i) in value.e_resources_list" :key="i">
-                <td class="programText">{{ i + 1 }}</td>
-                <td class="data">{{ item.database_name }}</td>
-                <td class="data">
-                  {{ item.subject }}
-                </td>
+                <tr v-for="(item, i) in value.e_resources_list" :key="i">
+                  <td class="programText">{{ i + 1 }}</td>
+                  <td class="data">{{ item.database_name }}</td>
+                  <td class="data">
+                    {{ item.subject }}
+                  </td>
 
-                <!-- <td></td> -->
-                <td class="data">{{ item.short_description }}</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <th colspan="4"></th>
-              </tr>
-            </tfoot>
-          </table>
+                  <!-- <td></td> -->
+                  <td class="data">{{ item.short_description }}</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th colspan="4"></th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
         </div>
       </div>
     </section>
@@ -62,12 +64,9 @@
           </p>
           <ul v-for="(item, i) in value.e_resources_file" :key="i">
             <li>
-              <a
-                :href="$config.baseURL + item.file"
-                target="_blank"
-                class="nav-link"
-                >{{ item.file_title }}</a
-              >
+              <a :href="item.file" target="_blank" class="nav-link">{{
+                item.file_title
+              }}</a>
             </li>
             <hr />
           </ul>
@@ -104,7 +103,7 @@ export default {
 <style lang="scss" scoped>
 @import './styles/_main.scss';
 
-#researchIEERD {
+#resourcePublicationEresource {
   #e-resources {
     .main-table {
       border-radius: 5px;
@@ -124,8 +123,16 @@ export default {
       p {
         font-size: 14px;
         font-weight: 500;
-        padding-right: 150px;
-        padding-left: 150px;
+        padding-right: 100px;
+        padding-left: 100px;
+        @include respond-below(md) {
+          padding-right: 50px;
+          padding-left: 50px;
+        }
+        @include respond-below(xs) {
+          padding-right: 10px;
+          padding-left: 10px;
+        }
       }
     }
 
@@ -142,78 +149,8 @@ export default {
 
         tr {
           th {
-            vertical-align: text-top;
-            font-size: 18px;
-            font-weight: 600;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: normal;
-            letter-spacing: normal;
-            color: $darkblue;
-            text-align: center;
-            padding-top: 40px;
-            padding-bottom: 40px;
-            .subtitle-div {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-            }
-            .subtitle {
-              display: block;
-              font-size: 14px;
-              color: $text-color;
-            }
-            .sub-text {
-              font-size: 14px;
-              font-weight: 600;
-
-              color: $text-color;
-            }
-            .last-text {
-              font-size: 14px;
-              font-weight: normal;
-              color: $text-color;
-              display: block;
-            }
-          }
-          th.title {
-            position: relative;
-
-            td {
-              .subTitle {
-                position: absolute;
-              }
-              .subTitle2 {
-                margin-left: 88px;
-                background-color: red;
-              }
-            }
-          }
-        }
-      }
-
-      tbody {
-        tr {
-          font-size: 18px;
-          font-weight: 600;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: normal;
-          letter-spacing: normal;
-          text-align: center;
-          color: $darkblue;
-          td.programText {
-            text-align: left !important;
-            padding-left: 50px !important;
-          }
-          td.data {
-            text-align: center !important;
-          }
-          td.fee {
-            padding-right: 10px;
-          }
-          td.same-text {
-            font-weight: 300;
+            @include title3Bold;
+            color: #1b2055;
           }
         }
       }

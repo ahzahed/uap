@@ -30,12 +30,14 @@
           </div>
         </div>
         <div class="row">
-          <div class="special">
-            <div><h3>Special Note:</h3></div>
-            <span class="info">
-              <div v-html="currentSpecial.notes"></div>
-            </span>
-          </div>
+          <div class="col-lg-12">
+            <div class="special">
+              <div><h3>Special Note:</h3></div>
+              <span class="info">
+                <div v-html="currentSpecial.notes"></div>
+              </span>
+            </div>
+            </div>
         </div>
       </div>
     </div>

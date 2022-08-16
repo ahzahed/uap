@@ -44,8 +44,12 @@ export default {
 #resourcesAcademicOverview {
   .details {
     background: $background-color;
-    padding: 80px;
+    padding: 50px;
     border-radius: 5px;
+    @include respond-below(xs) {
+      padding: 15px;
+      text-align: justify;
+    }
     h2 {
       @include title2;
     }

@@ -119,7 +119,6 @@ export default {
     return {
       show: true,
       showindex: 1,
-      
     }
   },
   methods: {
@@ -144,7 +143,6 @@ export default {
   }
   p {
     @include paragraph;
-    margin-bottom: 82px;
   }
   ul {
     padding: 0;
@@ -221,13 +219,9 @@ export default {
       }
     }
     p {
-      padding-top: 50px;
-      padding-bottom: 50px;
-      padding-left: 98px;
-      @include respond-below(sm) {
-        padding: 20px;
-      }
-      @include respond-below(xsl) {
+      padding: 50px;
+
+      @include respond-below(lg) {
         padding: 10px;
       }
     }

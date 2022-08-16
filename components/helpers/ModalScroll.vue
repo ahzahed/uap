@@ -1,11 +1,7 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-overlay">
-      <div
-        class="uap-modal"
-        :style="{ width: modelWidth }"
-        @click="$emit('close')"
-      >
+    <div class="modal-overlay" @click="$emit('close')">
+      <div class="uap-modal my-5" :style="{ width: modelWidth }">
         <div class="modal-content" @click.stop>
           <slot name="header"> </slot>
 
@@ -41,6 +37,7 @@ export default {
   justify-content: center;
   background-color: rgb(143 143 143);
   z-index: 3000;
+  overflow-y: scroll;
 }
 @media (min-width: 576px) {
   .uap-modal {
@@ -70,7 +67,7 @@ export default {
   margin: 0 auto;
   width: auto;
   min-height: calc(100% - 3.5rem);
-  overflow-y: scroll;
+  // overflow-y: scroll;
   /* display: flex; */
   align-items: center;
 }

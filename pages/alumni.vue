@@ -218,7 +218,7 @@ export default {
       @include paragraph;
     }
     img {
-      height: 270px;
+      height: 220px;
       width: 220px;
       border-radius: 5px;
     }

@@ -6,7 +6,6 @@
                     <div class="main-overview">
                         <h1>{{overviewInformations.title}}</h1>
                         <div v-html="overviewInformations.description">
-                           
                         </div>
                     </div>
                 </div>

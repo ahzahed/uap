@@ -20,7 +20,6 @@
           :key="i"
           class="col-lg-4 col-md-6"
           data-aos="fade-up"
-          :data-aos-duration="item.duration"
         >
           <div class="apply-item">
             <img :src="apply[i].icon" :alt="item.title" />

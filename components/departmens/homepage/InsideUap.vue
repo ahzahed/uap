@@ -46,7 +46,7 @@
                 <p class="mb-0">
                   {{ mission.department_mission_description }}
                 </p>
-                <div style="text-align: right">
+                <!-- <div style="text-align: right">
                   <button
                     class="primary-btn readmore mt-5"
                     @click="toggle = !toggle"
@@ -56,7 +56,7 @@
                     >
                     <span v-else> <span class="plus">-</span> Read Less</span>
                   </button>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -77,9 +77,6 @@
             v-if="insideVideo.videolink"
             ref="youtube"
             :video-id="videoURL"
-      
-           
-          
             @ready="ready"
             @playing="playing"
           ></youtube>
@@ -163,11 +160,10 @@ export default {
     },
   },
 
-
   methods: {
     ready(event) {
       this.player = event.target
-       this.player.playVideo()
+      this.player.playVideo()
     },
     playing() {
       // The player is playing a video.
@@ -214,11 +210,11 @@ export default {
   }
 }
 #glance {
-  padding-top: $section-padding;
+  // padding-top: $section-padding;
   //   padding-bottom: $section-padding;
   @include respond-below(xs) {
     padding-top: 80px;
-    padding-bottom: 80px;
+    // padding-bottom: 80px;
   }
   @include respond-between(xs, md) {
     padding-top: 100px;
@@ -237,7 +233,7 @@ export default {
     margin: 0 auto;
     overflow: hidden;
     height: 526px;
-    margin-bottom: 150px;
+    // margin-bottom: 150px;
     padding-left: 0px;
     border-radius: 5px;
     @include respond-below(xs) {

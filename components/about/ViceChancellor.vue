@@ -16,7 +16,7 @@
         </div>
         <!-- End -->
         <div class="col-xl-8 col-lg-8 col-md-12">
-          <div class="px-4 rightSide">
+          <div class="px-2 rightSide">
             <p v-html="viceChancellor.description"></p>
           </div>
         </div>

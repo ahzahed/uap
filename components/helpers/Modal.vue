@@ -1,11 +1,7 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-overlay">
-      <div
-        class="uap-modal"
-        :style="{ width: modelWidth }"
-        @click="$emit('close')"
-      >
+    <div class="modal-overlay" @click="$emit('close')">
+      <div class="uap-modal" :style="{ width: modelWidth }">
         <div class="modal-content" @click.stop>
           <slot name="header"> </slot>
 

@@ -48,7 +48,9 @@
         <div class="col-lg-6 order-lg-first p-0 visionMission">
           <div class="h-100">
             <div class="d-flex h-100">
-              <div class="vissionMissionContent w-100 my-auto px-5 py-5">
+              <div
+                class="vissionMissionContent w-100 my-auto px-sm-5 px-3 py-5"
+              >
                 <h4>Vision</h4>
                 <p>
                   {{ glance.visionContent }}
@@ -73,7 +75,9 @@
         <div class="col-lg-6 p-0 visionMission">
           <div class="h-100">
             <div class="d-flex h-100">
-              <div class="vissionMissionContent w-100 my-auto px-5 py-5">
+              <div
+                class="vissionMissionContent w-100 my-auto px-sm-5 px-3 py-5"
+              >
                 <h4>Mission</h4>
                 <p class="mb-0">
                   {{ glance.missionContent }}

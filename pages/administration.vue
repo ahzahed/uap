@@ -11,11 +11,10 @@
 </template>
 
 <script>
-// eslint-disable-next-line no-unused-vars
-import { mapActions, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 import Banner from '../components/helpers/Banner.vue'
-
 import Header from '~/halpers/Header.vue'
+
 export default {
   components: {
     Banner,
@@ -25,15 +24,7 @@ export default {
   asyncData({ store }) {
     store.dispatch('administration/getAdministrationBanner')
   },
-  data() {
-    return {
-      banner: {
-        banner: require('@/static/adminastration.png'),
-        title: 'Administration',
-        details: 'Campus Administration University of Asia Pacific',
-      },
-    }
-  },
+
   computed: {
     ...mapGetters('administration', [
       'administration_section',

@@ -4,14 +4,12 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="heading">
-            <h1 class="text-center">{{ message.title }}</h1>
+            <h1 class="text-center">Message From Head of The Department</h1>
           </div>
           <div v-if="message.message_form_department" class="details">
             <p
               v-if="toggle == false"
-              v-html="              
-                message.message_form_department.slice(0, 268)
-              "
+              v-html="message.message_form_department.slice(0, 268)"
             ></p>
 
             <p v-else v-html="message.message_form_department"></p>
