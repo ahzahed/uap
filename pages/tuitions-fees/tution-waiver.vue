@@ -7,7 +7,9 @@
           <p>(without admission fee)</p>
         </div>
         <div class="table-responsive">
-          <table class="table table-borderless table-responsive shadow-sm table-striped table-bordered">
+          <table
+            class="table table-borderless shadow-sm table-striped table-bordered mb-0"
+          >
             <thead>
               <tr class="" style="padding-bottom: 110px">
                 <th>SI. No</th>

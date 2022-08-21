@@ -94,7 +94,7 @@
                       class="nav-link"
                       @click.native="subCategory()"
                     >
-                      {{ item.group_name }}
+                      {{ item.club_name }}
                     </nuxt-link>
                   </li>
                 </ul>

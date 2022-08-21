@@ -3,11 +3,13 @@
 const state = () => ({
   schoolList: [],
   departmentListUnderSchool: [],
+  deanOfSchool: {},
 })
 
 const getters = {
   schoolList: (state) => state.schoolList,
   departmentListUnderSchool: (state) => state.departmentListUnderSchool,
+  deanOfSchool: (state) => state.deanOfSchool,
 }
 
 const actions = {
@@ -32,6 +34,11 @@ const actions = {
     const data = await this.$axios.get(`/department/of/school/${value}`)
     context.commit('DEPARTMENT_LIST_UNDER_SCHOOL', data.data)
   },
+
+  async getDeanOfSchool(context, value) {
+    const data = await this.$axios.get(`/dean/${value}`)
+    context.commit('DEAN_OF_SCHOOL', data.data)
+  },
 }
 
 const mutations = {
@@ -40,6 +47,9 @@ const mutations = {
   },
   DEPARTMENT_LIST_UNDER_SCHOOL(state, section) {
     state.departmentListUnderSchool = section
+  },
+  DEAN_OF_SCHOOL(state, section) {
+    state.deanOfSchool = section
   },
 }
 export default {

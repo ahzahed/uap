@@ -43,11 +43,11 @@ export const Menu = [
         title: 'Affiliations',
         link: '/affiliations',
       },
-      {
-        title: 'Message From Dean',
-        link: '/message-from-dean',
-      },
-      
+      // {
+      //   title: 'Message From Dean',
+      //   link: '/message-from-dean',
+      // },
+
       {
         title: 'Message From Chairman',
         link: '/administration-details/1',

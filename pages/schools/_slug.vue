@@ -17,8 +17,9 @@
       </div>
       <!-- end container -->
     </div>
+    <Message :dean="deanOfSchool" />
 
-    <div class="container">
+    <div class="container mt-5">
       <div class="panel panel-default">
         <div class="panel-heading">Departments under school</div>
         <div class="panel-body">
@@ -49,21 +50,20 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Message from '../../components/messageDean/Message.vue'
 
 export default {
-  components: {},
+  components: { Message },
   layout: 'HomeLayout',
   asyncData({ store, route }) {
-    store.dispatch(
-      'school/getDepartmentListUnderSchool',
-      route.params.slug
-    )
+    store.dispatch('school/getDepartmentListUnderSchool', route.params.slug)
+    store.dispatch('school/getDeanOfSchool', route.params.slug)
   },
   data() {
     return {}
   },
   computed: {
-    ...mapGetters('school', ['departmentListUnderSchool']),
+    ...mapGetters('school', ['departmentListUnderSchool', 'deanOfSchool']),
   },
 }
 </script>
@@ -100,7 +100,6 @@ export default {
     }
   }
   .panel {
-    padding-top: 60px;
     padding-bottom: 60px;
     .panel-heading {
       font-size: 18px;

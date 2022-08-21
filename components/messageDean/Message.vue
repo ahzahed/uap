@@ -1,17 +1,14 @@
 <template>
   <section id="message">
-    <div class="container">
+    <div class="container mt-5">
       <div class="row">
         <div class="col-lg-12">
           <div class="heading">
             <h1 class="text-center">{{ message.title }}</h1>
           </div>
           <div class="details">
-            <p
-              v-if="toggle == false"
-              v-html="message.details.slice(0, 300)"
-            ></p>
-            <p v-else v-html="message.details"></p>
+            <!-- <p v-if="toggle == false" v-html="dean.message.slice(0, 300)"></p> -->
+            <p v-html="dean.message"></p>
             <!-- <div class="row messageFrom">
               <div class="col-lg-4">
                 <img :src="img" alt="x" />
@@ -21,7 +18,7 @@
               </div>
             </div> -->
             <div style="text-align: right">
-              <button class="primary-btn readmore" @click="toggle = !toggle">
+              <!-- <button class="primary-btn readmore" @click="toggle = !toggle">
                 <span v-if="toggle == false">
                   <span class="plus"><i class="fas fa-plus-circle"></i></span>
                   Read More</span
@@ -30,19 +27,19 @@
                   <span class="plus"><i class="fas fa-minus-circle"></i></span>
                   Read Less</span
                 >
-              </button>
+              </button> -->
             </div>
-            <div v-show="toggle == true" class="messageFrom mt-5">
-              <img :src="img" alt="x" />
+            <div class="messageFrom mt-5">
+              <img :src="$config.baseURL + dean.image" :alt="dean.name" />
               <div class="profile mt-2">
                 <p>
-                  Professor Dr. Muhammad Mizanur Rahaman<br />
+                  {{ dean.name }}<br />
                   <span>Dean, School of Engineering</span><br />
                   <span>University of Asia Pacific</span>
                 </p>
                 <p class="email">
                   <img class="icon" :src="require('static/envelope.svg')" />
-                  deaneng@uap-bd.edu
+                  {{ dean.email }}
                 </p>
               </div>
             </div>
@@ -56,6 +53,12 @@
 <script>
 // import s from 'static/envelope.svg'
 export default {
+  props: {
+    dean: {
+      required: true,
+      type: Object,
+    },
+  },
   data() {
     return {
       toggle: false,
@@ -73,8 +76,6 @@ export default {
 <style lang="scss" scoped>
 @import './styles/_main.scss';
 #message {
-  margin-top: 104px;
-  margin-bottom: 104px;
   .heading {
     background-color: $darkblue;
     padding-top: 23px;

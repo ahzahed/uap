@@ -73,10 +73,10 @@ export const Menu = [
         title: 'Apply Online',
         link: 'https://www.admission.uap-bd.edu/Admission/Home.aspx',
       },
-      {
-        title: 'Admission Test Schedule',
-        link: '/',
-      },
+      // {
+      //   title: 'Admission Test Schedule',
+      //   link: '/',
+      // },
       { title: 'Admission Result', link: '/admission-result' },
       { title: 'Financial Aid', link: '/tuition-waiver-financial-aid' },
     ],
