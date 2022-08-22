@@ -1,6 +1,10 @@
 <template>
   <section id="special">
-    <div v-for="(special, i) in specialInformation" :key="i" class="container my-5">
+    <div
+      v-for="(special, i) in specialInformation"
+      :key="i"
+      class="container my-5"
+    >
       <div class="col-12 col-lg-10 mx-auto">
         <div class="row">
           <div class="col-lg-12 p-0">
@@ -12,11 +16,11 @@
         <div class="row main d-flex justify-content-center shadow-sm">
           <div class="col-md-12">
             <ul class="mb-0">
-              <li>
+          
                 <!-- <span class="title">{{ special.title }}</span
                 >: <span class="dec">{{ special.description }}</span> -->
                 <div v-html="special.description"></div>
-              </li>
+             
             </ul>
           </div>
         </div>
@@ -40,7 +44,6 @@ export default {
 @import './styles/_main.scss';
 
 #special {
-  
   .bottom {
     p {
       margin-bottom: 0px;
@@ -56,7 +59,7 @@ export default {
 
   .container {
     .main {
-      padding: 65px 100px 30px 100px;
+      padding: 30px;
       background-color: $background-color;
       border-radius: $border-radius;
       ul {

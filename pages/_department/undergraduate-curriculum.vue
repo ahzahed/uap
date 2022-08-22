@@ -1,7 +1,7 @@
 <template>
   <section id="mscCurriculum">
     <Banner :banner="msc_banner" />
-    <Curriculum :bsc-body="msc_body"/>
+    <Curriculum :bsc-body="msc_body" />
   </section>
 </template>
 
@@ -16,7 +16,7 @@ export default {
     Curriculum,
   },
   layout: 'HomeLayout',
-   asyncData({ store, route }) {
+  asyncData({ store, route }) {
     store.dispatch('depMscCur/getMscBanner', route.params.department)
     store.dispatch('depMscCur/getMscBody', route.params.department)
   },
@@ -28,8 +28,8 @@ export default {
       },
     }
   },
-   computed: {
-    ...mapGetters('depMscCur', ['msc_banner','msc_body']),
+  computed: {
+    ...mapGetters('depMscCur', ['msc_banner', 'msc_body']),
   },
 }
 </script>

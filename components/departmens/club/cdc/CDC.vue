@@ -37,7 +37,7 @@
           backgroundColor: clubInfo.goal_bg_color,
         }"
       >
-        <h4 class="text-center mb-5">Our Goals</h4>
+        <h4 class="text-center mb-2">Our Goals</h4>
         <div v-html="clubInfo.our_goal"></div>
         <!-- <p class="pb-5">{{ clubInfo.our_goal }}</p> -->
       </div>
@@ -85,8 +85,8 @@ export default {
       }
     }
     .goal {
-      padding-top: 100px;
-      padding-bottom: 100px;
+      padding-top: 50px;
+    
     }
   }
 }

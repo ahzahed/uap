@@ -59,7 +59,6 @@ export const Menu = [
 
   {
     title: 'Admission',
-    link: '/admission',
     subMenus: [
       {
         title: 'Admission Info Graduate',
@@ -95,8 +94,11 @@ export const Menu = [
         title: 'Research and publication',
         link: '/academic/research-publications',
       },
-      { title: 'Graduate Curriculum', link: '/bsc-curriculum' },
-      { title: 'Undergraduate Curricular', link: '/msc-curriculum' },
+      { title: 'Graduate Curriculum', link: '/graduate-curriculum' },
+      {
+        title: 'Undergraduate Curricular',
+        link: '/undergraduate-curriculum',
+      },
       { title: 'Mission Outcome', link: '/mission-outcome' },
       { title: 'Class Schedule', link: '/class-schedule' },
       { title: 'Exam Schedule', link: '/exam-schedule' },

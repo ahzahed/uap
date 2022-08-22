@@ -2,7 +2,7 @@
   <section id="news">
     <div class="container py-5 my-5">
       <div class="row">
-        <div class="col-lg-4 col-md-6 main-content">
+        <div class="col-lg-4 col-md-6 main-content pb-3">
           <h2>Latest News</h2>
           <div class="finalResult pt-4">
             <ul v-for="(item, i) in latestInformation" :key="i">
@@ -11,7 +11,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 waitingResultContent main-content">
+        <div class="col-lg-4 col-md-6 waitingResultContent main-content pb-3">
           <h2>Recent Notice</h2>
           <div class="waitingResult pt-4">
             <ul v-for="(item, i) in recentInformation" :key="i">
@@ -20,7 +20,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 waitingResultContent main-content">
+        <div class="col-lg-4 col-md-6 waitingResultContent main-content pb-3">
           <h2>Featured Research</h2>
           <div class="waitingResult pt-4">
             <ul v-for="(item, i) in researchInformation" :key="i">

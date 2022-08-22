@@ -26,10 +26,9 @@
 <script>
 export default {
   props: {
-    // eslint-disable-next-line vue/require-default-prop
     banner: {
       type: Object,
-      require: true,
+      required: true,
     },
   },
 }

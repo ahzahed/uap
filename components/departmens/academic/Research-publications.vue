@@ -17,6 +17,7 @@
                   data-bs-target="#collapseOne"
                   aria-expanded="true"
                   aria-controls="collapseOne"
+                  :class="show && item.id == showindex ? '' : 'collapsed'"
                   @click="
                     () => {
                       accoladingSlide(item.id)
@@ -36,18 +37,11 @@
                 data-bs-parent="#accordionExample"
                 :class="show && item.id == showindex ? 'show' : ''"
               >
-                <div class="px-5 mx-md-5 my-5">
+                <!-- <div class="px-5 mx-md-5 my-5">
                   <div v-html="item.research_and_publication_description"></div>
-                  <!-- <ul
-                    v-for="(info, j) in item.details"
-                    :key="j"
-                    class="ps-0 mb-4"
-                  >
-                    <li>
-                      <h4 class="title1 mb-0">{{ info.title1 }}</h4>
-                      <p class="my-3">{{ info.desc }}</p>
-                    </li>
-                  </ul> -->
+                </div> -->
+                <div class="accordion-body">
+                  <p v-html="item.research_and_publication_description"></p>
                 </div>
               </div>
             </div>
@@ -87,36 +81,29 @@ export default {
 #research-publication {
   padding-top: $section-padding;
   padding-bottom: $section-padding;
-  .accordion-item {
-    border-radius: 5px;
 
-    h1 {
-      @include title;
-      font-weight: bold;
-      color: $darkblue;
+  border-radius: 5px;
+
+  h1 {
+    @include title;
+    font-weight: bold;
+    color: $darkblue;
+  }
+  button {
+    @include title2;
+    color: $light-gray;
+    background-color: $background-color;
+    padding: 49px 66px;
+    @include respond-below(sm) {
+      padding: 15px;
     }
-    button {
-      @include title2;
-      color: $light-gray;
-      background-color: $background-color;
-      padding: 49px 66px;
-      @include respond-below(sm) {
-        padding: 15px;
-      }
-    }
-    ul {
-      list-style-type: disc !important;
-      h4 {
-        @include title3;
-        text-align: justify;
-        color: $text-color;
-      }
-      p {
-        @include paragraph2;
-        font-weight: 300;
-        text-align: justify;
-        color: $text-color;
-      }
+  }
+
+  p {
+    padding: 50px;
+
+    @include respond-below(lg) {
+      padding: 10px;
     }
   }
 }

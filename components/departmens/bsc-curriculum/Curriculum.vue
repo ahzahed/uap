@@ -1,19 +1,10 @@
- <template>
+<template>
   <section id="bsc-curriculum">
     <div class="container my-5">
       <div class="row">
-        <div class="col-lg-11 text-center mx-auto">
+        <div class="col-lg-11 mx-auto">
           <div v-if="bscBody" class="details">
             <div v-html="bscBody.curriculum_detail"></div>
-            <!-- <h1 class="mb-5">{{ title }}</h1>
-            <h3>{{ department }}</h3>
-            <h3 class="mb-5">{{ prospectus }}</h3>
-            <h2 class="mb-5">{{ year }}</h2>
-            <h4 class="mb-4">Board of Editors</h4>
-            <div v-for="(item, i) in boards" :key="i" class="boards">
-              <p class="name">{{ item.name }}</p>
-              <p class="position">{{ item.position }}</p>
-            </div> -->
           </div>
         </div>
       </div>
@@ -24,10 +15,9 @@
 <script>
 export default {
   props: {
-    // eslint-disable-next-line vue/require-default-prop
     bscBody: {
       type: Object,
-      require: true,
+      required: true,
     },
   },
   data() {
@@ -66,39 +56,12 @@ export default {
 @import './styles/_main.scss';
 #bsc-curriculum {
   .details {
-    height: 980px;
-    overflow-y: scroll;
     border-bottom: 21px solid #4786ef;
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding: 50px;
     background-color: $background-color;
     border-radius: 5px;
-    h1 {
-      @include title2;
-      font-size: 48px;
-      font-weight: 600;
-    }
-    h3 {
-      @include title3;
-      font-weight: 600;
-    }
-    h2 {
-      @include cardTitle;
-      text-align: center;
-      color: $text-color;
-    }
-    h4 {
-      @include title3;
-      font-weight: 600;
-    }
-    .boards {
-      p {
-        @include paragraph;
-        font-weight: 600;
-      }
-      .name {
-        margin-bottom: 0px;
-      }
+    @include respond-below(md) {
+      padding: 20px;
     }
   }
 }

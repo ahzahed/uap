@@ -71,6 +71,9 @@
         .banner__title {
           @include title;
           margin-bottom: 45px;
+          @include respond-below(md) {
+            font-size: 18px;
+          }
           @include respond-below(xs) {
             margin-bottom: 30px;
           }

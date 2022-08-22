@@ -1,14 +1,20 @@
 <template>
   <section id="event">
-    <Banner :banner="banner" />
+    <!-- <Banner :banner="banner" /> -->
     <div class="container py-5">
+      <div class="row event-header">
+        <div class="col-md-12 text-center">
+          <div class="section-title">
+            <h2>All Events</h2>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div
-          v-for="(event, i) in notices"
+          v-for="(event, i) in club_events"
           :key="i"
           class="col-md-4 col-lg-4 p-3"
-          style="cursor: pointer"
-          @click="showModal(event)"
+          @click="showModal(event.description)"
         >
           <div class="main-card h-100 shadow">
             <div class="card-top">
@@ -18,13 +24,15 @@
                 class="w-100"
               />
             </div>
-            <!-- <div class="serial">
+            <div class="serial">
               <p class="text-center event-btn mb-0">
-                {{ $moment(event.date).format('MMMM DD') }}
-                <small class="d-block">(Closed)</small>
+                {{ event.type }}
               </p>
-            </div> -->
+            </div>
             <div class="main-card-body">
+              <!-- <h5 class="card-title">
+                <span class="card-title-dot"></span>{{ event.topic }}
+              </h5> -->
               <p class="card-text mb-0 title">
                 {{ event.title }}
               </p>
@@ -38,6 +46,7 @@
         </div>
       </div>
     </div>
+
     <!-- Modal Start -->
     <Modal
       v-show="isModalVisible"
@@ -46,11 +55,7 @@
       @close="closeModal"
     >
       <template #body>
-        <img
-          :src="$config.baseURL + singleNewsDetails.image"
-          :alt="singleNewsDetails.title"
-        />
-        <div v-html="singleNewsDetails.description"></div>
+        <div v-html="singleNewsDetails"></div>
       </template>
       <template #footer>
         <div class="modal-footer">
@@ -71,31 +76,37 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import Banner from '@/components/helpers/Banner.vue'
 import Modal from '@/components/helpers/ModalScroll.vue'
+// import Banner from '@/components/helpers/Banner.vue'
 export default {
   name: 'Events',
   components: {
-    Banner,
+    // Banner,
     Modal,
   },
   layout: 'HomeLayout',
   asyncData({ store, route }) {
-    store.dispatch(
-      'depNoticeBoard/getNoticeBoardBanner',
-      route.params.department
-    )
-    store.dispatch('depNoticeBoard/getNotices', route.params.department)
+    store.dispatch('club/getClubEvents', route.params.slug)
   },
   data() {
     return {
       singleNewsDetails: '',
       isModalVisible: false,
+      status: [
+        { title: 'Upcoming', value: 'upcoming' },
+        { title: 'Upcoming', value: 'upcoming' },
+      ],
+
+      filter: false,
+      topic: '',
+      date: '',
+      currentPage: 1,
     }
   },
   computed: {
-    ...mapGetters('depNoticeBoard', ['banner', 'notices']),
+    ...mapGetters('club', ['club_events']),
   },
+
   methods: {
     // Modal
     showModal(slug) {

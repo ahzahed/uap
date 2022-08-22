@@ -1,6 +1,6 @@
 /* eslint-disable vue/no-use-v-if-with-v-for */
 <template>
-  <section class="academic-gallery">
+  <section id="academic-gallery">
     <Banner v-if="banner" :banner="banner" />
 
     <!-- <Banner :items="banner" /> -->
@@ -8,7 +8,7 @@
       <div class="row nav-padding">
         <div class="col-md-12 col-lg-12 mx-auto">
           <ul class="nav justify-content-center">
-            <li class="nav-item" :class="activeItem === 'all' ? 'active' : ''">
+            <li class="nav-item" :class="activeItem === 'All' ? 'active' : ''">
               <a
                 class="flex-sm-fill text-sm-center nav-link"
                 @click="getGallery('all')"
@@ -22,6 +22,7 @@
               :class="activeItem == item.cat_gallery ? 'active' : ''"
             >
               <a
+                v-if="i !== 0"
                 class="flex-sm-fill text-sm-center nav-link"
                 @click="getGallery(item.cat_gallery)"
                 >{{ item.cat_gallery }}</a
@@ -109,7 +110,7 @@ export default {
   data() {
     return {
       showModal: false,
-      activeItem: 'all',
+      activeItem: 'All',
       settings: {
         dots: false,
         autoplay: true,
@@ -158,7 +159,8 @@ export default {
 </script>
 
 <style lang="scss">
-.academic-gallery {
+#academic-gallery {
+  margin-bottom: 70px;
   .gallery-nav {
     position: absolute;
     top: 50%;

@@ -4,19 +4,15 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 p-0 visionMissionImg">
-          <div style="overflow: hidden; height: 100%">
-            <img
-              class="img-fluid w-100"
-              :src="$config.baseURL + vision.department_vission_image"
-              alt="vision"
-              style="height: 100%"
-            />
-          </div>
+          <img
+            :src="$config.baseURL + vision.department_vission_image"
+            alt="vision"
+          />
         </div>
         <div class="col-lg-6 order-lg-first p-0 visionMission">
           <div class="h-100">
             <div class="d-flex h-100">
-              <div class="vissionMissionContent w-100 my-auto px-5 py-5">
+              <div class="vissionMissionContent w-100 my-auto py-5">
                 <h4>{{ vision.department_vission_title }}</h4>
                 <p>
                   {{ vision.department_vission_description }}
@@ -29,19 +25,15 @@
 
       <div class="row">
         <div class="col-lg-6 p-0 visionMissionImg">
-          <div style="overflow: hidden; height: 100%">
-            <img
-              class="img-fluid w-100"
-              :src="$config.baseURL + mission.department_mission_image"
-              alt="mission"
-              style="height: 100%"
-            />
-          </div>
+          <img
+            :src="$config.baseURL + mission.department_mission_image"
+            alt="mission"
+          />
         </div>
         <div class="col-lg-6 p-0 visionMission">
           <div class="h-100">
             <div class="d-flex h-100">
-              <div class="vissionMissionContent w-100 my-auto px-5 py-5">
+              <div class="vissionMissionContent w-100 my-auto py-5">
                 <h4>{{ mission.department_mission_title }}</h4>
                 <p class="mb-0">
                   {{ mission.department_mission_description }}
@@ -255,6 +247,11 @@ export default {
     }
   }
   .visionMissionImg {
+    img {
+      @include respond-below(lg) {
+        width: 100%;
+      }
+    }
     // max-height: 810px;
   }
   .visionMission {
@@ -275,6 +272,14 @@ export default {
       border-radius: 5px;
       padding: 11px 22px;
       cursor: pointer;
+    }
+    .vissionMissionContent {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      @include respond-below(sm) {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
     }
   }
 }

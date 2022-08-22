@@ -35,10 +35,8 @@ export default {
 <style lang="scss" scoped>
 @import './styles/_main.scss';
 #procedure {
-  padding-bottom: $section-padding;
   padding-top: $section-padding;
   h1 {
-    margin-bottom: 95px;
     @include title;
   }
   h3 {

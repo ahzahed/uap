@@ -34,7 +34,7 @@ export default {
   .container {
     .top-text {
       // margin-top: 70px;
-      margin-bottom: 70px;
+      margin-bottom: 30px;
       @include title;
       text-align: justify;
     }

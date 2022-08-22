@@ -2,15 +2,15 @@
   <section class="about-section">
     <Banner :banner="club_banner" />
     <CDC :club-info="club_body" />
-    <Event :event-title="eventTitle" :events="club_events" />
+    <Event  :events="club_events" />
   </section>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import Banner from '../../components/departmens/club/Banner.vue'
-import CDC from '../../components/departmens/club/cdc/CDC.vue'
-import Event from '../../components/departmens/club/cdc/Event.vue'
+import Banner from '../../../components/departmens/club/Banner.vue'
+import CDC from '../../../components/departmens/club/cdc/CDC.vue'
+import Event from '../../../components/departmens/club/cdc/GeneralEvent.vue'
 export default {
   components: {
     Banner,
@@ -82,7 +82,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('club', ['club_banner', 'club_body','club_events']),
+    ...mapGetters('club', ['club_banner', 'club_body', 'club_events']),
   },
 }
 </script>

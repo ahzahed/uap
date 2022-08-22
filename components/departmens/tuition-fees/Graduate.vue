@@ -40,7 +40,15 @@
                     {{ graduateCost.length > 0 && graduateCost[0].value }}
                   </th>
                 </tr>
-                <tr v-for="(item, i) in graduateCost.slice(1)" :key="i">
+                <tr>
+                  <td class="data">
+                    {{ graduateCost.length > 0 && graduateCost[1].title }}
+                  </td>
+                  <td class="data">
+                    {{ graduateCost.length > 0 && graduateCost[1].value }}
+                  </td>
+                </tr>
+                <tr v-for="(item, i) in graduateCost.slice(2)" :key="i">
                   <td class="data">{{ item.title }}</td>
                   <td class="data">&#2547; {{ item.value }}</td>
                 </tr>

@@ -3,7 +3,11 @@
     <div class="footer-overly"></div>
     <div class="container">
       <div class="row padding-footer">
-        <div class="col-md-3 col-12" data-aos="fade-right" data-aos-duration="1800">
+        <div
+          class="col-md-3 col-12"
+          data-aos="fade-right"
+          data-aos-duration="1800"
+        >
           <div class="footer-logo">
             <nuxt-link to="/" class="logo">
               <img
@@ -31,7 +35,8 @@
               v-for="(menu, i) in footermenus"
               :key="'col_' + i"
               class="col-md-3 col-6 footer-col"
-              data-aos="fade-up" :data-aos-duration="menu.duration"
+              data-aos="fade-up"
+              :data-aos-duration="menu.duration"
             >
               <ul class="navbar-nav">
                 <li
@@ -49,32 +54,32 @@
         </div>
       </div>
       <div class="row justify-content-center footer-socal-area">
-        <div class="col-md-6 ">
-          <ul class="nav justify-content-center ">
+        <div class="col-md-6">
+          <ul class="nav justify-content-center">
             <li v-for="(item, i) in socalicons" :key="i" class="nav-item">
-              <nuxt-link class="nav-link " to=""><img :src="item.img"></nuxt-link>
+              <nuxt-link class="nav-link" to=""
+                ><img :src="item.img"
+              /></nuxt-link>
             </li>
-          
           </ul>
         </div>
       </div>
     </div>
     <section class="footer-bottom">
-         <p>© University of Asia Pacific</p>
-      </section>
-
-
-
-
+      <p>© University of Asia Pacific</p>
+    </section>
   </footer>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import footerlogo from '../../static/images/footerlogo.png'
 
 import aosMixin from '~/mixins/aos'
 export default {
   mixins: [aosMixin],
-
+  asyncData({ store }) {
+    store.dispatch('footer/getFooter')
+  },
   data() {
     return {
       footersactive: {
@@ -85,7 +90,7 @@ export default {
       },
       footermenus: [
         {
-             duration: 1000,
+          duration: 1000,
           links: [
             {
               text: 'Automation(UCAM) Login',
@@ -114,7 +119,7 @@ export default {
           ],
         },
         {
-             duration: 1200,
+          duration: 1200,
           links: [
             {
               text: 'Plagiarism checker',
@@ -139,7 +144,7 @@ export default {
           ],
         },
         {
-             duration: 1400,
+          duration: 1400,
           links: [
             {
               text: 'UAP News Letter Picture',
@@ -164,7 +169,7 @@ export default {
           ],
         },
         {
-             duration: 1600,
+          duration: 1600,
           links: [
             {
               text: 'Plagiarism checker',
@@ -193,14 +198,18 @@ export default {
           ],
         },
       ],
-      socalicons:[
-        {img:require('../../static/images/icon/Path 1.png')},
-        {img:require('../../static/images/icon/Path 2.png')},
-        {img:require('../../static/images/icon/Path 3.png')},
-        {img:require('../../static/images/icon/Path 4.png')},
-        {img:require('../../static/images/icon/Path 5.png')},
-      ]
+      socalicons: [
+        { img: require('../../static/images/icon/Path 1.png') },
+        { img: require('../../static/images/icon/Path 2.png') },
+        { img: require('../../static/images/icon/Path 3.png') },
+        { img: require('../../static/images/icon/Path 4.png') },
+        { img: require('../../static/images/icon/Path 5.png') },
+      ],
     }
+  },
+
+  computed: {
+    ...mapGetters('footer', ['footer']),
   },
 }
 </script>
@@ -289,7 +298,6 @@ export default {
         }
         &:hover {
           color: #ddd;
-          
         }
       }
     }

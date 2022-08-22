@@ -9,7 +9,7 @@
               <li>
                 <nuxt-link to="/"><i class="fas fa-home"></i> Home</nuxt-link>
               </li>
-              <li class="departments">Departments</li>
+              <li class="departments">Schools</li>
             </ul>
           </div>
         </div>

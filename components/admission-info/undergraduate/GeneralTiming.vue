@@ -51,7 +51,7 @@ export default {
   //   padding-top: $section-padding;
   h1 {
     @include title;
-    margin-bottom: 95px;
+    margin-bottom: 30px;
   }
   .left {
     padding-right: 0px;

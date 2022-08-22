@@ -54,7 +54,7 @@ export default {}
 
     background-color: $lightblue;
     button {
-      padding: 11px 124px;
+      padding: 11px 80px;
       background-color: rgba(18, 102, 241, 0.75);
       border-radius: 5px;
       margin-top: 55px;

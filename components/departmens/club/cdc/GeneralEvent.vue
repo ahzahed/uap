@@ -47,13 +47,7 @@
       </VueSlickCarousel>
       <div class="text-center mt-5">
         <nuxt-link
-          :to="
-            '/' +
-            $nuxt.$route.params.department +
-            '/club/' +
-            $nuxt.$route.params.slug +
-            '/events'
-          "
+          :to="'/club/' + $nuxt.$route.params.slug + '/events'"
           class="primary-btn readmore"
           >More Events</nuxt-link
         >

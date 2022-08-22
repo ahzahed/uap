@@ -111,7 +111,7 @@ export default {
   right: 0;
   z-index: 99;
   @include respond-below(xml) {
-    // display: none;
+    display: none;
   }
   .floating-tabs {
     margin-left: 5px;
