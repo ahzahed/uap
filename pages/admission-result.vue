@@ -82,6 +82,8 @@ export default {
     margin-bottom: 82px;
   }
   ul {
+    list-style-type: none;
+
     padding: 0;
     li {
       padding-left: 85px;

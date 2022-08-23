@@ -12,7 +12,7 @@
     >
       <video
         v-if="banner.header_video_link"
-        :src="banner.header_video_link"
+        :src="$config.baseURL + banner.header_banner"
         loop
         muted
         autoplay

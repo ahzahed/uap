@@ -10,7 +10,7 @@
               :key="i"
               class="table text-center"
             >
-              <thead>
+              <thead :class="item.deadline.length > 0 ? 'd-none' : ''">
                 <tr>
                   <th
                     id="headingOne"

@@ -199,4 +199,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped src="~/styles/_overlaymenu.scss"></style>
+<style lang="scss" scoped src="~/styles/_overlaymenu.scss">
+.uap-overlaymenu {
+  .nav-primary__list {
+    ul {
+      list-style-type: none;
+      background: red;
+    }
+  }
+}
+</style>
