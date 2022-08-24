@@ -7,9 +7,7 @@
       <div class="container">
         <div class="banner-content col-md-6">
           <h2 class="banner-content-title">{{ banner.title }}</h2>
-          <p v-html="banner.description ">
-            
-          </p>
+          <p v-html="banner.description || banner.simple_text"></p>
         </div>
       </div>
     </div>
@@ -19,7 +17,6 @@
 <script>
 export default {
   props: {
-    // eslint-disable-next-line vue/require-default-prop
     banner: {
       type: Object,
       required: true,

@@ -5,7 +5,7 @@
       <div class="floating-tabs">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <nuxt-link class="nav-link" to="#cse">Why CSE at uap</nuxt-link>
+            <nuxt-link class="nav-link" to="#cse">Why at uap</nuxt-link>
           </li>
           <li class="nav-item">
             <nuxt-link class="nav-link" to="#general">General Info</nuxt-link>

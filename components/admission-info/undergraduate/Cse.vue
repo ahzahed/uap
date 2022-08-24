@@ -1,7 +1,7 @@
 <template>
   <section id="cse">
     <div class="container">
-      <h4 class="text-center">Why CSE at UAP</h4>
+      <h4 class="text-center">Why at UAP</h4>
       <div class="row">
         <div
           class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2 d-flex justify-content-center"
@@ -33,6 +33,10 @@ export default {
   props: {
     informations: {
       type: Array,
+      required: true,
+    },
+    banner: {
+      type: Object,
       required: true,
     },
   },

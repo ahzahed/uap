@@ -142,7 +142,7 @@
                       class="nav-link"
                       @click.native="subCategory()"
                     >
-                      {{ item.group_name }}
+                      {{ item.section }}
                     </nuxt-link>
                   </li>
                 </ul>
@@ -163,7 +163,7 @@
                       class="nav-link"
                       @click.native="subCategory()"
                     >
-                      {{ item.group_name }}
+                      {{ item.section }}
                     </nuxt-link>
                   </li>
                 </ul>
