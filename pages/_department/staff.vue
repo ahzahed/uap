@@ -19,15 +19,7 @@ export default {
   },
   data() {
     return {
-      chairperson: {
-        img: require('@/static/BOD/b1.jpg'),
-        name: 'MR. C.M.SHAFI SAMI',
-        designation: 'Chairperson',
-        occupation:
-          'Former Foreign Secretary and Former Adviser, Caretaker Government',
-        address: 'Apt. 1SE, House # 18/A Road # 44 Gulshan‐2, Dhaka‐1212',
-        email: 'cmsami@yahoo.com, samishafi1942@gmail.com',
-      },
+      
 
       currentPage: 1,
     }

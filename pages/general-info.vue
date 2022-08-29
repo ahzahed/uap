@@ -48,11 +48,7 @@ export default {
   layout: 'HomeLayout',
   data() {
     return {
-      banner: {
-        banner: require('@/static/admissiontest.png'),
-        title: 'Admission Info',
-        details: 'Undergraduate',
-      },
+      
       Informations: [
           {
               info: "The Department of CSE is ranked “Very Good” in quality by External Peer Review Team (EPRT), IQAC, UGC."

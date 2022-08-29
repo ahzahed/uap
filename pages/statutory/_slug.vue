@@ -39,9 +39,7 @@ export default {
   asyncData({ route, store }) {
     store.dispatch('statutory/allStatutory', route.query.id)
   },
-  data() {
-    return {}
-  },
+
 
   computed: {
     ...mapGetters('statutory', ['statutoryList']),

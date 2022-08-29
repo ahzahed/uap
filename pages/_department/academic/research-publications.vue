@@ -19,11 +19,7 @@ export default {
   
   data() {
     return {
-      banner: {
-        img: require('@/static/faq.png'),
-        title: 'Research and publications',
-        // details: 'Key dates for 2020 and 2021',
-      },
+      
       accolades: [
         {
           index: 1,

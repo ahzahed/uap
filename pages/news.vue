@@ -124,10 +124,7 @@ export default {
       date: '',
       topic: '',
 
-      banner: {
-        img: require('@/static/admissiontest.png'),
-        title: 'Events',
-      },
+      
     }
   },
   computed: {

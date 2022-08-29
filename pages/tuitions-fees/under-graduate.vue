@@ -83,9 +83,7 @@ export default {
     store.dispatch('tuitions/allUnderGraduate')
     store.dispatch('tuitions/getUnderGraduateNote')
   },
-  data() {
-    return {}
-  },
+ 
   computed: {
     ...mapGetters('tuitions', ['underGraduateList', 'underGraduationNote']),
   },

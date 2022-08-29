@@ -25,15 +25,7 @@ export default {
   asyncData({ store }) {
     store.dispatch('rules/getRulesBanner')
   },
-  data() {
-    return {
-      banner: {
-        banner: require('@/static/adminastration.png'),
-        title: 'Administration',
-        details: 'Campus Administration University of Asia Pacific',
-      },
-    }
-  },
+  
   computed: {
     ...mapGetters('rules', ['rules_banner', 'rules_section']),
   },

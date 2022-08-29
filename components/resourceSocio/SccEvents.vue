@@ -169,10 +169,7 @@ export default {
       selectedStatus: '',
       date: '',
       currentPage: 1,
-      banner: {
-        img: require('@/static/admissiontest.png'),
-        title: 'Events',
-      },
+     
     }
   },
   computed: {

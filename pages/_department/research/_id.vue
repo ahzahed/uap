@@ -41,14 +41,7 @@ export default {
       id: route.params.id,
     })
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'BSc. Curriculum',
-      },
-    }
-  },
+  
   computed: {
     ...mapGetters('depResearchResource', [
       'research_resource_banner',

@@ -20,14 +20,7 @@ export default {
     store.dispatch('depAcademicCal/getAcademicCalBanner')
     store.dispatch('depAcademicCal/getAcademicCalBody')
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'Academic Calender',
-      },
-    }
-  },
+  
   computed: {
     ...mapGetters('depAcademicCal', ['academic_cal_banner','academic_cal_body']),
   },

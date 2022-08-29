@@ -16,14 +16,7 @@ export default {
     store.dispatch('resourceFaculty/getRfBanner')
     store.dispatch('department/getDepartmentList')
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/admissiontest.png'),
-        title: 'UAP Resources: The Faculty',
-      },
-    }
-  },
+ 
   computed: {
     ...mapGetters('resourceFaculty', ['rf_banner']),
     ...mapGetters('department', ['departmentList']),

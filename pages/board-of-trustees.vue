@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       chairperson: {
-        img: require('@/static/BOD/b1.jpg'),
+        // img: require('@/static/BOD/b1.jpg'),
         name: 'MR. C.M.SHAFI SAMI',
         designation: 'Chairperson',
         occupation:

@@ -15,16 +15,7 @@ export default {
   asyncData({ store }) {
     store.dispatch('welcomeNote/getWelcomeBanner')
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/note.png'),
-        title: 'Welcome Note',
-        details:
-          'We Are One of The Largest, Most Diverse Universities in The Bangladesh',
-      },
-    }
-  },
+  
   computed: {
     ...mapGetters('welcomeNote', ['welcome_banner']),
   },

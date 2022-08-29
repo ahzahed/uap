@@ -10,6 +10,8 @@ const state = () => ({
   topic_list: [],
   news: [],
   single_news_by_slug: {},
+  footer: {},
+  admission_aid: {},
 })
 
 const getters = {
@@ -21,6 +23,8 @@ const getters = {
   how_to_apply: (state) => state.how_to_apply,
   news: (state) => state.news,
   single_news_by_slug: (state) => state.single_news_by_slug,
+  footer: (state) => state.footer,
+  admission_aid: (state) => state.admission_aid,
 }
 
 const actions = {
@@ -91,6 +95,17 @@ const actions = {
 
     context.commit('HOW_TO_APPLY', data.data)
   },
+
+  async getFooter(context) {
+    const data = await this.$axios.get(`/footer`)
+
+    context.commit('FOOTER', data.data)
+  },
+  async getAdmissionAid(context) {
+    const data = await this.$axios.get(`/admission_aid/info`)
+
+    context.commit('ADMISSION', data.data)
+  },
 }
 
 const mutations = {
@@ -120,6 +135,12 @@ const mutations = {
   },
   SINGLE_NEWS_BY_SLUG(state, section) {
     state.single_news_by_slug = section
+  },
+  FOOTER(state, section) {
+    state.footer = section
+  },
+  ADMISSION(state, section) {
+    state.admission_aid = section
   },
 }
 export default {

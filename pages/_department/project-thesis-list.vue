@@ -21,14 +21,7 @@ export default {
     store.dispatch('depProjectThe/getProjectTheBody', route.params.department)
     
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'Project & Thesis List',
-      },
-    }
-  },
+  
   computed: {
     ...mapGetters('depProjectThe', ['project_the_banner','project_the_body']),
   },

@@ -36,40 +36,7 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 export default {
-  data() {
-    return {
-      ranking: {
-        
-
-        data: [
-          {
-            color: '#1b2055',
-            background: '#e1f2f9',
-            img: require('@/static/image-6.png'),
-            title: 'UAP RANKED #5 AMONG PRIVATE UNIVERSITIES OF BANGLADESH',
-            details:
-              '<div class="py-1"><strong>19TH</strong> AMONG ALL PUBLIC AND PRIVATE UNIVERSITIES IN BANGLADESH</div> <div class="py-1">ASIA | RANKED #458 </div> <div class="py-1"> WORLD | RANKED #836 </div> <div class="py-1">SCIMAGO INSTITUTION RANKING, 2021</div>',
-          },
-          {
-            color: '#018e3a',
-            background: 'rgba(1, 255, 104, 0.1)',
-            img: require('@/static/image-5.png'),
-            title: 'UAP RANKED #9 AMONG PRIVATE UNIVERSITIES OF BANGLADESH',
-            details:
-              '<div class="py-1"><strong>27TH</strong> AMONG ALL PUBLIC AND PRIVATE UNIVERSITIES IN BANGLADESH </div> <div class="py-1">WORLD | RANKED #3989 </div> <div class="py-1">Webometrics Ranking of World Universities, 2021 </div>',
-          },
-          {
-            color: '#1b2055',
-            background: 'rgba(247, 215, 153, 0.28)',
-            img: require('@/static/image-7.png'),
-            title: 'UAP RANKED #5 AMONG PRIVATE UNIVERSITIES OF BANGLADESH',
-            details:
-              '<div class="py-1"><strong>19TH</strong> AMONG ALL PUBLIC AND PRIVATE UNIVERSITIES IN BANGLADESH </div><div class="py-1"> ASIA | RANKED #458 </div> <div class="py-1">WORLD | RANKED #836 </div> <span style="font-size: 14px; font-weight: 500">SCIMAGO INSTITUTION RANKING, 2021</span>',
-          },
-        ],
-      },
-    }
-  },
+  
 
   computed: {
     ...mapGetters('about', ['our_ranking']),

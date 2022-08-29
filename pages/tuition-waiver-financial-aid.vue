@@ -59,11 +59,7 @@ export default {
   },
   data() {
     return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'Tuition Waiver & Financial Aid',
-        details: 'University of Asia Pacific',
-      },
+      
 
       programmenu: [
         {

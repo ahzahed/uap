@@ -21,14 +21,7 @@ export default {
     store.dispatch('classSchedule/getSemesters', route.params.department)
     // store.dispatch('classSchedule/getSections', route.params.department)
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'Class Schedule',
-      },
-    }
-  },
+  
   computed: {
     ...mapGetters('classSchedule', ['class_schedule_banner','semesters']),
   },

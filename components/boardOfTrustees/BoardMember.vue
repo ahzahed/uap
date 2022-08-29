@@ -118,11 +118,7 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      img: require('@/static/authorities-banner.png'),
-    }
-  },
+  
 }
 </script>
 <style lang="scss" scoped>

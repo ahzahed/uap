@@ -40,15 +40,7 @@ export default {
     store.dispatch('careerService/getCareerServiceBanner')
     store.dispatch('careerService/getCareerServiceBody')
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'Committee',
-        details: 'University of Asia Pacific',
-      },
-    }
-  },
+  
 
   computed: {
     ...mapGetters('careerService', [

@@ -29,11 +29,7 @@ export default {
       require: true,
     },
   },
-  data() {
-    return {
-      img: require('@/static/pdf/academic.png'),
-    }
-  },
+  
 }
 </script>
 

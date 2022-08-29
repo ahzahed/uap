@@ -18,11 +18,7 @@ export default {
   },
   data() {
     return {
-      banner: {
-        image: require('@/static/1.JPG'),
-        title: 'Important Dates and Deadlines',
-        details: 'Key dates for 2020 and 2021',
-      },
+      
     }
   },
   computed: {

@@ -20,14 +20,7 @@ export default {
     store.dispatch('depBscCur/getBscBanner', route.params.department)
     store.dispatch('depBscCur/getBscBody', route.params.department)
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'MSc. Curriculum',
-      },
-    }
-  },
+
   computed: {
     ...mapGetters('depBscCur', ['bsc_banner', 'bsc_body']),
   },

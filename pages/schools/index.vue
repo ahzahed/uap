@@ -55,9 +55,7 @@ export default {
   asyncData({ store }) {
     store.dispatch('school/getSchoolList')
   },
-  data() {
-    return {}
-  },
+ 
   computed: {
     ...mapGetters('school', ['schoolList']),
   },

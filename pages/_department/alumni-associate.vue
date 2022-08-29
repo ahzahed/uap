@@ -20,14 +20,7 @@ export default {
     store.dispatch('alumniAsso/getAaBanner', route.params.department)
     store.dispatch('alumniAsso/getAaBody', route.params.department)
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'Academic Calendar – Fall 2021',
-      },
-    }
-  },
+ 
   computed: {
     ...mapGetters('alumniAsso', ['aa_banner', 'aa_body']),
   },

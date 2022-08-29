@@ -36,9 +36,7 @@ export default {
   data() {
     return {
       toggle: false,
-      img: require('@/static/BOD/x.jpg'),
-      details:
-        '<h4 style="margin-bottom: 25px"></h4><p></p><h4 style="margin-bottom: 25px"></h4> <p> </p>',
+      
     }
   },
 }

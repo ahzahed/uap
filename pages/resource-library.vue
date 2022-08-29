@@ -32,15 +32,7 @@ export default {
   asyncData({ store }) {
     store.dispatch('resourceLibrary/getResourseLibraryBanner')
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'Committee',
-        details: 'University of Asia Pacific',
-      },
-    }
-  },
+  
 
   computed: {
     ...mapGetters('resourceLibrary', [

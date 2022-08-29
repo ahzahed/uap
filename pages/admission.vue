@@ -33,16 +33,7 @@ export default {
     store.dispatch('admission/admissionAddress')
     store.dispatch('admission/getAdmissionNecessaryList')
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/admission.png'),
-        title: 'Admission at UAP',
-        details:
-          'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.',
-      },
-    }
-  },
+ 
   computed: {
     ...mapGetters('admission', [
       'admission_banner',

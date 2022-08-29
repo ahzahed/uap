@@ -16,15 +16,7 @@ export default {
     store.dispatch('faqs/getFaqBanner')
     store.dispatch('faqs/getFaqBody')
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/faq.png'),
-        title: 'Freequently Ask question',
-        details: 'Key dates for 2020 and 2021',
-      },
-    }
-  },
+  
    computed: {
     ...mapGetters('faqs', ['faq_banner','faq_body']),
   },

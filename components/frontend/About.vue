@@ -10,7 +10,7 @@
         >
           <div class="about-content">
             <h2>{{ welcome_info.title }}</h2>
-            <p>
+            <p style="text-align: justify">
               {{ welcome_info.description }}
             </p>
 

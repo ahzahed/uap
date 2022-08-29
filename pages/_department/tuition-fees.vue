@@ -62,10 +62,7 @@ export default {
   },
   data() {
     return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'Tuition & fees',
-      },
+      
       whatIsRequired: [
         {
           name: 'Graduate cost',

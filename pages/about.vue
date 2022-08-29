@@ -60,15 +60,7 @@ export default {
     store.dispatch('about/getAboutBanner')
     store.dispatch('about/getViceChancellor')
   },
-  data() {
-    return {
-      banner: {
-        banner: require('@/static/adminastration.png'),
-        title: 'Administration',
-        details: 'Campus Administration University of Asia Pacific',
-      },
-    }
-  },
+  
   computed: {
     ...mapGetters('about', ['about_banner', 'vice_chancellor']),
   },

@@ -57,21 +57,14 @@ export default {
       id: route.query.id,
     })
   },
-  data() {
-    return {
-      banner: {
-        image: require('@/static/biography.png'),
-        title: 'Member of UAP CSE Faculty',
-      },
-    }
-  },
+
   computed: {
     ...mapGetters('faculty', [
       'faculty_details',
       'faculty_thesis',
       'faculty_research',
       'faculty_resource',
-      'faculty_publication'
+      'faculty_publication',
     ]),
   },
 }

@@ -58,9 +58,7 @@ export default {
     store.dispatch('tuitions/allGraduate')
     store.dispatch('tuitions/getGraduationNote')
   },
-  data() {
-    return {}
-  },
+
   computed: {
     ...mapGetters('tuitions', ['graduateList', 'graduationNote']),
   },

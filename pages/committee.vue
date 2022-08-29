@@ -31,15 +31,7 @@ export default {
   asyncData({ store }) {
     store.dispatch('committee/getCommitteeBanner')
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'Committee',
-        details: 'University of Asia Pacific',
-      },
-    }
-  },
+  
 
   computed: {
     ...mapGetters('committee', ['committee_section', 'committee_banner']),

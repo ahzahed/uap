@@ -83,7 +83,6 @@ export default {
   // },
   data() {
     return {
-      img: require('@/static/pdf/classpdf.png'),
       semester: '',
       section: '',
       semester_id: '',

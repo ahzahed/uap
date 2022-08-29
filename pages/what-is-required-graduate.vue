@@ -31,15 +31,7 @@ export default {
   asyncData({ store }) {
     store.dispatch('whatIsRequired/getWhatIsRequiredBanner')
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'Committee',
-        details: 'University of Asia Pacific',
-      },
-    }
-  },
+  
 
   computed: {
     ...mapGetters('whatIsRequired', [

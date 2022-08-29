@@ -59,9 +59,7 @@ export default {
     store.dispatch('school/getDepartmentListUnderSchool', route.params.slug)
     store.dispatch('school/getDeanOfSchool', route.params.slug)
   },
-  data() {
-    return {}
-  },
+  
   computed: {
     ...mapGetters('school', ['departmentListUnderSchool', 'deanOfSchool']),
   },

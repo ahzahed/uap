@@ -107,9 +107,7 @@ export default {
     store.dispatch('tuitions/getWaiverList')
     store.dispatch('tuitions/meritWaiver')
   },
-  data() {
-    return {}
-  },
+ 
   computed: {
     ...mapGetters('tuitions', ['getWaiverList', 'meritWaiverList']),
   },

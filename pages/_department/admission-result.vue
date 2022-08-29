@@ -29,15 +29,7 @@ export default {
     store.dispatch('depAdmissionResult/getFinalResult', route.params.department)
     store.dispatch('depAdmissionResult/getWaitingList', route.params.department)
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'Admission Result',
-        details: 'University of Asia Pacific',
-      },
-    }
-  },
+ 
   computed: {
     ...mapGetters('depAdmissionResult', [
       'admission_result_banner',

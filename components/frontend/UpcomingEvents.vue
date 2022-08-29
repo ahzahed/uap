@@ -30,7 +30,7 @@
                 >{{ upcoming_events[0].from }} -
                 {{ upcoming_events[0].to }}</span
               >
-              <small>{{ upcoming_events[0].medium }}</small>
+              <small>{{ upcoming_events[0].topic }}</small>
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@
                   <h5>{{ item.title }}</h5>
                   <div class="overlay-content">
                     <span>{{ item.from }} - {{ item.to }}</span>
-                    <small>{{ item.medium }}</small>
+                    <small>{{ item.topic }}</small>
                   </div>
                 </div>
               </div>
@@ -69,14 +69,12 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import backgroundImage from '../../static/test1.jpeg'
 import aosMixin from '~/mixins/aos'
 export default {
   mixins: [aosMixin],
   data() {
     return {
       upcomingEvents: {
-        background: backgroundImage,
         title: `WEBINAR SERIES ON "YOUNG WOMEN'S HEALTH PROBLEMS" HELD AT UAP`,
         from: '2.30 PM',
         to: '3.30 PM',

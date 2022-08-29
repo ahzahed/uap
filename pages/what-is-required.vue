@@ -32,12 +32,7 @@ export default {
   },
   data() {
     return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'What is required',
-        details:
-          'Undergraduate admission Criteria and Application Fee Payment Procedure',
-      },
+      
       whatIsRequired: [
         {
           name: 'Graduate admission criteria',

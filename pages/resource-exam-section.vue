@@ -28,15 +28,7 @@ export default {
     Header,
   },
   layout: 'HomeLayout',
-  data() {
-    return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'Committee',
-        details: 'University of Asia Pacific',
-      },
-    }
-  },
+  
 
   computed: {
     ...mapGetters('resourceExamSection', [

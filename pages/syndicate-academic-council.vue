@@ -61,16 +61,7 @@ export default {
   asyncData({ store }) {
     store.dispatch('syndicate/getSyndicateBanner')
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/authorities-banner.png'),
-        title: 'Syndicate and Academic Council',
-        details:
-          'MEMBERS OF SYNDICATE OF UNIVERSITY OF ASIA PACIFIC (AS PER PRIVATE UNIVERSITY ACT 2010)',
-      },
-    }
-  },
+  
   computed: {
     ...mapGetters('syndicate', ['syndicate_section', 'syndicate_banner']),
   },

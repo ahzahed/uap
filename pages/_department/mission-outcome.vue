@@ -21,14 +21,7 @@ export default {
     store.dispatch('depMissionOut/getMissionBody', route.params.department)
   
   },
-  data() {
-    return {     
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'Mission & Outcome',
-      },
-    }
-  },
+  
    computed: {
     ...mapGetters('depMissionOut', ['mission_banner','mission_body']),
   },

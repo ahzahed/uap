@@ -79,9 +79,7 @@ export default {
   data() {
     return {
       toggle: false,
-      img: require('@/static/BOD/x.jpg'),
-      // details:
-      // '<h4 style="margin-bottom: 25px"><i>A commitment to excellence</i></h4><p>As a private University based within the urban intricacies of Metropolitan Dhaka, the capital city of a rapidly rising south Asian country Bangladesh, UAP knows the responsibility of an educational institute to shape up the future leaders of the country as well as the world. We are committed with all our resources to ensure a foundation that each and every student of our institute rightfully deserves. It’s our promise to keep.</p><h4 style="margin-bottom: 25px"><i>Acting Vice Chancellor’s welcoming words</i></h4> <p> In terms of its mission of enhancing opportunities of higher education, UAP has now become a well-recognized academia at home and abroad. During these years of nearly two and half decades, our growth and transformation were measured and steered to match world class learning experience that our boys and girls, and their parents aspire. Within the limits of growing demands, we are providing to our students and faculty members the best possible environment conducive to embed our vision of excellence in UAP’s academic programs.</p>',
+      
     }
   },
 }

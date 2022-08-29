@@ -77,11 +77,6 @@ export default {
         },
       ],
 
-      banner: {
-        img: require('@/static/authorities-banner.png'),
-        title: 'UAP Resources: Academic',
-        details: 'Classrooms, Lab & Workshops',
-      },
       academic: [
         {
           section: 'Overview',
@@ -99,52 +94,8 @@ export default {
           active: false,
         },
       ],
-      overview: [
-        {
-          img: require('@/static/resourceaca.png'),
-        },
-        {
-          img: require('@/static/resourceaca.png'),
-        },
-        {
-          img: require('@/static/resourceaca.png'),
-        },
-        {
-          img: require('@/static/resourceaca.png'),
-        },
-        {
-          img: require('@/static/resourceaca.png'),
-        },
-        {
-          img: require('@/static/resourceaca.png'),
-        },
-        {
-          img: require('@/static/resourceaca.png'),
-        },
-      ],
-      laboratories: [
-        {
-          img: require('@/static/resourceaca.png'),
-        },
-        {
-          img: require('@/static/resourceaca.png'),
-        },
-        {
-          img: require('@/static/resourceaca.png'),
-        },
-        {
-          img: require('@/static/resourceaca.png'),
-        },
-        {
-          img: require('@/static/resourceaca.png'),
-        },
-        {
-          img: require('@/static/resourceaca.png'),
-        },
-        {
-          img: require('@/static/resourceaca.png'),
-        },
-      ],
+
+      
       overviewDetails:
         'UAP puts ample focus on developing its classroom and lab facilities with necessary modern equipment. About the classrooms UAP maintains a unique policy by making every classroom available for all departments so that a sense of cohesiveness and communal atmosphere is maintained within varied departments. The classrooms are also varied in sizes accommodating 30 to 60 students. In every semester the classroom slots are allocated centrally to each department according to their requisition.  The rest of the classes are kept free to fulfill additional or temporary requirements of each department whenever they need one. This unique system allows the students and faculties from one department to interact with students from other departments and to create a sense of oneness. The class rooms are air conditioned and equipped with computer, multimedia projector, Sound system (fixed or on demand), Wi-Fi etc.',
       laboratoriesDetails:

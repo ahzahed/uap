@@ -38,9 +38,7 @@ export default {
   asyncData({ route, store }) {
     store.dispatch('committee/allCommittee', route.query.id)
   },
-  data() {
-    return {}
-  },
+ 
 
   computed: {
     ...mapGetters('committee', ['committees']),

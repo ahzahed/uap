@@ -32,36 +32,7 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      resources: [
-        {
-          title: 'Department of Business Administration',
-          img: require('../../static/resourcesFaculty.png'),
-        },
-        {
-          title: 'Department of Business Administration',
-          img: require('../../static/resourcesFaculty.png'),
-        },
-        {
-          title: 'Department of Business Administration',
-          img: require('../../static/resourcesFaculty.png'),
-        },
-        {
-          title: 'Department of Business Administration',
-          img: require('../../static/resourcesFaculty.png'),
-        },
-        {
-          title: 'Department of Business Administration',
-          img: require('../../static/resourcesFaculty.png'),
-        },
-        {
-          title: 'Department of Business Administration',
-          img: require('../../static/resourcesFaculty.png'),
-        },
-      ],
-    }
-  },
+  
 }
 </script>
 <style lang="scss" scoped>

@@ -35,15 +35,7 @@ export default {
   asyncData({ store }) {
     store.dispatch('resourcePublications/getResoursePublicationBanner')
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'Committee',
-        details: 'University of Asia Pacific',
-      },
-    }
-  },
+  
 
   computed: {
     ...mapGetters('resourcePublications', [

@@ -56,9 +56,7 @@ export default {
   asyncData({ store }) {
     store.dispatch('department/getDepartmentList')
   },
-  data() {
-    return {}
-  },
+ 
   computed: {
     ...mapGetters('department', ['departmentList']),
   },

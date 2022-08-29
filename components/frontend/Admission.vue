@@ -9,9 +9,9 @@
           data-aos-duration="1000"
         >
           <div class="admission-content">
-            <h2>{{ admission.title }}</h2>
-            <p>
-              {{ admission.details }}
+            <h2>{{ admission_aid.title }}</h2>
+            <p style="text-align: justify">
+              {{ admission_aid.description }}
             </p>
             <!-- <div class="admission-icon">
               <a href="#">Read More</a>
@@ -27,7 +27,11 @@
           data-aos-duration="1000"
         >
           <div class="admission-img">
-            <img :src="admission.img" :alt="admission.title" class="w-100" />
+            <img
+              :src="admission_aid.image"
+              :alt="admission_aid.title"
+              class="w-100"
+            />
           </div>
         </div>
       </div>
@@ -37,18 +41,18 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 import aosMixin from '~/mixins/aos'
 export default {
   mixins: [aosMixin],
-  data() {
-    return {
-      admission: {
-        title: 'Admission & Aid',
-        details:
-          'UAP University, we prepare you to launch your career by providing a supportive, creative, and professional environment from which to learn practical skills, build a network of industry contacts.',
-        img: require('@/static/campusresourceclass.png'),
-      },
-    }
+  computed: {
+    ...mapGetters('home', ['admission_aid']),
+  },
+  created() {
+    this.getAdmissionAid()
+  },
+  methods: {
+    ...mapActions('home', ['getAdmissionAid']),
   },
 }
 </script>

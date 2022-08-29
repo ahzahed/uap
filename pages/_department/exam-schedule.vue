@@ -21,14 +21,7 @@ export default {
     store.dispatch('examSchedule/getSemesters', route.params.department)
     // store.dispatch('classSchedule/getSections', route.params.department)
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'Class Schedule',
-      },
-    }
-  },
+ 
   computed: {
     ...mapGetters('examSchedule', ['exam_schedule_banner','semesters']),
   },

@@ -32,15 +32,7 @@ export default {
     store.dispatch('statutory/getStatutoryBanner')
   },
 
-  data() {
-    return {
-      banner: {
-        banner: require('@/static/comittee.png'),
-        title: 'Statutory',
-        details: 'University of Asia Pacific',
-      },
-    }
-  },
+  
 
   computed: {
     ...mapGetters('statutory', ['statutory_section', 'statutory_banner']),

@@ -20,15 +20,7 @@ export default {
     store.dispatch('pandemic/getFee')
     store.dispatch('pandemic/getDeposit')
   },
-  data() {
-    return {
-      banner: {
-        img: require('@/static/comittee.png'),
-        title: 'Pandemic Payment Policy and Option',
-        details: 'Pandemic & Special Fee Structure',
-      },
-    }
-  },
+  
   computed: {
     ...mapGetters('pandemic', ['pandemic_banner', 'message', 'fee', 'deposit']),
   },

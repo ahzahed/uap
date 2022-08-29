@@ -38,9 +38,7 @@ export default {
   asyncData({ route, store }) {
     store.dispatch('syndicate/allSyndicate', route.query.id)
   },
-  data() {
-    return {}
-  },
+ 
 
   computed: {
     ...mapGetters('syndicate', ['syndicate']),

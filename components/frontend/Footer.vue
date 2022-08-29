@@ -32,20 +32,69 @@
         <div class="col-md-9">
           <div class="row">
             <div
-              v-for="(menu, i) in footermenus"
-              :key="'col_' + i"
               class="col-md-3 col-6 footer-col"
               data-aos="fade-up"
-              :data-aos-duration="menu.duration"
+              data-aos-duration="1000"
             >
               <ul class="navbar-nav">
                 <li
-                  v-for="(item, key) in menu.links"
+                  v-for="(item, key) in footer.column_1"
                   :key="'menu_' + key"
                   class="nav-item"
                 >
                   <nuxt-link class="nav-link" :to="item.link"
-                    >{{ item.text }}
+                    >{{ item.title }}
+                  </nuxt-link>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="col-md-3 col-6 footer-col"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <ul class="navbar-nav">
+                <li
+                  v-for="(item, key) in footer.column_2"
+                  :key="'menu_' + key"
+                  class="nav-item"
+                >
+                  <nuxt-link class="nav-link" :to="item.link"
+                    >{{ item.title }}
+                  </nuxt-link>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="col-md-3 col-6 footer-col"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <ul class="navbar-nav">
+                <li
+                  v-for="(item, key) in footer.column_3"
+                  :key="'menu_' + key"
+                  class="nav-item"
+                >
+                  <nuxt-link class="nav-link" :to="item.link"
+                    >{{ item.title }}
+                  </nuxt-link>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="col-md-3 col-6 footer-col"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <ul class="navbar-nav">
+                <li
+                  v-for="(item, key) in footer.column_4"
+                  :key="'menu_' + key"
+                  class="nav-item"
+                >
+                  <nuxt-link class="nav-link" :to="item.link"
+                    >{{ item.title }}
                   </nuxt-link>
                 </li>
               </ul>
@@ -71,15 +120,13 @@
   </footer>
 </template>
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import footerlogo from '../../static/images/footerlogo.png'
 
 import aosMixin from '~/mixins/aos'
 export default {
   mixins: [aosMixin],
-  asyncData({ store }) {
-    store.dispatch('footer/getFooter')
-  },
+
   data() {
     return {
       footersactive: {
@@ -209,7 +256,13 @@ export default {
   },
 
   computed: {
-    ...mapGetters('footer', ['footer']),
+    ...mapGetters('home', ['footer']),
+  },
+  created() {
+    this.getFooter()
+  },
+  methods: {
+    ...mapActions('home', ['getFooter']),
   },
 }
 </script>

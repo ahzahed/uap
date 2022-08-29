@@ -183,9 +183,7 @@ export default {
     store.dispatch('depAlumni/getAllAlumniStories', route.params.department)
     store.dispatch('depAlumni/alumniHeader', route.params.department)
   },
-  data() {
-    return {}
-  },
+ 
 
   computed: {
     ...mapGetters('depAlumni', ['allAlumniStories', 'banner']),
