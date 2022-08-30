@@ -27,14 +27,14 @@
             ></p>
 
             <p v-else v-html="details.description"></p>
-            <div style="text-align: right">
+            <!-- <div style="text-align: right">
               <button class="primary-btn readmore" @click="toggle = !toggle">
                 <span v-if="toggle == false">
                   <span class="plus">+</span> Read More</span
                 >
                 <span v-else> <span class="plus">-</span> Read Less</span>
               </button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -79,7 +79,6 @@ export default {
   data() {
     return {
       toggle: false,
-      
     }
   },
 }
@@ -113,7 +112,7 @@ export default {
     img {
       height: 250px;
       width: 250px;
-      object-fit: cover;
+      object-fit: contain;
     }
     .img-thumbnail {
       border: 5px solid rgba(18, 102, 241, 0.75);

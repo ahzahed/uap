@@ -1,15 +1,24 @@
 <template>
   <div class="top-bar">
     <div class="container">
-      <div class="row">     
-        <div class="col-md-6 col-sm-6 col-6">         
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-6">
           <ul class="nav justify-content-sm-start">
             <li
               v-for="(item, i) in leftLinks"
               :key="'left_' + i"
               class="nav-item"
             >
-              <nuxt-link class="nav-link" :to="item.to">{{
+              <a
+                v-if="item.to.includes('www.') || item.to.includes('http')"
+                :href="item.to"
+                target="_blank"
+                class="nav-link"
+              >
+                {{ item.text }}</a
+              >
+
+              <nuxt-link v-else class="nav-link" :to="item.to">{{
                 item.text
               }}</nuxt-link>
             </li>
@@ -44,7 +53,7 @@ export default {
         },
         {
           text: 'UCAM Login',
-          to: '/',
+          to: 'https://www.ucam.uap-bd.edu/Security/LogIn.aspx',
         },
         // {
         //   text: 'UAP Ranking',
@@ -62,11 +71,11 @@ export default {
         // },
         {
           text: 'Library',
-          to: '/',
+          to: 'http://www.library.uap-bd.edu/',
         },
         {
           text: 'Contact',
-          to: '/',
+          to: 'https://www.uap-bd.edu/contactus.php',
         },
       ],
     }

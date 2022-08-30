@@ -6,6 +6,9 @@ const state = () => ({
   all_our_ranking: [],
   about_banner: {},
   vice_chancellor: {},
+  about_banner_bottom: {},
+  mission: {},
+  vision: {},
 })
 
 const getters = {
@@ -14,6 +17,9 @@ const getters = {
   our_ranking: (state) => state.our_ranking,
   all_our_ranking: (state) => state.all_our_ranking,
   vice_chancellor: (state) => state.vice_chancellor,
+  about_banner_bottom: (state) => state.about_banner_bottom,
+  mission: (state) => state.mission,
+  vision: (state) => state.vision,
 }
 
 const actions = {
@@ -32,6 +38,18 @@ const actions = {
   async getAllOurRanking(context) {
     const data = await this.$axios.get(`our_ranking/more/rank`)
     context.commit('ALL_OUR_RANKING', data.data)
+  },
+  async getAboutBannerBottom(context) {
+    const data = await this.$axios.get(`about/message`)
+    context.commit('ABOUT_BANNER_BOTTOM', data.data)
+  },
+  async getMission(context) {
+    const data = await this.$axios.get(`about/mission`)
+    context.commit('MISSION', data.data)
+  },
+  async getVision(context) {
+    const data = await this.$axios.get(`about/vission`)
+    context.commit('VISION', data.data)
   },
 
   getAboutBanner(context) {
@@ -70,6 +88,15 @@ const mutations = {
   },
   VICE_CHANCELLOR(state, vice_chancellor) {
     state.vice_chancellor = vice_chancellor
+  },
+  ABOUT_BANNER_BOTTOM(state, section) {
+    state.about_banner_bottom = section
+  },
+  MISSION(state, section) {
+    state.mission = section
+  },
+  VISION(state, section) {
+    state.vision = section
   },
 }
 export default {

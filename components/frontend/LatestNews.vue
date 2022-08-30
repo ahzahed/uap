@@ -21,7 +21,7 @@
           :key="i"
           class="col-lg-3 col-xl-3 col-md-4 col-sm-6 col-12"
         >
-          <NewsCard :item="item" @click.native="showModal(item.description)" />
+          <NewsCard :item="item" @click.native="showModal(item)" />
         </div>
       </div>
       <!-- <NewsCard
@@ -60,7 +60,15 @@
       @close="closeModal"
     >
       <template #body>
-        <div v-html="singleNewsDetails"></div>
+        <h3 class="mb-4 text-center">{{ singleNewsDetails.title }}</h3>
+        <p><span class="fw-bold">Date: </span>{{ singleNewsDetails.date }}</p>
+        <img
+          :src="singleNewsDetails.image"
+          class="mb-5"
+          :alt="singleNewsDetails.title"
+        />
+        <hr />
+        <div v-html="singleNewsDetails.description"></div>
       </template>
       <template #footer>
         <div class="modal-footer">
@@ -90,7 +98,7 @@ export default {
   mixins: [aosMixin],
   data() {
     return {
-      singleNewsDetails: '',
+      singleNewsDetails: {},
       isModalVisible: false,
       settings: {
         dots: false,
@@ -171,7 +179,7 @@ export default {
   background: $background-color;
   .latest-news-header {
     text-align: center;
-    padding-bottom: 80px;
+
     h2 {
       font-size: 52px;
       font-weight: 500;

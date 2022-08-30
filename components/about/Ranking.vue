@@ -9,7 +9,7 @@
         <div
           v-for="(item, i) in our_ranking"
           :key="i"
-          class="col-12 col-sm-6 col-md-6 col-lg-4 mt-5 ranking-item"
+          class="col-12 col-sm-6 col-md-6 col-lg-4 ranking-item"
         >
           <div class="card h-100 shadow-sm">
             <div class="ranking-img">

@@ -42,7 +42,17 @@
                   :key="'menu_' + key"
                   class="nav-item"
                 >
-                  <nuxt-link class="nav-link" :to="item.link"
+                  <a
+                    v-if="
+                      item.link.includes('www.') || item.link.includes('http')
+                    "
+                    :href="item.link"
+                    target="_blank"
+                    class="nav-link"
+                  >
+                    {{ item.title }}</a
+                  >
+                  <nuxt-link v-else class="nav-link" :to="item.link"
                     >{{ item.title }}
                   </nuxt-link>
                 </li>
@@ -59,7 +69,17 @@
                   :key="'menu_' + key"
                   class="nav-item"
                 >
-                  <nuxt-link class="nav-link" :to="item.link"
+                  <a
+                    v-if="
+                      item.link.includes('www.') || item.link.includes('http')
+                    "
+                    :href="item.link"
+                    target="_blank"
+                    class="nav-link"
+                  >
+                    {{ item.title }}</a
+                  >
+                  <nuxt-link v-else class="nav-link" :to="item.link"
                     >{{ item.title }}
                   </nuxt-link>
                 </li>
@@ -76,7 +96,17 @@
                   :key="'menu_' + key"
                   class="nav-item"
                 >
-                  <nuxt-link class="nav-link" :to="item.link"
+                  <a
+                    v-if="
+                      item.link.includes('www.') || item.link.includes('http')
+                    "
+                    :href="item.link"
+                    target="_blank"
+                    class="nav-link"
+                  >
+                    {{ item.title }}</a
+                  >
+                  <nuxt-link v-else class="nav-link" :to="item.link"
                     >{{ item.title }}
                   </nuxt-link>
                 </li>
@@ -93,7 +123,17 @@
                   :key="'menu_' + key"
                   class="nav-item"
                 >
-                  <nuxt-link class="nav-link" :to="item.link"
+                  <a
+                    v-if="
+                      item.link.includes('www.') || item.link.includes('http')
+                    "
+                    :href="item.link"
+                    target="_blank"
+                    class="nav-link"
+                  >
+                    {{ item.title }}</a
+                  >
+                  <nuxt-link v-else class="nav-link" :to="item.link"
                     >{{ item.title }}
                   </nuxt-link>
                 </li>
@@ -246,11 +286,11 @@ export default {
         },
       ],
       socalicons: [
-        { img: require('../../static/images/icon/Path 1.png') },
-        { img: require('../../static/images/icon/Path 2.png') },
-        { img: require('../../static/images/icon/Path 3.png') },
-        { img: require('../../static/images/icon/Path 4.png') },
-        { img: require('../../static/images/icon/Path 5.png') },
+        { img: require('../../static/images/icon/Path1.png') },
+        { img: require('../../static/images/icon/Path2.png') },
+        { img: require('../../static/images/icon/Path3.png') },
+        { img: require('../../static/images/icon/Path4.png') },
+        { img: require('../../static/images/icon/Path5.png') },
       ],
     }
   },

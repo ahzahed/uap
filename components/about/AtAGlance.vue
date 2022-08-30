@@ -39,7 +39,7 @@
           <div class="visionMissionImg">
             <img
               class="img-fluid w-100"
-              :src="glance.visionImg"
+              :src="vision.image"
               alt="vision"
               style="height: 100%"
             />
@@ -53,7 +53,7 @@
               >
                 <h4>Vision</h4>
                 <p>
-                  {{ glance.visionContent }}
+                  {{ vision.description }}
                 </p>
               </div>
             </div>
@@ -66,7 +66,7 @@
           <div class="visionMissionImg">
             <img
               class="img-fluid w-100"
-              :src="glance.missionImg"
+              :src="mission.image"
               alt="mission"
               style="height: 100%"
             />
@@ -80,7 +80,7 @@
               >
                 <h4>Mission</h4>
                 <p class="mb-0">
-                  {{ glance.missionContent }}
+                  {{ mission.description }}
                 </p>
               </div>
             </div>
@@ -101,6 +101,16 @@ export default {
   components: {
     PlayBtn,
     PlayOnBtn,
+  },
+  props: {
+    mission: {
+      required: true,
+      type: Object,
+    },
+    vision: {
+      required: true,
+      type: Object,
+    },
   },
   data() {
     return {

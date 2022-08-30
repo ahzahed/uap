@@ -48,7 +48,7 @@
                   </a>
                 </li>
                 <li
-                  v-for="(item, i) in Menu.slice(5)"
+                  v-for="(item, i) in Menu.slice(4)"
                   :key="i"
                   class="nav-item"
                 >

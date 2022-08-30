@@ -27,9 +27,9 @@
       </div>
     </div>
     <Banner :banner="about_banner" />
-    <AboutDetails />
-    <ViceChancellor :vice-chancellor='vice_chancellor'/>
-    <AtAGlance />
+    <AboutDetails :details="about_banner_bottom" />
+    <ViceChancellor :vice-chancellor="vice_chancellor" />
+    <AtAGlance :mission="mission" :vision="vision" />
     <BriefHistory />
     <Accolades />
     <Ranking />
@@ -59,10 +59,19 @@ export default {
   asyncData({ store }) {
     store.dispatch('about/getAboutBanner')
     store.dispatch('about/getViceChancellor')
+    store.dispatch('about/getAboutBannerBottom')
+    store.dispatch('about/getVision')
+    store.dispatch('about/getMission')
   },
-  
+
   computed: {
-    ...mapGetters('about', ['about_banner', 'vice_chancellor']),
+    ...mapGetters('about', [
+      'about_banner',
+      'vice_chancellor',
+      'about_banner_bottom',
+      'mission',
+      'vision',
+    ]),
   },
 }
 </script>

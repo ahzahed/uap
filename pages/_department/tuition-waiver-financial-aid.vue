@@ -24,6 +24,10 @@
       v-show="programmenu[4].active == true"
       :general-informations="general_criteria"
     />
+    <Calculator
+      v-show="programmenu[5].active == true"
+      :calculator="calculator"
+    />
   </section>
 </template>
 
@@ -36,6 +40,7 @@ import CurrentStudent from '../../components/financial-aid/Current-student.vue'
 import NewStudent from '../../components/financial-aid/New-student.vue'
 import SpecialWaiver from '../../components/financial-aid/Special-waiver.vue'
 import General from '../../components/financial-aid/General.vue'
+import Calculator from '../../components/financial-aid/Calculator.vue'
 export default {
   components: {
     Banner,
@@ -45,6 +50,7 @@ export default {
     CurrentStudent,
     SpecialWaiver,
     General,
+    Calculator,
   },
   layout: 'HomeLayout',
   asyncData({ store, route }) {
@@ -81,8 +87,47 @@ export default {
       'depTuitionWaiverFinancial/getGeneralCriteria',
       route.params.department
     )
+    store.dispatch(
+      'depTuitionWaiverFinancial/getCalculator',
+      route.params.department
+    )
   },
-  
+  data() {
+    return {
+      programmenu: [
+        {
+          name: 'Overview',
+          url: '#',
+          active: true,
+        },
+        {
+          name: 'Waiver For New Students',
+          url: '#',
+          active: false,
+        },
+        {
+          name: 'Waiver For Current Students',
+          url: '#',
+          active: false,
+        },
+        {
+          name: 'Special Waiver & Other Assistances',
+          url: '#',
+          active: false,
+        },
+        {
+          name: 'General Criteria',
+          url: '#',
+          active: false,
+        },
+        {
+          name: 'Waiver Calculator',
+          url: '#',
+          active: false,
+        },
+      ],
+    }
+  },
   computed: {
     ...mapGetters('depTuitionWaiverFinancial', [
       'tuition_waiver_banner',
@@ -93,6 +138,7 @@ export default {
       'current_student_note',
       'special_waiver',
       'general_criteria',
+      'calculator',
     ]),
   },
 }

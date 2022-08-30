@@ -1,11 +1,8 @@
 <template>
   <main class="content">
-
     <Header />
     <Overlaymenu />
-    <Loader v-if="loader"/>
-
-  
+    <Loader v-if="loader" />
 
     <div v-if="DRAWER_STATE" class="backdrop"></div>
     <div class="main">
@@ -20,9 +17,9 @@ import { mapState, mapActions } from 'vuex'
 import Loader from '~/halpers/PageLoader.vue'
 import Header from '~/components/department/Header.vue'
 import Overlaymenu from '~/components/department/Overlaymenu'
-import Footer from '~/components/department/Footer'
+import Footer from '~/components/frontend/Footer.vue'
 export default {
-  components: { Footer,Loader, Header, Overlaymenu,  },
+  components: { Footer, Loader, Header, Overlaymenu },
   computed: {
     ...mapState('sidebar', ['drawer', 'loader']),
     DRAWER_STATE: {
@@ -35,7 +32,7 @@ export default {
       },
     },
   },
- 
+
   methods: {
     ...mapActions('sidebar', ['TOGGLE_DRAWER']),
   },

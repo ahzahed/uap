@@ -9,6 +9,7 @@ const state = () => ({
   current_student_note: {},
   special_waiver: {},
   general_criteria: {},
+  calculator: {},
 })
 
 const getters = {
@@ -20,6 +21,7 @@ const getters = {
   current_student_note: (state) => state.current_student_note,
   special_waiver: (state) => state.special_waiver,
   general_criteria: (state) => state.general_criteria,
+  calculator: (state) => state.calculator,
 }
 
 const actions = {
@@ -85,6 +87,12 @@ const actions = {
     )
     context.commit('GENERAL_CRITERIA', data.data)
   },
+  async getCalculator(context, value) {
+    const data = await this.$axios.get(
+      `/departmen/tuition/waiver/calculator/${value}`
+    )
+    context.commit('CALCULATOR', data.data)
+  },
 }
 
 const mutations = {
@@ -111,6 +119,9 @@ const mutations = {
   },
   GENERAL_CRITERIA(state, section) {
     state.general_criteria = section
+  },
+  CALCULATOR(state, section) {
+    state.calculator = section
   },
 }
 export default {

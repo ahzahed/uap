@@ -15,6 +15,7 @@
           v-for="(item, slideindex) in accolades"
           :key="`${slideindex}-carousel`"
           class="card"
+          @click="showModal(item.description)"
         >
           <img :src="item.image" class="card-img" :alt="item.title" />
           <div class="card-img-overlay">
@@ -41,18 +42,43 @@
         </div>
       </div>
     </div>
+
+    <Modal
+      v-show="isModalVisible"
+      model-class="modal-dialog modal-dialog-centered"
+      model-width="800px"
+      @close="closeModal"
+    >
+      <template #body>
+        <div v-html="singleNewsDetails"></div>
+      </template>
+      <template #footer>
+        <div class="modal-footer">
+          <button
+            class="btn btn-primary"
+            data-bs-target="#exampleModalToggle"
+            data-bs-toggle="modal"
+            @click="closeModal()"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </Modal>
   </section>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-// eslint-disable-next-line no-unused-vars
-import { mapActions, mapGetters } from 'vuex'
+import Modal from '@/components/helpers/ModalScroll.vue'
 export default {
-  components: { VueSlickCarousel },
+  components: { VueSlickCarousel, Modal },
   data() {
     return {
+      singleNewsDetails: '',
+      isModalVisible: false,
       showindex: 'student_accolades',
       settings: {
         dots: false,
@@ -61,7 +87,7 @@ export default {
         arrows: false,
         focusOnSelect: true,
         infinite: true,
-        slidesToShow: 4,  
+        slidesToShow: 4,
         adaptiveHeight: true,
         slidesToScroll: 3,
 
@@ -117,6 +143,16 @@ export default {
     accoladingByCat(value) {
       this.showindex = value
       this.$store.dispatch('about/accoladingByCat', value).then((res) => {})
+    },
+    // Modal
+    showModal(slug) {
+      // this.$store.dispatch('home/getSingleNewsBySlug', slug).then((res) => {
+      this.singleNewsDetails = slug
+      this.isModalVisible = true
+      // })
+    },
+    closeModal() {
+      this.isModalVisible = false
     },
   },
 }

@@ -196,11 +196,11 @@ export default {
         },
       ],
       socalicons: [
-        { img: require('../../static/images/icon/Path 1.png') },
-        { img: require('../../static/images/icon/Path 2.png') },
-        { img: require('../../static/images/icon/Path 3.png') },
-        { img: require('../../static/images/icon/Path 4.png') },
-        { img: require('../../static/images/icon/Path 5.png') },
+        { img: require('../../static/images/icon/Path1.png') },
+        { img: require('../../static/images/icon/Path2.png') },
+        { img: require('../../static/images/icon/Path3.png') },
+        { img: require('../../static/images/icon/Path4.png') },
+        { img: require('../../static/images/icon/Path5.png') },
       ],
     }
   },

@@ -44,13 +44,20 @@ vue/require-default-prop */
             </div>
             <button @click="getFile">Check</button>
           </div>
+
           <div class="row">
             <div class="col-lg-12">
               <div class="pdfImage">
                 <!-- <img :src="img" alt="" class="w-100 h-100" /> -->
+                <iframe
+                  v-show="class_schedule_body.file"
+                  :src="$config.baseURL + class_schedule_body.file"
+                  width="90%"
+                  height="700px"
+                />
                 <a
                   v-show="class_schedule_body.file"
-                  class="pink-btn btn"
+                  class="pink-btn btn mt-5"
                   :href="$config.baseURL + class_schedule_body.file"
                   target="_blank"
                 >
