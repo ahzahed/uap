@@ -1,6 +1,6 @@
 <template>
   <section class="about-section">
-    <Banner v-if="boardoftrustees_banner" :banner="boardoftrustees_banner" />
+    <Banner :banner="boardoftrustees_banner" />
     <BoardCard
       :items="boardoftrustees.data"
       :chairperson="chairman"

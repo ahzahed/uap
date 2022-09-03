@@ -1,12 +1,12 @@
 <template>
   <section class="about-section">
-    <Banner v-if="banner" :banner="admission_banner" />
+    <Banner :banner="admission_banner" />
 
     <AdmissionDetails />
     <GeneralTiming />
     <Procedure />
     <OfficeContact :address="admission_address" />
-    <NecessaryLinks :admission_necessary_list='admission_necessary_list'/>
+    <NecessaryLinks :admission_necessary_list="admission_necessary_list" />
   </section>
 </template>
 
@@ -33,7 +33,7 @@ export default {
     store.dispatch('admission/admissionAddress')
     store.dispatch('admission/getAdmissionNecessaryList')
   },
- 
+
   computed: {
     ...mapGetters('admission', [
       'admission_banner',

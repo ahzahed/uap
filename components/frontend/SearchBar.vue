@@ -8,8 +8,39 @@
       <div class="container">
         <div class="col-md-11 mx-auto">
           <div class="form-group has-search">
-            <input type="text" class="form-control" placeholder="Search" />
+            <input
+              v-model="search"
+              type="text"
+              class="form-control"
+              placeholder="Search"
+            />
+            <!-- {{ searchResult }} -->
+            <!-- <div v-for="(item, i) in searchResult" :key="i">
+              <a :href="item.link">{{ item.title }}</a>
+            </div> -->
+            <button class="btn primary-btn mt-2" @click="x(search)">
+              Search
+            </button>
             <i class="fas fa-search search-icon"></i>
+          </div>
+
+          <!-- Search Result Start -->
+          <div class="row pb-5 x">
+            <div
+              v-for="(item, key) in searchResult"
+              :key="'menu_' + key"
+              class="col-md-6 col-sm-12 search-col"
+            >
+              <div class="col-md-12">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <nuxt-link v-if="item.link" class="nav-link" :to="item.link"
+                      >{{ item.title }}
+                    </nuxt-link>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           <!-- <div class="row">
             <div
@@ -50,13 +81,14 @@
               </template>
             </div>
           </div> -->
+          <!-- Search Result End -->
         </div>
       </div>
     </div>
   </transition>
 </template>
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
 export default {
   data() {
     return {
@@ -130,9 +162,13 @@ export default {
   },
   computed: {
     ...mapState('sidebar', ['searchbar']),
+    ...mapGetters('search', ['searchResult']),
   },
   methods: {
     ...mapActions('sidebar', ['Toggle_SearchBar']),
+    x(search) {
+      this.$store.dispatch('search/getSearchValue', search)
+    },
   },
 }
 </script>
@@ -154,5 +190,9 @@ export default {
 .fade-leave-to {
   opacity: 0;
   transform: translateY(100%);
+}
+.x {
+  max-height: 400px;
+  overflow: scroll;
 }
 </style>
