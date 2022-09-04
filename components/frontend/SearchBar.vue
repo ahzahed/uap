@@ -33,7 +33,7 @@
             >
               <div class="col-md-12">
                 <ul class="navbar-nav">
-                  <li class="nav-item">
+                  <li class="nav-item" @click="Toggle_SearchBar">
                     <nuxt-link v-if="item.link" class="nav-link" :to="item.link"
                       >{{ item.title }}
                     </nuxt-link>
@@ -191,8 +191,23 @@ export default {
   opacity: 0;
   transform: translateY(100%);
 }
+.x::-webkit-scrollbar {
+  width: 10px;
+  height: 100px;
+  color: red;
+}
+.x::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 60px;
+  background-color: #f5f5f5;
+}
+.x::-webkit-scrollbar-thumb {
+  border-radius: 60px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $darkblue;
+}
 .x {
   max-height: 400px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 </style>

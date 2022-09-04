@@ -67,8 +67,8 @@ import { mapState, mapActions } from 'vuex'
 // eslint-disable-next-line import/named
 import { Menu } from '../../data/departmantMenu'
 import eventBus from '../../eventBus'
+import SearchBar from '../frontend/SearchBar.vue'
 import TopHeader from './TopHeader.vue'
-import SearchBar from './SearchBar.vue'
 import MegaMenu from './MegaMenu.vue'
 export default {
   components: {
