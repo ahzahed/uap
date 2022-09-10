@@ -16,9 +16,12 @@
             <!-- <div class="admission-icon">
               <a href="#">Read More</a>
             </div> -->
-            <nuxt-link class="primary-btn admission-icon" to="/"
-              >Read More</nuxt-link
+            <p
+              class="primary-btn admission-icon"
+              @click="showModal(admission_aid)"
             >
+              Read More
+            </p>
           </div>
         </div>
         <div
@@ -36,6 +39,31 @@
         </div>
       </div>
     </div>
+    <Modal
+      v-show="isModalVisible"
+      model-class="modal-dialog modal-dialog-centered"
+      model-width="800px"
+      @close="closeModal"
+    >
+      <template #body>
+        <div>
+          <h3 class="text-center my-3">{{ singleNewsDetails.title }}</h3>
+          <p>{{ singleNewsDetails.description }}</p>
+        </div>
+      </template>
+      <template #footer>
+        <div class="modal-footer">
+          <button
+            class="btn btn-primary"
+            data-bs-target="#exampleModalToggle"
+            data-bs-toggle="modal"
+            @click="closeModal()"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </Modal>
   </section>
   <!-- Admission Part End -->
 </template>
@@ -43,8 +71,16 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 import aosMixin from '~/mixins/aos'
+import Modal from '@/components/helpers/ModalScroll.vue'
 export default {
+  components: { Modal },
   mixins: [aosMixin],
+  data() {
+    return {
+      singleNewsDetails: {},
+      isModalVisible: false,
+    }
+  },
   computed: {
     ...mapGetters('home', ['admission_aid']),
   },
@@ -53,6 +89,15 @@ export default {
   },
   methods: {
     ...mapActions('home', ['getAdmissionAid']),
+    showModal(slug) {
+      // this.$store.dispatch('home/getSingleNewsBySlug', slug).then((res) => {
+      this.singleNewsDetails = slug
+      this.isModalVisible = true
+      // })
+    },
+    closeModal() {
+      this.isModalVisible = false
+    },
   },
 }
 </script>
@@ -126,6 +171,8 @@ export default {
       border-radius: 5px;
       margin-right: 35px;
       margin-top: 30px;
+      display: inline-block;
+      color: white;
       @include respond-below(sm) {
         text-align: center;
         margin-right: 0;

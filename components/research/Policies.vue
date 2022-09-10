@@ -5,7 +5,7 @@
         <h2>IEERD Policies</h2>
         <div class="text_box_five">
           <ul v-for="(item, i) in research.research_policies_files" :key="i">
-            <li>
+            <li style="list-style-type: none">
               <a
                 :href="$config.baseURL + item.file"
                 target="_blank"
@@ -33,7 +33,6 @@ export default {
   data() {
     return {
       toggle: false,
-      
     }
   },
 }

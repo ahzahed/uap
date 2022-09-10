@@ -27,13 +27,38 @@
               <!-- {{ item.description }} -->
             </p>
 
-            <nuxt-link class="primary-btn choose-icon" to="/"
-              >Learn More</nuxt-link
-            >
+            <p class="primary-btn choose-icon" @click="showModal(item)">
+              Learn More
+            </p>
           </div>
         </div>
       </div>
     </div>
+    <Modal
+      v-show="isModalVisible"
+      model-class="modal-dialog modal-dialog-centered"
+      model-width="800px"
+      @close="closeModal"
+    >
+      <template #body>
+        <div>
+          <h3 class="text-center my-3">{{ singleNewsDetails.title }}</h3>
+          <div v-html="singleNewsDetails.description"></div>
+        </div>
+      </template>
+      <template #footer>
+        <div class="modal-footer">
+          <button
+            class="btn btn-primary"
+            data-bs-target="#exampleModalToggle"
+            data-bs-toggle="modal"
+            @click="closeModal()"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </Modal>
   </section>
   <!-- Choose Part End -->
 </template>
@@ -41,10 +66,14 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 import aosMixin from '~/mixins/aos'
+import Modal from '@/components/helpers/ModalScroll.vue'
 export default {
+  components: { Modal },
   mixins: [aosMixin],
   data() {
     return {
+      singleNewsDetails: {},
+      isModalVisible: false,
       choose: {
         title: 'Why choose UAP',
         details:
@@ -60,6 +89,15 @@ export default {
   },
   methods: {
     ...mapActions('home', ['whyChooseUap']),
+    showModal(slug) {
+      // this.$store.dispatch('home/getSingleNewsBySlug', slug).then((res) => {
+      this.singleNewsDetails = slug
+      this.isModalVisible = true
+      // })
+    },
+    closeModal() {
+      this.isModalVisible = false
+    },
   },
 }
 </script>
@@ -157,6 +195,8 @@ export default {
     .choose-icon {
       padding: 11px 32px;
       border-radius: 5px;
+      display: inline-block;
+      color: white;
     }
   }
 }

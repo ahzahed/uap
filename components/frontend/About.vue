@@ -14,9 +14,20 @@
               {{ welcome_info.description }}
             </p>
 
-            <nuxt-link class="primary-btn read-more-icon" to="/"
-              >Read More</nuxt-link
+            <p
+              class="primary-btn read-more-icon"
+              @click="showModal(welcome_info)"
             >
+              Read More
+            </p>
+            <!-- <p
+              v-show="welcome_info.description.length(550)"
+              class="primary-btn read-more-icon"
+              to="/"
+              @click="showModal(welcome_info)"
+            >
+              Read More
+            </p> -->
           </div>
         </div>
         <div
@@ -30,6 +41,31 @@
         </div>
       </div>
     </div>
+    <Modal
+      v-show="isModalVisible"
+      model-class="modal-dialog modal-dialog-centered"
+      model-width="800px"
+      @close="closeModal"
+    >
+      <template #body>
+        <div>
+          <h3 class="text-center my-3">{{ singleNewsDetails.title }}</h3>
+          <p>{{ singleNewsDetails.description }}</p>
+        </div>
+      </template>
+      <template #footer>
+        <div class="modal-footer">
+          <button
+            class="btn btn-primary"
+            data-bs-target="#exampleModalToggle"
+            data-bs-toggle="modal"
+            @click="closeModal()"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </Modal>
   </section>
   <!-- About Part End -->
 </template>
@@ -37,9 +73,16 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 import aosMixin from '~/mixins/aos'
+import Modal from '@/components/helpers/ModalScroll.vue'
 export default {
+  components: { Modal },
   mixins: [aosMixin],
-
+  data() {
+    return {
+      singleNewsDetails: {},
+      isModalVisible: false,
+    }
+  },
   computed: {
     ...mapGetters('home', ['welcome_info']),
   },
@@ -48,6 +91,15 @@ export default {
   },
   methods: {
     ...mapActions('home', ['welcomeInfo']),
+    showModal(slug) {
+      // this.$store.dispatch('home/getSingleNewsBySlug', slug).then((res) => {
+      this.singleNewsDetails = slug
+      this.isModalVisible = true
+      // })
+    },
+    closeModal() {
+      this.isModalVisible = false
+    },
   },
 }
 </script>
@@ -120,6 +172,8 @@ export default {
       margin-right: 75px;
       padding: 11px 42px;
       border-radius: 5px;
+      display: inline-block;
+      color: white;
       @include respond-below(sm) {
         text-align: center;
         margin-right: 0;

@@ -111,13 +111,13 @@
 
     <!-- Extra Events section start -->
     <section id="downloadFormSample">
-      <div class="container">
+      <div class="container mb-5 pb-5">
         <div class="row">
           <div class="col-lg-6 mt-5">
             <div class="finalResult">
               <h2>Workshop List</h2>
               <ul v-for="(item, i) in extra_events.workshop" :key="i">
-                <li>
+                <li style="list-style-type: none">
                   <a
                     class="nav-link"
                     style="cursor: pointer"
@@ -134,7 +134,7 @@
             <div class="finalResult">
               <h2>Seminar List</h2>
               <ul v-for="(item, i) in extra_events.seminar" :key="i">
-                <li>
+                <li style="list-style-type: none">
                   <a
                     class="nav-link"
                     style="cursor: pointer"

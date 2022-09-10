@@ -75,7 +75,7 @@
           v-for="(event, i) in events.data"
           :key="i"
           class="col-md-4 col-lg-4 p-3"
-          @click="showModal(event.description)"
+          @click="showModal(event)"
         >
           <div class="main-card h-100 shadow">
             <div class="card-top">
@@ -118,7 +118,24 @@
       @close="closeModal"
     >
       <template #body>
-        <div v-html="singleNewsDetails"></div>
+        <div>
+          <h3 class="text-center">{{ singleNewsDetails.title }}</h3>
+          <img :src="singleNewsDetails.image" :alt="singleNewsDetails.title" />
+          <div class="container">
+            <div class="row mt-5 border rounded">
+              <div class="col-lg-6 modalEventLeft">
+                <p><strong>Date:</strong> {{ singleNewsDetails.date }}</p>
+                <p><strong>From: </strong>{{singleNewsDetails.from }} <br /><strong>To: </strong>{{singleNewsDetails.to}}</p>
+              </div>
+              <div class="col-lg-6 modalEventRight">
+                <p><strong>Topic:</strong> {{singleNewsDetails.topic}}</p>
+                <p><strong>Type:</strong> {{singleNewsDetails.type}}</p>
+                <p><strong>Status:</strong> {{singleNewsDetails.status}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-5" v-html="singleNewsDetails.description"></div>
+        </div>
       </template>
       <template #footer>
         <div class="modal-footer">
@@ -152,7 +169,7 @@ export default {
   layout: 'HomeLayout',
   data() {
     return {
-      singleNewsDetails: '',
+      singleNewsDetails: {},
       isModalVisible: false,
       status: [
         { title: 'Upcoming', value: 'upcoming' },
@@ -164,7 +181,6 @@ export default {
       selectedStatus: '',
       date: '',
       currentPage: 1,
-      
     }
   },
   computed: {
@@ -315,6 +331,15 @@ export default {
   }
   .not_fount_news {
     height: 100%;
+  }
+
+  .modalEventLeft{
+    background: #E1F2F9;
+    padding: 10px;
+  }
+  .modalEventRight{
+    background: #F0F0FA;
+    padding: 10px;
   }
 }
 </style>

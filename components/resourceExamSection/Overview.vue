@@ -14,7 +14,7 @@
           <div class="finalResult">
             <h2>Services for Students/Graduates</h2>
             <ul v-for="(item, i) in value.overview_file" :key="i">
-              <li>
+              <li style="list-style-type: none">
                 <a
                   :href="$config.baseURL + item.file"
                   target="_blank"
@@ -45,8 +45,6 @@ export default {
       required: true,
     },
   },
-
-  
 }
 </script>
 

@@ -55,10 +55,10 @@ export default {
           text: 'UCAM Login',
           to: 'https://www.ucam.uap-bd.edu/Security/LogIn.aspx',
         },
-        // {
-        //   text: 'UAP Ranking',
-        //   to: '/uapranking',
-        // },
+        {
+          text: 'UAP Ranking',
+          to: '/our-ranking',
+        },
       ],
       rightLinks: [
         {

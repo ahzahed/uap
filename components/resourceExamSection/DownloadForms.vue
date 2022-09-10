@@ -6,7 +6,7 @@
           <div class="finalResult">
             <h2>Download forms</h2>
             <ul v-for="(item, i) in value.download_form" :key="i">
-              <li>
+              <li style="list-style-type: none">
                 <a
                   :href="$config.baseURL + item.file"
                   target="_blank"
@@ -26,7 +26,7 @@
               v-for="(item, i) in value.sample_authorization_letters"
               :key="i"
             >
-              <li>
+              <li style="list-style-type: none">
                 <a
                   :href="$config.baseURL + item.file"
                   target="_blank"
@@ -55,7 +55,6 @@ export default {
   data() {
     return {
       toggle: false,
-      
     }
   },
 }

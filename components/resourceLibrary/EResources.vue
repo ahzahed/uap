@@ -13,7 +13,7 @@
             </p>
           </div>
           <div class="table-responsive">
-            <table class="table shadow-sm table-striped table-bordered">
+            <table class="table shadow-sm table-striped table-bordered mb-0">
               <thead>
                 <tr>
                   <th>serial No.</th>
@@ -56,7 +56,7 @@
             ID and passwords
           </p>
           <ul v-for="(item, i) in value.NewArrivalFour" :key="i">
-            <li>
+            <li style="list-style-type: none">
               <a
                 :href="$config.baseURL + item.file"
                 target="_blank"
@@ -80,8 +80,6 @@ export default {
       required: true,
     },
   },
-
-  
 }
 </script>
 

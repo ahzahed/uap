@@ -5,7 +5,7 @@
         <div class="text_box_five">
           <h2>iPress Release and Media Coverage</h2>
           <ul v-for="(item, i) in value.MediaReleases" :key="i">
-            <li>
+            <li style="list-style-type: none">
               <a
                 :href="$config.baseURL + item.file"
                 target="_blank"
@@ -29,8 +29,6 @@ export default {
       required: true,
     },
   },
-
- 
 }
 </script>
 

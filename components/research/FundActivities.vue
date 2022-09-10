@@ -8,7 +8,7 @@
             v-for="(item, i) in research.research_funded_activites_files"
             :key="i"
           >
-            <li>
+            <li style="list-style-type: none">
               <a
                 :href="$config.baseURL + item.file"
                 target="_blank"
@@ -36,7 +36,6 @@ export default {
   data() {
     return {
       toggle: false,
-      
     }
   },
 }

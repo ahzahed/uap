@@ -5,7 +5,12 @@
         <div class="col-lg-12">
           <h3 class="text-center">{{ file.file_title }}</h3>
           <div class="pdfImage">
-            <img :src="$config.baseURL + file.file" alt="" />
+            <iframe
+              v-show="file.file"
+              width="100%"
+              height="100%"
+              :src="$config.baseURL + file.file"
+            />
             <a
               class="pink-btn btn mt-5"
               :href="$config.baseURL + file.file"
@@ -29,7 +34,6 @@ export default {
       require: true,
     },
   },
-  
 }
 </script>
 

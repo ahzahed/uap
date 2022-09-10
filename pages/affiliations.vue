@@ -8,7 +8,7 @@
           :key="i"
           class="col-sm-6 col-lg-4 p-3"
           style="cursor: pointer"
-          @click="showModal(event.short_description)"
+          @click="showModal(event)"
         >
           <div class="main-card h-100 shadow">
             <div class="card-top">
@@ -39,7 +39,10 @@
       @close="closeModal"
     >
       <template #body>
-        <div v-html="singleNewsDetails"></div>
+        <div>
+          <h3 class="text-center my-3">{{ singleNewsDetails.title }}</h3>
+          <div v-html="singleNewsDetails.short_description"></div>
+        </div>
       </template>
       <template #footer>
         <div class="modal-footer">

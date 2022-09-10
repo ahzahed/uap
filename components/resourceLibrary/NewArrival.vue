@@ -5,7 +5,7 @@
         <div class="text_box_five">
           <h2>Latest Arrival at library</h2>
           <ul v-for="(item, i) in value.NewArrival" :key="i">
-            <li>
+            <li style="list-style-type: none">
               <a
                 :href="$config.baseURL + item.file"
                 target="_blank"
@@ -29,8 +29,6 @@ export default {
       required: true,
     },
   },
-
-  
 }
 </script>
 
