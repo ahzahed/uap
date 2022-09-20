@@ -42,7 +42,7 @@ export default {
     ],
   },
   publicRuntimeConfig: {
-    baseURL: process.env.BASE_URL || 'https://uapadmin.shoptheowlet.com/',
+    baseURL: process.env.BASE_URL || 'http://uapapi.uap-bd.edu/',
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/styles/app.scss'],
@@ -72,7 +72,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'https://uap.shoptheowlet.com/api/',
+    baseURL: 'http://uapapi.uap-bd.edu/api',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
