@@ -5,33 +5,25 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-3 col-md-9 col-sm-8 col-7 col-xs-12">
-            <nuxt-link class="logo" to="/">
+            <nuxt-link class="logo" :to="`/${$route.params.department}`">
               <img src="@/static/logo-big-black.png" />
             </nuxt-link>
           </div>
           <div class="col-lg-9 col-md-3 col-sm-4 col-5 col-xs-12">
             <ul class="navbar nav" @mouseleave="hideMegaMenu()">
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <nuxt-link class="nav-link" to="/">Home & About</nuxt-link>
-              </li>
+              </li> -->
               <li
-                v-for="(item, i) in Menu.slice(0, 4)"
+                v-for="(item, i) in Menu.slice(0, 5)"
                 :key="i"
                 class="nav-item"
-                @mouseover="mouseEvent($event, 'item', i)"
               >
-                <nuxt-link
-                  v-if="item.link"
-                  class="nav-link"
-                  :class="index === i ? 'active' : ''"
-                  :to="'/' + $nuxt.$route.params.department + item.link"
-                  >{{ item.title }}</nuxt-link
-                >
                 <a
-                  v-else
                   class="nav-link"
                   :class="index === i ? 'active' : ''"
                   href="javascript:void(0)"
+                  @mouseover="mouseEvent($event, 'item', i, item.id)"
                   >{{ item.title }}</a
                 >
                 <MegaMenu
@@ -43,7 +35,11 @@
                 <i class="fas fa-search"></i>
                 <!-- <span class="header_icon_title">Search</span> -->
               </li>
-              <li class="btn header_icon" @click.stop="TOGGLE_DRAWER">
+              <li
+                class="btn header_icon"
+                @click="getQuickLinks"
+                @click.stop="TOGGLE_DRAWER"
+              >
                 <template v-if="!DRAWER_STATE">
                   <i class="fas fa-bars"></i>
                   <!-- <span class="header_icon_title">Menu </span> -->
@@ -63,7 +59,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
 // eslint-disable-next-line import/named
 import { Menu } from '../../data/departmantMenu'
 import eventBus from '../../eventBus'
@@ -87,6 +83,7 @@ export default {
 
   computed: {
     ...mapState('sidebar', ['drawer']),
+    ...mapGetters('dynamic', ['dynamic_menu', 'dynamic_submenu']),
 
     DRAWER_STATE: {
       get() {
@@ -97,6 +94,7 @@ export default {
   mounted() {
     eventBus.$on('hide-mega-menu', () => {
       this.showMegaMenu = false
+      this.megamenu = []
     })
 
     this.$nextTick(function () {
@@ -117,21 +115,30 @@ export default {
     eventBus.$off('hide-mega-menu')
   },
   methods: {
+    getQuickLinks() {
+      this.$store.dispatch('quickLinks/getLinks')
+      this.$store.dispatch(
+        'dynamic/getDynamicMenu',
+        this.$route.params.department
+      )
+    },
     hideMegaMenu() {
       eventBus.$emit('hide-mega-menu')
     },
-    mouseEvent(event, source, i) {
-      // eslint-disable-next-line no-console
-
+    async mouseEvent(event, source, i, id) {
+      const subMenuResponse = await this.$axios.get(
+        `submenu/${this.$route.params.department}/${id}`
+      )
       if (source === 'item') {
         event.stopPropagation()
-        // eslint-disable-next-line no-console
         this.index = i
-        this.megamenu = Menu[i].subMenus
+        this.megamenu = [...Menu[i].subMenus, ...subMenuResponse.data]
+        if (this.megamenu.length > 0) {
+          this.showMegaMenu = true
+        } else {
+          this.showMegaMenu = false
+        }
       }
-      this.showMegaMenu = true
-
-      // eslint-disable-next-line no-self-compare
     },
 
     ...mapActions('sidebar', ['TOGGLE_DRAWER', 'Toggle_SearchBar']),

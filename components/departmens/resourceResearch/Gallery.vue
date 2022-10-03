@@ -12,8 +12,8 @@
           <div class="main-card h-100 shadow">
             <div class="card-top">
               <img
-                :src="$config.baseURL + event.image"
-                alt="event.title"
+                :src="$config.baseURL + (event.image || event.file)"
+                :alt="event.title"
                 class="w-100"
               />
             </div>

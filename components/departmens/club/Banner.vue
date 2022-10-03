@@ -2,7 +2,7 @@
   <section id="banner">
     <div class="banner-section">
       <div class="banner-image">
-        <img :src="banner.image" alt="about-banner" class="img-responsive" />
+        <img :src="banner.image" :alt="banner.title" class="img-responsive" />
       </div>
       <div class="container">
         <div class="row justify-content-center">

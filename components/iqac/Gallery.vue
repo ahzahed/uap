@@ -8,7 +8,7 @@
           v-for="photo in value.gallery"
           :key="photo.id"
           class="col-sm-6 col-md-4 col-lg-3"
-          @click="openGallery"
+          @click="openGallery(photo)"
         >
           <figure>
             <img
@@ -31,7 +31,7 @@
       model-width="800px"
       @close="closeModal"
     >
-      <template #body>
+      <template #body>      
         <VueSlickCarousel
           v-if="value.gallery.length"
           v-bind="settings"
@@ -102,10 +102,10 @@ export default {
       this.showModal = false
     },
     showNext() {
-      this.$refs.value.gallery.next()
+      this.$refs.photos?.next()
     },
     showPrev() {
-      this.$refs.value.gallery.prev()
+      this.$refs.photos?.prev()
     },
     openGallery(item) {
       this.showModal = true

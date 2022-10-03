@@ -29,7 +29,6 @@ const actions = {
           if (result.data) {
             result.data.image = this.$config.baseURL + result.data.image
           }
-          console.log(result.data);
           context.commit('BANNER', result.data)
         })
         .catch((error) => {

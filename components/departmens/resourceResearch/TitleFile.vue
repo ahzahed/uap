@@ -4,7 +4,7 @@
       <div class="col-lg-6 mt-5 m-auto">
         <div class="text_box_five">
           <h2>Latest Arrival at library</h2>
-          <ul v-for="(item, i) in value" :key="i">
+          <ul v-for="(item, i) in value" :key="i" style="list-style-type: none">
             <li>
               <a
                 :href="$config.baseURL + item.file"

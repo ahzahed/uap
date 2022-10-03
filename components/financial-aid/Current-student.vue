@@ -4,8 +4,8 @@
       <div class="main-student">
         <div class="row justify-content-center">
           <div class="col-lg-12">
-            <div class="">
-              <table class="table table-borderless table-responsive">
+            <div class="table-responsive">
+              <table class="table table-borderless table-striped">
                 <thead>
                   <tr>
                     <th class="gpa">Semester GPA</th>
@@ -37,7 +37,7 @@
                 <div v-html="currentSpecial.notes"></div>
               </span>
             </div>
-            </div>
+          </div>
         </div>
       </div>
     </div>

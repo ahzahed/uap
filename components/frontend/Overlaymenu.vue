@@ -116,12 +116,12 @@
             </strong>
             <ol class="nav-quick-links-nav__list">
               <li
-                v-for="(item, i) in nav"
+                v-for="(item, i) in links"
                 :key="'item_' + i"
                 class="nav-quick-links-nav__item"
               >
                 <nuxt-link
-                  :to="item.url"
+                  :to="item.link"
                   class="nav-quick-links-nav__link"
                   data-attribute="find-a-department"
                   >{{ item.title }}</nuxt-link
@@ -142,6 +142,7 @@ export default {
   // asyncData({ store }) {
   //   store.dispatch('club/getClubType')
   // },
+
   data() {
     return {
       nav,
@@ -154,6 +155,7 @@ export default {
   computed: {
     ...mapState('sidebar', ['drawer']),
     ...mapGetters('club', ['club_type']),
+    ...mapGetters('quickLinks', ['links']),
 
     DRAWER_STATE: {
       get() {
@@ -167,11 +169,15 @@ export default {
   },
   mounted() {
     window.addEventListener('resize', this.getDimensions)
+    
   },
   unmounted() {
     window.removeEventListener('resize', this.getDimensions)
   },
   methods: {
+    // getQuickLinks() {
+    //   this.$store.dispatch('quickLinks/getLinks')
+    // },
     getDimensions() {
       this.width = document.documentElement.clientWidth
       this.height = document.documentElement.clientHeight

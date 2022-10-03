@@ -2,7 +2,7 @@
   <div class="container">
     <div class="members-list-card card">
       <div class="card-header"></div>
-      <div class="card-body">
+      <div v-if="committees.data" class="card-body">
         <div class="row">
           <div
             v-for="(member, key) in committees.data"
@@ -38,7 +38,6 @@ export default {
   asyncData({ route, store }) {
     store.dispatch('committee/allCommittee', route.query.id)
   },
- 
 
   computed: {
     ...mapGetters('committee', ['committees']),
@@ -57,7 +56,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import './styles/_main.scss';
-
 
 .card {
   .card-header {
@@ -107,5 +105,4 @@ export default {
     }
   }
 }
-
 </style>

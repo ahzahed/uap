@@ -5,14 +5,20 @@
         <ul class="menu-sublist">
           <li v-for="(menu, menu_2) in menus" :key="menu_2" class="menu-item">
             <a
-              v-if="menu.link.includes('www.')"
-              :href="menu.link"
+              v-if="menu.slug.includes('www.')"
+              :href="menu.slug"
               target="_blank"
               ><i class="fas fa-angle-double-right"></i> {{ menu.title }}</a
             >
             <nuxt-link
+              v-else-if="menu.title === 'Admission Test Schedule'"
+              :to="menu.slug"
+              ><i class="fas fa-angle-double-right"></i>
+              {{ menu.title }}</nuxt-link
+            >
+               <nuxt-link
               v-else
-              :to="'/' + $nuxt.$route.params.department + menu.link"
+              :to="'/' + $nuxt.$route.params.department + '/' + menu.slug"
               ><i class="fas fa-angle-double-right"></i>
               {{ menu.title }}</nuxt-link
             >

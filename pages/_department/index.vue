@@ -11,11 +11,11 @@
     <Message :message="head_message" />
     <FactFigure :department-fact-figure="departmentFactFigure" />
     <Alumni :alumni-information="alumniStories" />
-    <News
+    <!-- <News
       :latest-information="latestInformation"
       :recent-information="recentInformation"
       :research-information="researchInformation"
-    />
+    /> -->
   </section>
 </template>
 
@@ -26,7 +26,7 @@ import InsideUap from '../../components/departmens/homepage/InsideUap.vue'
 import Alumni from '../../components/departmens/homepage/Alumni.vue'
 import Message from '../../components/departmens/homepage/Message.vue'
 import FactFigure from '../../components/departmens/homepage/FactFigure.vue'
-import News from '../../components/departmens/homepage/News.vue'
+// import News from '../../components/departmens/homepage/News.vue'
 import Banner from '~/components/frontend/Banner.vue'
 export default {
   components: {
@@ -35,7 +35,7 @@ export default {
     Message,
     FactFigure,
     Alumni,
-    News,
+    // News,
   },
   layout: 'HomeLayout',
 
@@ -43,6 +43,8 @@ export default {
     store.dispatch('department/getDepartmentList').then((res) => {
       // eslint-disable-next-line array-callback-return
       const dep = res.data.find((o) => o.department === route.params.department)
+      // store.dispatch('dynamic/getDynamicMenu', route.params.department)
+
       if (dep) {
         store.dispatch('department/departmentHeader', route.params.department)
         store.dispatch(
@@ -70,13 +72,13 @@ export default {
           'department/getDepartmentFactFigure',
           route.params.department
         )
-        store.dispatch('depAlumni/alumniStories', route.params.department)
+        // store.dispatch('depAlumni/alumniStories', route.params.department)
       } else {
         redirect('/404')
       }
     })
   },
-  
+
   computed: {
     ...mapGetters('department', [
       'vision',

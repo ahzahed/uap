@@ -48,13 +48,21 @@ vue/require-default-prop */
           <div class="row">
             <div class="col-lg-12">
               <div class="pdfImage">
-                <!-- <img :src="img" alt="" class="w-100 h-100" /> -->
+                <!-- {{checkFile(class_schedule_body.file)}} -->
                 <iframe
+                  v-if="class_schedule_body.file && class_schedule_body.file.includes('.pdf')"
                   v-show="class_schedule_body.file"
                   :src="$config.baseURL + class_schedule_body.file"
                   width="90%"
                   height="700px"
                 />
+                <img
+                  v-else-if="class_schedule_body.file"
+                  :src="$config.baseURL + class_schedule_body.file"
+                  alt=""
+                  class="w-100 h-100"
+                />
+
                 <a
                   v-show="class_schedule_body.file"
                   class="pink-btn btn mt-5"
@@ -100,6 +108,7 @@ export default {
     ...mapGetters('classSchedule', ['sections', 'class_schedule_body']),
   },
   methods: {
+  
     getSections(event) {
       this.semester_id = event.target.value
       this.$store.dispatch('classSchedule/getSections', {

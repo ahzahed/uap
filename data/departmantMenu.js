@@ -44,85 +44,101 @@ export const Menu = [
   // },
 
   {
+    title: 'About',
+    id: 1,
+    subMenus: [],
+  },
+  {
     title: 'People',
+    id: 2,
     subMenus: [
       {
         title: 'Faculty',
-        link: '/faculty',
+        slug: 'faculty',
       },
       {
         title: 'Staff',
-        link: '/staff',
+        slug: 'staff',
       },
     ],
   },
 
   {
     title: 'Admission',
+    id: 3,
     subMenus: [
       {
         title: 'Admission Info Graduate',
-        link: '/admission-info-graduate',
+        slug: 'admission-info-graduate',
       },
       {
         title: 'Admission Info Undergraduate',
-        link: '/admission-info-undergraduate',
+        slug: 'admission-info-undergraduate',
       },
       {
         title: 'Apply Online',
-        link: 'https://www.admission.uap-bd.edu/Admission/Home.aspx',
+        slug: 'https://www.admission.uap-bd.edu/Admission/Home.aspx',
       },
-      // {
-      //   title: 'Admission Test Schedule',
-      //   link: '/',
-      // },
-      { title: 'Admission Result', link: '/admission-result' },
-      { title: 'Financial Aid', link: '/tuition-waiver-financial-aid' },
+      {
+        title: 'Admission Test Schedule',
+        slug: '/admission-test',
+      },
+      { title: 'Admission Result', slug: 'admission-result' },
+      { title: 'Financial Aid', slug: 'tuition-waiver-financial-aid' },
     ],
   },
   {
     title: 'Academic',
+    id: 4,
     subMenus: [
-      { title: 'Tuition Fees', link: '/tuition-fees' },
-      { title: 'Explore', link: '/explore' },
+      { title: 'Tuition Fees', slug: 'tuition-fees' },
+      { title: 'Explore', slug: 'explore' },
       {
         title: 'Notice Board',
-        link: '/notice-board',
+        slug: 'notice-board',
       },
-      { title: 'Gallery', link: '/academic/gallery' },
+      { title: 'Gallery', slug: 'academic/gallery' },
       {
         title: 'Research and publication',
-        link: '/academic/research-publications',
+        slug: 'academic/research-publications',
       },
-      { title: 'Graduate Curriculum', link: '/graduate-curriculum' },
+      { title: 'Graduate Curriculum', slug: 'graduate-curriculum' },
       {
         title: 'Undergraduate Curricular',
-        link: '/undergraduate-curriculum',
+        slug: 'undergraduate-curriculum',
       },
-      { title: 'Mission Outcome', link: '/mission-outcome' },
-      { title: 'Class Schedule', link: '/class-schedule' },
-      { title: 'Exam Schedule', link: '/exam-schedule' },
-      { title: 'Project and thesis list', link: '/project-thesis-list' },
+      { title: 'Mission Outcome', slug: 'mission-outcome' },
+      { title: 'Class Schedule', slug: 'class-schedule' },
+      { title: 'Exam Schedule', slug: 'exam-schedule' },
+      { title: 'Project and thesis list', slug: 'project-thesis-list' },
     ],
   },
   {
     title: 'News and Information',
+    id: 5,
     subMenus: [
-      { title: 'Events', link: '/academic/events' },
-      { title: 'Seminar and workshop', link: '/seminar-workshop' },
+      { title: 'Events', slug: 'academic/events' },
+      { title: 'Seminar and workshop', slug: 'seminar-workshop' },
     ],
   },
 
+  // {
+  //   title: 'Facilities',
+  //   id: 6,
+  //   link: '/facilities',
+  // },
   {
     title: 'Facilities',
-    link: '/facilities',
+    id: 6,
+    subMenus: [{ title: 'Facilities', slug: 'facilities' }],
   },
 
   {
     title: 'Alumni',
+    id: 7,
     subMenus: [
-      { title: 'Alumni', link: '/alumni' },
-      { title: 'Alumni Associates', link: '/alumni-associate' },
+      { title: 'Alumni', slug: 'alumni' },
+      { title: 'Alumni Associates', slug: 'alumni-associate' },
     ],
   },
 

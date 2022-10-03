@@ -47,7 +47,11 @@
                 <i class="fas fa-search"></i>
                 <!-- <span class="header_icon_title">Search</span> -->
               </li>
-              <li class="btn header_icon" @click.stop="TOGGLE_DRAWER">
+              <li
+                class="btn header_icon"
+                @click="getQuickLinks"
+                @click.stop="TOGGLE_DRAWER"
+              >
                 <template v-if="!DRAWER_STATE">
                   <i class="fas fa-bars"></i>
                   <!-- <span class="header_icon_title">Menu </span> -->
@@ -123,6 +127,9 @@ export default {
     eventBus.$off('hide-mega-menu')
   },
   methods: {
+    getQuickLinks() {
+      this.$store.dispatch('quickLinks/getLinks')
+    },
     hideMegaMenu() {
       eventBus.$emit('hide-mega-menu')
     },

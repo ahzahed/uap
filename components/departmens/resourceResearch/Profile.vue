@@ -7,7 +7,7 @@
             <h3>{{ item.title }}</h3>
             <div v-html="item.description"></div>
             <img
-              :src="$config.baseURL + item.image"
+              :src="$config.baseURL + (item.image || item.file)"
               alt="event.title"
               class="w-100 mt-4"
             />

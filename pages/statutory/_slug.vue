@@ -59,7 +59,7 @@ export default {
 <style lang="scss" scoped>
 @import './styles/_main.scss';
 .card {
-  margin-top: 51px;
+
   .card-header {
     background-color: $darkblue;
     padding: 14px;

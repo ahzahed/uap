@@ -6,7 +6,7 @@
         :key="`administration_${i}`"
         class="row"
       >
-        <div class="col-lg-5 col-md-7 col-sm-9 mx-auto">
+        <div class="col-lg-6 col-md-7 col-sm-9 mx-auto">
           <div class="card mb-3">
             <div class="row g-0">
               <div class="col-sm-4">

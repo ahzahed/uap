@@ -38,7 +38,9 @@ export default {
   layout: 'HomeLayout',
   asyncData({ store }) {
     store.dispatch('home/getBanner')
+    // store.dispatch('quickLinks/getLinks')
   },
+
   computed: {
     ...mapGetters('home', ['banners']),
   },

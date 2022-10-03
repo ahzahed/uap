@@ -32,8 +32,6 @@ export default {
     store.dispatch('statutory/getStatutoryBanner')
   },
 
-  
-
   computed: {
     ...mapGetters('statutory', ['statutory_section', 'statutory_banner']),
   },
@@ -71,10 +69,52 @@ export default {
 
 <style lang="scss" scoped>
 @import './styles/_main.scss';
-.banner-section {
-  padding-bottom: 110px;
-}
-.mambars{
-  background: $lightblue;
+.mambars {
+  background: #f0f0fa;
+  .mambars_header {
+    border-bottom: 1px solid #cccccc;
+    padding: 40px 0;
+    .nav-item {
+      .nav-link {
+        font-size: 17px;
+        // font-weight: 500;
+        color: $darkblue;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          border: 1px solid $darkblue;
+        }
+        &:first-child {
+          margin-right: 10px;
+        }
+      }
+      .nuxt-link-active {
+        background-color: $darkblue;
+        border: 1px solid $darkblue;
+        color: $white;
+        font-weight: 500;
+      }
+    }
+  }
+  .mambars_body {
+    padding: 60px 0;
+    .members {
+      .card {
+        margin-bottom: 20px;
+        .card-header {
+          background-color: #f0f0fa;
+          color: #000;
+          font-size: 1.2rem;
+          font-weight: 500;
+          padding: 10px;
+        }
+        .card-body {
+          padding: 10px;
+        }
+      }
+    }
+  }
 }
 </style>

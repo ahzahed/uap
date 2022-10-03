@@ -1,7 +1,7 @@
 <template>
   <section v-show="value.length > 0" id="researchIntro">
-    <div class="container">
-      <div v-for="(item, i) in value" :key="i" class="row">
+    <div v-for="(item, i) in value" :key="i" class="container">
+      <div class="row mb-3">
         <div class="col-lg-12">
           <div class="text_box_one">
             <h3>{{ item.title }}</h3>
@@ -25,7 +25,6 @@ export default {
   data() {
     return {
       toggle: false,
-      
     }
   },
 }
@@ -54,7 +53,7 @@ export default {
 
   .text_box_one {
     background-color: $lightblue;
-    padding: 92px 111px;
+    padding: 30px 30px;
     text-align: justify;
     @include respond-below(lg) {
       padding: 80px 70px;

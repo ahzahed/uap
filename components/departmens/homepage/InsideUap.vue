@@ -148,7 +148,7 @@ export default {
       return url
     },
     player() {
-      return this.$refs.youtube.player
+      return this.$refs?.youtube?.player
     },
   },
 

@@ -7,7 +7,7 @@
           <p>Entry Level Waiver for Undergraduate Program</p>
         </div>
         <div class="table-top table-responsive">
-          <table class="table table-borderless table-responsive shadow-sm table-striped table-bordered">
+          <table class="table table-borderless shadow-sm table-striped table-bordered">
             <thead>
               <tr>
                 <th>SI. No</th>

@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 <template>
   <div
     v-if="DRAWER_STATE"
@@ -38,6 +36,7 @@
                     Research
                   </a>
                 </li>
+
                 <li class="nav-item">
                   <a
                     href="javascript:void(0)"
@@ -47,6 +46,7 @@
                     Resource
                   </a>
                 </li>
+                <!-- Static Menus  -->
                 <li
                   v-for="(item, i) in Menu.slice(4)"
                   :key="i"
@@ -64,6 +64,24 @@
                     href="javascript:void(0)"
                     class="nav-link"
                     @click="setCategory(item)"
+                  >
+                    {{ item.title }}
+                  </a>
+                </li>
+
+                <!-- dynamic menus  -->
+                <li v-for="(item, i) in dynamic_menu" :key="i" class="nav-item">
+                  <!-- <nuxt-link
+                    v-if="item.slug"
+                    :to="'/' + $nuxt.$route.params.department + item.slug"
+                    class="nav-link"
+                  >
+                    <p @click="TOGGLE_DRAWER">{{ item.title }}</p>
+                  </nuxt-link> -->
+                  <a
+                    href="javascript:void(0)"
+                    class="nav-link"
+                    @click="dynamicSubmenu(item.id)"
                   >
                     {{ item.title }}
                   </a>
@@ -167,6 +185,24 @@
                     </nuxt-link>
                   </li>
                 </ul>
+                <!-- dynamic submenu  -->
+                <ul v-if="dynamic_submenu.length > 0">
+                  <li
+                    v-for="(item, i3) in dynamic_submenu"
+                    :key="'menu2_' + i3"
+                    class="nav-item"
+                  >
+                    <nuxt-link
+                      :to="
+                        '/' + $nuxt.$route.params.department + '/' + item.slug
+                      "
+                      class="nav-link"
+                      @click.native="subCategory()"
+                    >
+                      {{ item.title }}
+                    </nuxt-link>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -183,14 +219,15 @@
               Quick Links
               <i class="fas fa-chevron-right"></i>
             </strong>
+
             <ol class="nav-quick-links-nav__list">
               <li
-                v-for="(item, i) in nav"
+                v-for="(item, i) in links"
                 :key="'item_' + i"
                 class="nav-quick-links-nav__item"
               >
                 <nuxt-link
-                  :to="item.url"
+                  :to="item.link"
                   class="nav-quick-links-nav__link"
                   data-attribute="find-a-department"
                   >{{ item.title }}</nuxt-link
@@ -208,6 +245,9 @@ import { mapState, mapActions, mapGetters } from 'vuex'
 import { Menu } from '../../data/departmantMenu.js'
 import { nav } from '@/data/navfooter'
 export default {
+  asyncData({ store, route }) {
+    store.dispatch('dynamic/getDynamicMenu', route.params.department)
+  },
   data() {
     return {
       nav,
@@ -221,6 +261,8 @@ export default {
     ...mapState('sidebar', ['drawer']),
     ...mapGetters('depClub', ['dep_club_type']),
     ...mapGetters('depResearchResource', ['research_type', 'resource_type']),
+    ...mapGetters('dynamic', ['dynamic_menu', 'dynamic_submenu']),
+    ...mapGetters('quickLinks', ['links']),
 
     DRAWER_STATE: {
       get() {
@@ -244,10 +286,12 @@ export default {
       this.height = document.documentElement.clientHeight
     },
     setCategory(item) {
-      // eslint-disable-next-line no-console
       if (item.subMenus) {
         this.sub_categories = item.subMenus
         this.$store.dispatch('depClub/getEmptyDepClubType')
+        this.$store.dispatch('depResearchResource/getEmptyResearchType')
+        this.$store.dispatch('depResearchResource/getEmptyResourceType')
+        this.$store.dispatch('dynamic/getEmptyDynamicSubmenu')
       } else {
         this.sub_categories = []
       }
@@ -260,6 +304,7 @@ export default {
       this.sub_categories = []
       this.$store.dispatch('depResearchResource/getEmptyResearchType')
       this.$store.dispatch('depResearchResource/getEmptyResourceType')
+      this.$store.dispatch('dynamic/getEmptyDynamicSubmenu')
     },
     research() {
       this.$store.dispatch(
@@ -269,6 +314,7 @@ export default {
       this.sub_categories = []
       this.$store.dispatch('depClub/getEmptyDepClubType')
       this.$store.dispatch('depResearchResource/getEmptyResourceType')
+      this.$store.dispatch('dynamic/getEmptyDynamicSubmenu')
     },
     resource() {
       this.$store.dispatch(
@@ -278,6 +324,17 @@ export default {
       this.sub_categories = []
       this.$store.dispatch('depClub/getEmptyDepClubType')
       this.$store.dispatch('depResearchResource/getEmptyResearchType')
+      this.$store.dispatch('dynamic/getEmptyDynamicSubmenu')
+    },
+    dynamicSubmenu(id) {
+      this.$store.dispatch('dynamic/getDynamicSubmenu', {
+        department: this.$route.params.department,
+        id,
+      })
+      this.sub_categories = []
+      this.$store.dispatch('depClub/getEmptyDepClubType')
+      this.$store.dispatch('depResearchResource/getEmptyResearchType')
+      this.$store.dispatch('depResearchResource/getEmptyResourceType')
     },
     subCategory() {
       this.sub_categories = []

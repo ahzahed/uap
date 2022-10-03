@@ -2,7 +2,7 @@
   <section id="banner">
     <div class="banner-section">
       <div class="banner-image">
-        <img :src="banner.image" alt="about-banner" />
+        <img :src="banner.image" :alt="banner.title" />
       </div>
       <div class="container">
         <div class="banner-content col-md-6">

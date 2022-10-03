@@ -40,6 +40,11 @@
     >
       <template #body>
         <div>
+          <img
+            :src="$config.baseURL + singleNewsDetails.logo"
+            class="mx-auto d-block mb-5"
+            alt="event.title"
+          />
           <h3 class="text-center my-3">{{ singleNewsDetails.title }}</h3>
           <div v-html="singleNewsDetails.short_description"></div>
         </div>

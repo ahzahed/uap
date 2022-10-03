@@ -83,7 +83,7 @@ export default {
       settings: {
         dots: false,
         autoplay: true,
-        autoplaySpeed: 500,
+        autoplaySpeed: 2000,
         arrows: false,
         focusOnSelect: true,
         infinite: true,
@@ -101,6 +101,7 @@ export default {
           },
           {
             breakpoint: 700,
+              autoplaySpeed: 2000,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 2,
@@ -109,6 +110,7 @@ export default {
           },
           {
             breakpoint: 480,
+            autoplaySpeed: 2000,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
