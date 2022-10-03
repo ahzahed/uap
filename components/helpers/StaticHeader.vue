@@ -7,6 +7,7 @@
             <a
               class="nav-link my-3"
               :class="item.active == true ? 'active' : ''"
+              style="cursor: pointer"
               @click="ShowItem(item)"
               >{{ item.name }}</a
             >

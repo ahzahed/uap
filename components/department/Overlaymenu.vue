@@ -48,7 +48,7 @@
                 </li>
                 <!-- Static Menus  -->
                 <li
-                  v-for="(item, i) in Menu.slice(4)"
+                  v-for="(item, i) in Menu.slice(5)"
                   :key="i"
                   class="nav-item"
                 >
@@ -114,7 +114,7 @@
                     class="nav-item"
                   >
                     <nuxt-link
-                      :to="'/' + $nuxt.$route.params.department + item.link"
+                      :to="'/' + $nuxt.$route.params.department + item.slug"
                       class="nav-link"
                       @click.native="subCategory()"
                     >
@@ -227,9 +227,10 @@
                 class="nav-quick-links-nav__item"
               >
                 <nuxt-link
-                  :to="item.link"
+                  :to="'/' + item.link"
                   class="nav-quick-links-nav__link"
                   data-attribute="find-a-department"
+                  @click.native="closeOverlay()"
                   >{{ item.title }}</nuxt-link
                 >
               </li>
@@ -281,6 +282,10 @@ export default {
     window.removeEventListener('resize', this.getDimensions)
   },
   methods: {
+    closeOverlay() {
+      this.sub_categories = []
+      this.TOGGLE_DRAWER()
+    },
     getDimensions() {
       this.width = document.documentElement.clientWidth
       this.height = document.documentElement.clientHeight

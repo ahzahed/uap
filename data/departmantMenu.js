@@ -130,15 +130,15 @@ export const Menu = [
   {
     title: 'Facilities',
     id: 6,
-    subMenus: [{ title: 'Facilities', slug: 'facilities' }],
+    subMenus: [{ title: 'Facilities', slug: '/facilities' }],
   },
 
   {
     title: 'Alumni',
     id: 7,
     subMenus: [
-      { title: 'Alumni', slug: 'alumni' },
-      { title: 'Alumni Associates', slug: 'alumni-associate' },
+      { title: 'Alumni', slug: '/alumni' },
+      { title: 'Alumni Associates', slug: '/alumni-associate' },
     ],
   },
 

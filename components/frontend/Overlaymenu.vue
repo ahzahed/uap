@@ -124,6 +124,7 @@
                   :to="item.link"
                   class="nav-quick-links-nav__link"
                   data-attribute="find-a-department"
+                  @click.native="closeOverlay()"
                   >{{ item.title }}</nuxt-link
                 >
               </li>
@@ -169,7 +170,6 @@ export default {
   },
   mounted() {
     window.addEventListener('resize', this.getDimensions)
-    
   },
   unmounted() {
     window.removeEventListener('resize', this.getDimensions)
@@ -178,6 +178,10 @@ export default {
     // getQuickLinks() {
     //   this.$store.dispatch('quickLinks/getLinks')
     // },
+    closeOverlay() {
+      this.sub_categories = []
+      this.TOGGLE_DRAWER()
+    },
     getDimensions() {
       this.width = document.documentElement.clientWidth
       this.height = document.documentElement.clientHeight
