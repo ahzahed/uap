@@ -4,12 +4,12 @@
     <div class="header-bottom">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-3 col-md-9 col-sm-8 col-7 col-xs-12">
+          <div class="col-7 col-xs-12 col-sm-9 col-md-9 col-lg-3">
             <nuxt-link class="logo" :to="`/${$route.params.department}`">
               <img src="@/static/logo-big-black.png" />
             </nuxt-link>
           </div>
-          <div class="col-lg-9 col-md-3 col-sm-4 col-5 col-xs-12">
+          <div class="col-5 col-xs-12 col-sm-3 col-md-3 col-lg-9">
             <ul class="navbar nav" @mouseleave="hideMegaMenu()">
               <!-- <li class="nav-item">
                 <nuxt-link class="nav-link" to="/">Home & About</nuxt-link>
@@ -20,7 +20,7 @@
                 class="nav-item"
               >
                 <a
-                  class="nav-link"
+                  class="nav-link p-0"
                   :class="index === i ? 'active' : ''"
                   href="javascript:void(0)"
                   @mouseover="mouseEvent($event, 'item', i, item.id)"

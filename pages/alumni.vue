@@ -25,7 +25,7 @@
               </p>
               <p>Year of Graduation: {{ alumni.year_of_graduation }}</p>
               <ul class="social mb-0 list-inline mt-3">
-                <li class="list-inline-item">
+                <li v-show="alumni.facebook" class="list-inline-item">
                   <a
                     :href="alumni.facebook"
                     target="_blank"
@@ -34,7 +34,7 @@
                     <i :class="'fab fa-facebook-square'"></i
                   ></a>
                 </li>
-                <li class="list-inline-item">
+                <li v-show="alumni.twitter" class="list-inline-item">
                   <a
                     :href="alumni.twitter"
                     target="_blank"
@@ -43,7 +43,7 @@
                     <i :class="'fab fa-twitter-square'"></i
                   ></a>
                 </li>
-                <li class="list-inline-item">
+                <li v-show="alumni.linkedin" class="list-inline-item">
                   <a
                     :href="alumni.linkedin"
                     target="_blank"
@@ -52,7 +52,7 @@
                     <i :class="'fab fa-linkedin'"></i
                   ></a>
                 </li>
-                <li class="list-inline-item">
+                <li v-show="alumni.Instagram" class="list-inline-item">
                   <a
                     :href="alumni.Instagram"
                     target="_blank"

@@ -73,8 +73,8 @@
         <div
           v-for="(event, i) in events.data"
           :key="i"
-          class="col-md-4 col-lg-4 p-3"
-          @click="showModal(event.description)"
+          class="col-xl-4 col-lg-6 col-md-6 p-3"
+          @click="showModal(event)"
         >
           <div class="main-card h-100 shadow">
             <div class="card-top">
@@ -159,7 +159,31 @@
       @close="closeModal"
     >
       <template #body>
-        <div v-html="singleNewsDetails"></div>
+        <div>
+          <h3 class="text-center">{{ singleNewsDetails.title }}</h3>
+          <img
+            :src="$config.baseURL + singleNewsDetails.image"
+            :alt="singleNewsDetails.title"
+            class="w-100"
+          />
+          <div class="container">
+            <div class="row mt-5 border rounded">
+              <div class="col-lg-6 modalEventLeft">
+                <p><strong>Date:</strong> {{ singleNewsDetails.date }}</p>
+                <p>
+                  <strong>From: </strong>{{ singleNewsDetails.from }}
+                  <br /><strong>To: </strong>{{ singleNewsDetails.to }}
+                </p>
+              </div>
+              <div class="col-lg-6 modalEventRight">
+                <p><strong>Topic:</strong> {{ singleNewsDetails.topic }}</p>
+                <p><strong>Type:</strong> {{ singleNewsDetails.type }}</p>
+                <p><strong>Status:</strong> {{ singleNewsDetails.status }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-5" v-html="singleNewsDetails.description"></div>
+        </div>
       </template>
       <template #footer>
         <div class="modal-footer">
@@ -358,58 +382,13 @@ export default {
     height: 100%;
   }
 
-  // Extra Events
-  #downloadFormSample {
-    .heading {
-      background-color: $darkblue;
-      padding-top: 23px;
-      padding-bottom: 23px;
-      border-radius: 5px;
-      h1 {
-        @include title2;
-        margin-bottom: 0px;
-        color: $white;
-      }
-      p {
-        color: $white;
-        @include paragraph;
-      }
-    }
-
-    .text_box_one {
-      background-color: $lightblue;
-      padding: 92px 111px;
-      text-align: justify;
-      @include respond-below(lg) {
-        padding: 80px 70px;
-      }
-      @include respond-below(sm) {
-        padding: 40px 30px;
-      }
-      @include paragraph;
-    }
-
-    .finalResult,
-    .waitingResult {
-      h2 {
-        @include title2;
-        padding-left: 85px;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        background-color: $background-color;
-        border-radius: 5px;
-        @include respond-below(xs) {
-          text-align: center;
-          padding-left: 0px;
-        }
-      }
-      border-radius: 5px;
-      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-      min-height: 380px;
-      @include respond-below(lg) {
-        margin-top: 20px;
-      }
-    }
+  .modalEventLeft {
+    background: #e1f2f9;
+    padding: 10px;
+  }
+  .modalEventRight {
+    background: #f0f0fa;
+    padding: 10px;
   }
 }
 </style>

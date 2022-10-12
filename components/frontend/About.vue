@@ -11,10 +11,19 @@
           <div class="about-content">
             <h2>{{ welcome_info.title }}</h2>
             <p style="text-align: justify">
-              {{ welcome_info.description }}
+              {{
+                welcome_info.description &&
+                welcome_info.description.length > 530
+                  ? welcome_info.description.slice(0, 530) + '.....'
+                  : welcome_info.description
+              }}
             </p>
 
             <p
+              v-if="
+                welcome_info.description &&
+                welcome_info.description.length > 530
+              "
               class="primary-btn read-more-icon"
               @click="showModal(welcome_info)"
             >
@@ -123,25 +132,9 @@ export default {
   }
   .about-content {
     h2 {
-      margin: 0 57px 42px 0;
-      @include title1;
-      text-align: left;
-      @include respond-below(sm) {
-        // padding-bottom: 40px;
-        // font-size: 33px;
-        text-align: center;
-      }
-      @include respond-between(sm, md) {
-        // padding-bottom: 40px;
-        text-align: center;
-      }
-      @include respond-between(md, lg) {
-        // padding-bottom: 40px;
-        text-align: center;
-      }
+      @include title4;
       @include respond-between(lg, xl) {
-        font-size: 45px;
-        // padding-bottom: 36px;
+        padding-left: 10px;
       }
     }
     p {
@@ -165,6 +158,7 @@ export default {
         font-size: 16px;
         line-height: 26px;
         padding-right: 30px;
+        padding-left: 10px;
       }
     }
     .read-more-icon {
@@ -185,6 +179,9 @@ export default {
       @include respond-between(md, lg) {
         text-align: center;
         margin-right: 0;
+      }
+      @include respond-between(lg, xl) {
+        margin-left: 10px;
       }
     }
     // .read-more-icon {

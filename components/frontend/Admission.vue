@@ -150,6 +150,7 @@ export default {
       @include respond-between(lg, xl) {
         font-size: 40px;
         padding-bottom: 45px;
+        padding-left: 10px;
       }
     }
     p {
@@ -163,6 +164,7 @@ export default {
         font-size: 18px;
         line-height: 35px;
         padding-right: 0px;
+        padding-left: 10px;
       }
     }
     .admission-icon {
@@ -184,6 +186,9 @@ export default {
       @include respond-between(md, lg) {
         text-align: center;
         margin-right: 0;
+      }
+      @include respond-between(lg, xl) {
+        margin-left: 10px;
       }
     }
 

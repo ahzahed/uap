@@ -84,7 +84,10 @@
                     {{ singleNewsDetails.year_of_graduation }}
                   </p>
                   <ul class="social mb-0 list-inline mt-3">
-                    <li class="list-inline-item">
+                    <li
+                      v-show="singleNewsDetails.facebook"
+                      class="list-inline-item"
+                    >
                       <a
                         :href="singleNewsDetails.facebook"
                         target="_blank"
@@ -93,7 +96,10 @@
                         <i :class="'fab fa-facebook-square'"></i
                       ></a>
                     </li>
-                    <li class="list-inline-item">
+                    <li
+                      v-show="singleNewsDetails.twitter"
+                      class="list-inline-item"
+                    >
                       <a
                         :href="singleNewsDetails.twitter"
                         target="_blank"
@@ -102,7 +108,10 @@
                         <i :class="'fab fa-twitter-square'"></i
                       ></a>
                     </li>
-                    <li class="list-inline-item">
+                    <li
+                      v-show="singleNewsDetails.linkedin"
+                      class="list-inline-item"
+                    >
                       <a
                         :href="singleNewsDetails.linkedin"
                         target="_blank"
@@ -111,7 +120,10 @@
                         <i :class="'fab fa-linkedin'"></i
                       ></a>
                     </li>
-                    <li class="list-inline-item">
+                    <li
+                      v-show="singleNewsDetails.Instagram"
+                      class="list-inline-item"
+                    >
                       <a
                         :href="singleNewsDetails.Instagram"
                         target="_blank"
@@ -202,8 +214,8 @@ export default {
       @include paragraph;
     }
     img {
-      height: 270px;
-      width: 220px;
+      height: 415px;
+      width: 415px;
       border-radius: 5px;
     }
     .university {

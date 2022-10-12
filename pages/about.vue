@@ -1,6 +1,6 @@
 <template>
   <section class="about-page">
-    <div id="float">
+    <!-- <div id="float">
       <p>CONTENTS</p>
       <div class="floating-tabs">
         <ul class="nav flex-column">
@@ -25,7 +25,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    </div> -->
     <Banner :banner="about_banner" />
     <AboutDetails :details="about_banner_bottom" />
     <ViceChancellor :vice-chancellor="vice_chancellor" />

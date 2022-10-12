@@ -5,7 +5,7 @@
         <div
           v-for="(item, i) in departments"
           :key="i"
-          class="col-lg-4 col-md-6 col-sm-6"
+          class="col-xl-4 col-lg-6 col-md-6 col-sm-6"
         >
           <nuxt-link :to="'/' + item.department + '/faculty'">
             <div class="card my-5">

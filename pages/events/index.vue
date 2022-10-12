@@ -74,7 +74,7 @@
         <div
           v-for="(event, i) in events.data"
           :key="i"
-          class="col-md-4 col-lg-4 p-3"
+          class="col-lg-4 col-md-4 p-3"
           @click="showModal(event)"
         >
           <div class="main-card h-100 shadow">
@@ -120,17 +120,24 @@
       <template #body>
         <div>
           <h3 class="text-center">{{ singleNewsDetails.title }}</h3>
-          <img :src="singleNewsDetails.image" :alt="singleNewsDetails.title" />
+          <img
+            :src="singleNewsDetails.image"
+            :alt="singleNewsDetails.title"
+            class="w-100"
+          />
           <div class="container">
             <div class="row mt-5 border rounded">
               <div class="col-lg-6 modalEventLeft">
                 <p><strong>Date:</strong> {{ singleNewsDetails.date }}</p>
-                <p><strong>From: </strong>{{singleNewsDetails.from }} <br /><strong>To: </strong>{{singleNewsDetails.to}}</p>
+                <p>
+                  <strong>From: </strong>{{ singleNewsDetails.from }}
+                  <br /><strong>To: </strong>{{ singleNewsDetails.to }}
+                </p>
               </div>
               <div class="col-lg-6 modalEventRight">
-                <p><strong>Topic:</strong> {{singleNewsDetails.topic}}</p>
-                <p><strong>Type:</strong> {{singleNewsDetails.type}}</p>
-                <p><strong>Status:</strong> {{singleNewsDetails.status}}</p>
+                <p><strong>Topic:</strong> {{ singleNewsDetails.topic }}</p>
+                <p><strong>Type:</strong> {{ singleNewsDetails.type }}</p>
+                <p><strong>Status:</strong> {{ singleNewsDetails.status }}</p>
               </div>
             </div>
           </div>
@@ -333,12 +340,12 @@ export default {
     height: 100%;
   }
 
-  .modalEventLeft{
-    background: #E1F2F9;
+  .modalEventLeft {
+    background: #e1f2f9;
     padding: 10px;
   }
-  .modalEventRight{
-    background: #F0F0FA;
+  .modalEventRight {
+    background: #f0f0fa;
     padding: 10px;
   }
 }

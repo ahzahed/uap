@@ -62,7 +62,7 @@
             which can be access within the university premises without any user
             ID and passwords
           </p>
-          <ul v-for="(item, i) in value.e_resources_file" :key="i">
+          <ul v-for="(item, i) in value.e_resources_file" :key="i" style="list-style-type: none">
             <li>
               <a :href="item.file" target="_blank" class="nav-link">{{
                 item.file_title

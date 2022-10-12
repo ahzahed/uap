@@ -5,7 +5,7 @@
         <div
           v-for="(information, i) in value.service_fee"
           :key="i"
-          class="col-lg-3 main-card mb-5"
+          class="col-xl-3 col-lg-4 col-md-6 main-card mb-5"
         >
           <div class="card-top">
             <div class="serial">

@@ -20,11 +20,11 @@
       </div>
 
       <!-- video section -->
-      <div class="row">
+      <div class="row mb-5">
         <div class="col-lg-1"></div>
         <div class="col-lg-10 col-xl-10 col-md-10 col-sm-12 videoSection">
           <video id="myVideo" ref="campustourvideo" autoplay muted loop>
-            <source src="@/static/welcome.mp4" type="video/mp4" />
+            <source src="@/static/welcome_cropped.mp4" type="video/mp4" />
           </video>
 
           <div class="main-campus-content">
@@ -80,29 +80,26 @@ export default {
 <style lang="scss" scoped>
 @import './styles/_main.scss';
 #welcome {
-  margin-top: 150px;
+  margin-top: 80px;
   h1 {
     @include title;
   }
   p {
-    margin-top: 52px;
+    margin-top: 42px;
     text-align: justify;
     @include paragraph;
   }
   .videoSection {
     position: relative;
     margin: 0 auto;
-    overflow: hidden;
-    height: 526px;
-    margin-bottom: 150px;
-    padding-left: 0px;
+
+ 
     border-radius: 5px;
     @include respond-below(xs) {
       height: 400px;
       margin-bottom: 80px;
     }
     video {
-      margin-top: -140px;
       width: 100%;
     }
     .main-campus-content {
@@ -110,13 +107,11 @@ export default {
       box-sizing: border-box;
       left: 0;
       right: 0;
-
-      top: 60%;
+      top: 50%;
 
       #myBtn {
         position: relative;
         margin: 0 auto;
-        margin-bottom: 100px;
       }
     }
   }

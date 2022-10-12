@@ -3,11 +3,11 @@
   <section class="academic-gallery">
     <!-- <Banner :items="banner" /> -->
     <div class="container">
-      <div v-if="value.gallery.length" class="row">
+      <div v-if="value.gallery.length" class="row mb-5 pb-5">
         <div
           v-for="photo in value.gallery"
           :key="photo.id"
-          class="col-sm-6 col-md-4 col-lg-3"
+          class="col-xl-3 col-lg-4 col-md-6 col-sm-6"
           @click="openGallery(photo)"
         >
           <figure>
@@ -31,7 +31,7 @@
       model-width="800px"
       @close="closeModal"
     >
-      <template #body>      
+      <template #body>
         <VueSlickCarousel
           v-if="value.gallery.length"
           v-bind="settings"

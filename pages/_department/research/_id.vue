@@ -1,5 +1,5 @@
 <template>
-  <section id="depResouce">
+  <section id="depResouce" class="mb-5">
     <Banner :banner="research_resource_banner" />
     <Intro v-if="research.title_des" :value="research.title_des" />
     <Gallery v-if="research.gallery" :value="research.gallery" />

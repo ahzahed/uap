@@ -20,7 +20,7 @@
       <div class="site-nav__inner">
         <nav class="nav-primary">
           <div class="row h-100">
-            <div class="col-md-4 col-sm-6 col-lg-3 col-xl-3 h-100">
+            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3 h-100">
               <ul v-if="width > 991" class="nav-primary__list">
                 <li class="nav-item">
                   <a href="javascript:void(0)" class="nav-link" @click="club()">
@@ -105,7 +105,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xl-3 h-100">
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 h-100">
               <div class="nav-child">
                 <ul v-if="sub_categories.length" class="nav-child__list">
                   <li

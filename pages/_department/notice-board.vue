@@ -6,7 +6,7 @@
         <div
           v-for="(event, i) in notices"
           :key="i"
-          class="col-md-4 col-lg-4 p-3"
+          class="col-xl-4 col-lg-6 col-md-6 p-3"
           style="cursor: pointer"
           @click="showModal(event)"
         >
@@ -49,6 +49,7 @@
         <img
           :src="$config.baseURL + singleNewsDetails.image"
           :alt="singleNewsDetails.title"
+          class="w-100"
         />
         <div v-html="singleNewsDetails.description"></div>
       </template>

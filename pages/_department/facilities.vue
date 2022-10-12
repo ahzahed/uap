@@ -6,9 +6,9 @@
         <div
           v-for="(event, i) in facilities"
           :key="i"
-          class="col-md-4 col-lg-4 p-3"
+          class="col-xl-4 col-lg-6 col-md-4 p-3"
           style="cursor: pointer"
-          @click="showModal(event.description)"
+          @click="showModal(event)"
         >
           <div class="main-card h-100 shadow">
             <div class="card-top">
@@ -44,7 +44,15 @@
       @close="closeModal"
     >
       <template #body>
-        <div v-html="singleNewsDetails"></div>
+        <div>
+          <h3 class="text-center">{{ singleNewsDetails.title }}</h3>
+          <img
+            :src="$config.baseURL + singleNewsDetails.image"
+            :alt="singleNewsDetails.title"
+            class="w-100 py-3"
+          />
+          <div v-html="singleNewsDetails.description"></div>
+        </div>
       </template>
       <template #footer>
         <div class="modal-footer">

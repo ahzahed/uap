@@ -4,13 +4,13 @@
     <div class="header-bottom">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-3 col-md-9 col-sm-8 col-7 col-xs-12">
+          <div class="col-7 col-xs-12 col-sm-9 col-md-9 col-lg-3">
             <nuxt-link class="logo" to="/">
               <img src="@/static/logo-big-black.png" />
             </nuxt-link>
           </div>
           <div
-            class="col-lg-9 col-md-3 col-sm-4 col-5 col-xs-12"
+            class="col-5 col-xs-12 col-sm-3 col-md-3 col-lg-9"
             @mouseleave="hideMegaMenu()"
           >
             <ul class="navbar nav">
@@ -22,14 +22,14 @@
               >
                 <nuxt-link
                   v-if="item.link"
-                  class="nav-link"
+                  class="nav-link p-0"
                   :class="index === i ? 'active' : ''"
                   :to="item.link"
                   >{{ item.title }}</nuxt-link
                 >
                 <a
                   v-else
-                  class="nav-link"
+                  class="nav-link p-0"
                   :class="index === i ? 'active' : ''"
                   href="javascript:void(0)"
                   >{{ item.title }}</a

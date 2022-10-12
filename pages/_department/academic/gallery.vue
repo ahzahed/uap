@@ -35,7 +35,7 @@
         <div
           v-for="photo in photos"
           :key="photo.id"
-          class="col-sm-6 col-md-4 col-lg-3"
+          class="col-xl-3 col-lg-6 col-md-6 mx-auto"
           @click="openGallery"
         >
           <figure>

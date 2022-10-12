@@ -3,7 +3,7 @@
     <div class="container">
       <div class="main-calculator">
         <div class="row justify-content-center">
-          <div class="col-lg-8 col-md-10 col-sm-10 main-background">
+          <div class="col-xl-8 col-lg-10 col-md-10 col-sm-10 main-background">
             <div class="row py-5 top-text">
               <div class="text-center">
                 <h4>Waiver Calculator</h4>

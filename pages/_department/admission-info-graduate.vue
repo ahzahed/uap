@@ -1,6 +1,6 @@
 <template>
   <section class="about-section">
-    <div id="float">
+    <!-- <div id="float">
       <p>CONTENTS</p>
       <div class="floating-tabs">
         <ul class="nav flex-column">
@@ -30,7 +30,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    </div> -->
     <Banner :banner="post_admission_info_banner" />
     <Cse :informations="post_why_uap" />
 

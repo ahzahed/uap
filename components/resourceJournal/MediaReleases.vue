@@ -1,7 +1,7 @@
 <template>
   <section id="researchIEERD">
     <div class="container">
-      <div class="col-lg-6 mt-5 m-auto">
+      <div class="col-xl-6 col-lg-8 col-md-10 mt-5 m-auto">
         <div class="text_box_five">
           <h2>iPress Release and Media Coverage</h2>
           <ul v-for="(item, i) in value.MediaReleases" :key="i">

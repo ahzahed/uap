@@ -203,7 +203,7 @@ export default {
 
   #allFaq {
     padding-top: 50px;
-    padding-bottom: $section-padding;
+    // padding-bottom: $section-padding;
     h1 {
       @include title;
       font-weight: bold;

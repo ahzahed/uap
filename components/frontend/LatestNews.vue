@@ -19,7 +19,7 @@
         <div
           v-for="(item, i) in latest_news_lists"
           :key="i"
-          class="col-lg-3 col-xl-3 col-md-4 col-sm-6 col-12"
+          class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12"
         >
           <NewsCard :item="item" @click.native="showModal(item)" />
         </div>
