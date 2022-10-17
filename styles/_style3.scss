@@ -69,8 +69,11 @@
         padding: 35px;
         border-radius: 5px;
         .banner__title {
-          @include title;
+          @include title4;
           margin-bottom: 45px;
+          @include respond-below(lg) {
+            font-size: 26px;
+          }
           @include respond-below(md) {
             font-size: 18px;
           }

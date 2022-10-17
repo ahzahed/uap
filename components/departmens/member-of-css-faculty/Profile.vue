@@ -13,37 +13,44 @@
               <span class="university">University of Asia Pacific</span>
             </p>
             <ul class="social mb-0 list-inline mt-3">
-              <li class="list-inline-item">
+              <li v-show="profile && profile.facebook" class="list-inline-item">
                 <a
                   :href="profile.facebook"
                   target="_blank"
                   class="social-link shadow"
+                  style="cursor: pointer"
                 >
                   <i :class="'fab fa-facebook-square'"></i
                 ></a>
               </li>
-              <li class="list-inline-item">
+              <li v-show="profile && profile.twitter" class="list-inline-item">
                 <a
                   :href="profile.twitter"
                   target="_blank"
+                  style="cursor: pointer"
                   class="social-link shadow"
                 >
                   <i :class="'fab fa-twitter-square'"></i
                 ></a>
               </li>
-              <li class="list-inline-item">
+              <li v-show="profile && profile.linkedin" class="list-inline-item">
                 <a
                   :href="profile.linkedin"
                   target="_blank"
+                  style="cursor: pointer"
                   class="social-link shadow"
                 >
                   <i :class="'fab fa-linkedin'"></i
                 ></a>
               </li>
-              <li class="list-inline-item">
+              <li
+                v-show="profile && profile.Instagram"
+                class="list-inline-item"
+              >
                 <a
                   :href="profile.Instagram"
                   target="_blank"
+                  style="cursor: pointer"
                   class="social-link shadow"
                 >
                   <i :class="'fab fa-instagram-square'"></i

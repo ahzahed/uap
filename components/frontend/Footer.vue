@@ -5,8 +5,7 @@
       <div class="row padding-footer">
         <div
           class="col-md-3 col-12"
-          data-aos="fade-right"
-          data-aos-duration="1800"
+       
         >
           <div class="footer-logo">
             <nuxt-link to="/" class="logo">
@@ -33,8 +32,7 @@
           <div class="row">
             <div
               class="col-md-3 col-6 footer-col"
-              data-aos="fade-up"
-              data-aos-duration="1000"
+              
             >
               <ul class="navbar-nav">
                 <li
@@ -60,8 +58,7 @@
             </div>
             <div
               class="col-md-3 col-6 footer-col"
-              data-aos="fade-up"
-              data-aos-duration="1000"
+             
             >
               <ul class="navbar-nav">
                 <li
@@ -87,8 +84,7 @@
             </div>
             <div
               class="col-md-3 col-6 footer-col"
-              data-aos="fade-up"
-              data-aos-duration="1000"
+            
             >
               <ul class="navbar-nav">
                 <li
@@ -114,8 +110,7 @@
             </div>
             <div
               class="col-md-3 col-6 footer-col"
-              data-aos="fade-up"
-              data-aos-duration="1000"
+             
             >
               <ul class="navbar-nav">
                 <li

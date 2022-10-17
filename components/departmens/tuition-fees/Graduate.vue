@@ -13,6 +13,7 @@
           type="radio"
           name="inlineRadioOptions"
           :value="item.id"
+          style="cursor: pointer"
         />
         <label class="form-check-label" :for="item.id">{{
           item.program_name

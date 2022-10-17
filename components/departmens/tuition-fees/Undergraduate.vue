@@ -12,6 +12,7 @@
           class="form-check-input"
           type="radio"
           name="inlineRadioOptions"
+          style="cursor: pointer"
           :value="item.id"
         />
         <label class="form-check-label" :for="item.id">{{

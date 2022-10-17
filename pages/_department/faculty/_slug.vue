@@ -27,37 +27,41 @@
                   <h5 class="mb-0">{{ professor.name }}</h5>
                   <p class="mb-0">{{ professor.designation }}</p>
                   <div>
-                    <ul class="nav">
-                      <li class="nav-item">
+                    <ul class="nav mb-2">
+                      <li v-show="professor && professor.facebook" class="nav-item">
                         <a
                           class="nav-link"
+                          style="cursor: pointer"
                           :href="professor.facebook"
                           target="_blank"
                         >
                           <img src="@/static/images/faculty/facebook.png"
                         /></a>
                       </li>
-                      <li class="nav-item">
+                      <li v-show="professor && professor.linkedin" class="nav-item">
                         <a
                           class="nav-link"
+                          style="cursor: pointer"
                           :href="professor.linkedin"
                           target="_blank"
                         >
                           <img src="@/static/images/faculty/twitter.png"
                         /></a>
                       </li>
-                      <li class="nav-item">
+                      <li v-show="professor && professor.twitter" class="nav-item">
                         <a
                           class="nav-link"
+                          style="cursor: pointer"
                           :href="professor.twitter"
                           target="_blank"
                         >
                           <img src="@/static/images/faculty/linkedin.png"
                         /></a>
                       </li>
-                      <li class="nav-item">
+                      <li v-show="professor && professor.Instagram" class="nav-item">
                         <a
                           class="nav-link"
+                          style="cursor: pointer"
                           :href="professor.Instagram"
                           target="_blank"
                         >

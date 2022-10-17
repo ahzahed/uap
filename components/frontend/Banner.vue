@@ -21,7 +21,7 @@
 
       <div class="banner__content-main">
         <div class="container">
-          <div class="banner__content col-md-10 col-md-12 col-lg-7 col-xl-5">
+          <div class="banner__content col-xl-5 col-lg-8 col-md-10 col-sm-12">
             <h2 class="banner__title">{{ banner.header_title }}</h2>
 
             <nuxt-link to="/" class="banner__link primary-btn btn"

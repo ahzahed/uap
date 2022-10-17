@@ -1,45 +1,45 @@
 /* eslint-disable vue/require-default-prop */
 <template>
-  <section id="trustees">
+  <section id="trustees" class="mb-5">
     <div class="container">
-      <div class="col-lg-12 col-md-10 col-sm-12 mx-auto">
-        <div class="mb-4">
-          <div class="row">
-            <!-- card start -->
-            <div v-for="(item, i) in items" :key="i" class="col-lg-6">
-              <div class="card mb-4 loopCardContainer">
-                <div class="row">
-                  <div class="col-lg-5 col-md-5 col-sm-5 paddingRight">
-                    <img
-                      :src="$config.baseURL + item.image"
-                      class="img-fluid h-100 w-100"
-                      :alt="item.name"
-                    />
-                  </div>
-                  <div class="col-lg-7 col-md-7 col-sm-7">
-                    <div class="card-body">
-                      <h5>{{ item.name }}</h5>
-                      <h6>{{ item.designation }}</h6>
+      <div class="row">
+        <!-- card start -->
+        <div
+          v-for="(item, i) in items"
+          :key="i"
+          class="col-xl-6 col-lg-7 mx-auto"
+        >
+          <div class="card mb-4 loopCardContainer">
+            <div class="row">
+              <div class="col-lg-5 col-md-5 col-sm-5 paddingRight">
+                <img
+                  :src="$config.baseURL + item.image"
+                  class="img-fluid h-100 w-100"
+                  :alt="item.name"
+                />
+              </div>
+              <div class="col-lg-7 col-md-7 col-sm-7">
+                <div class="card-body">
+                  <h5>{{ item.name }}</h5>
+                  <h6>{{ item.designation }}</h6>
 
-                      <h5>Degree</h5>
-                      <p>{{ item.degree }}</p>
-                      <h5>Address</h5>
-                      <p>{{ item.address }}</p>
-                      <h5>Email</h5>
-                      <p>{{ item.email }}</p>
-                      <h5>Phone</h5>
-                      <p>
-                        {{ item.phone }}
-                      </p>
-                    </div>
-                  </div>
+                  <h5>Degree</h5>
+                  <p>{{ item.degree }}</p>
+                  <h5>Address</h5>
+                  <p>{{ item.address }}</p>
+                  <h5>Email</h5>
+                  <p>{{ item.email }}</p>
+                  <h5>Phone</h5>
+                  <p>
+                    {{ item.phone }}
+                  </p>
                 </div>
               </div>
             </div>
-
-            <!-- Card end -->
           </div>
         </div>
+
+        <!-- Card end -->
       </div>
     </div>
   </section>
@@ -52,7 +52,6 @@ export default {
       required: true,
     },
   },
-  
 }
 </script>
 <style lang="scss" scoped>
