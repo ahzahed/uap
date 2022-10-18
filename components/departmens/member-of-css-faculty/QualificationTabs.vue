@@ -3,7 +3,7 @@
   <section id="QualificationTabs">
     <div class="container my-5">
       <div class="row">
-        <div class="col-lg-7">
+        <div class="col-xl-7 col-lg-12">
           <div class="leftSide shadow">
             <div class="row">
               <div class="col-md-3">
@@ -125,7 +125,7 @@
           </div>
         </div>
 
-        <div class="col-lg-5">
+        <div class="col-xl-5 col-lg-12">
           <div class="rightSide shadow">
             <h2>Contact</h2>
           <div class="details">

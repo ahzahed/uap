@@ -2,10 +2,9 @@
   <section id="academicTeaching">
     <div class="container">
       <div class="row">
-        <div class="col-xl-5 col-md-6 mb-5">
+        <div class="col-xl-5 col-lg-12 mb-5">
           <div class="bg-white rounded shadow py-5 px-4 leftSide">
             <h5>Academic Qualification</h5>
-
             <div
               class="academicTeachingLists"
               v-html="profile.academic_qualification"
@@ -13,27 +12,27 @@
           </div>
         </div>
 
-        <div class="col-xl-7 col-md-6 mb-5 text-center">
+        <div class="col-xl-7 col-lg-12 mb-5 text-center">
           <div class="bg-white rounded shadow py-5 px-4 rightSide">
             <h5 class="mb-4">Teaching Experience</h5>
             <div
-              v-for="(item, i) in teachingExp"
+              v-for="(item, i) in profile.teaching_xp"
               id="teachingColor"
               :key="i"
               class="card mb-3"
             >
               <div class="row g-0">
                 <div class="col-md-4 cardLeft">
-                  <div class="card-body">
-                    <p>{{ item.time }}</p>
+                  <div class="card-body h-100">
+                    <p>{{ item.title }}</p>
                   </div>
                 </div>
                 <div class="col-md-8">
                   <div class="card-body" style="text-align: left">
                     <p>
-                      {{ item.position }}
+                      {{ item.description }}
                     </p>
-                    <p class="place">{{ item.place }}</p>
+                    <p class="place">{{ item.organization }}</p>
                   </div>
                 </div>
               </div>
@@ -51,7 +50,7 @@ export default {
     // eslint-disable-next-line vue/require-default-prop
     profile: {
       type: Object,
-      require: true,
+      required: true,
     },
   },
   data() {

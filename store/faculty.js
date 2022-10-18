@@ -45,7 +45,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       context.commit('sidebar/toggleLoader', true, { root: true })
       this.$axios
-        .get(`/department/faculty/designation/${value}`)
+        .get(`/department/faculty/designation`)
         .then((result) => {
           context.commit('sidebar/toggleLoader', false, { root: true })
           result.data.forEach((element) => {
@@ -91,7 +91,9 @@ const actions = {
           if (result.data) {
             result.data.banner_image = this.$config.baseURL + result.data.banner
             result.data.profile_image = this.$config.baseURL + result.data.image
+            result.data.teaching_xp = JSON.parse(result.data.teach_experience)
           }
+          // console.log(JSON.parse(result.data.teach_experience))
           context.commit('FACULTY_DETAILS', result.data)
         })
         .catch((error) => {
