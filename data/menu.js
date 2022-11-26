@@ -50,15 +50,15 @@ export const Menu = [
 
       {
         title: 'Message From Chairman',
-        link: '/administration-details/1',
+        link: '/chairman',
       },
       {
         title: 'Message From Vice Chancellor',
-        link: '/administration-details/2',
+        link: '/vice_chancellor',
       },
       {
         title: 'Message From Pro Vice Chancellor',
-        link: '/administration-details/3',
+        link: '/pro_vice_chancellor',
       },
       {
         title: 'Treasurer',

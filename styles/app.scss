@@ -83,15 +83,15 @@
   padding: 0;
   outline: 0;
 }
-p::first-letter {
-  /* content and styles here */
-  text-transform: capitalize;
-}
-p {
-  &::first-letter {
-    text-transform: capitalize;
-  }
-}
+// p::first-letter {
+//   /* content and styles here */
+//   text-transform: capitalize;
+// }
+// p {
+//   &::first-letter {
+//     text-transform: capitalize;
+//   }
+// }
 a {
   text-decoration: none !important;
 }
@@ -161,12 +161,15 @@ body::-webkit-scrollbar-thumb {
 .banner-content {
   background: #1b2055;
   color: rgba(255, 255, 255, 1);
-  padding: 50px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
   border-radius: 5px;
   z-index: 9;
   opacity: 0.9;
   position: relative;
-  margin-top: -160px;
+  margin-top: -30px;
 }
 .BriefHistory {
   .bounding-box {

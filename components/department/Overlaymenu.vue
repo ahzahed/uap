@@ -48,19 +48,18 @@
                 </li>
                 <!-- Static Menus  -->
                 <li
-                  v-for="(item, i) in Menu.slice(5)"
+                  v-for="(item, i) in Menu.slice(4)"
                   :key="i"
                   class="nav-item"
                 >
-                  <nuxt-link
+                  <!-- <nuxt-link
                     v-if="item.link"
                     :to="'/' + $nuxt.$route.params.department + item.link"
                     class="nav-link"
                   >
                     <p @click="TOGGLE_DRAWER">{{ item.title }}</p>
-                  </nuxt-link>
+                  </nuxt-link> -->
                   <a
-                    v-else
                     href="javascript:void(0)"
                     class="nav-link"
                     @click="setCategory(item)"
@@ -150,7 +149,15 @@
                     :key="'menu2_' + i3"
                     class="nav-item"
                   >
+                    <a
+                      v-if="item.link"
+                      :href="item.link"
+                      target="_blank"
+                      class="nav-link"
+                      >{{ item.section }}</a
+                    >
                     <nuxt-link
+                      v-else
                       :to="
                         '/' +
                         $nuxt.$route.params.department +
@@ -171,7 +178,15 @@
                     :key="'menu2_' + i3"
                     class="nav-item"
                   >
+                    <a
+                      v-if="item.link"
+                      :href="item.link"
+                      target="_blank"
+                      class="nav-link"
+                      >{{ item.section }}</a
+                    >
                     <nuxt-link
+                      v-else
                       :to="
                         '/' +
                         $nuxt.$route.params.department +
@@ -291,6 +306,11 @@ export default {
       this.height = document.documentElement.clientHeight
     },
     setCategory(item) {
+      const id = item.id
+      this.$store.dispatch('dynamic/getDynamicSubmenu', {
+        department: this.$route.params.department,
+        id,
+      })
       if (item.subMenus) {
         this.sub_categories = item.subMenus
         this.$store.dispatch('depClub/getEmptyDepClubType')

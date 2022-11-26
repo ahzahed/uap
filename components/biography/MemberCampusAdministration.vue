@@ -29,7 +29,7 @@
               </div>
               <div class="d-flex align-items-end flex-column bd-highlight">
                 <ul class="nav ms-auto p-2 bd-highlight">
-                  <li v-for="(item, i) in socalicons" :key="i" class="nav-item">
+                  <li v-for="(item, j) in socalicons" :key="j" class="nav-item">
                     <nuxt-link class="nav-link" to=""
                       ><img :src="item.img"
                     /></nuxt-link>

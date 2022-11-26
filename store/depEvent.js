@@ -2,6 +2,7 @@
 /* eslint-disable camelcase */
 const state = () => ({
   events: [],
+  events_section: [],
   banner: {},
   upcoming_events: [],
   parent_categories: [],
@@ -10,12 +11,28 @@ const state = () => ({
 
 const getters = {
   upcoming_events: (state) => state.upcoming_events,
+  events_section: (state) => state.events_section,
   events: (state) => state.events,
   topics: (state) => state.topics,
   banner: (state) => state.banner,
 }
 
 const actions = {
+  allEventsSection(context, value) {
+    return new Promise((resolve, reject) => {
+      context.commit('sidebar/toggleLoader', true, { root: true })
+      this.$axios
+        .get(`/department/event/topics/${value}`)
+        .then((result) => {
+          context.commit('sidebar/toggleLoader', false, { root: true })
+          resolve(result)
+          context.commit('EVENTS_SECTION', result.data)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
   async depEventBanner(context, payload) {
     const data = await this.$axios.get(
       `/department/event/page/setting/${payload}`
@@ -58,6 +75,9 @@ const mutations = {
   },
   TOPIC_LIST(state, topics) {
     state.topics = topics
+  },
+  EVENTS_SECTION(state, section) {
+    state.events_section = section
   },
   DETAILS(state, details) {
     state.details = details

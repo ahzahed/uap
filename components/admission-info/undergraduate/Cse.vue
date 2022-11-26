@@ -2,7 +2,7 @@
   <section id="cse">
     <div class="container">
       <h4 class="text-center">
-        Why at {{ $nuxt.$route.params.department }} UAP
+        Why {{ $nuxt.$route.params.department }} at UAP
       </h4>
       <div class="row">
         <div

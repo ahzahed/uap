@@ -1,10 +1,10 @@
 <template>
   <section id="bsc-curriculum">
     <div class="container my-5">
-      <div class="row">
+      <div v-for="(item, i) in bscBody" :key="i" class="row mt-4">
         <div class="col-lg-11 mx-auto">
-          <div v-if="bscBody" class="details">
-            <div v-html="bscBody.curriculum_detail"></div>
+          <div class="details">
+            <div v-html="item.curriculum_detail"></div>
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@ export default {
 @import './styles/_main.scss';
 #bsc-curriculum {
   .details {
-    border-bottom: 21px solid #4786ef;
+    border-bottom: 8px solid #4786ef;
     padding: 50px;
     background-color: $background-color;
     border-radius: 5px;

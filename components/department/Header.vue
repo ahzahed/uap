@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-7 col-xs-12 col-sm-9 col-md-9 col-lg-3">
-            <nuxt-link class="logo" :to="`/${$route.params.department}`">
+            <nuxt-link class="logo" to="/">
               <img src="@/static/logo-big-black.png" />
             </nuxt-link>
           </div>
@@ -14,8 +14,17 @@
               <!-- <li class="nav-item">
                 <nuxt-link class="nav-link" to="/">Home & About</nuxt-link>
               </li> -->
+              <li class="nav-item">
+                <!-- <a class="nav-link p-0" href="/">Home</a> -->
+                <nuxt-link
+                  class="nav-link p-0"
+                  :to="`/${$route.params.department}`"
+                >
+                  Home
+                </nuxt-link>
+              </li>
               <li
-                v-for="(item, i) in Menu.slice(0, 5)"
+                v-for="(item, i) in Menu.slice(0, 4)"
                 :key="i"
                 class="nav-item"
               >

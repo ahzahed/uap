@@ -1,53 +1,4 @@
 export const Menu = [
-  // {
-  //   title: 'Home & About',
-  //   link: '/',
-  //   subMenus: [],
-  //   // subMenus: [
-  //   //   {
-  //   //     title: 'Awards and Achievements',
-  //   //     link: '/awards-and-achievements',
-  //   //   },
-  //   //   {
-  //   //     title: 'Affiliations',
-  //   //     link: '/affiliations',
-  //   //   },
-  //   //   {
-  //   //     title: 'The Chairman',
-  //   //     link: '/chairman',
-  //   //   },
-  //   //   {
-  //   //     title: 'The Vice Chancellor',
-  //   //     link: '/vice-chancellor',
-  //   //   },
-  //   //   {
-  //   //     title: 'The Pro Vice Chancellor',
-  //   //     link: '/pro-vice-chancellor',
-  //   //   },
-  //   //   {
-  //   //     title: 'Treasurer',
-  //   //     link: 'treasurer',
-  //   //   },
-  //   //   {
-  //   //     title: 'Registrar',
-  //   //     link: '/registrar',
-  //   //   },
-  //   //   {
-  //   //     title: 'Office of the Proctor',
-  //   //     link: '/office-of-proctor',
-  //   //   },
-  //   //   {
-  //   //     title: 'career',
-  //   //     link: '/career',
-  //   //   },
-  //   // ],
-  // },
-
-  {
-    title: 'About',
-    id: 1,
-    subMenus: [],
-  },
   {
     title: 'People',
     id: 2,
@@ -75,14 +26,7 @@ export const Menu = [
         title: 'Admission Info Undergraduate',
         slug: 'admission-info-undergraduate',
       },
-      {
-        title: 'Apply Online',
-        slug: 'https://www.admission.uap-bd.edu/Admission/Home.aspx',
-      },
-      {
-        title: 'Admission Test Schedule',
-        slug: '/admission-test',
-      },
+
       { title: 'Admission Result', slug: 'admission-result' },
       { title: 'Financial Aid', slug: 'tuition-waiver-financial-aid' },
     ],
@@ -122,58 +66,18 @@ export const Menu = [
     ],
   },
 
-  // {
-  //   title: 'Facilities',
-  //   id: 6,
-  //   link: '/facilities',
-  // },
   {
     title: 'Facilities',
-    id: 6,
+    id: 7,
     subMenus: [{ title: 'Facilities', slug: '/facilities' }],
   },
 
   {
     title: 'Alumni',
-    id: 7,
+    id: 8,
     subMenus: [
       { title: 'Alumni', slug: '/alumni' },
       { title: 'Alumni Associates', slug: '/alumni-associate' },
     ],
   },
-
-  // {
-  //   title: 'Studentss',
-  //   subMenus: [
-  //     { title: 'Alumni', link: '/alumni' },
-  //     { title: 'Career Services', link: '/career-services' },
-  //     {
-  //       title: 'Directorate of Students Welfare',
-  //       link: '/directorate-of-students-welfare',
-  //     },
-  //     { title: 'Library', link: '/library' },
-  //     {
-  //       title: 'Convocation',
-  //       link: '/convocation',
-  //     },
-  //     {
-  //       title: 'Clubs',
-  //       link: '/clubs',
-  //     },
-  //     {
-  //       title: 'UCAM',
-  //       link: '/ucam',
-  //     },
-  //     {
-  //       title: 'Emergency Information',
-  //       link: '/emergency-information',
-  //     },
-  //   ],
-  // },
-  // {
-  //   title: 'Research',
-  // },
-  // {
-  //   title: 'Resources',
-  // },
 ]

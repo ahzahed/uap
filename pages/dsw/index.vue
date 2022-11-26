@@ -133,9 +133,9 @@
       <template #body>
         <div>
           <h3 class="text-center">{{ singleNewsDetails.title }}</h3>
-          <img :src="$config.baseURL + singleNewsDetails.image"
+          <!-- <img :src="$config.baseURL + singleNewsDetails.image"
             :alt="singleNewsDetails.title"
-            class="w-100" />
+            class="w-100" /> -->
           <div class="container">
             <div class="row mt-5 border rounded">
               <div class="col-lg-6 modalEventLeft">
