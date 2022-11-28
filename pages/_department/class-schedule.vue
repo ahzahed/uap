@@ -1,7 +1,7 @@
 <template>
   <section id="classSchedule">
     <Banner :banner="class_schedule_banner" />
-    <List :semesters="semesters"/>
+    <List :programs="programs"/>
   </section>
 </template>
 
@@ -18,12 +18,12 @@ export default {
   layout: 'HomeLayout',
   asyncData({ store, route }) {
     store.dispatch('classSchedule/getClassScheduleBanner', route.params.department)
-    store.dispatch('classSchedule/getSemesters', route.params.department)
+    store.dispatch('classSchedule/getPrograms', route.params.department)
     // store.dispatch('classSchedule/getSections', route.params.department)
   },
   
   computed: {
-    ...mapGetters('classSchedule', ['class_schedule_banner','semesters']),
+    ...mapGetters('classSchedule', ['class_schedule_banner','programs']),
   },
 }
 </script>

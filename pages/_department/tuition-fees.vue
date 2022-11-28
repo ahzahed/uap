@@ -20,11 +20,13 @@
         }}</label>
       </div>
     </div> -->
-
-    <Graduate v-show="whatIsRequired[0].active == true" :programs="programs" />
+    <Graduate
+      v-show="whatIsRequired[0].active == true"
+      :programs="graduate_programs"
+    />
     <Undergraduate
       v-show="whatIsRequired[1].active == true"
-      :programs="programs"
+      :programs="undergraduate_programs"
     />
 
     <SpecialNote
@@ -58,11 +60,17 @@ export default {
       'depTuitionFees/getTuitionFeesBanner',
       route.params.department
     )
-    store.dispatch('depTuitionFees/getPrograms', route.params.department)
+    store.dispatch(
+      'depTuitionFees/getGraduatePrograms',
+      route.params.department
+    )
+    store.dispatch(
+      'depTuitionFees/getUndergraduatePrograms',
+      route.params.department
+    )
   },
   data() {
     return {
-      
       whatIsRequired: [
         {
           name: 'Graduate cost',
@@ -88,7 +96,8 @@ export default {
       // 'underGraduateCost',
       'specialNote',
       'tuition_fees_banner',
-      'programs',
+      'graduate_programs',
+      'undergraduate_programs',
     ]),
   },
 }

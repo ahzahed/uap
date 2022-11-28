@@ -41,6 +41,7 @@ const actions = {
         })
     })
   },
+  
   getAllDesignation(context, value) {
     return new Promise((resolve, reject) => {
       context.commit('sidebar/toggleLoader', true, { root: true })

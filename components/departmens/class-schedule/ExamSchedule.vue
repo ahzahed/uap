@@ -71,25 +71,25 @@ vue/require-default-prop */
                 <!-- {{checkFile(class_schedule_body.file)}} -->
                 <iframe
                   v-if="
-                    class_schedule_body.file &&
-                    class_schedule_body.file.includes('.pdf')
+                    exam_schedule_body.file &&
+                    exam_schedule_body.file.includes('.pdf')
                   "
-                  v-show="class_schedule_body.file"
-                  :src="$config.baseURL + class_schedule_body.file"
+                  v-show="exam_schedule_body.file"
+                  :src="$config.baseURL + exam_schedule_body.file"
                   width="90%"
                   height="700px"
                 />
                 <img
-                  v-else-if="class_schedule_body.file"
-                  :src="$config.baseURL + class_schedule_body.file"
+                  v-else-if="exam_schedule_body.file"
+                  :src="$config.baseURL + exam_schedule_body.file"
                   alt=""
                   class="w-100 h-100"
                 />
 
                 <a
-                  v-show="class_schedule_body.file"
+                  v-show="exam_schedule_body.file"
                   class="pink-btn btn mt-5"
-                  :href="$config.baseURL + class_schedule_body.file"
+                  :href="$config.baseURL + exam_schedule_body.file"
                   target="_blank"
                 >
                   Download <i class="fas fa-download"></i>
@@ -130,16 +130,16 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('classSchedule', [
+    ...mapGetters('examSchedule', [
       'semesters',
       'sections',
-      'class_schedule_body',
+      'exam_schedule_body',
     ]),
   },
   methods: {
     getSemesters(event) {
       this.program_id = event.target.value
-      this.$store.dispatch('classSchedule/getSemesters', {
+      this.$store.dispatch('examSchedule/getSemesters', {
         department: this.$router,
         id: event.target.value,
       })
@@ -147,7 +147,7 @@ export default {
 
     getSections(event) {
       this.semester_id = event.target.value
-      this.$store.dispatch('classSchedule/getSections', {
+      this.$store.dispatch('examSchedule/getSections', {
         department: this.$router,
         id: event.target.value,
       })
@@ -158,7 +158,7 @@ export default {
     },
 
     getFile() {
-      this.$store.dispatch('classSchedule/getClassScheduleBody', {
+      this.$store.dispatch('examSchedule/getExamScheduleBody', {
         program: this.program_id,
         semester: this.semester_id,
         section: this.section_id,

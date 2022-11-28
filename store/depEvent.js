@@ -18,6 +18,33 @@ const getters = {
 }
 
 const actions = {
+  // async depEventBanner(context, payload) {
+  //   const data = await this.$axios.get(
+  //     `/department/event/page/setting/${payload}`
+  //   )
+  //   data.data.image = this.$config.baseURL + data.data.image
+  //   context.commit('BANNER', data.data)
+  // },
+
+  depEventBanner(context, payload) {
+    return new Promise((resolve, reject) => {
+      context.commit('sidebar/toggleLoader', true, { root: true })
+      this.$axios
+        .get(`/department/event/page/setting/${payload}`)
+        .then((result) => {
+          context.commit('sidebar/toggleLoader', false, { root: true })
+          resolve(result)
+          if (result.data) {
+            result.data.image = this.$config.baseURL + result.data.image
+          }
+          context.commit('BANNER', result.data)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
   allEventsSection(context, value) {
     return new Promise((resolve, reject) => {
       context.commit('sidebar/toggleLoader', true, { root: true })
@@ -25,65 +52,95 @@ const actions = {
         .get(`/department/event/topics/${value}`)
         .then((result) => {
           context.commit('sidebar/toggleLoader', false, { root: true })
-          resolve(result)
+          if (result.data) {
+            result.data.forEach((item) => {
+              item.section = item.slug
+            })
+          }
           context.commit('EVENTS_SECTION', result.data)
+          resolve(result)
         })
         .catch((error) => {
           reject(error)
         })
     })
   },
-  async depEventBanner(context, payload) {
-    const data = await this.$axios.get(
-      `/department/event/page/setting/${payload}`
-    )
-    data.data.image = this.$config.baseURL + data.data.image
-    context.commit('BANNER', data.data)
-  },
-  async allEventList(context, payload) {
-    const data = await this.$axios.get(
-      `/department/event/${payload.depatment}?page=${payload.page}`
-    )
 
-    context.commit('DATA', data.data)
+  async allEventList(context, payload) {
+    try {
+      context.commit('sidebar/toggleLoader', true, { root: true })
+      const data = await this.$axios.get(
+        `/department/event/${payload.department}/${payload.slug}`
+      )
+
+      context.commit('DATA', data.data)
+      context.commit('sidebar/toggleLoader', false, { root: true })
+    } catch (error) {
+      context.commit('sidebar/toggleLoader', false, { root: true })
+    }
   },
-  async topicList(context) {
-    const data = await this.$axios.get(`/event/topic/list`)
-    context.commit('TOPIC_LIST', data.data)
-  },
-  async upcomingeventlist(context) {
-    const data = await this.$axios.get(`/event/upcoming/list`)
-    context.commit('UPCOMING_EVENT', data.data)
-  },
-  async filterByEvent(context, payload) {
-    const data = await this.$axios.get(
-      `/event/${payload.date}/${payload.topic}/filter`
-    )
-    context.commit('DATA', data.data)
-  },
+
+  // async allEventList(context, payload) {
+  //   const data = await this.$axios.get(
+  //     `/department/event/${payload.department}/${payload.slug}`
+  //   )
+
+  //   context.commit('DATA', data.data)
+  // },
+
+  // async allEventList(context, payload) {
+  //   try {
+  //     context.commit('sidebar/toggleLoader', true, { root: true })
+  //     const data = await this.$axios.get(
+  //       `/department/event/${payload.depatment}/${payload.slug}?page=${payload.page}`
+  //     )
+
+  //     context.commit('DATA', data.data)
+  //     context.commit('sidebar/toggleLoader', false, { root: true })
+  //   } catch (error) {
+  //     context.commit('sidebar/toggleLoader', false, { root: true })
+  //   }
+  // },
+
+  // async topicList(context) {
+  //   const data = await this.$axios.get(`/event/topic/list`)
+  //   context.commit('TOPIC_LIST', data.data)
+  // },
+  // async upcomingeventlist(context) {
+  //   const data = await this.$axios.get(`/event/upcoming/list`)
+  //   context.commit('UPCOMING_EVENT', data.data)
+  // },
+  // async filterByEvent(context, payload) {
+  //   const data = await this.$axios.get(
+  //     `/event/${payload.date}/${payload.topic}/filter`
+  //   )
+  //   context.commit('DATA', data.data)
+  // },
 }
 
 const mutations = {
-  DATA(state, events) {
-    state.events = events
-  },
   BANNER(state, banner) {
     state.banner = banner
-  },
-  UPCOMING_EVENT(state, upcoming_events) {
-    state.upcoming_events = upcoming_events
-  },
-  TOPIC_LIST(state, topics) {
-    state.topics = topics
   },
   EVENTS_SECTION(state, section) {
     state.events_section = section
   },
-  DETAILS(state, details) {
-    state.details = details
+  DATA(state, events) {
+    state.events = events
   },
-  CREATED(state) {},
-  SHOW(state) {},
+
+  // UPCOMING_EVENT(state, upcoming_events) {
+  //   state.upcoming_events = upcoming_events
+  // },
+  // TOPIC_LIST(state, topics) {
+  //   state.topics = topics
+  // },
+
+  // DETAILS(state, details) {
+  //   state.details = details
+  // },
+  // CREATED(state) {},
+  // SHOW(state) {},
 }
 export default {
   state,

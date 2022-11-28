@@ -23,8 +23,8 @@
     <div v-show="graduateCost.length > 0" class="container mt-5">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <div class="table-responsive-lg">
-            <table class="table text-center">
+          <div class="table-responsive">
+            <table class="table text-center mb-0">
               <thead>
                 <tr>
                   <th colspan="3" class="heading">
@@ -55,6 +55,9 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+          <div class="meritTableFooter p-5">
+            <div v-html="graduateNote.description"></div>
           </div>
         </div>
       </div>
@@ -98,12 +101,16 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('depTuitionFees', ['graduateCost']),
+    ...mapGetters('depTuitionFees', ['graduateCost', 'graduateNote']),
   },
   methods: {
     getGraduation(event) {
       // this.program_id = event.target.value
       this.$store.dispatch('depTuitionFees/graduateCost', {
+        department: this.$router,
+        id: event.target.value,
+      })
+      this.$store.dispatch('depTuitionFees/getGraduateNote', {
         department: this.$router,
         id: event.target.value,
       })
@@ -144,6 +151,17 @@ export default {
       color: $darkblue;
       text-align: center;
     }
+  }
+  .meritTableFooter {
+    font-size: 18px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+
+    color: #000;
+    background-color: $violot;
   }
 }
 </style>
