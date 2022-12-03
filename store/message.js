@@ -21,6 +21,10 @@ const actions = {
         .then((result) => {
           context.commit('sidebar/toggleLoader', false, { root: true })
           resolve(result)
+          if (result.data) {
+            result.data.message.image =
+              this.$config.baseURL + result.data.message.image
+          }
           context.commit('CHAIRMAN', result.data)
         })
         .catch((error) => {
@@ -37,6 +41,10 @@ const actions = {
         .then((result) => {
           context.commit('sidebar/toggleLoader', false, { root: true })
           resolve(result)
+          if (result.data) {
+            result.data.message.image =
+              this.$config.baseURL + result.data.message.image
+          }
           context.commit('VICE_CHANCELLOR', result.data)
         })
         .catch((error) => {
@@ -53,6 +61,10 @@ const actions = {
         .then((result) => {
           context.commit('sidebar/toggleLoader', false, { root: true })
           resolve(result)
+          if (result.data) {
+            result.data.message.image =
+              this.$config.baseURL + result.data.message.image
+          }
           context.commit('PRO_VICE_CHANCELLOR', result.data)
         })
         .catch((error) => {

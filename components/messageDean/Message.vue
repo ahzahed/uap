@@ -4,11 +4,11 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="heading">
-            <h1 class="text-center">{{ message.title }}</h1>
+            <h1 class="text-center">Message From Dean</h1>
           </div>
           <div class="details">
             <!-- <p v-if="toggle == false" v-html="dean.message.slice(0, 300)"></p> -->
-            <p v-html="dean.message"></p>
+            <p v-html="dean.dean.message"></p>
             <!-- <div class="row messageFrom">
               <div class="col-lg-4">
                 <img :src="img" alt="x" />
@@ -30,16 +30,19 @@
               </button> -->
             </div>
             <div class="messageFrom mt-5">
-              <img :src="$config.baseURL + dean.image" :alt="dean.name" />
+              <img
+                :src="$config.baseURL + dean.dean.image"
+                :alt="dean.dean.name"
+              />
               <div class="profile mt-2">
                 <p>
-                  {{ dean.name }}<br />
+                  {{ dean.dean.name }}<br />
                   <span>Dean, School of Engineering</span><br />
                   <span>University of Asia Pacific</span>
                 </p>
                 <p class="email">
                   <img class="icon" :src="require('static/envelope.svg')" />
-                  {{ dean.email }}
+                  {{ dean.dean.email }}
                 </p>
               </div>
             </div>
@@ -62,7 +65,6 @@ export default {
   data() {
     return {
       toggle: false,
-      
     }
   },
 }

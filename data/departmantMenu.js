@@ -61,7 +61,8 @@ export const Menu = [
     title: 'News and Information',
     id: 5,
     subMenus: [
-      { title: 'Events', slug: 'academic/events' },
+      // { title: 'Events', slug: 'academic/events' }, //Old events
+      { title: 'Events', slug: 'events' }, // New Events
       { title: 'Seminar and workshop', slug: 'seminar-workshop' },
     ],
   },
