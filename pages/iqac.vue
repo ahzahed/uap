@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 /* eslint-disable no-unused-vars */
 <template>
   <section id="iqac">

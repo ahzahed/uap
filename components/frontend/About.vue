@@ -10,21 +10,30 @@
         >
           <div class="about-content">
             <h2>{{ welcome_info.title }}</h2>
-            <p style="text-align: justify">
+            <div
+              v-html="
+                welcome_info.description &&
+                welcome_info.description.length > 600
+                  ? welcome_info.description.slice(0, 600) + '.....'
+                  : welcome_info.description
+              "
+            ></div>
+            <!-- <p style="text-align: justify">
               {{
                 welcome_info.description &&
                 welcome_info.description.length > 530
                   ? welcome_info.description.slice(0, 530) + '.....'
                   : welcome_info.description
               }}
-            </p>
+            </p> -->
 
             <p
               v-if="
                 welcome_info.description &&
-                welcome_info.description.length > 530
+                welcome_info.description.length > 600
               "
               class="primary-btn read-more-icon"
+              style="cursor: pointer; font-weight: bold"
               @click="showModal(welcome_info)"
             >
               Read More
@@ -59,7 +68,8 @@
       <template #body>
         <div>
           <h3 class="text-center my-3">{{ singleNewsDetails.title }}</h3>
-          <p>{{ singleNewsDetails.description }}</p>
+          <!-- <p>{{ singleNewsDetails.description }}</p> -->
+          <div v-html="singleNewsDetails.description"></div>
         </div>
       </template>
       <template #footer>
@@ -190,6 +200,10 @@ export default {
     // }
   }
   .about-img {
+    padding-left: 100px;
+    @include respond-below(lg) {
+      padding-left: 0px;
+    }
     overflow: hidden;
     img {
       height: auto;

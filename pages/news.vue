@@ -55,7 +55,7 @@
           :key="i"
           class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12"
         >
-          <NewsCard :item="item" @click.native="showModal(item.description)" />
+          <NewsCard :item="item" @click.native="showModal(item)" />
         </div>
       </div>
 
@@ -82,7 +82,15 @@
       @close="closeModal"
     >
       <template #body>
-        <div v-html="singleNewsDetails"></div>
+        <h3 class="mb-4 text-center">{{ singleNewsDetails.title }}</h3>
+        <p><span class="fw-bold">Date: </span>{{ singleNewsDetails.date }}</p>
+        <img
+          :src="singleNewsDetails.image"
+          class="mb-5"
+          :alt="singleNewsDetails.title"
+        />
+        <hr />
+        <div v-html="singleNewsDetails.description"></div>
       </template>
       <template #footer>
         <div class="modal-footer">

@@ -1,40 +1,60 @@
 <template>
-  <!-- Admission Part Start -->
+  <!-- About Part Start -->
   <section id="admission">
     <div class="container">
       <div class="row">
         <div
-          class="col-lg-5 col-md-6 col-12"
+          class="col-lg-6 col-md-12"
           data-aos="fade-right"
           data-aos-duration="1000"
         >
-          <div class="admission-content">
+          <div class="about-content">
             <h2>{{ admission_aid.title }}</h2>
-            <p style="text-align: justify">
-              {{ admission_aid.description }}
-            </p>
-            <!-- <div class="admission-icon">
-              <a href="#">Read More</a>
-            </div> -->
+            <div
+              v-html="
+                admission_aid.description &&
+                admission_aid.description.length > 600
+                  ? admission_aid.description.slice(0, 600) + '.....'
+                  : admission_aid.description
+              "
+            ></div>
+            <!-- <p style="text-align: justify">
+              {{
+                admission_aid.description &&
+                admission_aid.description.length > 530
+                  ? admission_aid.description.slice(0, 530) + '.....'
+                  : admission_aid.description
+              }}
+            </p> -->
+
             <p
-              class="primary-btn admission-icon"
+              v-if="
+                admission_aid.description &&
+                admission_aid.description.length > 600
+              "
+              class="primary-btn read-more-icon"
+              style="cursor: pointer; font-weight: bold"
               @click="showModal(admission_aid)"
             >
               Read More
             </p>
+            <!-- <p
+              v-show="admission_aid.description.length(550)"
+              class="primary-btn read-more-icon"
+              to="/"
+              @click="showModal(admission_aid)"
+            >
+              Read More
+            </p> -->
           </div>
         </div>
         <div
-          class="col-lg-7 col-md-6 col-12"
+          class="col-lg-6 col-md-12"
           data-aos="fade-left"
-          data-aos-duration="1000"
+          data-aos-duration="1200"
         >
-          <div class="admission-img">
-            <img
-              :src="admission_aid.image"
-              :alt="admission_aid.title"
-              class="w-100"
-            />
+          <div class="about-img">
+            <img :src="admission_aid.image" :alt="admission_aid.title" />
           </div>
         </div>
       </div>
@@ -48,7 +68,8 @@
       <template #body>
         <div>
           <h3 class="text-center my-3">{{ singleNewsDetails.title }}</h3>
-          <p>{{ singleNewsDetails.description }}</p>
+          <!-- <p>{{ singleNewsDetails.description }}</p> -->
+          <div v-html="singleNewsDetails.description"></div>
         </div>
       </template>
       <template #footer>
@@ -65,7 +86,7 @@
       </template>
     </Modal>
   </section>
-  <!-- Admission Part End -->
+  <!-- About Part End -->
 </template>
 
 <script>
@@ -109,70 +130,53 @@ export default {
   padding-bottom: $section-padding;
   background: $background-color;
   @include respond-below(sm) {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
   @include respond-between(sm, md) {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
   @include respond-between(md, lg) {
     padding-top: 100px;
     padding-bottom: 100px;
   }
-  .admission-content {
-    @include respond-below(md) {
-      text-align: center;
-    }
+  .about-content {
     h2 {
-      color: $text-color;
-      font-size: 52px;
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      margin-bottom: 0;
-      padding-bottom: 29px;
-      @include respond-below(sm) {
-        padding-bottom: 50px;
-        font-size: 32px;
-        text-align: center;
-      }
-      @include respond-between(sm, md) {
-        padding-bottom: 50px;
-        text-align: center;
-      }
-      @include respond-between(md, lg) {
-        padding-bottom: 50px;
-        text-align: center;
-      }
+      @include title4;
       @include respond-between(lg, xl) {
-        font-size: 40px;
-        padding-bottom: 45px;
         padding-left: 10px;
       }
     }
     p {
       color: $text-color;
-      font-family: Poppins;
+
       @include paragraph;
+      text-align: left;
+      padding-right: 60px;
       margin-bottom: 0;
-      padding-bottom: 37px;
-      padding-right: 20px;
+      padding-bottom: 60px;
+      @include respond-below(sm) {
+        padding-right: 0;
+      }
+      @include respond-between(sm, md) {
+        padding-right: 0;
+      }
+      @include respond-between(md, lg) {
+        padding-right: 0;
+      }
       @include respond-between(lg, xl) {
-        font-size: 18px;
-        line-height: 35px;
-        padding-right: 0px;
+        font-size: 16px;
+        line-height: 26px;
+        padding-right: 30px;
         padding-left: 10px;
       }
     }
-    .admission-icon {
+    .read-more-icon {
+      text-align: right;
+      margin-right: 75px;
       padding: 11px 42px;
-      text-align: center;
       border-radius: 5px;
-      margin-right: 35px;
-      margin-top: 30px;
       display: inline-block;
       color: white;
       @include respond-below(sm) {
@@ -191,8 +195,31 @@ export default {
         margin-left: 10px;
       }
     }
+    // .read-more-icon {
+    //   padding: 11px 42px;
+    //   border-radius: 5px;
+    // }
+  }
+  .about-img {
+    padding-left: 100px;
+    @include respond-below(lg) {
+      padding-left: 0px;
+    }
+    overflow: hidden;
+    img {
+      height: auto;
+      max-width: 100%;
 
-    .admission-img {
+      opacity: 1;
+      vertical-align: bottom;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      &:hover {
+        transform: scale(1.2);
+        opacity: 0.7;
+      }
       @include respond-below(sm) {
         padding-top: 50px;
       }
