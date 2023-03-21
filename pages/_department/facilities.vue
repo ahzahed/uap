@@ -6,7 +6,7 @@
         <div
           v-for="(event, i) in facilities"
           :key="i"
-          class="col-xl-4 col-lg-6 col-md-4 p-3"
+          class="col-xl-4 col-md-6 col-sm-12 p-3"
           style="cursor: pointer"
           @click="showModal(event)"
         >
@@ -28,9 +28,9 @@
               <p class="card-text mb-0 title">
                 {{ event.title }}
               </p>
-              <div class="mb-3">
+              <!-- <div class="mb-3">
                 <div v-html="event.description"></div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

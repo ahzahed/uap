@@ -38,7 +38,7 @@ const actions = {
     try {
       context.commit('sidebar/toggleLoader', true, { root: true })
       const data = await this.$axios.get(
-        `/admission/result/written/test/${preload}`
+        `/admission/result/written/test/${preload}/written`
       )
       context.commit('WRITTEN_TEST', data.data)
       context.commit('sidebar/toggleLoader', false, { root: true })
@@ -50,7 +50,7 @@ const actions = {
     try {
       context.commit('sidebar/toggleLoader', true, { root: true })
       const data = await this.$axios.get(
-        `/admission/result/final/result/${preload}`
+        `/admission/result/written/test/${preload}/final`
       )
       context.commit('FINAL_RESULT', data.data)
       context.commit('sidebar/toggleLoader', false, { root: true })
@@ -62,7 +62,7 @@ const actions = {
     try {
       context.commit('sidebar/toggleLoader', true, { root: true })
       const data = await this.$axios.get(
-        `/admission/result/waiting/list/${preload}`
+        `/admission/result/written/test/${preload}/waiting`
       )
       context.commit('WAITING_LIST', data.data)
       context.commit('sidebar/toggleLoader', false, { root: true })

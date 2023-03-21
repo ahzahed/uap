@@ -8,12 +8,9 @@
           <div class="waitingResult pt-4 shadow-sm">
             <ul v-for="(item, i) in written" :key="i">
               <li>
-                <a
-                  :href="$config.baseURL + item.file"
-                  target="_blank"
-                  class="nav-link"
-                  >{{ item.file_title }}</a
-                >
+                <a :href="item.pdf" target="_blank" class="nav-link">{{
+                  item.pdf_file_title
+                }}</a>
               </li>
               <hr />
             </ul>
@@ -24,12 +21,9 @@
           <div class="waitingResult pt-4 shadow-sm">
             <ul v-for="(item, i) in final" :key="i">
               <li>
-                <a
-                  :href="$config.baseURL + item.file"
-                  target="_blank"
-                  class="nav-link"
-                  >{{ item.file_title }}</a
-                >
+                <a :href="item.pdf" target="_blank" class="nav-link">{{
+                  item.pdf_file_title
+                }}</a>
               </li>
               <hr />
             </ul>
@@ -40,12 +34,9 @@
           <div class="waitingResult pt-4 shadow-sm">
             <ul v-for="(item, i) in waiting" :key="i">
               <li>
-                <a
-                  :href="$config.baseURL + item.file"
-                  target="_blank"
-                  class="nav-link"
-                  >{{ item.file_title }}</a
-                >
+                <a :href="item.pdf" target="_blank" class="nav-link">{{
+                  item.pdf_file_title
+                }}</a>
               </li>
               <hr />
             </ul>

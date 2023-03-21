@@ -82,13 +82,14 @@ export const Menu = [
     title: 'Authorities',
     subMenus: [
       {
-        title: 'Administration',
-        link: '/administration',
-      },
-      {
         title: 'Board of Trustees',
         link: '/board-of-trustees',
       },
+      {
+        title: 'Administration',
+        link: '/administration',
+      },
+
       {
         title: 'Syndicate and Academic Council',
         link: '/syndicate-academic-council',
@@ -200,6 +201,7 @@ export const Menu = [
   },
   {
     title: 'News and Information',
+    link: '/events',
     subMenus: [
       { title: 'Events', link: '/events' },
       // { title: 'News', link: '/news' },

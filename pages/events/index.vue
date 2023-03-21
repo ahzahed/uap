@@ -90,7 +90,7 @@
               <h5 class="card-title">
                 <span class="card-title-dot"></span>{{ event.topic }}
               </h5>
-              <p class="card-text mb-0 title">
+              <p class="card-text mb-0 title" style="cursor: pointer">
                 {{ event.title }}
               </p>
               <div class="mb-3">

@@ -6,18 +6,24 @@
         <div class="col-xl-12 col-md-12 mb-5">
           <div class="bg-white rounded shadow py-5 px-4 leftSide">
             <h5>Publications</h5>
-            <div v-for="(item, i) in profile" :key="i" class="details">
-              <a :href="item.link" target="_blank"> {{ item.title }}</a>
+            <ol>
+              <li v-for="(item, i) in profile" :key="i" class="details">
+                <a :href="item.link" target="_blank"> {{ item.title }}</a>
 
-              <div>
-                <b>Author: </b>
-                <div style="display: inline-block" v-html="item.author"></div>
-                | <b>Year: </b>{{ item.year }} | <b>Journal: </b>
-                {{ item.journal }}
-              </div>
-              <div v-html="item.abstract"></div>
-              <hr style="margin-bottom: 0px" />
-            </div>
+                <div>
+                  <b>Author: </b>
+                  <div
+                    style="display: inline-block"
+                    class="faculty_member_publication_author"
+                    v-html="item.author"
+                  ></div>
+                  | <b>Year: </b>{{ item.year }} | <b>Journal: </b>
+                  {{ item.journal }}
+                </div>
+                <div v-html="item.abstract"></div>
+                <hr style="margin-bottom: 0px" />
+              </li>
+            </ol>
           </div>
         </div>
       </div>
@@ -85,16 +91,7 @@ export default {
     }
     .details {
       padding-top: 20px;
-      padding-left: 20px;
-      h3 {
-        @include cardPara;
-        font-weight: 600;
-        cursor: pointer;
-      }
-      p {
-        @include paragraph2;
-        text-align: left;
-      }
+      // padding-left: 10px;
     }
   }
 }

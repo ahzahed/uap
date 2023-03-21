@@ -15,7 +15,7 @@
       </div>
 
       <div v-if="upcoming_events.length" class="row">
-        <div class="col-lg-6 col-sm-12">
+        <div class="col-lg-6 col-sm-12" @click="showModal(upcoming_events[0])">
           <div class="event-img">
             <img
               :src="upcoming_events[0].image"
@@ -25,7 +25,7 @@
             <div class="overlay-event"></div>
             <div class="overlay-content">
               <p>{{ upcoming_events[0].date }}</p>
-              <h6>{{ upcoming_events[0].title }}</h6>
+              <h6 style="cursor: pointer">{{ upcoming_events[0].title }}</h6>
               <span
                 >{{ upcoming_events[0].from }} -
                 {{ upcoming_events[0].to }}</span
@@ -40,6 +40,7 @@
             v-for="(item, i) in upcoming_events.slice(1)"
             :key="i"
             class="card mb-sm-3"
+            @click="showModal(item)"
           >
             <div class="row g-0">
               <div class="col-md-4 col-sm-4">
@@ -52,7 +53,7 @@
               </div>
               <div class="col-md-8 col-sm-8">
                 <div class="card-body">
-                  <h5>{{ item.title }}</h5>
+                  <h5 style="cursor: pointer">{{ item.title }}</h5>
                   <div class="overlay-content">
                     <span>{{ item.from }} - {{ item.to }}</span>
                     <small>{{ item.topic }}</small>
@@ -64,13 +65,64 @@
         </div>
       </div>
     </div>
+
+    <Modal
+      v-show="isModalVisible"
+      model-class="modal-dialog modal-dialog-centered"
+      model-width="800px"
+      @close="closeModal"
+    >
+      <template #body>
+        <div>
+          <h3 class="text-center">{{ singleNewsDetails.title }}</h3>
+          <!-- <img
+            :src="singleNewsDetails.image"
+            :alt="singleNewsDetails.title"
+            class="w-100"
+          /> -->
+          <div class="container">
+            <div class="row mt-5 border rounded">
+              <div class="col-lg-6 modalEventLeft">
+                <p><strong>Date:</strong> {{ singleNewsDetails.date }}</p>
+                <p>
+                  <strong>From: </strong>{{ singleNewsDetails.from }}
+                  <br /><strong>To: </strong>{{ singleNewsDetails.to }}
+                </p>
+              </div>
+              <div class="col-lg-6 modalEventRight">
+                <p><strong>Topic:</strong> {{ singleNewsDetails.topic }}</p>
+                <p><strong>Type:</strong> {{ singleNewsDetails.type }}</p>
+                <p><strong>Status:</strong> {{ singleNewsDetails.status }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-5" v-html="singleNewsDetails.description"></div>
+        </div>
+      </template>
+      <template #footer>
+        <div class="modal-footer">
+          <button
+            class="btn btn-primary"
+            data-bs-target="#exampleModalToggle"
+            data-bs-toggle="modal"
+            @click="closeModal()"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </Modal>
   </section>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
 import aosMixin from '~/mixins/aos'
+import Modal from '@/components/helpers/ModalScroll.vue'
 export default {
+  components: {
+    Modal,
+  },
   mixins: [aosMixin],
   data() {
     return {
@@ -81,6 +133,8 @@ export default {
         medium: 'Online',
         date: 'Dec 21',
       },
+      singleNewsDetails: {},
+      isModalVisible: false,
     }
   },
   computed: {
@@ -91,6 +145,16 @@ export default {
   },
   methods: {
     ...mapActions('event', ['upcomingeventlist']),
+    // Modal
+    showModal(slug) {
+      // this.$store.dispatch('home/getSingleNewsBySlug', slug).then((res) => {
+      this.singleNewsDetails = slug
+      this.isModalVisible = true
+      // })
+    },
+    closeModal() {
+      this.isModalVisible = false
+    },
   },
 }
 </script>
@@ -439,5 +503,13 @@ export default {
   //     letter-spacing: normal;
   //   }
   // }
+  .modalEventLeft {
+    background: #e1f2f9;
+    padding: 10px;
+  }
+  .modalEventRight {
+    background: #f0f0fa;
+    padding: 10px;
+  }
 }
 </style>
