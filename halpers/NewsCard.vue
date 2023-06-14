@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" style="cursor: pointer">
     <img :src="item.image" class="card-img" :alt="item.title" />
     <div class="card-img-overlay shadow">
       <h5 class="card-title">

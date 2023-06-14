@@ -31,7 +31,16 @@
               :key="'left_' + i"
               class="nav-item"
             >
-              <nuxt-link class="nav-link" :to="item.to">{{
+              <a
+                v-if="item.to.includes('www.') || item.to.includes('http')"
+                :href="item.to"
+                target="_blank"
+                class="nav-link"
+              >
+                {{ item.text }}</a
+              >
+
+              <nuxt-link v-else class="nav-link" :to="item.to">{{
                 item.text
               }}</nuxt-link>
             </li>

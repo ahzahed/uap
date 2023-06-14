@@ -2,11 +2,11 @@
 <template>
   <section id="ListOfAllLab">
     <div class="container mt-5">
-      <div class="row">
-        <div class="col-sl-4 col-lg-6 col-md-6 mb-3">
-          <h2>Written Test</h2>
+      <div class="row justify-content-center">
+        <div class="col-sl-4 col-lg-8 col-md-6 mb-3">
+          <h2>{{top}}</h2>
           <div class="waitingResult pt-4 shadow-sm">
-            <ul v-for="(item, i) in written" :key="i">
+            <ul v-for="(item, i) in data" :key="i">
               <li>
                 <a :href="item.pdf" target="_blank" class="nav-link">{{
                   item.pdf_file_title
@@ -16,7 +16,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-3">
+        <!-- <div class="col-lg-4 col-md-6 mb-3">
           <h2>Final Result</h2>
           <div class="waitingResult pt-4 shadow-sm">
             <ul v-for="(item, i) in final" :key="i">
@@ -41,7 +41,7 @@
               <hr />
             </ul>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -50,18 +50,22 @@
 <script>
 export default {
   props: {
-    written: {
+    data: {
       type: Array,
       required: true,
     },
-    final: {
-      type: Array,
+    top: {
+      type: String,
       required: true,
     },
-    waiting: {
-      type: Array,
-      required: true,
-    },
+    // final: {
+    //   type: Array,
+    //   required: true,
+    // },
+    // waiting: {
+    //   type: Array,
+    //   required: true,
+    // },
   },
   data() {
     return {
@@ -158,7 +162,7 @@ export default {
   .waitingResult {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    height: 280px;
+    height: 600px;
     overflow-y: scroll;
   }
   .waitingResult::-webkit-scrollbar {

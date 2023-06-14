@@ -1,19 +1,25 @@
 <template>
-  <section id="mscCurriculum">
+  <section id="bscCurriculum">
     <Banner :banner="bsc_banner" />
-    <Curriculum :bsc-body="bsc_body" />
+    <Header
+      :list="section"
+      :department="$nuxt.$route.params.department"
+      page="undergraduate-curriculum"
+    />
+    <nuxt-child></nuxt-child>
   </section>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import Banner from '../../components/helpers/Banner.vue'
-import Curriculum from '../../components/departmens/bsc-curriculum/Curriculum.vue'
+// import Curriculum from '../../components/departmens/bsc-curriculum/Curriculum.vue'
+import Header from '~/halpers/Header.vue'
 
 export default {
   components: {
     Banner,
-    Curriculum,
+    Header,
   },
   layout: 'HomeLayout',
   asyncData({ store, route }) {
@@ -22,7 +28,31 @@ export default {
   },
 
   computed: {
-    ...mapGetters('depBscCur', ['bsc_banner', 'bsc_body']),
+    ...mapGetters('depBscCur', ['bsc_banner', 'section']),
+  },
+
+  watch: {
+    $route(to, from) {
+      if (!to.query.id) {
+        this.getAllSections()
+      }
+    },
+  },
+  created() {
+    this.getAllSections()
+  },
+  methods: {
+    getAllSections() {
+      this.$store
+        .dispatch('depBscCur/getAllSections', this.$route.params.department)
+        .then((res) => {
+          if (res.data.length) {
+            this.$router.push(
+              `/${this.$route.params.department}/undergraduate-curriculum/${res?.data[0]?.slug}?id=${res?.data[0]?.id}`
+            )
+          }
+        })
+    },
   },
 }
 </script>

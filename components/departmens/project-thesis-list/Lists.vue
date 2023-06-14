@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-9 text-center mx-auto">
           <div class="shadow-sm">
-            <h2>CSE Project & Thesis List</h2>
+            <h2>{{ $route.params.department }} Project & Thesis List</h2>
             <div v-if="lists.length > 0" class="lists">
               <ul v-for="(item, i) in lists" :key="i">
                 <u>

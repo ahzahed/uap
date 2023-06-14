@@ -46,7 +46,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       context.commit('sidebar/toggleLoader', true, { root: true })
       this.$axios
-        .get(`/department/faculty/designation`)
+        .get(`/department/faculty/designation/${value}`)
         .then((result) => {
           context.commit('sidebar/toggleLoader', false, { root: true })
           result.data.forEach((element) => {

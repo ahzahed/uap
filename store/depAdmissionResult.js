@@ -5,6 +5,7 @@ const state = () => ({
   written_test: [],
   final_result: [],
   waiting_list: [],
+  admission_result: [],
 })
 
 const getters = {
@@ -12,6 +13,7 @@ const getters = {
   written_test: (state) => state.written_test,
   final_result: (state) => state.final_result,
   waiting_list: (state) => state.waiting_list,
+  admission_result: (state) => state.admission_result,
 }
 
 const actions = {
@@ -19,19 +21,32 @@ const actions = {
     return new Promise((resolve, reject) => {
       context.commit('sidebar/toggleLoader', true, { root: true })
       this.$axios
-        .get(`/admission/result/page/setting/${value}`)
+        .get(`/admission/result/page/setting`)
         .then((result) => {
           context.commit('sidebar/toggleLoader', false, { root: true })
           resolve(result)
-          if (result.data) {
-            result.data.image = this.$config.baseURL + result.data.image
-          }
+          // if (result.data) {
+          //   result.data.image = this.$config.baseURL + result.data.image
+          // }
           context.commit('ADMISSION_RESULT_BANNER', result.data)
         })
         .catch((error) => {
           reject(error)
         })
     })
+  },
+
+  async getAdmissionResult(context, preload) {
+    try {
+      context.commit('sidebar/toggleLoader', true, { root: true })
+      const data = await this.$axios.get(
+        `/admission/result/${preload.department}/${preload.type}`
+      )
+      context.commit('ADMISSION_RESULT', data.data)
+      context.commit('sidebar/toggleLoader', false, { root: true })
+    } catch (error) {
+      context.commit('sidebar/toggleLoader', false, { root: true })
+    }
   },
 
   async getWrittenTest(context, preload) {
@@ -84,6 +99,9 @@ const mutations = {
   },
   WAITING_LIST(state, waiting_list) {
     state.waiting_list = waiting_list
+  },
+  ADMISSION_RESULT(state, admission_result) {
+    state.admission_result = admission_result
   },
 }
 export default {

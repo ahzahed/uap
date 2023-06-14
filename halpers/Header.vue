@@ -12,7 +12,7 @@
                 path: `/${department}/${page}/${item.slug}`,
                 query: { id: item.id },
               }"
-              >{{ item.section }}</nuxt-link
+              >{{ item.section || item.title }}</nuxt-link
             >
             <nuxt-link
               v-else

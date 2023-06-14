@@ -9,17 +9,13 @@
 </template>
 
 <script>
-// import infoTuition from '../components/tution-fees/tuition-info.vue'
 import { mapGetters } from 'vuex'
 import Program from '@/components/tution-fees/Program.vue'
-// import WaiverInfo from '../components/tution-fees/WaiverInfo.vue'
-// import Waiver from '../components/tution-fees/Waiver.vue'
 import Banner from '@/components/helpers/Banner.vue'
 
 export default {
   components: {
     Program,
-    //  WaiverInfo,
     Banner,
   },
   layout: 'HomeLayout',
