@@ -38,32 +38,32 @@ const actions = {
   },
   async getPrograms(context, value) {
     const data = await this.$axios.get(
-      `/department/class/schedule/program/${value}/exam`
+      `/department/exam/schedule/program/${value}`
     )
     context.commit('PROGRAMS', data.data)
   },
 
   async getSemesters(context, value) {
     const data = await this.$axios.get(
-      `/department/class/schedule/semester/${value.department.history.current.params.department}/${value.id}/exam`
+      `/department/exam/schedule/semester/${value.department.history.current.params.department}/${value.id}`
     )
     context.commit('SEMESTERS', data.data)
   },
   async getSections(context, value) {
     const data = await this.$axios.get(
-      `/department/class/schedule/section/${value.department.history.current.params.department}/${value.id}/exam`
+      `/department/exam/schedule/section/${value.department.history.current.params.department}/${value.id}`
     )
     context.commit('SECTIONS', data.data)
   },
   async getExamScheduleBody(context, value) {
     if (value.section) {
       const data = await this.$axios.get(
-        `/department/class/schedule/${value.department.history.current.params.department}/exam/${value.program}/${value.semester}/${value.section}`
+        `/department/exam/schedule/${value.department.history.current.params.department}/${value.program}/${value.semester}/${value.section}`
       )
       context.commit('EXAM_SCHEDULE_BODY', data.data)
     } else {
       const data = await this.$axios.get(
-        `/department/class/schedule/${value.department.history.current.params.department}/exam/${value.program}/${value.semester}`
+        `/department/exam/schedule/${value.department.history.current.params.department}/${value.program}/${value.semester}`
       )
       context.commit('EXAM_SCHEDULE_BODY', data.data)
     }

@@ -138,6 +138,8 @@ export default {
   },
   methods: {
     getSemesters(event) {
+      this.semester = ''
+      this.section = ''
       this.program_id = event.target.value
       this.$store.dispatch('examSchedule/getSemesters', {
         department: this.$router,
