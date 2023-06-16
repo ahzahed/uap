@@ -203,7 +203,7 @@ export const Menu = [
     title: 'News and Information',
     link: '/events',
     subMenus: [
-      { title: 'Events', link: '/events' },
+      { title: 'News and Events', link: '/events' },
       // { title: 'News', link: '/news' },
       { title: 'UAP News and Notice', link: '/news' },
       // {
