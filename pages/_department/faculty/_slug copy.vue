@@ -2,29 +2,33 @@
   <section id="professor">
     <!-- <p>{{ designation_wise_member }}</p> -->
     <div class="container mt-5">
-      <div class="row justify-content-start">
+      <div class="row justify-content-center">
         <div
           v-for="(professor, i) in designation_wise_member"
           :key="i"
-          class="col-lg-6 d-flex"
+          class="col-md-6"
         >
-          <div class="card profile-card mb-5 mx-auto">
+          <div
+            class="card profile-card mb-5 mx-auto shadow-sm"
+            style="max-width: 540px"
+          >
             <div class="row g-0">
               <div class="col-sm-4 img-top">
-                <img :src="professor.profile" class="main-img" alt="..." />
+                <img
+                  :src="professor.profile"
+                  class="main-img w-100 h-100"
+                  alt="..."
+                />
               </div>
               <div class="col-sm-8 main-info">
                 <div
-                  class="card-body d-flex flex-column justify-content-center ps-5 card-top"
+                  class="card-body d-flex flex-column justify-content-center ps-5 ps-md-3 ps-lg-5 ms-2 ms-lg-3 h-100 card-top"
                 >
                   <h5 class="mb-0">{{ professor.name }}</h5>
-                  <p class="mb-1">{{ professor.designation }}</p>
+                  <p class="mb-0">{{ professor.designation }}</p>
                   <div>
                     <ul class="nav mb-2">
-                      <li
-                        v-show="professor && professor.facebook"
-                        class="nav-item"
-                      >
+                      <li v-show="professor && professor.facebook" class="nav-item">
                         <a
                           class="nav-link"
                           style="cursor: pointer"
@@ -34,10 +38,7 @@
                           <img src="@/static/images/faculty/facebook.png"
                         /></a>
                       </li>
-                      <li
-                        v-show="professor && professor.linkedin"
-                        class="nav-item"
-                      >
+                      <li v-show="professor && professor.linkedin" class="nav-item">
                         <a
                           class="nav-link"
                           style="cursor: pointer"
@@ -47,10 +48,7 @@
                           <img src="@/static/images/faculty/twitter.png"
                         /></a>
                       </li>
-                      <li
-                        v-show="professor && professor.twitter"
-                        class="nav-item"
-                      >
+                      <li v-show="professor && professor.twitter" class="nav-item">
                         <a
                           class="nav-link"
                           style="cursor: pointer"
@@ -60,10 +58,7 @@
                           <img src="@/static/images/faculty/linkedin.png"
                         /></a>
                       </li>
-                      <li
-                        v-show="professor && professor.Instagram"
-                        class="nav-item"
-                      >
+                      <li v-show="professor && professor.Instagram" class="nav-item">
                         <a
                           class="nav-link"
                           style="cursor: pointer"
@@ -135,60 +130,46 @@ export default {
 @import './styles/_main.scss';
 #professor {
   .profile-card {
-    box-shadow: 0 0 6px 2px rgba(131, 131, 131, 0.25);
+    // box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     border: none;
-    width: 100%;
-    flex: 0 0 100%;
-    justify-content: center;
-    // border: 1px solid #ebebeb;
-    background-color: #fff;
     @include respond-below(sm) {
       max-width: 300px !important;
     }
     .img-top {
       // box-shadow: 0 22px 40px 0 rgba(57, 192, 237, 0.2);
       .main-img {
-        width: 100%;
-        height: auto;
-        max-height: 300px;
-        overflow: hidden;
-        border-radius: 6px;
-        object-fit: cover;
-        object-position: top;
+        border-radius: 5px;
       }
     }
 
     .main-info {
-      // background-color: $background-color;
-      display: flex;
-      justify-content: start;
-      align-items: center;
+      background-color: $background-color;
+
       .card-top {
-        row-gap: 0px;
+        row-gap: 10px;
         @include respond-below(lg) {
           row-gap: 2px;
         }
         h5 {
-          font-size: 12px;
           @include cardTitle;
-          @include respond-below(xl) {
-            font-size: 16px;
+          @include respond-below(lg) {
+            font-size: 19px;
           }
         }
         p {
           @include cardPara;
-          @include respond-below(xl) {
-            font-size: 14px;
+          @include respond-below(lg) {
+            font-size: 16px;
           }
         }
         ul {
           li {
             .icon img {
               @include respond-below(lg) {
-                height: 10px;
-                width: 10px;
+                hight: 15px;
+                width: 18px;
                 &:first-child {
-                  height: 10px;
+                  height: 18px;
                 }
               }
             }

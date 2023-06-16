@@ -34,7 +34,8 @@ export default {
   right: 0;
   display: flex;
   justify-content: center;
-  background-color: rgb(143 143 143);
+  /* background-color: rgb(143 143 143); */
+  background-color: rgba(0,0,0,0.8);
   z-index: 3000;
 }
 @media (min-width: 576px) {

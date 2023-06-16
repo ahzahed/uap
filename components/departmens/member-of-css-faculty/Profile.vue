@@ -5,7 +5,7 @@
         <!-- Team item -->
         <div class="col-xl-4 col-md-6 mb-5 text-center">
           <div class="bg-white rounded shadow py-5 px-4 leftSide">
-            <img :src="profile.profile_image" class="img-fluid mb-3 shadow" />
+            <img :src="profile.profile_image" class="mb-3 shadow main-img" />
             <h5>{{ profile.name }}</h5>
             <span>{{ profile.position }}</span>
             <p>
@@ -112,6 +112,12 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    .main-img {
+      width: auto;
+      border-radius: 6px;
+      object-fit: cover;
+      object-position: top;
+    }
     h5 {
       @include title2;
     }

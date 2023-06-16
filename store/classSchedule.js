@@ -55,7 +55,7 @@ const actions = {
     context.commit('SECTIONS', data.data)
   },
   async getClassScheduleBody(context, value) {
-    console.log(value);
+    // console.log(value);
     if (value.section) {
       const data = await this.$axios.get(
         `/department/class/schedule/${value.department.history.current.params.department}/${value.program}/${value.semester}/${value.section}`

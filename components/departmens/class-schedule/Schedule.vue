@@ -83,7 +83,7 @@ vue/require-default-prop */
                   v-else-if="class_schedule_body.file"
                   :src="$config.baseURL + class_schedule_body.file"
                   alt=""
-                  class="w-100 h-100"
+                  class="w-100 h-100 px-2"
                 />
 
                 <a

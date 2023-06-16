@@ -141,6 +141,9 @@
               </div>
             </div>
           </div>
+          <div class="mt-5 text-center">
+            <img :alt="singleNewsDetails.title" :src="singleNewsDetails.image" width="500"/>
+          </div>
           <div class="mt-5" v-html="singleNewsDetails.description"></div>
         </div>
       </template>

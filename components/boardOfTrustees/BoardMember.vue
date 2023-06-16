@@ -33,18 +33,18 @@
             </div>
         </div> -->
         <div v-show="showCharman == 1" class="row">
-          <div class="col-lg-6 mx-auto">
+          <div class="col-lg-7 mx-auto">
             <div class="mb-4">
               <div class="card mb-4 loopCardContainer">
                 <div class="row">
                   <div class="col-lg-5 col-md-5 col-sm-5 paddingRight">
                     <img
                       :src="chairperson.image"
-                      class="img-fluid h-100 w-100"
+                      class="main-img"
                       :alt="chairperson.name"
                     />
                   </div>
-                  <div class="col-lg-7 col-md-7 col-sm-7">
+                  <div class="col-lg-7 col-md-7 col-sm-7 main-info">
                     <div class="card-body">
                       <h5>{{ chairperson.name }}</h5>
                       <h6>{{ chairperson.designation }}</h6>
@@ -67,17 +67,13 @@
         <div class="mb-4">
           <div class="row">
             <!-- card start -->
-            <div v-for="(item, i) in items" :key="i" class="col-lg-6">
+            <div v-for="(item, i) in items" :key="i" class="col-lg-6 d-flex">
               <div class="card mb-4 loopCardContainer">
                 <div class="row">
                   <div class="col-lg-5 col-md-5 col-sm-5 paddingRight">
-                    <img
-                      :src="item.image"
-                      class="img-fluid h-100 w-100"
-                      :alt="item.name"
-                    />
+                    <img :src="item.image" class="main-img" :alt="item.name" />
                   </div>
-                  <div class="col-lg-7 col-md-7 col-sm-7">
+                  <div class="col-lg-7 col-md-7 col-sm-7 main-info">
                     <div class="card-body">
                       <h5>{{ item.name }}</h5>
                       <h6>{{ item.designation }}</h6>
@@ -118,7 +114,6 @@ export default {
       required: true,
     },
   },
-  
 }
 </script>
 <style lang="scss" scoped>
@@ -127,7 +122,7 @@ export default {
   margin-top: 69px;
 
   .card {
-    background: #e1f2f9;
+    // background: #e1f2f9;
     @include respond-between(xs, sm) {
       margin-right: 50px;
       margin-left: 50px;
@@ -138,11 +133,28 @@ export default {
     }
   }
   .loopCardContainer {
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 6px 2px rgba(131, 131, 131, 0.25);
+    // border: none;
+    // width: 100%;
+    // flex: 0 0 100%;
+    justify-content: center;
+    // box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     border-radius: 5px;
+    @include respond-above(sm) {
+      width: 100%;
+    }
     .paddingRight {
       @include respond-between(sm, xl) {
         padding-right: 0px !important;
+      }
+      .main-img {
+        width: 100%;
+        height: auto;
+        max-height: 320px;
+        // overflow: hidden;
+        border-radius: 4px;
+        object-fit: cover;
+        object-position: top;
       }
     }
     img {
@@ -159,12 +171,18 @@ export default {
       //   height: 300px !important;
       // }
     }
-    .card-body {
-      @include respond-between(xl, xml) {
-        padding: 8px;
-      }
-      @include respond-between(lg, xl) {
-        padding: 3px;
+    .main-info {
+      // background-color: $background-color;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      .card-body {
+        @include respond-between(xl, xml) {
+          padding: 8px;
+        }
+        @include respond-between(lg, xl) {
+          padding: 3px;
+        }
       }
     }
 

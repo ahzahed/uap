@@ -23,7 +23,14 @@
             >
               <div class="row g-0">
                 <div class="col-md-4 cardLeft">
-                  <div class="card-body h-100">
+                  <div
+                    class="card-body h-100"
+                    style="
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    "
+                  >
                     <p>{{ item.title }}</p>
                   </div>
                 </div>

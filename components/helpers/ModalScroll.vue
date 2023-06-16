@@ -1,7 +1,8 @@
 <template>
   <transition name="modal-fade">
     <div class="modal-overlay" @click="$emit('close')">
-      <div class="uap-modal my-5" :style="{ width: modelWidth }">
+      <!-- <div class="uap-modal my-5" :style="{ width: modelWidth }"> -->
+      <div class="uap-modal my-5" style=" width: 900px">
         <div class="modal-content bg-white" @click.stop>
           <slot name="header"> </slot>
 
@@ -35,7 +36,8 @@ export default {
   right: 0;
   display: flex;
   justify-content: center;
-  background-color: rgb(143 143 143);
+  // background-color: rgb(143 143 143);
+  background-color: rgba(0,0,0,0.8);
   z-index: 3000;
   overflow-y: scroll;
 }
